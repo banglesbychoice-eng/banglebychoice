@@ -1,0 +1,39 @@
+{
+    "name": "Bangle by Choice B2B Wholesale",
+    "short_name": "BangleB2B",
+    "description": "B2B wholesale procurement portal for bulk raw materials, premium silk threads, custom bases, and handcrafted designer bangles. Serving retail shops, boutiques, and independent artisans.",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#F8F7F4",
+    "theme_color": "#C44536",
+    "orientation": "portrait-primary",
+    "scope": "./",
+    "icons": [
+        {
+            "src": "./icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "./icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "shopping",
+        "business",
+        "wholesale"
+    ],
+    "screenshots": [
+        {
+            "src": "./screenshots/home.png",
+            "sizes": "540x720",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+    ],
+    "prefer_related_applications": false
+}

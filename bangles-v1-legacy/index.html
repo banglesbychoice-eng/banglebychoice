@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bangle by Choice | Custom Thread & Designer Bangles</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-rose-200 selection:text-rose-900">
+
+    <!-- ========================================= -->
+    <!-- DESKTOP APP (Hidden on Mobile) -->
+    <!-- ========================================= -->
+    <div id="desktop-app" class="hidden md:block">
+
+        <!-- Top Bar -->
+        <div
+            class="bg-slate-900 text-white text-xs font-bold text-center py-2 tracking-widest uppercase overflow-hidden">
+            <span class="animate-pulse mr-2 text-rose-500">●</span>
+            <span id="scrolling-announcement">Worldwide Delivery Available ✈️ | Custom Handmade Bangles</span>
+        </div>
+
+        <!-- Navigation (Desktop) -->
+        <nav class="sticky top-0 w-full z-50 glass-effect border-b border-rose-100 shadow-sm transition-all duration-300"
+            id="navbar">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <div class="text-2xl font-bold text-rose-700 tracking-tighter">Bangle<span
+                            class="text-slate-600 font-light italic">byChoice</span></div>
+                </div>
+
+                <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600 uppercase tracking-wide">
+                    <button onclick="switchContext('bangles')" id="desk-nav-bangles"
+                        class="hover:text-rose-600 transition text-rose-600 border-b-2 border-rose-600">Bangles</button>
+                    <button onclick="switchContext('materials')" id="desk-nav-materials"
+                        class="hover:text-rose-600 transition">Raw Materials</button>
+                    <a href="#outfit-match" class="hover:text-rose-600 transition">Outfit Match</a>
+                    <button type="button" onclick="toggleAdmin()"
+                        class="text-slate-400 hover:text-slate-800 transition"><i class="fa-solid fa-lock"></i>
+                        Admin</button>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div
+                        class="hidden md:flex items-center bg-slate-100 rounded-full px-4 py-2 border border-slate-200 focus-within:border-rose-300 transition">
+                        <i class="fa-solid fa-search text-slate-400"></i>
+                        <input type="text" id="desktop-search" placeholder="Search Bangles..."
+                            class="bg-transparent border-none outline-none text-sm ml-2 w-32 placeholder-slate-400 text-slate-700"
+                            onkeyup="filterBySearch(this.value)">
+                    </div>
+                    <button id="desktop-cart-btn" class="relative p-2 text-slate-600 hover:text-rose-600 transition"
+                        title="Cart">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span id="cart-count"
+                            class="absolute top-0 right-0 bg-rose-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center transform scale-0 transition-transform duration-300">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section (Desktop) -->
+        <header class="relative pt-24 pb-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-row items-center gap-10">
+                    <div class="w-1/2 text-left">
+                        <h1 class="text-7xl font-bold text-slate-900 mb-6 leading-tight font-serif">
+                            More Than Jewelry. <br>
+                            <span class="text-rose-600 italic">It's Your Story.</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 mb-8 max-w-xl leading-relaxed font-light">
+                            Rediscover the elegance of bangles tailored for the modern woman. <br>
+                            <span class="font-semibold text-slate-800">Thread • Glass • Customised • Korean • Raw
+                                Materials</span>
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="#collections"
+                                class="px-10 py-4 bg-rose-600 text-white font-bold rounded-full shadow-lg hover:bg-rose-700 transition hover:scale-105 transform duration-200">
+                                Explore All
+                            </a>
+                            <a href="#outfit-match"
+                                class="px-10 py-4 bg-white text-rose-600 border-2 border-rose-100 font-bold rounded-full shadow-sm hover:bg-rose-50 transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-camera"></i> Match My Outfit
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-1/2 flex justify-center">
+                        <div class="relative w-full max-w-md aspect-square">
+                            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Elegant Indian Bangles"
+                                class="w-full h-full object-cover rounded-2xl shadow-2xl rotate-2 hover:rotate-0 transition duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Psychology / Mission Section -->
+        <section id="psychology" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Wear Bangles?</h2>
+                    <p class="text-slate-500">Bangles are not just tradition—they are an expression of emotion and
+                        personality.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-slate-50 p-8 rounded-2xl text-center border border-slate-100 hover:shadow-xl transition group">
+                        <div
+                            class="w-16 h-16 mx-auto bg-red-100 text-red-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Red & Black</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Wearing <strong>Red</strong> signifies energy
+                            and passion. <strong>Black</strong> represents power and protects your aura.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-slate-50 p-8 rounded-2xl text-center border border-slate-100 hover:shadow-xl transition group">
+                        <div
+                            class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Blue & Green</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed"><strong>Blue</strong> radiates calmness and
+                            wisdom. <strong>Green</strong> signifies new beginnings.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div
+                        class="bg-slate-50 p-8 rounded-2xl text-center border border-slate-100 hover:shadow-xl transition group">
+                        <div
+                            class="w-16 h-16 mx-auto bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Silent Office Edit</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Worried about noise? Our "Office Edit"
+                            features <strong>silent thread bangles</strong> perfect for work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories / Products (Desktop) -->
+        <!-- Main Products Section -->
+        <section id="collections" class="py-20 bg-slate-50 min-h-screen">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <h2 id="collection-title" class="text-3xl md:text-4xl font-bold mb-2">Curated Bangles</h2>
+                        <p id="collection-subtitle" class="text-slate-500">Handcrafted with love.</p>
+                    </div>
+
+                    <!-- Search & Filter Controls -->
+                    <div class="flex flex-wrap gap-4 items-center justify-end" id="voice-search-container">
+
+                        <!-- Bangles Filters -->
+                        <div id="bangles-filters" class="flex gap-2">
+                            <select id="desktop-category-filter" onchange="runFilters()"
+                                class="px-3 py-2 rounded-lg border border-slate-200 bg-white text-sm font-bold text-slate-600 focus:border-rose-300 outline-none cursor-pointer">
+                                <option value="all">Category: All</option>
+                                <!-- Injected via JS -->
+                            </select>
+                        </div>
+
+                        <!-- Materials Filters (Hidden by default) -->
+                        <div id="materials-filters" class="hidden flex flex-wrap gap-2">
+                            <select id="filter-shape" onchange="runFilters()"
+                                class="px-3 py-2 rounded-lg border border-slate-200 bg-white text-sm font-bold text-slate-600 focus:border-rose-300 outline-none cursor-pointer">
+                                <option value="all">Shape: All</option>
+                            </select>
+                            <select id="filter-color" onchange="runFilters()"
+                                class="px-3 py-2 rounded-lg border border-slate-200 bg-white text-sm font-bold text-slate-600 focus:border-rose-300 outline-none cursor-pointer">
+                                <option value="all">Color: All</option>
+                            </select>
+                            <select id="filter-size" onchange="runFilters()"
+                                class="px-3 py-2 rounded-lg border border-slate-200 bg-white text-sm font-bold text-slate-600 focus:border-rose-300 outline-none cursor-pointer">
+                                <option value="all">Size: All</option>
+                            </select>
+                        </div>
+
+                        <select id="desktop-sort-filter" onchange="runFilters()"
+                            class="px-3 py-2 rounded-lg border border-slate-200 bg-white text-sm font-bold text-slate-600 focus:border-rose-300 outline-none cursor-pointer">
+                            <option value="default">Sort By</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-4 gap-6" id="product-grid">
+                    <!-- Products Injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer (Desktop) -->
+        <footer class="bg-slate-900 text-slate-300 py-16">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <div class="text-2xl font-bold text-white tracking-tighter mb-6">Bangle<span
+                                class="text-slate-500 font-light italic">byChoice</span></div>
+                        <p class="text-sm leading-relaxed mb-6">Reviving the culture of bangles for the modern world.
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <i class="fa-solid fa-gem text-rose-400 text-2xl"></i>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-wide">Huge Variety</h4>
+                            <p class="text-xs text-slate-400">Thread, Glass & Korean</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-6">Contact</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex gap-3"><i class="fa-solid fa-location-dot mt-1"></i> Hyderabad, India</li>
+                            <li class="flex gap-3"><i class="fa-solid fa-phone mt-1"></i> +91 9553655562</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-slate-800 pt-8 text-center text-xs">
+                    <p>&copy; 2025 Bangle by Choice. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Cart Drawer (Desktop) -->
+        <div id="cart-drawer" class="fixed inset-0 z-[60] hidden">
+            <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity opacity-0" id="cart-overlay"
+                onclick="toggleCart()"></div>
+            <div class="absolute top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col"
+                id="cart-panel">
+                <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+                    <h2 class="text-xl font-bold font-serif text-slate-900">Your Bag</h2>
+                    <button onclick="toggleCart()" class="text-slate-400 hover:text-rose-600 transition"><i
+                            class="fa-solid fa-xmark text-2xl"></i></button>
+                </div>
+                <div class="flex-1 overflow-y-auto p-6" id="cart-scroll-area">
+                    <div id="cart-items" class="space-y-6 mb-8"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- MOBILE APP SHELL (Hidden on Desktop) -->
+    <!-- ========================================= -->
+    <div id="mobile-app" class="md:hidden h-screen flex flex-col bg-white overflow-hidden relative">
+
+        <!-- Mobile App-Like Header (Sticky) -->
+        <div class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm">
+            <!-- Top Row: Logo & Actions -->
+            <div class="flex items-center justify-between px-4 py-3">
+                <div class="font-serif font-bold text-xl text-rose-600 tracking-tight">Bangle<span
+                        class="text-slate-800 italic font-light text-sm">App</span></div>
+                <div class="flex gap-3">
+                    <!-- Cart Icon (Top Right for standard feel) -->
+                    <button onclick="switchMobileView('bag')" class="relative text-slate-800 transition">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span id="mobile-cart-count-top"
+                            class="absolute -top-1 -right-1.5 bg-rose-600 text-white text-[9px] font-bold rounded-full h-4 w-4 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Row 2: Global Search (Integrated) -->
+            <div class="px-4 pb-3">
+                <div
+                    class="flex items-center bg-slate-100/50 rounded-xl px-3 py-2.5 border border-slate-200/60 focus-within:border-rose-300 focus-within:bg-white transition shadow-sm group">
+                    <i class="fa-solid fa-search text-slate-400 group-focus-within:text-rose-500 mr-2 transition"></i>
+                    <input type="text" id="global-mobile-search" placeholder="Search Bangles, Materials..."
+                        class="bg-transparent w-full outline-none text-sm text-slate-800 font-medium placeholder-slate-400"
+                        onkeyup="handleGlobalSearch(this.value)">
+                </div>
+            </div>
+
+            <!-- Row 3: Segmented Context (Tabs) -->
+            <div class="px-4 pb-0">
+                <div class="flex border-b border-slate-100">
+                    <button onclick="switchContext('bangles'); switchMobileView('bangles')" id="tab-btn-bangles"
+                        class="flex-1 pb-3 text-sm font-bold text-rose-600 border-b-2 border-rose-600 transition-all">
+                        Bangles
+                    </button>
+                    <button onclick="switchContext('materials'); switchMobileView('materials')" id="tab-btn-materials"
+                        class="flex-1 pb-3 text-sm font-bold text-slate-400 hover:text-slate-600 transition-all">
+                        Raw Materials
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content (Padded for Header) -->
+        <main id="mobile-content" class="flex-1 overflow-y-auto bg-slate-50 overscroll-contain pt-2">
+
+            <!-- VIEW: BANGLES -->
+            <div id="view-bangles" class="mobile-view p-4 pb-24">
+
+                <!-- Category Pills (Horizontal) -->
+                <div class="flex gap-2 overflow-x-auto pb-4 no-scrollbar mb-2" id="mobile-bangle-cats">
+                    <!-- Injected via JS -->
+                </div>
+
+                <!-- Featured Hero (Small) -->
+                <div class="relative rounded-xl overflow-hidden shadow-md shadow-rose-900/10 mb-5 h-40 group">
+                    <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&w=600&q=80"
+                        class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-linear-to-t from-black/70 to-transparent flex items-end p-4">
+                        <div>
+                            <span class="text-[10px] text-rose-200 font-bold tracking-widest uppercase">New
+                                Arrival</span>
+                            <h2 class="text-white font-bold text-lg leading-none">Bridal Collection</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Grid Header -->
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="font-bold text-slate-800">Trending Now</h3>
+                    <button onclick="openMobileFilters()"
+                        class="text-xs font-bold text-rose-600 bg-rose-50 px-3 py-1.5 rounded-full flex items-center gap-1"><i
+                            class="fa-solid fa-sliders"></i> Filters</button>
+                </div>
+                <div id="mobile-bangles-grid" class="grid grid-cols-2 gap-3"></div>
+            </div>
+
+            <!-- VIEW: MATERIALS -->
+            <div id="view-materials" class="mobile-view hidden p-4 pb-24 pt-2">
+
+                <!-- "Shop by Shape" Horizontal Scroll -->
+                <h3 class="font-bold text-slate-800 text-sm mb-3 px-1">Shop by Shape</h3>
+                <div class="flex gap-3 overflow-x-auto pb-4 no-scrollbar mb-4" id="mobile-material-shapes">
+                    <!-- Injected via JS -->
+                </div>
+
+                <!-- Products Grid Header -->
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="font-bold text-slate-800">All Materials</h3>
+                    <button onclick="openMobileFilters()"
+                        class="text-xs font-bold text-rose-600 bg-rose-50 px-3 py-1.5 rounded-full flex items-center gap-1"><i
+                            class="fa-solid fa-sliders"></i> Filters</button>
+                </div>
+                <div id="mobile-materials-grid" class="grid grid-cols-2 gap-3"></div>
+            </div>
+
+            <!-- VIEW: HOME (Removed - Combined into Contexts) -->
+            <div id="view-search" class="mobile-view hidden absolute inset-0 bg-white z-40 p-4">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="flex-1 bg-slate-100 rounded-lg flex items-center px-4 py-2 border border-transparent focus-within:border-rose-300 transition">
+                        <i class="fa-solid fa-search text-slate-400 mr-2"></i>
+                        <input type="text" placeholder="Search..." class="bg-transparent w-full outline-none text-sm"
+                            onkeyup="renderProducts('all', this.value)">
+                    </div>
+                    <button onclick="switchMobileView('bangles')"
+                        class="text-slate-500 font-bold text-sm">Cancel</button>
+                </div>
+                <div class="text-xs text-slate-400 uppercase font-bold mb-2">Popular</div>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="bg-slate-50 text-slate-600 px-3 py-1 rounded-full text-xs font-bold border border-slate-200">Silk
+                        Thread</span>
+                    <span
+                        class="bg-slate-50 text-slate-600 px-3 py-1 rounded-full text-xs font-bold border border-slate-200">Kundan</span>
+                </div>
+            </div>
+
+
+            <!-- VIEW: BAG -->
+            <div id="view-bag" class="mobile-view hidden absolute inset-0 bg-slate-50 z-10 flex flex-col">
+                <div class="bg-white p-4 border-b shadow-sm sticky top-0 z-20">
+                    <h2 class="font-bold text-xl">Shopping Bag</h2>
+                </div>
+                <div class="p-4 flex-1 overflow-y-auto" id="mobile-cart-items">
+                    <!-- Cart Injected JS -->
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Bottom        <!-- Floating Cart Removed (Moved to Header) -->
+    </div>
+
+    <!-- Product Quick View Modal (Shared) -->
+    <div id="product-modal" class="fixed inset-0 z-[999] hidden flex items-center justify-center px-4">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div
+            class="bg-white rounded-2xl shadow-2xl w-full max-w-lg relative z-10 overflow-hidden flex flex-col max-h-[80vh]">
+            <button onclick="closeModal()"
+                class="absolute top-4 right-4 z-20 bg-white/80 p-2 rounded-full hover:bg-white text-slate-800 transition"><i
+                    class="fa-solid fa-xmark text-xl"></i></button>
+
+            <div class="h-64 bg-slate-100 relative">
+                <div id="modal-image-container" class="w-full h-full"></div>
+            </div>
+
+            <div class="p-6 overflow-y-auto">
+                <span id="modal-category"
+                    class="text-xs font-bold text-rose-600 uppercase tracking-widest mb-1 block">Category</span>
+                <h2 id="modal-title" class="text-2xl font-bold text-slate-900 mb-2 font-serif">Product Name</h2>
+                <div class="flex items-center gap-4 mb-4">
+                    <div id="modal-price-container">
+                        <span id="modal-mrp" class="strike-price text-sm"></span>
+                        <span id="modal-price" class="text-xl font-bold text-slate-900">₹999</span>
+                        <span id="modal-discount"
+                            class="ml-2 bg-rose-100 text-rose-600 text-xs font-bold px-2 py-1 rounded uppercase hidden"></span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-500 ml-auto">
+                        <i class="fa-solid fa-truck"></i> Shipping Extra
+                    </div>
+                </div>
+                <div class="bg-rose-50 border-l-4 border-rose-400 p-3 rounded-r-lg mb-4">
+                    <p id="modal-story" class="text-slate-700 italic text-xs">"Story text..."</p>
+                </div>
+
+                <div id="modal-variants-container" class="mb-4"></div>
+
+                <div class="flex gap-3 mt-4">
+                    <button onclick="addToCartFromModal()"
+                        class="flex-1 py-3 bg-rose-600 text-white font-bold rounded-lg hover:bg-rose-700 transition shadow-lg">Add
+                        to Bag</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Portal (Hidden by default, used for both) -->
+    <div id="admin-portal" class="fixed inset-0 z-[9999] hidden bg-slate-100 overflow-auto">
+        <div class="p-10 flex flex-col items-center justify-center min-h-screen">
+            <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md text-center">
+                <h2 class="text-2xl font-bold mb-4">Admin Portal</h2>
+                <p class="text-slate-500 mb-6">Restricted Access</p>
+                <!-- Include Admin Form Content via JS injection or iframe if needed, kept simple for shell -->
+                <button onclick="toggleAdmin()" class="text-rose-600 font-bold hover:underline">Close Portal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Mobile Filter Sheet (Bottom Sheet) -->
+    <div id="mobile-filter-sheet" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeMobileFilters()">
+        </div>
+        <div class="absolute bottom-0 left-0 w-full bg-slate-50 rounded-t-2xl shadow-2xl transform transition-transform duration-300 translate-y-full"
+            id="mobile-filter-panel">
+            <div class="p-4 border-b border-slate-200 flex justify-between items-center bg-white rounded-t-2xl">
+                <h3 class="font-bold text-lg text-slate-900">Filters</h3>
+                <button onclick="closeMobileFilters()" class="text-slate-400 p-2"><i
+                        class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div class="p-4 max-h-[60vh] overflow-y-auto" id="mobile-filter-content">
+                <!-- Dynamic Controls Injected Here -->
+            </div>
+            <div class="p-4 border-t border-slate-200 bg-white">
+                <button onclick="applyMobileFilters()"
+                    class="w-full py-3 bg-rose-600 text-white font-bold rounded-xl shadow-lg hover:bg-rose-700 transition">Apply
+                    Filters</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

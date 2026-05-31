@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#C44536">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="BangleByChoice B2B">
+
+    <title>B2B Wholesale Portal | Bangle by Choice Raw Materials & finished bangles</title>
+    <meta name="description" content="Wholesale procurement portal of Bangle by Choice. Bulk raw materials, premium silk threads, custom bases, and handcrafted designer bangles for retail shops and makers. MOQ ₹5,000.">
+
+    <!-- Open Graph B2B Meta Tags -->
+    <meta property="og:title" content="B2B Wholesale Portal | Bangle by Choice">
+    <meta property="og:description" content="Bulk raw materials, premium silk threads, custom bases, and designer bangles for boutiques and independent artisans.">
+    <meta property="og:url" content="https://banglebychoice.in/mobile-pwa/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="B2B Wholesale Portal | Bangle by Choice">
+    <meta name="twitter:description" content="Bulk raw materials, premium silk threads, custom bases, and designer bangles for boutiques and independent artisans.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://banglebychoice.in/mobile-pwa/">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+    <!-- Geo Meta Tags (Hyderabad, India) -->
+    <meta name="geo.region" content="IN-TG">
+    <meta name="geo.placename" content="Hyderabad">
+    <meta name="geo.position" content="17.385044;78.486671">
+    <meta name="ICBM" content="17.385044, 78.486671">
+
+    <!-- JSON-LD B2B Wholesale Store Schema -->
+    <script type="application/ld-json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WholesaleStore",
+      "name": "Bangle by Choice",
+      "image": "https://banglebychoice.in/mobile-pwa/icons/icon-512.png",
+      "description": "Wholesale procurement and supply of high-quality silk thread bangles, base sets, and custom raw materials.",
+      "url": "https://banglebychoice.in/mobile-pwa/",
+      "telephone": "+919553655562",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bangle by Choice Wholesale District",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "postalCode": "500001",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+
+    <!-- Fonts - Space Grotesk & JetBrains Mono for utility terminal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+    </script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</head>
+
+<body>
+    <!-- App Container -->
+    <div id="app" class="app-container">
+
+        <!-- Header with Search -->
+        <header class="app-header bg-[#F8F7F4] border-b-2 border-[#1A1A1A]">
+            <div class="header-content h-auto py-3">
+                <div class="flex-grow">
+                    <h1 class="brand text-xl font-bold tracking-tight uppercase" style="color: var(--text)">BangleByChoice <span class="brand-accent text-[#C44536]" style="font-style: normal; font-weight: 700;">B2B Terminal</span></h1>
+                    <p class="font-mono-data text-[10px] opacity-70 mt-1 uppercase" style="color: var(--text)">Wholesale Procurement & Raw Materials</p>
+                </div>
+                <div class="header-search flex-shrink-0" id="header-search" onclick="openSearch()" style="max-width: 180px; border-color: var(--secondary);">
+                    <i class="fa-solid fa-search"></i>
+                    <span>Search SKU...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="app-main" id="main-content">
+
+            <!-- Home Section -->
+            <section id="home-section" class="section active">
+                <div class="section-content">
+
+                    <!-- B2B Announcement / Promo Banner -->
+                    <div id="b2b-promo-banner" class="moq-alert-banner">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <div>
+                            <span><strong>WHOLESALE RULES:</strong> Minimum Order Quantity (MOQ) is <strong>₹5,000</strong>.</span>
+                            <span class="block text-[10px] mt-1 font-mono-data">Tier 1: 10% OFF at ₹10,000+ | Tier 2: 20% OFF at ₹20,000+</span>
+                        </div>
+                    </div>
+
+                    <!-- Quick Categories -->
+                    <div class="quick-categories">
+                        <h2 class="section-title">Shop by Category</h2>
+                        <div class="category-grid" id="home-categories">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Featured Products -->
+                    <div class="featured-section">
+                        <h2 class="section-title">Popular Materials & Bangles</h2>
+                        <div class="product-grid" id="home-products">
+                            <div class="skeleton-card"></div>
+                            <div class="skeleton-card"></div>
+                            <div class="skeleton-card"></div>
+                            <div class="skeleton-card"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dynamic Category Sections (Bangles, Raw Materials, Kundhans, Accessories) -->
+            <section id="bangles-section" class="section">
+                <div class="section-content">
+                    <div class="section-header">
+                        <h2 class="section-title">💍 Finished Bangles</h2>
+                        <button class="sort-btn" onclick="openSortSheet('bangles')">
+                            <i class="fa-solid fa-arrow-down-short-wide"></i>
+                        </button>
+                    </div>
+                    <div class="sub-categories" id="bangles-sub-cats"></div>
+                    <div class="wholesale-table-container">
+                        <table class="wholesale-table">
+                            <thead>
+                                <tr>
+                                    <th class="w-16">Image</th>
+                                    <th>SKU / Product Description</th>
+                                    <th class="text-right">Unit Price</th>
+                                    <th class="text-right w-24">Order Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bangles-products-table">
+                                <!-- Loaded dynamically by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="raw-materials-section" class="section">
+                <div class="section-content">
+                    <div class="section-header">
+                        <h2 class="section-title">🧵 Raw Materials</h2>
+                        <button class="sort-btn" onclick="openSortSheet('raw-materials')">
+                            <i class="fa-solid fa-arrow-down-short-wide"></i>
+                        </button>
+                    </div>
+                    <div class="sub-categories" id="raw-materials-sub-cats"></div>
+                    <div class="wholesale-table-container">
+                        <table class="wholesale-table">
+                            <thead>
+                                <tr>
+                                    <th class="w-16">Image</th>
+                                    <th>SKU / Product Description</th>
+                                    <th class="text-right">Unit Price</th>
+                                    <th class="text-right w-24">Order Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody id="raw-materials-products-table">
+                                <!-- Loaded dynamically by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="kundhans-section" class="section">
+                <div class="section-content">
+                    <div class="section-header">
+                        <h2 class="section-title">💎 Kundhans & Beads</h2>
+                        <button class="sort-btn" onclick="openSortSheet('kundhans')">
+                            <i class="fa-solid fa-arrow-down-short-wide"></i>
+                        </button>
+                    </div>
+                    <div class="sub-categories" id="kundhans-sub-cats"></div>
+                    <div class="wholesale-table-container">
+                        <table class="wholesale-table">
+                            <thead>
+                                <tr>
+                                    <th class="w-16">Image</th>
+                                    <th>SKU / Product Description</th>
+                                    <th class="text-right">Unit Price</th>
+                                    <th class="text-right w-24">Order Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody id="kundhans-products-table">
+                                <!-- Loaded dynamically by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="accessories-section" class="section">
+                <div class="section-content">
+                    <div class="section-header">
+                        <h2 class="section-title">📿 Accessories</h2>
+                        <button class="sort-btn" onclick="openSortSheet('accessories')">
+                            <i class="fa-solid fa-arrow-down-short-wide"></i>
+                        </button>
+                    </div>
+                    <div class="sub-categories" id="accessories-sub-cats"></div>
+                    <div class="wholesale-table-container">
+                        <table class="wholesale-table">
+                            <thead>
+                                <tr>
+                                    <th class="w-16">Image</th>
+                                    <th>SKU / Product Description</th>
+                                    <th class="text-right">Unit Price</th>
+                                    <th class="text-right w-24">Order Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody id="accessories-products-table">
+                                <!-- Loaded dynamically by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cart Section (Redesigned as B2B Purchase Order) -->
+            <section id="cart-section" class="section">
+                <div class="section-content">
+                    <h2 class="section-title">📋 B2B Purchase Requisition</h2>
+                    
+                    <!-- MOQ Status Panel -->
+                    <div id="cart-moq-status" class="moq-alert-banner">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>Loading order verification...</span>
+                    </div>
+
+                    <div id="cart-items" class="cart-items mb-8">
+                        <!-- Loaded dynamically by JS -->
+                        <div class="empty-state">
+                            <i class="fa-solid fa-shopping-cart"></i>
+                            <p>No wholesale items selected</p>
+                            <button class="btn-primary" onclick="switchSection('home')">Browse Wholesale Catalog</button>
+                        </div>
+                    </div>
+
+                    <!-- Shipping & Business Details Form -->
+                    <div id="shipping-form" class="shipping-form hidden">
+                        <h3 class="form-title" style="border-bottom: 2px solid var(--secondary); padding-bottom: 6px; margin-bottom: 12px; font-weight: 700; text-transform: uppercase; font-size: 0.85rem;"><i class="fa-solid fa-truck-fast"></i> Procurement Details</h3>
+                        <div class="form-field mb-3">
+                            <input type="text" id="ship-name" placeholder="Business or Representative Name" autocomplete="name" style="border-radius: 0; border: 1.5px solid var(--secondary); padding: 10px 14px; width: 100%; font-family: inherit;">
+                        </div>
+                        <div class="form-row mb-3" style="display: flex; gap: 8px;">
+                            <div class="form-field country-code" style="width: 80px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border: 1.5px solid var(--secondary); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">
+                                <span>+91</span>
+                            </div>
+                            <div class="form-field phone-field" style="flex: 1;">
+                                <input type="tel" id="ship-phone" placeholder="WhatsApp Phone Number" autocomplete="tel" maxlength="10" inputmode="numeric" style="border-radius: 0; border: 1.5px solid var(--secondary); padding: 10px 14px; width: 100%; font-family: inherit;">
+                            </div>
+                        </div>
+                        <div class="form-field mb-3">
+                            <textarea id="ship-address" placeholder="Full Delivery Address (Include City, State, Pincode)" rows="3" autocomplete="street-address" style="border-radius: 0; border: 1.5px solid var(--secondary); padding: 10px 14px; width: 100%; font-family: inherit; resize: none;"></textarea>
+                        </div>
+                        <div class="form-field mb-4">
+                            <input type="text" id="ship-gstin" placeholder="GSTIN / Business Tax ID (Optional)" style="border-radius: 0; border: 1.5px solid var(--secondary); padding: 10px 14px; width: 100%; font-family: inherit; text-transform: uppercase;">
+                        </div>
+                    </div>
+
+                    <!-- Cart Footer -->
+                    <div id="cart-footer" class="cart-footer hidden" style="border-top: 2px dashed var(--secondary); padding-top: var(--spacing-md);">
+                        <div class="cart-summary" style="margin-bottom: var(--spacing-md);">
+                            <div class="summary-row" style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px;">
+                                <span>Bulk Subtotal</span>
+                                <span id="cart-subtotal" class="font-mono-data">₹0.00</span>
+                            </div>
+                            <div class="summary-row text-[#C44536]" id="discount-row" style="display: none; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px; font-weight: 600;">
+                                <span>B2B Volume Discount</span>
+                                <span id="cart-discount" class="font-mono-data">-₹0.00</span>
+                            </div>
+                            <div class="summary-row" style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px;">
+                                <span>Freight & Shipping</span>
+                                <span id="cart-shipping" class="font-mono-data">Free</span>
+                            </div>
+                            <div class="summary-row total" style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700; border-top: 1.5px solid var(--secondary); padding-top: 8px; margin-top: 8px;">
+                                <span>Net Wholesale Total</span>
+                                <span id="cart-total" class="font-mono-data">₹0.00</span>
+                            </div>
+                        </div>
+                        
+                        <!-- PO Submit Button styled in Brutalist style -->
+                        <button class="btn-po-submit w-full" id="cart-checkout-btn" disabled onclick="checkout()" style="width: 100%; font-size: 0.95rem; padding: 14px 20px; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; background: var(--secondary); color: var(--bg);">
+                            <i class="fa-brands fa-whatsapp"></i> Send Purchase Order via WhatsApp
+                        </button>
+                        <p class="checkout-note text-[10px] text-center mt-3 opacity-60">Your formal PO sheet will be compiled and sent directly to our WhatsApp procurement desk for instant processing. 💬</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav" id="bottom-nav">
+            <button class="nav-item active" data-section="home" onclick="switchSection('home')">
+                <i class="fa-solid fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="nav-item" data-section="bangles" onclick="switchSection('bangles')">
+                <i class="fa-solid fa-gem"></i>
+                <span>Bangles</span>
+            </button>
+            <button class="nav-item" data-section="kundhans" onclick="switchSection('kundhans')">
+                <i class="fa-solid fa-diamond"></i>
+                <span>Kundhans</span>
+            </button>
+            <button class="nav-item" data-section="raw-materials" onclick="switchSection('raw-materials')">
+                <i class="fa-solid fa-box-open"></i>
+                <span>Materials</span>
+            </button>
+            <button class="nav-item" data-section="cart" onclick="switchSection('cart')">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span class="cart-badge" id="nav-cart-badge">0</span>
+                <span>Cart</span>
+            </button>
+        </nav>
+
+    </div>
+
+    <!-- Variation Bottom Sheet -->
+    <div id="variation-sheet" class="bottom-sheet">
+        <div class="sheet-backdrop" onclick="closeVariationSheet()"></div>
+        <div class="sheet-content">
+            <div class="sheet-handle"></div>
+            <div class="sheet-header">
+                <h3 id="sheet-title">Variations</h3>
+                <button class="close-btn" onclick="closeVariationSheet()" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="sheet-body" id="sheet-body"></div>
+            <div class="sheet-footer" id="sheet-footer"></div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay">
+        <div class="search-header">
+            <button class="search-back-btn" onclick="closeSearch()" aria-label="Back">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <input type="search" id="search-input" placeholder="Search bangles, kundhans, threads..." autocomplete="off" inputmode="search">
+            <button class="search-clear-btn hidden" id="search-clear" onclick="clearSearch()" aria-label="Clear">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Search Suggestions (shown when empty) -->
+        <div id="search-suggestions" class="search-suggestions">
+            <div id="recent-searches" class="suggestion-section hidden">
+                <div class="suggestion-header">
+                    <span>Recent Searches</span>
+                    <button onclick="clearRecentSearches()">Clear</button>
+                </div>
+                <div id="recent-list" class="suggestion-chips"></div>
+            </div>
+            <div id="popular-searches" class="suggestion-section">
+                <div class="suggestion-header">
+                    <span>Popular Categories</span>
+                </div>
+                <div id="popular-list" class="suggestion-chips"></div>
+            </div>
+            <div id="browse-categories" class="suggestion-section">
+                <div class="suggestion-header">
+                    <span>Browse by Category</span>
+                </div>
+                <div id="browse-list" class="category-browse-list"></div>
+            </div>
+        </div>
+
+        <!-- Search Results -->
+        <div id="search-results" class="search-results hidden"></div>
+    </div>
+
+    <!-- B2B Wholesale Purchase Order Dock -->
+    <div class="po-floating-bar" id="b2b-wholesale-cart">
+        <div class="po-details-grid flex-wrap gap-4">
+            <div class="flex items-center gap-4 md:gap-8 flex-wrap">
+                <div class="po-stat">
+                    <span class="po-stat-lbl">Total Items</span>
+                    <span class="po-stat-val font-mono-data" id="wholesale-total-items">0 units</span>
+                </div>
+                <div class="po-stat">
+                    <span class="po-stat-lbl">Subtotal</span>
+                    <span class="po-stat-val font-mono-data" id="wholesale-subtotal">₹0.00</span>
+                </div>
+                <div class="po-stat">
+                    <span class="po-stat-lbl">Wholesale Total</span>
+                    <span class="po-stat-val highlight font-mono-data" id="wholesale-grand-total">₹0.00</span>
+                </div>
+            </div>
+            <button class="btn-po-submit" id="wholesale-checkout-btn" disabled onclick="switchSection('cart')">
+                View Purchase Order <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Install PWA Prompt -->
+    <div id="install-prompt" class="install-prompt hidden">
+        <div class="install-content">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <div class="install-text">
+                <strong>Install App</strong>
+                <span>Get the best mobile experience</span>
+            </div>
+            <button class="btn-install" id="install-btn">Install</button>
+            <button class="btn-dismiss" onclick="dismissInstall()">×</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./utils/dataLoader.js"></script>
+    <script src="./utils/groupProducts.js"></script>
+    <script src="./app.js"></script>
+
+    <!-- Register Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.error('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+
+</html>

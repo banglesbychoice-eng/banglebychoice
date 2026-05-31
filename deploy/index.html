@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#E3244D">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>BangleByChoice — Designer Bangles & Craft Materials</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="BangleByChoice — Premium Handcrafted Bangles">
+    <meta property="og:description" content="Shop Hyderabad's finest glass bangles, customized silk thread bangles, and premium bangle-making materials.">
+    <meta property="og:url" content="https://banglebychoice.vercel.app">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #D4A574; /* Logo Gold */
+            --primary-light: rgba(212, 165, 116, 0.1);
+            --primary-hover: #B8864E;
+            --gold: #D4A574; /* Logo Gold */
+            --gold-light: rgba(212, 165, 116, 0.05);
+            --gold-dark: #A87D4B;
+            --bg-linen: #121212; /* Dark theme background */
+            --bg-card: #1C1C1C; /* Dark card background */
+            --ink: #FFFFFF; /* White text */
+            --ink-light: #A8A8A8; /* Muted text */
+            --border: #2C2C2C; /* Dark borders */
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --radius-sm: 6px;
+            --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --ease: cubic-bezier(0.25, 0.8, 0.25, 1);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        /* Reset */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-linen);
+            color: var(--ink);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* SVG Noise Texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.015;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* Utilities */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s var(--ease);
+            font-size: 14px;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            color: #white;
+            color: #FFF;
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--ink);
+        }
+        .btn-secondary:hover {
+            background-color: var(--gold-light);
+            border-color: var(--gold);
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1ebd58;
+        }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        header {
+            background-color: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+        }
+        .header-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand-logo-img {
+            height: 52px;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .icon-btn {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.2s var(--ease);
+            position: relative;
+            color: var(--ink);
+        }
+        .icon-btn:hover {
+            border-color: var(--gold);
+            transform: scale(1.05);
+        }
+        .badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background-color: var(--primary);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--bg-card);
+        }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            padding: 40px 0;
+            animation: fadeIn 0.8s var(--ease);
+        }
+        .hero-banner {
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, #1A1A1A 0%, #2A2421 100%);
+            color: #FFF;
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 280px;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            box-shadow: var(--shadow-subtle);
+        }
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            right: -10%;
+            bottom: -30%;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+        }
+        .hero-eyebrow {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .hero-sub {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+        }
+
+        /* ============================================================
+           CATEGORIES & FILTERS
+           ============================================================ */
+        .filters-section {
+            padding: 10px 0;
+            position: sticky;
+            top: 76px;
+            background-color: var(--bg-linen);
+            z-index: 90;
+            border-bottom: 1px solid var(--border);
+        }
+        .categories-scroll {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding: 8px 0;
+        }
+        .categories-scroll::-webkit-scrollbar { display: none; }
+        .filter-chip {
+            padding: 10px 20px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-pill, 100px);
+            font-size: 13.5px;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s var(--ease);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--ink-light);
+        }
+        .filter-chip:hover {
+            border-color: var(--gold);
+            color: var(--ink);
+        }
+        .filter-chip.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(227, 36, 77, 0.15);
+        }
+
+        /* ============================================================
+           PRODUCT GRID
+           ============================================================ */
+        .products-section {
+            padding: 30px 0 60px;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        @media (min-width: 768px) {
+            .products-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        }
+        @media (min-width: 1024px) {
+            .products-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        .product-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s var(--ease);
+            cursor: pointer;
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--gold);
+        }
+        .card-image-wrap {
+            aspect-ratio: 1;
+            width: 100%;
+            position: relative;
+            background-color: var(--gold-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .card-img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            background: linear-gradient(135deg, var(--gold-light) 0%, #FFF8FA 100%);
+            transition: transform 0.3s var(--ease);
+        }
+        .product-card:hover .card-img-placeholder {
+            transform: scale(1.05);
+        }
+        .card-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: var(--ink);
+            color: white;
+            font-size: 9px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .card-name {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 6px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 44px;
+        }
+        .card-meta {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .price-wrap {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+        .card-price {
+            font-family: var(--font-mono);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .card-mrp {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-decoration: line-through;
+            color: var(--ink-light);
+            opacity: 0.6;
+        }
+        .add-icon-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .add-icon-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* ============================================================
+           BOTTOM SHEET / DETAIL DIALOG
+           ============================================================ */
+        .backdrop {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(42, 36, 33, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s var(--ease);
+        }
+        .backdrop.show {
+            display: block;
+            opacity: 1;
+        }
+        .sheet {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            width: 100%;
+            max-width: 540px;
+            background-color: var(--bg-card);
+            border-radius: 24px 24px 0 0;
+            z-index: 1001;
+            padding: 24px;
+            transition: transform 0.4s var(--ease);
+            max-height: 90vh;
+            overflow-y: auto;
+            border-top: 1px solid var(--border);
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
+        }
+        .sheet.show {
+            transform: translate(-50%, 0);
+        }
+        .sheet-drag-handle {
+            width: 40px;
+            height: 4px;
+            background-color: var(--border);
+            border-radius: 2px;
+            margin: 0 auto 16px;
+        }
+        .sheet-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--bg-linen);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--ink);
+        }
+        .sheet-image-wrap {
+            aspect-ratio: 16/10;
+            background-color: var(--gold-light);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 64px;
+        }
+        .sheet-name {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .sheet-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .sheet-price {
+            font-family: var(--font-mono);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .sheet-mrp {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            text-decoration: line-through;
+            color: var(--ink-light);
+            opacity: 0.6;
+        }
+        .sheet-desc {
+            font-size: 14px;
+            color: var(--ink-light);
+            margin-bottom: 20px;
+        }
+        .size-selector-label {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .size-chips {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        .size-chip {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            background-color: var(--bg-card);
+        }
+        .size-chip.active {
+            border-color: var(--primary);
+            color: var(--primary);
+            background-color: var(--primary-light);
+        }
+        .sheet-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        /* ============================================================
+           CART OVERLAY / SLIDEOUT
+           ============================================================ */
+        .cart-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            max-width: 440px;
+            background-color: var(--bg-card);
+            z-index: 1002;
+            transform: translateX(100%);
+            transition: transform 0.4s var(--ease);
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid var(--border);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.05);
+        }
+        .cart-panel.show {
+            transform: translateX(0);
+        }
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .cart-title {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .cart-close {
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+        }
+        .cart-item-img {
+            width: 64px;
+            height: 64px;
+            background-color: var(--gold-light);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .cart-item-info {
+            flex: 1;
+        }
+        .cart-item-name {
+            font-size: 13.5px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .cart-item-meta {
+            font-size: 11px;
+            color: var(--ink-light);
+            margin-bottom: 6px;
+        }
+        .cart-item-price {
+            font-family: var(--font-mono);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .qty-btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--bg-linen);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .qty-val {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            width: 20px;
+            text-align: center;
+        }
+        .cart-empty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--ink-light);
+            gap: 12px;
+        }
+        .cart-empty i {
+            font-size: 48px;
+            opacity: 0.3;
+        }
+
+        /* Cart checkout form */
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid var(--border);
+            background-color: var(--bg-linen);
+        }
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .cart-form-field {
+            margin-bottom: 12px;
+        }
+        .cart-form-field input, .cart-form-field textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background-color: white;
+            font-family: var(--font-sans);
+            font-size: 13px;
+        }
+        .cart-form-field input:focus, .cart-form-field textarea:focus {
+            border-color: var(--gold);
+        }
+
+        /* ============================================================
+           ADMIN PORTAL VIEW
+           ============================================================ */
+        .admin-view {
+            display: none;
+            padding: 40px 0;
+            animation: fadeIn 0.4s var(--ease);
+        }
+        .admin-view.active {
+            display: block;
+        }
+        .admin-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+        @media (min-width: 1024px) {
+            .admin-grid {
+                grid-template-columns: 420px 1fr;
+            }
+        }
+        .admin-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-subtle);
+        }
+        .admin-card-title {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--ink-light);
+            margin-bottom: 6px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background-color: var(--bg-linen);
+            font-family: var(--font-sans);
+            font-size: 13.5px;
+            color: var(--ink);
+            transition: border-color 0.2s;
+        }
+        .form-control:focus {
+            border-color: var(--primary);
+            background-color: white;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        /* Dynamic variants layout */
+        .variants-config {
+            background-color: var(--bg-linen);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border: 1px dashed var(--border);
+            margin-bottom: 16px;
+        }
+        .variant-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .variant-remove-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgba(227, 36, 77, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* Inventory Table */
+        .inventory-table-wrap {
+            overflow-x: auto;
+        }
+        .inventory-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+        }
+        .inventory-table th {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 2px solid var(--border);
+            font-weight: 600;
+            color: var(--ink-light);
+        }
+        .inventory-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+        .table-img {
+            width: 44px;
+            height: 44px;
+            background-color: var(--gold-light);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .table-action-btn {
+            color: var(--primary);
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 14px;
+        }
+        .table-action-btn:hover {
+            color: var(--primary-hover);
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        footer {
+            border-top: 1px solid var(--border);
+            background-color: var(--bg-card);
+            padding: 40px 0;
+            margin-top: auto;
+            font-size: 13px;
+            color: var(--ink-light);
+        }
+        .footer-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .footer-wrap {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+        .footer-logo {
+            height: 40px;
+            object-fit: contain;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Search overlay full screen */
+        .search-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: var(--bg-card);
+            z-index: 999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s var(--ease);
+            padding: 40px 20px;
+        }
+        .search-overlay.show {
+            display: block;
+            opacity: 1;
+        }
+        .search-input-wrap {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+        }
+        .search-input {
+            flex: 1;
+            font-family: var(--font-display);
+            font-size: 28px;
+            border: none;
+            outline: none;
+            background: none;
+            color: var(--ink);
+        }
+        .search-close-btn {
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--ink-light);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: var(--ink);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-size: 13.5px;
+            font-weight: 500;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s var(--ease);
+        }
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .toast-icon {
+            color: var(--gold);
+        }
+
+        /* ============================================================
+           MOBILE-APP SPECIFIC STYLING (Bottom Nav & Responsive Layouts)
+           ============================================================ */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 64px;
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border);
+            display: none;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 990;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.03);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        .mobile-bottom-nav .nav-tab {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            color: var(--ink-light);
+            font-size: 11px;
+            font-weight: 500;
+            border: none;
+            background: none;
+            cursor: pointer;
+            height: 100%;
+            position: relative;
+            transition: color 0.2s var(--ease);
+        }
+
+        .mobile-bottom-nav .nav-tab i {
+            font-size: 18px;
+            transition: transform 0.2s var(--ease);
+        }
+
+        .mobile-bottom-nav .nav-tab.active {
+            color: var(--primary);
+        }
+
+        .mobile-bottom-nav .nav-tab.active i {
+            transform: scale(1.1);
+        }
+
+        .mobile-bottom-nav .nav-tab .badge {
+            top: 4px;
+            right: 25%;
+        }
+
+        @media (max-width: 1023px) {
+            body {
+                padding-bottom: 74px; /* Space for bottom nav */
+            }
+            .mobile-bottom-nav {
+                display: flex;
+            }
+            #adminPortalToggle {
+                display: none !important;
+            }
+            footer {
+                display: none !important;
+            }
+            .hero-banner {
+                padding: 40px 24px;
+                min-height: 200px;
+            }
+            .hero-title {
+                font-size: 28px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-bottom-nav {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+    </script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-wrap">
+            <img src="banglebychoice_logo.png" class="brand-logo-img" alt="BangleByChoice Logo" id="logoBtn">
+            <div class="nav-actions">
+                <button class="icon-btn" id="searchBtnIcon" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="icon-btn" id="cartBtnIcon" title="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="badge" id="cartBadgeCount">0</span>
+                </button>
+                <button class="btn btn-secondary" id="adminPortalToggle" style="padding: 10px 16px;"><i class="fa-solid fa-user-gear"></i> Admin</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONSUMER APP -->
+    <div id="consumerApp">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-banner">
+                    <div class="hero-content">
+                        <span class="hero-eyebrow">Handcrafted Elegance</span>
+                        <h1 class="hero-title">Hyderabad's Finest Designer Bangles</h1>
+                        <p class="hero-sub">Explore bridal sets, customized thread creations, glass stacks, and premium craft raw materials.</p>
+                        <button class="btn btn-primary" onclick="scrollToProducts()">Explore Collection</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FILTERS -->
+        <section class="filters-section">
+            <div class="container filters-wrap" style="display: flex; flex-direction: column; gap: 8px;">
+                <div class="categories-scroll" id="categoriesContainer" style="padding: 0;">
+                    <!-- Dynamic chips -->
+                </div>
+                <div class="categories-scroll" id="colorsFilterContainer" style="padding: 6px 0 0 0; border-top: 1px dashed var(--border); display: flex; gap: 10px; align-items: center;">
+                    <!-- Dynamic color chips -->
+                </div>
+                <div class="categories-scroll" id="sizesFilterContainer" style="padding: 6px 0 0 0; border-top: 1px dashed var(--border); display: flex; gap: 10px; align-items: center;">
+                    <!-- Dynamic size chips -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS -->
+        <section class="products-section" id="productsArea">
+            <div class="container">
+                <h2 class="section-title" id="shopGridTitle">All Products</h2>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Dynamic cards -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ADMIN PORTAL -->
+    <div id="adminApp" class="admin-view">
+        <div class="container" style="padding: 40px 0;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+                <h1 class="section-title" style="margin-bottom: 0;">Admin Portal | Product Manager</h1>
+                <button class="btn btn-secondary" id="exitAdminBtn"><i class="fa-solid fa-arrow-left"></i> Exit Admin</button>
+            </div>
+            
+            <div class="admin-grid">
+                <!-- Add product form -->
+                <div class="admin-card">
+                    <h2 class="admin-card-title">Add New Item</h2>
+                    <form id="addProductForm">
+                        <div class="form-group">
+                            <label class="form-label">Product Name *</label>
+                            <input type="text" id="prodName" class="form-control" placeholder="e.g. Silk Thread Set" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Category *</label>
+                            <div style="display: flex; gap: 8px;">
+                                <select id="prodCat" class="form-control" required style="flex: 1;">
+                                    <!-- Dynamic categories -->
+                                </select>
+                                <button type="button" class="btn btn-secondary" id="addCatBtn" style="padding: 10px 14px;" title="Add Custom Category"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Special Tag / Shape</label>
+                            <input type="text" id="prodTag" class="form-control" placeholder="e.g. Best Seller, Round Shape">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Price (₹) *</label>
+                            <div class="form-row">
+                                <input type="number" id="prodPrice" class="form-control" placeholder="Selling Price" required>
+                                <input type="number" id="prodMRP" class="form-control" placeholder="MRP (optional)">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Choose Theme / Color Accent</label>
+                            <div style="display: flex; gap: 8px;">
+                                <select id="prodColorTheme" class="form-control" style="flex: 1;">
+                                    <!-- Dynamic colors -->
+                                </select>
+                                <button type="button" class="btn btn-secondary" id="addColorThemeBtn" style="padding: 10px 14px;" title="Add Custom Color Theme"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="prodSizesGroup">
+                            <label class="form-label">Available Sizes *</label>
+                            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px;">
+                                <label style="display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer;">
+                                    <input type="checkbox" name="prodSizes" value="2.2" checked> 2.2
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer;">
+                                    <input type="checkbox" name="prodSizes" value="2.4" checked> 2.4
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer;">
+                                    <input type="checkbox" name="prodSizes" value="2.6" checked> 2.6
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer;">
+                                    <input type="checkbox" name="prodSizes" value="2.8" checked> 2.8
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Catchy One-Liner / Description</label>
+                            <textarea id="prodDesc" class="form-control" rows="3" placeholder="Describe the style, beauty, or material details..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;"><i class="fa-solid fa-plus"></i> Add Product</button>
+                    </form>
+                </div>
+
+                <!-- Current Inventory Table -->
+                <div class="admin-card" style="overflow: hidden;">
+                    <h2 class="admin-card-title">Current Inventory</h2>
+                    <div class="inventory-table-wrap">
+                        <table class="inventory-table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inventoryTableBody">
+                                <!-- Dynamic rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DETAIL BOTTOM SHEET -->
+    <div class="backdrop" id="backdrop"></div>
+    <div class="sheet" id="detailSheet">
+        <div class="sheet-drag-handle"></div>
+        <div class="sheet-close" id="closeSheetBtn"><i class="fa-solid fa-xmark"></i></div>
+        <div class="sheet-image-wrap" id="sheetImgWrap">🌸</div>
+        <h2 class="sheet-name" id="sheetName">Product Title</h2>
+        <div class="sheet-price-row">
+            <span class="sheet-price" id="sheetPrice">₹0</span>
+            <span class="sheet-mrp" id="sheetMRP">₹0</span>
+        </div>
+        <p class="sheet-desc" id="sheetDesc">Detail description here...</p>
+        
+        <div id="sizeSelectorWrap">
+            <span class="size-selector-label">Select Size</span>
+            <div class="size-chips">
+                <div class="size-chip" data-size="2.2">2.2</div>
+                <div class="size-chip active" data-size="2.4">2.4</div>
+                <div class="size-chip" data-size="2.6">2.6</div>
+                <div class="size-chip" data-size="2.8">2.8</div>
+            </div>
+        </div>
+
+        <div class="sheet-actions">
+            <button class="btn btn-secondary" id="addToCartBtn"><i class="fa-solid fa-cart-plus"></i> Add to Bag</button>
+            <button class="btn btn-whatsapp" id="directWhatsAppBtn"><i class="fa-brands fa-whatsapp"></i> Buy via WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- CART SIDEBAR -->
+    <div class="backdrop" id="cartBackdrop" style="z-index: 1001;"></div>
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2 class="cart-title">Your Bag</h2>
+            <div class="cart-close" id="closeCartBtn"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Dynamic items -->
+        </div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total-row">
+                <span>Total Amount:</span>
+                <span id="cartTotalPrice">₹0</span>
+            </div>
+            <div class="cart-form-field">
+                <input type="text" id="custName" placeholder="Your Name" required>
+            </div>
+            <div class="cart-form-field">
+                <textarea id="custAddress" rows="2" placeholder="Delivery Address (with Pincode)" required></textarea>
+            </div>
+            <button class="btn btn-whatsapp" id="checkoutBtn" style="width: 100%;"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="container">
+            <div class="search-input-wrap">
+                <input type="text" class="search-input" id="searchInputField" placeholder="Search bangles or materials...">
+                <div class="search-close-btn" id="closeSearchBtn"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="products-grid" id="searchResultsGrid">
+                <!-- Search results dynamic -->
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <span id="toastMessage">Product added to cart</span>
+    </div>
+
+    <footer>
+        <div class="container footer-wrap">
+            <img src="banglebychoice_logo.png" class="footer-logo" alt="BangleByChoice Logo">
+            <p>&copy; 2026 BangleByChoice. All Rights Reserved. Crafted with love.</p>
+        </div>
+    </footer>
+
+    <!-- MOBILE BOTTOM NAV -->
+    <nav class="mobile-bottom-nav">
+        <button class="nav-tab active" id="mobTabHome">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </button>
+        <button class="nav-tab" id="mobTabShop">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>Shop</span>
+        </button>
+        <button class="nav-tab" id="mobTabCart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge" id="mobCartBadgeCount" style="display: none;">0</span>
+            <span>Bag</span>
+        </button>
+        <button class="nav-tab" id="mobTabAdmin">
+            <i class="fa-solid fa-user-gear"></i>
+            <span>Admin</span>
+        </button>
+    </nav>
+
+    <!-- APP LOGIC -->
+    <script>
+        // Preset Products
+        const BASE_PRODUCTS = [
+            { id: 'GL01', name: 'Hyderabadi Lac Bangle Set — Ruby Red', price: 180, mrp: 250, cat: 'glass', bg: 'bg-ruby', emoji: '🔴', desc: 'Authentic Hyderabadi Lac bangles embedded with beautiful Ruby crystals. Classic traditional wear.', tag: 'NEW' },
+            { id: 'GL02', name: 'Glass Kada — Rose Gold Shimmer', price: 350, mrp: 499, cat: 'glass', bg: 'bg-gold', emoji: '✨', desc: 'Stunning glass kada set featuring reflective rose-gold leaf shimmer. Highly aesthetic.', tag: 'BESTSELLER' },
+            { id: 'GL03', name: 'Crystal Glass Bangle Set — Midnight Blue', price: 220, mrp: 320, cat: 'glass', bg: 'bg-blue', emoji: '🔵', desc: 'Brilliant blue crystals catch the light from all angles. Pack of 12 pieces.', tag: '' },
+            { id: 'SK01', name: 'Premium Silk Thread — Royal Purple Set', price: 280, mrp: 380, cat: 'silk', bg: 'bg-purple', emoji: '💜', desc: 'Handcrafted premium silk thread bangles embellished with micro-stones.', tag: '' },
+            { id: 'SK02', name: 'Silk Thread Round Bangle — Emerald', price: 320, mrp: 420, cat: 'silk', bg: 'bg-green', emoji: '💚', desc: 'Deep green threads wound perfectly on structural bases with gold wrap accents.', tag: 'NEW' },
+            { id: 'PD01', name: 'Kundan Work Silk Thread — Bridal Red', price: 1200, mrp: 1800, cat: 'designer', bg: 'bg-ruby', emoji: '👑', desc: 'Ornate bridal set adorned with handcrafted Kundan stones and heavy gold zardosi border.', tag: 'PREMIUM' },
+            { id: 'PD02', name: 'AD Stone Premium Kada — Diamond White', price: 1800, mrp: 2500, cat: 'designer', bg: 'bg-gold', emoji: '💎', desc: 'Premium American Diamond studded broad kada to match elegant evening dresses.', tag: '' },
+            { id: 'BR01', name: 'Complete Bridal Stack — Red & Gold', price: 4999, mrp: 6999, cat: 'bridal', bg: 'bg-gold', emoji: '💒', desc: 'Complete heavy bridal set containing 36 customized bangles, ideal for traditional weddings.', tag: 'BRIDAL' },
+            { id: 'RM01', name: 'Premium Silk Thread — Cherry Red Spool', price: 45, mrp: 60, cat: 'materials', bg: 'bg-ruby', emoji: '🧵', desc: 'High strength, lint-free premium silk thread spool for wrapping base bangles.', tag: 'CRAFT' },
+            { id: 'RM02', name: 'Bangle Acrylic Bases — Mix Size Box', price: 150, mrp: 200, cat: 'materials', bg: 'bg-rainbow', emoji: '⭕', desc: '12-piece mixed sizes structural plastic bangle bases to wrap with silk thread.', tag: 'CRAFT' },
+            { id: 'RM03', name: 'B-7000 Glue 50ml Tube', price: 65, mrp: 80, cat: 'materials', bg: 'bg-blue', emoji: '🫙', desc: 'Specialized transparent craft adhesive with pin tip for fixing stones and threads.', tag: 'MUST-HAVE' },
+            { id: 'RM04', name: 'AD Stone Flower Charms — 20pc', price: 120, mrp: 150, cat: 'materials', bg: 'bg-gold', emoji: '🌸', desc: 'Exquisite flower motif metal charms with embedded AD stones to decorate designer bangles.', tag: 'POPULAR' }
+        ];
+
+        const DEFAULT_CATEGORIES = {
+            all: '✨ View All',
+            glass: '🔮 Glass Bangles',
+            silk: '🧵 Silk Thread',
+            designer: '👑 Premium Designer',
+            bridal: '💒 Bridal Special',
+            materials: '📦 Making Materials'
+        };
+
+        const DEFAULT_GRADIENTS = {
+            'bg-ruby': 'linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%)',
+            'bg-gold': 'linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%)',
+            'bg-blue': 'linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%)',
+            'bg-green': 'linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%)',
+            'bg-purple': 'linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%)',
+            'bg-rainbow': 'linear-gradient(135deg, #FCE4EC 0%, #F5F5F5 50%, #E8EAF6 100%)'
+        };
+
+        const DEFAULT_COLORS = {
+            'bg-ruby': '🔴 Ruby Red',
+            'bg-gold': '✨ Golden Glow',
+            'bg-blue': '🔵 Midnight Blue',
+            'bg-green': '🟢 Emerald Green',
+            'bg-purple': '🟣 Royal Purple',
+            'bg-rainbow': '🌈 Multicolor / Pastel'
+        };
+
+        let CATEGORIES = JSON.parse(localStorage.getItem('bbc_categories')) || DEFAULT_CATEGORIES;
+        let GRADIENTS = JSON.parse(localStorage.getItem('bbc_gradients')) || DEFAULT_GRADIENTS;
+        let COLORS = JSON.parse(localStorage.getItem('bbc_colors')) || DEFAULT_COLORS;
+
+        // App States
+        let catalog = [];
+        let cart = [];
+        let currentFilter = 'all';
+        let currentColorFilter = 'all';
+        let currentSizeFilter = 'all';
+        let currentProduct = null;
+        let currentSize = '2.4';
+
+        // Initialize Data
+        function initData() {
+            const stored = localStorage.getItem('bbc_catalog');
+            if (stored) {
+                catalog = JSON.parse(stored);
+            } else {
+                catalog = [...BASE_PRODUCTS];
+                localStorage.setItem('bbc_catalog', JSON.stringify(catalog));
+            }
+            cart = JSON.parse(localStorage.getItem('bbc_cart') || '[]');
+        }
+
+        // Save Data to Storage
+        function saveData() {
+            localStorage.setItem('bbc_catalog', JSON.stringify(catalog));
+            localStorage.setItem('bbc_cart', JSON.stringify(cart));
+            updateCartUI();
+        }
+
+        // Toast Helper
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // Render Consumer Category Chips
+        function renderCategoryChips() {
+            const container = document.getElementById('categoriesContainer');
+            container.innerHTML = '';
+            Object.keys(CATEGORIES).forEach(key => {
+                const chip = document.createElement('div');
+                chip.className = `filter-chip ${currentFilter === key ? 'active' : ''}`;
+                chip.innerHTML = CATEGORIES[key];
+                chip.addEventListener('click', () => {
+                    currentFilter = key;
+                    renderCategoryChips();
+                    renderShopGrid();
+                });
+                container.appendChild(chip);
+            });
+            renderColorFilterChips();
+            renderSizeFilterChips();
+        }
+
+        // Render Color Filter Chips (Storefront)
+        function renderColorFilterChips() {
+            const container = document.getElementById('colorsFilterContainer');
+            container.innerHTML = '';
+            
+            // Add "All Colors" chip
+            const allChip = document.createElement('div');
+            allChip.className = `filter-chip ${currentColorFilter === 'all' ? 'active' : ''}`;
+            allChip.style.fontSize = '12px';
+            allChip.style.padding = '6px 12px';
+            allChip.innerHTML = '🎨 All Colors';
+            allChip.addEventListener('click', () => {
+                currentColorFilter = 'all';
+                renderColorFilterChips();
+                renderShopGrid();
+            });
+            container.appendChild(allChip);
+
+            // Render active color options
+            Object.keys(COLORS).forEach(key => {
+                const chip = document.createElement('div');
+                chip.className = `filter-chip ${currentColorFilter === key ? 'active' : ''}`;
+                chip.style.fontSize = '12px';
+                chip.style.padding = '6px 12px';
+                chip.innerHTML = COLORS[key];
+                chip.addEventListener('click', () => {
+                    currentColorFilter = key;
+                    renderColorFilterChips();
+                    renderShopGrid();
+                });
+                container.appendChild(chip);
+            });
+        }
+
+        // Render Size Filter Chips (Storefront)
+        function renderSizeFilterChips() {
+            const container = document.getElementById('sizesFilterContainer');
+            container.innerHTML = '';
+
+            // Add "All Sizes" chip
+            const allChip = document.createElement('div');
+            allChip.className = `filter-chip ${currentSizeFilter === 'all' ? 'active' : ''}`;
+            allChip.style.fontSize = '12px';
+            allChip.style.padding = '6px 12px';
+            allChip.innerHTML = '⭕ All Sizes';
+            allChip.addEventListener('click', () => {
+                currentSizeFilter = 'all';
+                renderSizeFilterChips();
+                renderShopGrid();
+            });
+            container.appendChild(allChip);
+
+            // Standard bangle sizes
+            const BANGLE_SIZES = ['2.2', '2.4', '2.6', '2.8', 'N/A'];
+            BANGLE_SIZES.forEach(size => {
+                const chip = document.createElement('div');
+                chip.className = `filter-chip ${currentSizeFilter === size ? 'active' : ''}`;
+                chip.style.fontSize = '12px';
+                chip.style.padding = '6px 12px';
+                chip.innerHTML = size === 'N/A' ? '📦 Craft Materials (N/A)' : `Size ${size}`;
+                chip.addEventListener('click', () => {
+                    currentSizeFilter = size;
+                    renderSizeFilterChips();
+                    renderShopGrid();
+                });
+                container.appendChild(chip);
+            });
+        }
+
+        // Scroll helper
+        function scrollToProducts() {
+            document.getElementById('productsArea').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Render Shop grid
+        function renderShopGrid() {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+            document.getElementById('shopGridTitle').innerText = CATEGORIES[currentFilter] || 'All Products';
+            
+            const filtered = catalog.filter(p => {
+                const matchCat = (currentFilter === 'all' || p.cat === currentFilter);
+                const matchColor = (currentColorFilter === 'all' || p.bg === currentColorFilter);
+                
+                let matchSize = false;
+                if (currentSizeFilter === 'all') {
+                    matchSize = true;
+                } else if (p.cat === 'materials') {
+                    matchSize = (currentSizeFilter === 'N/A');
+                } else {
+                    const sizesSupported = p.sizes || ['2.2', '2.4', '2.6', '2.8'];
+                    matchSize = sizesSupported.includes(currentSizeFilter);
+                }
+                
+                return matchCat && matchColor && matchSize;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--ink-light);">No products match the selected filters.</div>`;
+                return;
+            }
+
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.addEventListener('click', (e) => {
+                    if (e.target.closest('.add-icon-btn')) return; // Ignore add button click
+                    openDetailSheet(p);
+                });
+
+                const mrpHtml = p.mrp ? `<span class="card-mrp">₹${p.mrp}</span>` : '';
+                const tagHtml = p.tag ? `<span class="card-badge">${p.tag}</span>` : '';
+                const bgStyle = GRADIENTS[p.bg] || GRADIENTS['bg-rainbow'];
+
+                card.innerHTML = `
+                    <div class="card-image-wrap">
+                        <div class="card-img-placeholder" style="background: ${bgStyle}">${p.emoji || '🌸'}</div>
+                        ${tagHtml}
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-name">${p.name}</h3>
+                        <div class="card-meta">
+                            <div class="price-wrap">
+                                <span class="card-price">₹${p.price}</span>
+                                ${mrpHtml}
+                            </div>
+                            <button class="add-icon-btn" onclick="quickAdd('${p.id}')"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Quick add to cart
+        window.quickAdd = function(id) {
+            const product = catalog.find(p => p.id === id);
+            if (!product) return;
+            
+            // Raw materials don't require sizing logic
+            const size = product.cat === 'materials' ? 'N/A' : '2.4';
+            addToCart(product, size);
+            showToast(`Added ${product.name} to Cart`);
+        }
+
+        // Add item to cart state
+        function addToCart(product, size) {
+            const exists = cart.find(item => item.id === product.id && item.size === size);
+            if (exists) {
+                exists.qty += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    emoji: product.emoji,
+                    bg: product.bg,
+                    size: size,
+                    qty: 1
+                });
+            }
+            saveData();
+        }
+
+        // Open Product Details Bottom Sheet
+        function openDetailSheet(p) {
+            currentProduct = p;
+            document.getElementById('sheetName').innerText = p.name;
+            document.getElementById('sheetPrice').innerText = `₹${p.price}`;
+            document.getElementById('sheetMRP').innerText = p.mrp ? `₹${p.mrp}` : '';
+            document.getElementById('sheetDesc').innerText = p.desc || 'Beautiful handcrafted piece from BangleByChoice.';
+            document.getElementById('sheetImgWrap').innerHTML = p.emoji || '🌸';
+            document.getElementById('sheetImgWrap').style.background = GRADIENTS[p.bg] || GRADIENTS['bg-rainbow'];
+
+            // Disable size selector for making materials
+            const sizeWrap = document.getElementById('sizeSelectorWrap');
+            const sizeChipsContainer = document.querySelector('.size-chips');
+            sizeChipsContainer.innerHTML = '';
+            
+            if (p.cat === 'materials') {
+                sizeWrap.style.display = 'none';
+                currentSize = 'N/A';
+            } else {
+                sizeWrap.style.display = 'block';
+                const sizesSupported = p.sizes || ['2.2', '2.4', '2.6', '2.8'];
+                
+                sizesSupported.forEach((size, idx) => {
+                    const chip = document.createElement('div');
+                    chip.className = `size-chip ${idx === 0 ? 'active' : ''}`;
+                    chip.setAttribute('data-size', size);
+                    chip.innerText = size;
+                    chip.addEventListener('click', () => {
+                        document.querySelectorAll('.size-chip').forEach(c => c.classList.remove('active'));
+                        chip.classList.add('active');
+                        currentSize = size;
+                    });
+                    sizeChipsContainer.appendChild(chip);
+                });
+                currentSize = sizesSupported[0];
+            }
+
+            document.getElementById('backdrop').classList.add('show');
+            document.getElementById('detailSheet').classList.add('show');
+        }
+
+        // Close Bottom Sheet
+        function closeDetailSheet() {
+            document.getElementById('backdrop').classList.remove('show');
+            document.getElementById('detailSheet').classList.remove('show');
+            currentProduct = null;
+        }
+
+        // Update Cart Sidebar and Badge Counts
+        function updateCartUI() {
+            const count = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cartBadgeCount').innerText = count;
+            
+            const mobBadge = document.getElementById('mobCartBadgeCount');
+            if (mobBadge) {
+                mobBadge.innerText = count;
+                mobBadge.style.display = count > 0 ? 'flex' : 'none';
+            }
+            
+            const container = document.getElementById('cartItemsContainer');
+            container.innerHTML = '';
+            
+            let total = 0;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <p>Your bag is empty.</p>
+                    </div>
+                `;
+                document.getElementById('cartTotalPrice').innerText = '₹0';
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                total += item.price * item.qty;
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                const bgStyle = GRADIENTS[item.bg] || GRADIENTS['bg-rainbow'];
+
+                div.innerHTML = `
+                    <div class="cart-item-img" style="background: ${bgStyle}">${item.emoji || '🌸'}</div>
+                    <div class="cart-item-info">
+                        <h4 class="cart-item-name">${item.name}</h4>
+                        <div class="cart-item-meta">${item.size !== 'N/A' ? `Size: ${item.size}` : 'Craft Material'}</div>
+                        <div class="cart-item-price">₹${item.price}</div>
+                        <div class="cart-item-qty">
+                            <button class="qty-btn" onclick="updateQty(${index}, -1)"><i class="fa-solid fa-minus"></i></button>
+                            <span class="qty-val">${item.qty}</span>
+                            <button class="qty-btn" onclick="updateQty(${index}, 1)"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+
+            document.getElementById('cartTotalPrice').innerText = `₹${total}`;
+        }
+
+        window.updateQty = function(index, diff) {
+            cart[index].qty += diff;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            saveData();
+        };
+
+        // Open/Close Cart
+        function toggleCart(show) {
+            document.getElementById('cartBackdrop').classList.toggle('show', show);
+            document.getElementById('cartPanel').classList.toggle('show', show);
+        }
+
+        // Open/Close Search Overlay
+        function toggleSearch(show) {
+            document.getElementById('searchOverlay').classList.toggle('show', show);
+            if (show) {
+                document.getElementById('searchInputField').focus();
+            } else {
+                document.getElementById('searchInputField').value = '';
+                document.getElementById('searchResultsGrid').innerHTML = '';
+            }
+        }
+
+        // ============================================================
+        // ADMIN INVENTORY
+        // ============================================================
+        function renderAdminInventory() {
+            const tbody = document.getElementById('inventoryTableBody');
+            tbody.innerHTML = '';
+
+            catalog.forEach(p => {
+                const tr = document.createElement('tr');
+                const bgStyle = GRADIENTS[p.bg] || GRADIENTS['bg-rainbow'];
+
+                tr.innerHTML = `
+                    <td>
+                        <div class="table-img" style="background: ${bgStyle}">${p.emoji || '🌸'}</div>
+                    </td>
+                    <td style="font-weight:600;">${p.name}</td>
+                    <td><span style="text-transform: capitalize;">${p.cat}</span></td>
+                    <td style="font-family:var(--font-mono)">₹${p.price}</td>
+                    <td>
+                        <button class="table-action-btn" onclick="deleteProduct('${p.id}')"><i class="fa-solid fa-trash"></i> Delete</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        window.deleteProduct = function(id) {
+            catalog = catalog.filter(p => p.id !== id);
+            saveData();
+            renderAdminInventory();
+            renderShopGrid();
+            showToast('Product deleted from inventory');
+        }
+
+        function renderAdminDropdowns() {
+            // Categories
+            const catSelect = document.getElementById('prodCat');
+            catSelect.innerHTML = '';
+            Object.keys(CATEGORIES).forEach(key => {
+                if (key === 'all') return;
+                const opt = document.createElement('option');
+                opt.value = key;
+                opt.innerText = CATEGORIES[key];
+                catSelect.appendChild(opt);
+            });
+
+            // Colors
+            const colorSelect = document.getElementById('prodColorTheme');
+            colorSelect.innerHTML = '';
+            Object.keys(COLORS).forEach(key => {
+                const opt = document.createElement('option');
+                opt.value = key;
+                opt.innerText = COLORS[key];
+                colorSelect.appendChild(opt);
+            });
+        }
+
+        // Toggle Admin View
+        function showAdminView(show) {
+            if (show) {
+                document.getElementById('consumerApp').style.display = 'none';
+                document.getElementById('adminApp').classList.add('active');
+                renderAdminInventory();
+                renderAdminDropdowns();
+            } else {
+                document.getElementById('adminApp').classList.remove('active');
+                document.getElementById('consumerApp').style.display = 'block';
+            }
+        }
+
+        // ============================================================
+        // EVENTS SETUP
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', () => {
+            initData();
+            renderCategoryChips();
+            renderShopGrid();
+            updateCartUI();
+            renderAdminDropdowns();
+
+            // Add Custom Category Trigger
+            document.getElementById('addCatBtn').addEventListener('click', () => {
+                const catId = prompt('Enter a short URL-friendly ID for the category (e.g., "lac" or "beads"):');
+                if (!catId) return;
+                
+                const cleanedId = catId.toLowerCase().trim().replace(/[^a-z0-9]/g, '');
+                if (CATEGORIES[cleanedId]) {
+                    alert('This category ID already exists.');
+                    return;
+                }
+
+                const catName = prompt('Enter the category display name with an emoji (e.g., "🔮 Lac Bangles" or "✨ Beads"):');
+                if (!catName) return;
+
+                CATEGORIES[cleanedId] = catName;
+                localStorage.setItem('bbc_categories', JSON.stringify(CATEGORIES));
+                
+                renderAdminDropdowns();
+                renderCategoryChips();
+                showToast(`New category "${catName}" added!`);
+            });
+
+            // Add Custom Color Trigger
+            document.getElementById('addColorThemeBtn').addEventListener('click', () => {
+                const colorId = prompt('Enter a short ID for the color theme (e.g., "bg-pink" or "bg-coral"):');
+                if (!colorId) return;
+                
+                const cleanedId = colorId.toLowerCase().trim().replace(/[^a-z0-9_-]/g, '');
+                if (COLORS[cleanedId]) {
+                    alert('This color theme ID already exists.');
+                    return;
+                }
+
+                const colorLabel = prompt('Enter the color display name with an emoji (e.g., "🩷 Soft Pink" or "🧡 Coral Peach"):');
+                if (!colorLabel) return;
+
+                const gradientVal = prompt('Enter a CSS background gradient (e.g., "linear-gradient(135deg, #FFE4E1 0%, #FFB6C1 100%)"):');
+                if (!gradientVal) return;
+
+                COLORS[cleanedId] = colorLabel;
+                GRADIENTS[cleanedId] = gradientVal;
+
+                localStorage.setItem('bbc_colors', JSON.stringify(COLORS));
+                localStorage.setItem('bbc_gradients', JSON.stringify(GRADIENTS));
+                
+                renderAdminDropdowns();
+                showToast(`New color theme "${colorLabel}" added!`);
+            });
+
+            // Mobile bottom navigation handlers
+            function setActiveMobTab(tabId) {
+                document.querySelectorAll('.mobile-bottom-nav .nav-tab').forEach(t => {
+                    t.classList.toggle('active', t.id === tabId);
+                });
+            }
+
+            document.getElementById('mobTabHome').addEventListener('click', () => {
+                showAdminView(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setActiveMobTab('mobTabHome');
+            });
+
+            document.getElementById('mobTabShop').addEventListener('click', () => {
+                showAdminView(false);
+                scrollToProducts();
+                setActiveMobTab('mobTabShop');
+            });
+
+            document.getElementById('mobTabCart').addEventListener('click', () => {
+                toggleCart(true);
+            });
+
+            document.getElementById('mobTabAdmin').addEventListener('click', () => {
+                const pin = prompt('Enter Admin PIN:');
+                if (pin === 'admin123' || pin === '1234') {
+                    showAdminView(true);
+                    setActiveMobTab('mobTabAdmin');
+                } else {
+                    alert('Incorrect PIN!');
+                }
+            });
+
+            // Logo redirect
+            document.getElementById('logoBtn').addEventListener('click', () => {
+                showAdminView(false);
+                scrollTo(0, 0);
+                setActiveMobTab('mobTabHome');
+            });
+
+            // Cart sidebar togglers
+            document.getElementById('cartBtnIcon').addEventListener('click', () => toggleCart(true));
+            document.getElementById('closeCartBtn').addEventListener('click', () => toggleCart(false));
+            document.getElementById('cartBackdrop').addEventListener('click', () => toggleCart(false));
+
+            // Search overlay togglers
+            document.getElementById('searchBtnIcon').addEventListener('click', () => toggleSearch(true));
+            document.getElementById('closeSearchBtn').addEventListener('click', () => toggleSearch(false));
+
+            // Search logic
+            document.getElementById('searchInputField').addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+                const grid = document.getElementById('searchResultsGrid');
+                grid.innerHTML = '';
+                if (!query) return;
+
+                const results = catalog.filter(p => p.name.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query));
+                if (results.length === 0) {
+                    grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--ink-light);">No matching items found.</div>`;
+                    return;
+                }
+
+                results.forEach(p => {
+                    const card = document.createElement('div');
+                    card.className = 'product-card';
+                    card.addEventListener('click', () => {
+                        toggleSearch(false);
+                        openDetailSheet(p);
+                    });
+                    const bgStyle = GRADIENTS[p.bg] || GRADIENTS['bg-rainbow'];
+                    card.innerHTML = `
+                        <div class="card-image-wrap">
+                            <div class="card-img-placeholder" style="background: ${bgStyle}">${p.emoji || '🌸'}</div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-name">${p.name}</h3>
+                            <div class="card-meta">
+                                <span class="card-price">₹${p.price}</span>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            });
+
+            // Size Selector
+            document.querySelectorAll('.size-chip').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    document.querySelectorAll('.size-chip').forEach(c => c.classList.remove('active'));
+                    chip.classList.add('active');
+                    currentSize = chip.getAttribute('data-size');
+                });
+            });
+
+            // Details sheet close / backdrop
+            document.getElementById('closeSheetBtn').addEventListener('click', closeDetailSheet);
+            document.getElementById('backdrop').addEventListener('click', closeDetailSheet);
+
+            // Add from sheet action
+            document.getElementById('addToCartBtn').addEventListener('click', () => {
+                if (currentProduct) {
+                    addToCart(currentProduct, currentSize);
+                    closeDetailSheet();
+                    showToast(`Added ${currentProduct.name} to Cart`);
+                }
+            });
+
+            // Direct WhatsApp click
+            document.getElementById('directWhatsAppBtn').addEventListener('click', () => {
+                if (currentProduct) {
+                    const text = `Hello BangleByChoice! I want to order:\n- *Product:* ${currentProduct.name}\n- *Size:* ${currentSize}\n- *Price:* ₹${currentProduct.price}`;
+                    window.open(`https://wa.me/919553655562?text=${encodeURIComponent(text)}`, '_blank');
+                }
+            });
+
+            // Cart Checkout Order WhatsApp
+            document.getElementById('checkoutBtn').addEventListener('click', () => {
+                const name = document.getElementById('custName').value.trim();
+                const address = document.getElementById('custAddress').value.trim();
+
+                if (!name || !address) {
+                    alert('Please provide your name and delivery address to place the order.');
+                    return;
+                }
+
+                let text = `*New Order - BangleByChoice*\n\n*Name:* ${name}\n*Address:* ${address}\n\n*Items:*`;
+                let total = 0;
+                
+                cart.forEach(item => {
+                    text += `\n- ${item.name} (${item.size !== 'N/A' ? `Size: ${item.size}` : 'Material'}) x${item.qty} -> ₹${item.price * item.qty}`;
+                    total += item.price * item.qty;
+                });
+
+                text += `\n\n*Total Amount:* ₹${total}`;
+
+                window.open(`https://wa.me/919553655562?text=${encodeURIComponent(text)}`, '_blank');
+                
+                // Clear cart after checkout redirect
+                cart = [];
+                saveData();
+                toggleCart(false);
+                showToast('WhatsApp Checkout Initialized!');
+            });
+
+            // Admin button toggler
+            document.getElementById('adminPortalToggle').addEventListener('click', () => {
+                // Quick simple login for the demo
+                const pin = prompt('Enter Admin PIN:');
+                if (pin === 'admin123' || pin === '1234') {
+                    showAdminView(true);
+                } else {
+                    alert('Incorrect PIN!');
+                }
+            });
+
+            document.getElementById('exitAdminBtn').addEventListener('click', () => {
+                showAdminView(false);
+            });
+
+            // Toggle form size group based on category choice
+            document.getElementById('prodCat').addEventListener('change', (e) => {
+                const sizesGroup = document.getElementById('prodSizesGroup');
+                if (e.target.value === 'materials') {
+                    sizesGroup.style.display = 'none';
+                } else {
+                    sizesGroup.style.display = 'block';
+                }
+            });
+
+            // Add Product form submission
+            document.getElementById('addProductForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('prodName').value.trim();
+                const cat = document.getElementById('prodCat').value;
+                const tag = document.getElementById('prodTag').value.trim();
+                const price = parseInt(document.getElementById('prodPrice').value);
+                const mrp = parseInt(document.getElementById('prodMRP').value) || null;
+                const bg = document.getElementById('prodColorTheme').value;
+                const desc = document.getElementById('prodDesc').value.trim();
+
+                const newId = 'CUSTOM_' + Date.now();
+
+                // Select matching emoji for visuals
+                let emoji = '🌸';
+                if (cat === 'glass') emoji = '🔮';
+                else if (cat === 'silk') emoji = '🧵';
+                else if (cat === 'designer') emoji = '👑';
+                else if (cat === 'bridal') emoji = '💒';
+                else if (cat === 'materials') emoji = '📦';
+
+                // Extract selected sizes
+                const sizes = [];
+                if (cat !== 'materials') {
+                    document.querySelectorAll('input[name="prodSizes"]:checked').forEach(cb => {
+                        sizes.push(cb.value);
+                    });
+                    if (sizes.length === 0) {
+                        alert('Please select at least one size for the bangle.');
+                        return;
+                    }
+                } else {
+                    sizes.push('N/A');
+                }
+
+                catalog.unshift({
+                    id: newId,
+                    name,
+                    cat,
+                    tag,
+                    price,
+                    mrp,
+                    bg,
+                    emoji,
+                    desc,
+                    sizes
+                });
+
+                saveData();
+                renderAdminInventory();
+                renderShopGrid();
+                
+                // Reset form
+                document.getElementById('addProductForm').reset();
+                showToast('Product added successfully!');
+            });
+        });
+    </script>
+</body>
+</html>

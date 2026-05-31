@@ -1,0 +1,2797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangle by Choice | Custom Thread & Designer Bangles</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .bangle-spin {
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide scrollbar for horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Discount Badge Strike-through */
+        .strike-price {
+            text-decoration: line-through;
+            color: #94a3b8;
+            font-size: 0.8em;
+            margin-right: 4px;
+        }
+
+        /* Toast Notification */
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toast {
+            background: white;
+            color: #334155;
+            padding: 12px 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #e11d48;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateX(100%);
+            animation: slideIn 0.3s forwards;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .toast.success {
+            border-left-color: #10b981;
+        }
+
+        .toast.info {
+            border-left-color: #3b82f6;
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideOut {
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+        /* Skeleton Loading */
+        .skeleton {
+            background: #e2e8f0;
+            background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-rose-200 selection:text-rose-900">
+
+    <!-- Top Bar -->
+    <div class="bg-slate-900 text-white text-xs font-bold text-center py-2 tracking-widest uppercase overflow-hidden">
+        <span class="animate-pulse mr-2 text-rose-500">●</span>
+        <span id="scrolling-announcement">Free Shipping on Orders Above ₹999 | Worldwide Delivery Available ✈️</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 w-full z-50 glass-effect border-b border-rose-100 shadow-sm transition-all duration-300"
+        id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <button class="md:hidden text-slate-600 text-xl mr-2" onclick="toggleMobileMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="text-2xl font-bold text-rose-700 tracking-tighter">Bangle<span
+                        class="text-slate-600 font-light italic">byChoice</span></div>
+            </div>
+
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600 uppercase tracking-wide">
+                <a href="#collections" class="hover:text-rose-600 transition">Collections</a>
+                <a href="#outfit-match" class="hover:text-rose-600 transition">Outfit Match</a>
+                <a href="#diy" class="hover:text-rose-600 transition">DIY Materials</a>
+                <button type="button" onclick="toggleAdmin()" class="text-slate-400 hover:text-slate-800 transition"><i
+                        class="fa-solid fa-lock"></i> Admin</button>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <!-- Search Bar (Desktop) -->
+                <div
+                    class="hidden md:flex items-center bg-slate-100 rounded-full px-4 py-2 border border-slate-200 focus-within:border-rose-300 transition">
+                    <i class="fa-solid fa-search text-slate-400"></i>
+                    <input type="text" id="desktop-search" placeholder="Search Bangles..."
+                        class="bg-transparent border-none outline-none text-sm ml-2 w-32 placeholder-slate-400 text-slate-700"
+                        onkeyup="filterBySearch(this.value)">
+                </div>
+
+
+
+                <button class="relative p-2 text-slate-600 hover:text-rose-600 transition" title="Cart">
+                    <i class="fa-solid fa-bag-shopping text-xl"></i>
+                    <span id="cart-count"
+                        class="absolute top-0 right-0 bg-rose-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center transform scale-0 transition-transform duration-300">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full left-0 top-full shadow-lg overflow-hidden transition-all">
+            <div class="flex flex-col p-4 space-y-4 font-semibold text-slate-600 text-sm">
+                <!-- Mobile Search -->
+                <div class="flex items-center bg-slate-100 rounded-lg px-4 py-3 border border-slate-200">
+                    <i class="fa-solid fa-search text-slate-400"></i>
+                    <input type="text" placeholder="Search..."
+                        class="bg-transparent border-none outline-none text-sm ml-2 w-full text-slate-700"
+                        onkeyup="filterBySearch(this.value)">
+                </div>
+
+                <a href="#collections" onclick="toggleMobileMenu()" class="block py-2 border-b border-slate-50">Shop
+                    Collections</a>
+                <a href="#psychology" onclick="toggleMobileMenu()" class="block py-2 border-b border-slate-50">The
+                    Meaning of Colors</a>
+                <a href="#outfit-match" onclick="toggleMobileMenu()"
+                    class="block py-2 border-b border-slate-50 text-rose-600">Match Your Outfit</a>
+                <a href="#diy" onclick="toggleMobileMenu()" class="block py-2 border-b border-slate-50">DIY
+                    Materials</a>
+
+                <button onclick="toggleMobileMenu(); toggleAdmin()"
+                    class="block w-full text-left py-2 text-slate-400"><i class="fa-solid fa-lock"></i> Admin
+                    Portal</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-16 pb-16 lg:pt-24 lg:pb-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-10">
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h1 class="text-5xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight font-serif">
+                        More Than Jewelry. <br>
+                        <span class="text-rose-600 italic">It's Your Story.</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        Rediscover the elegance of bangles tailored for the modern woman. <br>
+                        <span class="font-semibold text-slate-800">Hyderabad's Finest Thread Work • Global
+                            Shipping</span>
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#collections"
+                            class="px-10 py-4 bg-rose-600 text-white font-bold rounded-full shadow-lg hover:bg-rose-700 transition hover:scale-105 transform duration-200">
+                            Shop Collections
+                        </a>
+                        <a href="#outfit-match"
+                            class="px-10 py-4 bg-white text-rose-600 border-2 border-rose-100 font-bold rounded-full shadow-sm hover:bg-rose-50 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-camera"></i> Match My Outfit
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-md aspect-square">
+                        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Elegant Indian Bangles"
+                            class="w-full h-full object-cover rounded-2xl shadow-2xl rotate-2 hover:rotate-0 transition duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trust Bar -->
+    <!-- Trust Bar -->
+    <!-- Trust Bar -->
+    <section class="py-8 bg-slate-900 text-white border-b border-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center  divide-slate-800 place-items-center">
+
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-truck-fast text-rose-400 text-2xl"></i>
+                    <div>
+                        <h4 class="font-bold text-sm uppercase tracking-wide">Pan-India Shipping</h4>
+                        <p class="text-xs text-slate-400">And Global Delivery</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-hand-sparkles text-rose-400 text-2xl"></i>
+                    <div>
+                        <h4 class="font-bold text-sm uppercase tracking-wide">Handmade</h4>
+                        <p class="text-xs text-slate-400">Custom Thread Work</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-rotate-left text-rose-400 text-2xl"></i>
+                    <div>
+                        <h4 class="font-bold text-sm uppercase tracking-wide">Easy Returns</h4>
+                        <p class="text-xs text-slate-400">Hassle-free Exchange</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Psychology / Mission Section -->
+    <section id="psychology" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Wear Bangles?</h2>
+                <p class="text-slate-500">Bangles are not just tradition—they are an expression of emotion and
+                    personality.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Card 1 -->
+                <div
+                    class="bg-slate-50 p-8 rounded-2xl text-center border border-slate-100 hover:shadow-xl transition group">
+                    <div
+                        class="w-16 h-16 mx-auto bg-red-100 text-red-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Red & Black</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Wearing <strong>Red</strong> signifies energy and passion. <strong>Black</strong> represents
+                        power and protects your aura. It's a statement of a bold personality.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-slate-50 p-8 rounded-2xl text-center border border-slate-100 hover:shadow-xl transition group">
+                    <div
+                        class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Blue & Green</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        <strong>Blue</strong> radiates calmness and wisdom. Ideal for stressful workdays.
+                        <strong>Green</strong> signifies new beginnings and fertility of ideas.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-slate-50 p-8 rounded-2xl text-center border border-slate-100 hover:shadow-xl transition group">
+                    <div
+                        class="w-16 h-16 mx-auto bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">The Modern Switch</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Worried about keyboard noise? Our "Office Edit" features <strong>silent thread bangles</strong>
+                        that don't clink against keys but still keep you stylish.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories / Products -->
+    <!-- Categories / Products -->
+    <section id="collections" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Curated Collections</h2>
+                    <p class="text-slate-500">Handcrafted with love in Hyderabad.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div id="filter-container" class="hidden md:flex gap-2 flex-wrap">
+                    <!-- Dynamic Filters Injected Here -->
+                    <button onclick="filterProducts('all')"
+                        class="px-4 py-2 rounded-full text-sm font-bold bg-rose-600 text-white shadow-md filter-btn"
+                        data-filter="all">All</button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="product-grid">
+                <!-- Products will be injected via JS -->
+            </div>
+
+            <!-- <div class="text-center mt-12">
+                <button
+                    class="px-8 py-3 border-2 border-slate-800 text-slate-800 font-bold rounded-full hover:bg-slate-800 hover:text-white transition uppercase text-sm tracking-widest">View
+                    All Products</button>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Services: Outfit Matcher -->
+    <section id="outfit-match" class="py-20 bg-rose-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+        </div>
+        <div class="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <span class="text-rose-300 font-bold tracking-widest uppercase text-sm mb-2 block">Exclusive
+                    Service</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Perfect Match, Every Time.</h2>
+                <p class="text-rose-100 text-lg mb-8">
+                    Don't know what accessories go with your new saree or office outfit? Upload a picture of your dress,
+                    and our expert stylists will curate the perfect bangle set for you.
+                </p>
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-rose-800 p-3 rounded-lg"><i class="fa-solid fa-upload"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">1. Upload Photo</h4>
+                            <p class="text-rose-200 text-sm">Share your outfit picture.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-rose-800 p-3 rounded-lg"><i class="fa-solid fa-palette"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">2. Customization</h4>
+                            <p class="text-rose-200 text-sm">We pick the exact thread shades and kundan work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+                <form onsubmit="event.preventDefault(); openMatchOutfitChat(this);" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Your Name</label>
+                        <input type="text" id="match-name"
+                            class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-rose-200 focus:outline-none focus:bg-white/30"
+                            placeholder="Jane Doe" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Message / Preference</label>
+                        <input type="text" id="match-note"
+                            class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-rose-200 focus:outline-none focus:bg-white/30"
+                            placeholder="e.g. Need for a wedding, budget 2k">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Upload Outfit Photo</label>
+                        <div class="border-2 border-dashed border-white/40 rounded-lg p-6 text-center cursor-pointer hover:bg-white/10 transition"
+                            onclick="document.querySelector('#match-submit-btn').click()">
+                            <i class="fa-solid fa-cloud-arrow-up text-3xl mb-2 text-rose-300"></i>
+                            <p class="text-sm">We'll open WhatsApp for you to attach the photo.</p>
+                        </div>
+                    </div>
+                    <button type="submit" id="match-submit-btn"
+                        class="w-full py-4 bg-white text-rose-900 font-bold rounded-lg hover:bg-rose-100 transition shadow-lg mt-4">
+                        Start Chat & Upload Photo
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIY Section -->
+    <section id="diy" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiLh0FCj8uvTZqTeFGIxxg3zHZr7zsf87_XA&s"
+                        alt="DIY Bangle Materials" class="w-full h-[400px] object-cover rounded-2xl shadow-2xl" />
+
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-900">Create Your Own Magic</h2>
+                    <p class="text-lg text-slate-600 mb-6">
+                        We encourage creativity! Get access to the same high-quality raw materials we use.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-slate-700"><i
+                                class="fa-solid fa-circle-check text-rose-600"></i> Silk Threads (All Colors)</li>
+                        <li class="flex items-center gap-3 text-slate-700"><i
+                                class="fa-solid fa-circle-check text-rose-600"></i> Kundans & Stone Chains</li>
+                        <li class="flex items-center gap-3 text-slate-700"><i
+                                class="fa-solid fa-circle-check text-rose-600"></i> Bangle Bases (Plastic & Metal)</li>
+                        <li class="flex items-center gap-3 text-slate-700"><i
+                                class="fa-solid fa-circle-check text-rose-600"></i> Glue & Tools</li>
+                    </ul>
+                    <button onclick="shopRawMaterials()"
+                        class="px-8 py-3 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-700 transition">Shop
+                        Raw Materials</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Stories -->
+    <section class="py-20 bg-rose-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Stories of Style</h2>
+                <p class="text-slate-500">Join thousands of women rediscovering their identity through Bangle by Choice.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition relative">
+                    <i class="fa-solid fa-quote-right absolute top-8 right-8 text-4xl text-rose-100"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User"
+                            class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-slate-900">Sneha Reddy</h4>
+                            <p class="text-xs text-slate-500">Software Engineer, Hyderabad</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 italic mb-4">"I stopped wearing bangles because of the noise while coding.
+                        The 'Silent Office Kada' collection is a game changer! I feel connected to my culture without
+                        compromising my work."</p>
+                    <div class="flex text-yellow-400 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition relative">
+                    <i class="fa-solid fa-quote-right absolute top-8 right-8 text-4xl text-rose-100"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User"
+                            class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-slate-900">Priya Sharma</h4>
+                            <p class="text-xs text-slate-500">Student, Mumbai</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 italic mb-4">"Used the 'Match Your Outfit' feature for my sister's wedding.
+                        They customized the thread color exactly to my lehenga. The quality of Kundans is amazing."</p>
+                    <div class="flex text-yellow-400 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition relative">
+                    <i class="fa-solid fa-quote-right absolute top-8 right-8 text-4xl text-rose-100"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="User"
+                            class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-slate-900">Anjali K.</h4>
+                            <p class="text-xs text-slate-500">DIY Enthusiast</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 italic mb-4">"I love that they sell raw materials! I bought the silk
+                        threads and bases to make bangles with my daughter. It's such a fun weekend activity."</p>
+                    <div class="flex text-yellow-400 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="text-2xl font-bold text-white tracking-tighter mb-6">Bangle<span
+                            class="text-slate-500 font-light italic">byChoice</span></div>
+                    <p class="text-sm leading-relaxed mb-6">
+                        Reviving the culture of bangles for the modern world. Custom made, thoughtfully designed, and
+                        delivered with love.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-rose-600 hover:text-white transition"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-rose-600 hover:text-white transition"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-rose-600 hover:text-white transition"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Shop</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><button onclick="footerAction('Thread')"
+                                class="hover:text-rose-400 transition text-left">Custom Thread Bangles</button></li>
+                        <li><button onclick="footerAction('gold')" class="hover:text-rose-400 transition text-left">One
+                                Gram Gold</button></li>
+                        <li><button onclick="footerAction('silver')"
+                                class="hover:text-rose-400 transition text-left">Silver Replicas</button></li>
+                        <li><button onclick="footerAction('Kids')" class="hover:text-rose-400 transition text-left">Kids
+                                Collection</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Help</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><button onclick="footerAction('size')" class="hover:text-rose-400 transition text-left">Size
+                                Guide</button></li>
+                        <li><button onclick="footerAction('shipping')"
+                                class="hover:text-rose-400 transition text-left">Shipping Policy</button></li>
+                        <li><button onclick="footerAction('track')"
+                                class="hover:text-rose-400 transition text-left">Track Order</button></li>
+                        <li><button onclick="footerAction('contact')"
+                                class="hover:text-rose-400 transition text-left">Contact Us</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contact</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex gap-3"><i class="fa-solid fa-location-dot mt-1"></i> Hyderabad, Telangana, India
+                        </li>
+                        <li class="flex gap-3"><i class="fa-solid fa-envelope mt-1"></i> Banglebychoice@gmail.com</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-phone mt-1"></i> +91 9553655562</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Footer Links Actions -->
+            <script>
+                function footerAction(type) {
+                    if (type === 'Thread') {
+                        filterProducts('Thread'); // Assuming 'Customized' category exists or map appropriately
+                        document.getElementById('collections').scrollIntoView({ behavior: 'smooth' });
+                    } else if (type === 'gold') {
+                        // Map to a category or search
+                        filterBySearch('gold');
+                        document.getElementById('collections').scrollIntoView({ behavior: 'smooth' });
+                    } else if (type === 'silver') {
+                        filterBySearch('silver');
+                        document.getElementById('collections').scrollIntoView({ behavior: 'smooth' });
+                    } else if (type === 'Kids') {
+                        filterProducts('Kids'); // Map to Category Name
+                        document.getElementById('collections').scrollIntoView({ behavior: 'smooth' });
+                    } else if (['size', 'shipping', 'track', 'contact'].includes(type)) {
+                        openInfoModal(type);
+                    }
+                }
+            </script>
+            <div class="hidden">
+                <!-- Update footer links to use onclick="footerAction('x')" -->
+                <!-- Since I can't easily replace just the hrefs without big chunks, I will do it via MultiReplace properly below by replacing the whole lists -->
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 text-center text-xs">
+                <p>&copy; 2025 Bangle by Choice. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919553655562" target="_blank"
+        class="fixed bottom-6 left-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition duration-300 flex items-center gap-2 group">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span
+            class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 whitespace-nowrap font-bold text-sm">Chat
+            for Custom Orders</span>
+    </a>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-[60] hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity opacity-0" id="cart-overlay"
+            onclick="toggleCart()"></div>
+        <div class="absolute top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col"
+            id="cart-panel">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+                <h2 class="text-xl font-bold font-serif text-slate-900">Your Bag</h2>
+                <button onclick="toggleCart()" class="text-slate-400 hover:text-rose-600 transition"><i
+                        class="fa-solid fa-xmark text-2xl"></i></button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-6" id="cart-scroll-area">
+                <div id="cart-items" class="space-y-6 mb-8">
+                    <!-- Cart items will be injected here -->
+                    <div class="flex flex-col items-center justify-center h-48 text-slate-400">
+                        <i class="fa-solid fa-basket-shopping text-6xl mb-4 text-slate-200"></i>
+                        <p>Your bag is empty.</p>
+                        <button onclick="toggleCart()" class="mt-4 text-rose-600 font-bold hover:underline">Start
+                            Shopping</button>
+                    </div>
+                </div>
+
+                <!-- Embedded Checkout Form -->
+                <div id="checkout-form-container" class="hidden border-t border-slate-200 pt-6">
+                    <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2"><i
+                            class="fa-solid fa-truck-fast text-rose-600"></i> Shipping Details</h3>
+                    <form id="cart-form" class="space-y-3">
+                        <input type="text" id="cust-name" placeholder="Full Name"
+                            class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-rose-500 focus:outline-none text-sm"
+                            required>
+                        <!-- Phone Number -->
+                        <div class="flex gap-2">
+                            <!-- Country Code -->
+                            <select id="cust-country-code"
+                                class="w-1/3 px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-rose-500 focus:outline-none text-sm"
+                                required>
+                                <option value="+91" selected>🇮🇳 +91</option>
+                                <option value="+1">🇺🇸 +1</option>
+                                <option value="+44">🇬🇧 +44</option>
+                                <option value="+971">🇦🇪 +971</option>
+                                <option value="+61">🇦🇺 +61</option>
+                            </select>
+
+                            <!-- Phone Number -->
+                            <input type="tel" id="cust-phone" placeholder="Phone Number"
+                                class="w-2/3 px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-rose-500 focus:outline-none text-sm"
+                                required>
+                        </div>
+
+                        <!-- Phone Error -->
+                        <p id="phone-error" class="hidden text-xs text-red-600 font-bold">
+                            Please enter a valid phone number
+                        </p>
+
+                        <textarea id="cust-address" placeholder="Full Address (House No, Street, City, Pincode)"
+                            rows="3"
+                            class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-rose-500 focus:outline-none text-sm"
+                            required></textarea>
+
+                        <!-- Payment Method -->
+                        <div class="pt-2">
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Payment Method</label>
+                            <div class="flex gap-2">
+                                <label class="flex-1 cursor-pointer">
+                                    <input type="radio" name="payment" value="Online/UPI" class="peer sr-only" checked>
+                                    <div
+                                        class="px-3 py-2 border border-slate-200 rounded-lg text-center text-xs font-bold text-slate-600 peer-checked:bg-rose-50 peer-checked:text-rose-700 peer-checked:border-rose-200 transition">
+                                        UPI / Online
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="p-6 border-t border-slate-100 bg-slate-50 shadow-[0_-5px_15px_rgba(0,0,0,0.05)] z-10">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-slate-600">Subtotal</span>
+                    <span class="text-xl font-bold text-slate-900" id="cart-total">₹0</span>
+                </div>
+                <button onclick="processCartCheckout()"
+                    class="w-full py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition shadow-lg flex items-center justify-center gap-2 animate-pulse"
+                    id="checkout-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Place Order on WhatsApp
+                </button>
+                <p class="text-[10px] text-slate-400 mt-3 text-center">By clicking, you will be redirected to WhatsApp
+                    with your pre-filled order details.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Info Modal (Policies/Size Guide) -->
+    <div id="info-modal" class="fixed inset-0 z-[90] hidden flex items-center justify-center px-4">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeInfoModal()"></div>
+        <div
+            class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl relative z-10 overflow-hidden flex flex-col max-h-[80vh]">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+                <h2 id="info-modal-title" class="text-xl font-bold text-slate-900">Information</h2>
+                <button onclick="closeInfoModal()" class="text-slate-400 hover:text-slate-800 transition"><i
+                        class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div class="p-8 overflow-y-auto text-slate-600 leading-relaxed" id="info-modal-content">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Product Quick View Modal -->
+    <div id="product-modal" class="fixed inset-0 z-[70] hidden flex items-center justify-center px-4">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div
+            class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl relative z-10 overflow-hidden flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh]">
+            <button onclick="closeModal()"
+                class="absolute top-4 right-4 z-20 bg-white/80 p-2 rounded-full hover:bg-white text-slate-800 transition"><i
+                    class="fa-solid fa-xmark text-xl"></i></button>
+
+            <div id="modal-image-container" class="md:w-1/2 bg-slate-100 relative">
+                <img id="modal-img" src="" alt="Product" class="w-full h-full object-cover">
+            </div>
+
+            <div class="md:w-1/2 p-8 overflow-y-auto">
+                <span id="modal-category"
+                    class="text-xs font-bold text-rose-600 uppercase tracking-widest mb-2 block">Category</span>
+                <h2 id="modal-title" class="text-3xl font-bold text-slate-900 mb-2 font-serif">Product Name</h2>
+                <div class="flex items-center gap-4 mb-6">
+                    <div id="modal-price-container">
+                        <span id="modal-mrp" class="strike-price text-lg"></span>
+                        <span id="modal-price" class="text-2xl font-bold text-slate-900">₹999</span>
+                        <span id="modal-discount"
+                            class="ml-2 bg-rose-100 text-rose-600 text-xs font-bold px-2 py-1 rounded uppercase hidden"></span>
+                    </div>
+                    <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded ml-auto">In
+                        Stock</span>
+                </div>
+
+                <div class="mb-6">
+                    <div class="bg-rose-50 border-l-4 border-rose-400 p-4 rounded-r-lg">
+                        <p id="modal-story" class="text-slate-700 italic text-sm">"Story text goes here..."</p>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <div class="mb-8" id="modal-variants-container">
+                        <!-- Variant Selectors will be injected here -->
+                        <div class="flex justify-between items-end mb-2">
+                            <label class="block text-sm font-bold text-slate-700">Loading Options...</label>
+                        </div>
+                    </div>
+
+                    <!-- Hidden Deprecated Size Help -->
+                    <div class="hidden">
+                        <p class="text-xs text-slate-400 flex items-center gap-1"><i
+                                class="fa-solid fa-circle-info"></i>
+                            Not sure? <a href="#" class="underline hover:text-rose-600"
+                                onclick="alert('Wrap a string around your hand (knuckles). Length: \n2.4 = 2.25 inches dia\n2.6 = 2.37 inches dia\n2.8 = 2.5 inches dia')">Quick
+                                Size Helper</a></p>
+                    </div>
+
+                    <div class="flex flex-col gap-3">
+                        <button onclick="buyNowDirect()"
+                            class="w-full py-4 bg-green-600 text-white font-bold rounded-full hover:bg-green-700 transition shadow-lg transform active:scale-95 flex justify-center items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Buy Now via WhatsApp
+                        </button>
+                        <div class="flex gap-3">
+                            <button onclick="addToCartFromModal()"
+                                class="flex-1 py-3 bg-white border-2 border-slate-900 text-slate-900 font-bold rounded-full hover:bg-slate-50 transition">
+                                Add to Bag
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-slate-100 grid grid-cols-2 gap-4 text-xs text-slate-500">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-truck"></i> Free Shipping > ₹999
+                        </div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-award"></i> Authentic Quality</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-box"></i> Secure Packaging</div>
+                        <div class="flex items-center gap-2"><i class="fa-brands fa-whatsapp"></i> 24/7 Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- Admin Portal moved to end of body -->
+
+    <!-- JavaScript -->
+    <script>
+        // --- DATA ---
+        let products = [];
+        let categoryDataMap = {}; // ID -> Name mapping
+        let editingProductId = null;
+        let variantMetadata = { types: [], units: {} };
+        // --- TRANSFORM SCRAPED DATA ---
+        function transformScrapedData(scrapedProducts) {
+            return scrapedProducts.map((sp, index) => {
+                // Get primary source for image paths
+                const primarySource = sp.sources && sp.sources.length > 0 ? sp.sources[0] : null;
+                const sourceWebsite = primarySource ? primarySource.website : 'unboxkar';
+
+                // Calculate discount percentage if applicable
+                const hasDiscount = sp.highest_price && sp.lowest_price && sp.highest_price > sp.lowest_price;
+                const discountPercent = hasDiscount
+                    ? Math.round(((sp.highest_price - sp.lowest_price) / sp.highest_price) * 100)
+                    : 0;
+
+                return {
+                    id: sp.id || `product-${index + 1}`,
+                    name: sp.name || 'Unnamed Product',
+                    category: sp.category || "Accessories",
+                    categoryId: sp.category,
+
+                    // Use lowest price from unified catalog
+                    price: sp.lowest_price || (primarySource ? primarySource.best_price : 0) || 0,
+                    originalPrice: sp.highest_price || (primarySource ? primarySource.best_price : 0) || 0,
+
+                    // Handle images - prefix paths correctly
+                    image: sp.images && sp.images.length > 0
+                        ? `./scraped-data/${sourceWebsite}/${sp.images[0]}`
+                        : 'https://via.placeholder.com/400x400?text=No+Image',
+                    images: sp.images && sp.images.length > 0
+                        ? sp.images.map(img => `./scraped-data/${sourceWebsite}/${img}`)
+                        : ['https://via.placeholder.com/400x400?text=No+Image'],
+
+                    // Generate variants from multiple sources if available
+                    variants: sp.sources && sp.sources.length > 0
+                        ? sp.sources.map(source => ({
+                            price: source.best_price || source.price || 0,
+                            mrp: source.price || source.best_price || 0,
+                            type: "Source",
+                            unit: source.website.charAt(0).toUpperCase() + source.website.slice(1),
+                            sku: source.sku || '',
+                            stock: source.availability === 'in_stock' ? 10 : 0
+                        }))
+                        : [{
+                            price: sp.lowest_price || 0,
+                            mrp: sp.highest_price || 0,
+                            type: "Size",
+                            unit: "Standard",
+                            stock: 10
+                        }],
+
+                    badge: sp.source_count > 1
+                        ? `${discountPercent}% OFF`
+                        : (sp.sources && sp.sources[0] && sp.sources[0].website ? sp.sources[0].website.toUpperCase() : null),
+                    story: sp.description || `Beautiful ${sp.name} from ${sp.category} collection. Handcrafted with love.`,
+                    stock: sp.sources && sp.sources.length > 0 && sp.sources[0].availability === 'in_stock' ? 10 : 0,
+                    tag: hasDiscount ? 'Best Price' : null,
+                    availableAt: sp.available_at || (sp.sources ? sp.sources.map(s => s.website) : []),
+                    sourceCount: sp.source_count || 1
+                };
+            });
+        }
+
+        // --- FETCH DATA FROM SCRAPED JSON ---
+        async function fetchProducts() {
+            // Show loading skeleton
+            renderSkeleton();
+
+            try {
+                // Try to load unified catalog first
+                const response = await fetch('./scraped-data/unified-catalog/products.json');
+                const result = await response.json();
+
+                if (result.products && result.products.length > 0) {
+                    console.log(`Loaded ${result.products.length} products from unified catalog`);
+                    products = transformScrapedData(result.products);
+
+                    renderFilters();
+                    renderProducts();
+                    renderAdminList();
+
+                    showToast(`Loaded ${products.length} products successfully!`, 'success');
+                } else {
+                    console.error("No products found in unified catalog", result);
+                    document.getElementById('product-grid').innerHTML = '<div class="col-span-full text-center py-10 text-slate-500"><i class="fa-solid fa-box-open text-6xl text-slate-200 mb-4"></i><p>No products available yet.</p><p class="text-sm mt-2">Products will appear here once scraping is complete.</p></div>';
+                }
+            } catch (error) {
+                console.error("Failed to load scraped products:", error);
+
+                // Fallback: Try individual site data
+                try {
+                    console.log("Trying to load from individual site data...");
+                    const sites = ['unboxkar', 'scrunchybows', 'theunikart'];
+                    let allProducts = [];
+
+                    for (const site of sites) {
+                        try {
+                            const siteResponse = await fetch(`./scraped-data/${site}/products.json`);
+                            const siteData = await siteResponse.json();
+                            if (siteData.products) {
+                                // Convert individual site format to unified format
+                                const siteProducts = siteData.products.map(p => ({
+                                    id: p.id,
+                                    name: p.name,
+                                    category: p.category,
+                                    lowest_price: p.sale_price || p.price,
+                                    highest_price: p.price,
+                                    images: p.images || [],
+                                    description: p.description,
+                                    sources: [{
+                                        website: site,
+                                        price: p.price,
+                                        best_price: p.sale_price || p.price,
+                                        sku: p.sku,
+                                        availability: p.availability,
+                                        url: p.url
+                                    }],
+                                    source_count: 1,
+                                    available_at: [site]
+                                }));
+                                allProducts = allProducts.concat(siteProducts);
+                            }
+                        } catch (siteError) {
+                            console.log(`Could not load from ${site}:`, siteError.message);
+                        }
+                    }
+
+                    if (allProducts.length > 0) {
+                        console.log(`Loaded ${allProducts.length} products from individual sites`);
+                        products = transformScrapedData(allProducts);
+                        renderFilters();
+                        renderProducts();
+                        renderAdminList();
+                        showToast(`Loaded ${products.length} products from individual sources`, 'info');
+                    } else {
+                        throw new Error("No products found in any source");
+                    }
+                } catch (fallbackError) {
+                    console.error("Fallback also failed:", fallbackError);
+                    document.getElementById('product-grid').innerHTML = '<div class="col-span-full text-center py-10 text-amber-600"><i class="fa-solid fa-triangle-exclamation text-6xl text-amber-200 mb-4"></i><p class="font-bold">Products not yet available</p><p class="text-sm mt-2">The scraping process is still running. Please wait a few minutes and refresh the page.</p><button onclick="location.reload()" class="mt-4 px-6 py-2 bg-rose-600 text-white rounded-full hover:bg-rose-700 transition">Refresh Page</button></div>';
+                }
+            }
+        }
+
+        async function fetchVariantMetadata() {
+            try {
+                // Assuming API returns { success: true, data: { types: ["Size", "Weight"], units: { "Size": ["2.2", ...], "Weight": ["kg"] } } }
+                const res = await fetch('http://13.205.12.242:8443/items/meta/variants');
+                const result = await res.json();
+                if (result.success && result.data) {
+                    variantMetadata = result.data;
+                    renderVariantOptions();
+                } else {
+                    console.error("Meta fetch failed or empty", result);
+                }
+            } catch (e) { console.error("Meta fetch error", e); }
+        }
+
+        function renderVariantOptions() {
+            const typeSelect = document.getElementById('variant-type-select');
+            if (!typeSelect) return;
+
+            // Populate Types
+            if (variantMetadata.types && variantMetadata.types.length > 0) {
+                typeSelect.innerHTML = variantMetadata.types.map(t => `<option value="${t}">${t}</option>`).join('');
+                updateVariantUnits();
+            }
+        }
+
+        function updateVariantUnits() {
+            const type = document.getElementById('variant-type-select').value;
+            const unitSelect = document.getElementById('variant-unit-select');
+            if (!unitSelect) return;
+
+            const units = variantMetadata.units[type] || [];
+            unitSelect.innerHTML = units.map(u => `<option value="${u}">${u}</option>`).join('');
+        }
+
+
+        function renderFilters() {
+            const container = document.getElementById('filter-container');
+            if (!container) return;
+
+            // Get unique categories
+            const categories = ['all', ...new Set(products.map(p => p.category))];
+
+            container.innerHTML = categories.map(cat => {
+                const isActive = cat === 'all';
+                const label = cat === 'all' ? 'All' : cat;
+                const displayLabel = label.charAt(0).toUpperCase() + label.slice(1);
+
+                const activeClass = "bg-rose-600 text-white shadow-md";
+                const inactiveClass = "bg-white text-slate-600 hover:bg-rose-50 border border-slate-200";
+
+                return `<button onclick="filterProducts('${cat}')" 
+                    class="px-4 py-2 rounded-full text-sm font-bold transition ${isActive ? activeClass : inactiveClass} filter-btn" 
+                    data-filter="${cat}">${displayLabel}</button>`;
+            }).join('');
+        }
+
+
+        // --- STATE ---
+        let cart = [];
+
+        let currentModalProduct = null;
+        let selectedVariant = null; // { size: '2.4', color: 'Red', price: 799, ... }
+        let currentSize = null;
+        let currentColor = null;
+        let currentImageIndex = 0;
+
+        let isAdminLoggedIn = false;
+        const WHATSAPP_NUMBER = "9553655562";
+
+        // --- UTILS ---
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+
+            let icon = type === 'success' ? '<i class="fa-solid fa-circle-check text-green-500 text-xl"></i>' : '<i class="fa-solid fa-circle-info text-blue-500 text-xl"></i>';
+
+            toast.innerHTML = `${icon} <span>${message}</span>`;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.3s forwards';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        function renderSkeleton() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = Array(8).fill(0).map(() => `
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 h-96">
+                    <div class="h-64 skeleton w-full"></div>
+                    <div class="p-5 space-y-3">
+                        <div class="h-4 skeleton w-3/4 rounded"></div>
+                        <div class="h-4 skeleton w-1/2 rounded"></div>
+                        <div class="flex justify-between mt-4">
+                            <div class="h-6 skeleton w-20 rounded"></div>
+                            <div class="h-6 skeleton w-10 circle rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- INITIALIZATION ---
+        // --- INITIALIZATION ---
+        window.addEventListener('DOMContentLoaded', () => {
+            fetchProducts();
+            fetchCategories(); // Added missing call
+            fetchVariantMetadata();
+            initMultilingualHeader();
+
+            // Navbar Scroll Effect
+            window.addEventListener('scroll', () => {
+                const nav = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    nav.classList.add('shadow-md', 'bg-white/95');
+                    nav.classList.remove('glass-effect');
+                } else {
+                    nav.classList.remove('shadow-md', 'bg-white/95');
+                    nav.classList.add('glass-effect');
+                }
+            });
+
+            // Cart Button Listener
+            document.querySelector('.fa-bag-shopping').parentElement.addEventListener('click', toggleCart);
+        });
+
+        // --- MULTILINGUAL HEADER ---
+        function initMultilingualHeader() {
+            const texts = [
+                "Free Shipping on Orders Above ₹999 | Worldwide Delivery ✈️",
+                "₹999 కంటే ఎక్కువ ఆర్డర్‌లపై ఉచిత షిప్పింగ్ | ప్రపంచవ్యాప్త డెలివరీ ✈️", // Telugu
+                "₹999 से अधिक के ऑर्डर पर मुफ़्त शिपिंग | दुनिया भर में डिलीवरी ✈️", // Hindi
+                "₹999 ಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ಆರ್ಡರ್‌ಗಳಿಗೆ ಉಚಿತ ಸಾಗಾಟ | ವಿಶ್ವಾದ್ಯಂತ ವಿತರಣೆ ✈️" // Kannada
+            ];
+            let i = 0;
+            const el = document.getElementById('scrolling-announcement');
+            setInterval(() => {
+                i = (i + 1) % texts.length;
+                el.style.opacity = 0;
+                setTimeout(() => {
+                    el.innerText = texts[i];
+                    el.style.opacity = 1;
+                }, 500);
+            }, 3000);
+            el.style.transition = "opacity 0.5s ease-in-out";
+        }
+
+        // --- NAVIGATION ---
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // --- ADMIN FUNCTIONS ---
+        // Config removed to use API-based variantMetadata
+
+        async function fetchCategories() {
+            try {
+                const response = await fetch('http://13.205.12.242:8443/category');
+                const result = await response.json();
+
+                const select = document.getElementById('admin-category');
+                if (result.success && result.data && result.data.categories) {
+                    categoryDataMap = {}; // Reset map
+                    select.innerHTML = result.data.categories.map(cat => {
+                        categoryDataMap[cat.category_id] = cat.name; // Populate map
+                        return `<option value="${cat.category_id}">${cat.name}</option>`;
+                    }).join('');
+
+                    // Trigger Logic in case default category is RAW MATERIALS
+                    handleCategoryChange();
+
+                    // Re-render products to update category names if they were fetched before categories
+                    if (products.length > 0) {
+                        products.forEach(p => {
+                            if (categoryDataMap[p.categoryId]) p.category = categoryDataMap[p.categoryId];
+                        });
+                        renderProducts();
+                        renderAdminList();
+                    }
+                }
+            } catch (error) {
+                console.error("Failed to fetch categories:", error);
+            }
+        }
+
+        function toggleCategoryForm() {
+            document.getElementById('new-cate-form').classList.toggle('hidden');
+        }
+
+        async function createCategory() {
+            const name = document.getElementById('new-cat-name').value;
+            const desc = document.getElementById('new-cat-desc').value;
+
+            if (!name) { alert("Category Name is required"); return; }
+
+            const payload = {
+                name: name,
+                parent_id: null,
+                description: desc,
+                is_active: true
+            };
+
+            try {
+                const response = await fetch('http://13.205.12.242:8443/category', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    alert("Category Created!");
+                    document.getElementById('new-cat-name').value = '';
+                    document.getElementById('new-cat-desc').value = '';
+                    toggleCategoryForm();
+                    fetchCategories(); // Refresh list
+                } else {
+                    alert("Failed to create category");
+                }
+            } catch (e) {
+                console.error(e);
+                alert("Error creating category");
+            }
+        }
+
+        function toggleAdmin() {
+            console.log("Toggle Admin called");
+            const portal = document.getElementById('admin-portal');
+            const loginView = document.getElementById('admin-login-view');
+            const dashboardView = document.getElementById('admin-dashboard-view');
+
+            if (!portal) {
+                alert("Error: Admin Portal element not found!");
+                return;
+            }
+
+            if (portal.classList.contains('hidden')) {
+                console.log("Opening Portal");
+                portal.classList.remove('hidden');
+
+                // Force Styles to Ensure Visibility
+                portal.style.display = 'block';
+                portal.style.zIndex = '9999';
+                portal.style.opacity = '1';
+
+                if (loginView) loginView.classList.remove('hidden');
+                if (dashboardView) dashboardView.classList.add('hidden');
+
+                if (loginView) loginView.classList.remove('hidden');
+                if (dashboardView) dashboardView.classList.add('hidden');
+
+                // Fetch Meta when opening portal if logged in, or relies on login
+                if (isAdminLoggedIn) fetchVariantMetadata();
+
+                const emailInput = document.getElementById('login-email');
+                const passInput = document.getElementById('login-password');
+                if (emailInput) emailInput.value = '';
+                if (passInput) passInput.value = '';
+            } else {
+                console.log("Closing Portal");
+                portal.classList.add('hidden');
+                portal.style.display = ''; // Reset
+                portal.style.zIndex = '';
+                portal.style.opacity = '';
+
+                isAdminLoggedIn = false;
+                if (loginView) loginView.classList.remove('hidden');
+                if (dashboardView) dashboardView.classList.add('hidden');
+            }
+        }
+
+        async function performAdminLogin() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            if (!email || !password) {
+                alert("Please enter email and password");
+                return;
+            }
+
+            try {
+                const response = await fetch('http://13.205.12.242:8443/user/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                if (response.ok) {
+                    isAdminLoggedIn = true;
+                    document.getElementById('admin-login-view').classList.add('hidden');
+                    document.getElementById('admin-dashboard-view').classList.remove('hidden');
+                    renderAdminList();
+                    fetchCategories();
+                    fetchVariantMetadata();
+                } else {
+                    alert("Login Failed: Invalid Credentials");
+                }
+            } catch (e) {
+                console.error(e);
+                alert("Connection Error: " + e.message);
+            }
+        }
+
+        function renderAdminList() {
+            const tbody = document.getElementById("admin-product-list");
+            tbody.innerHTML = "";
+            products.forEach((p) => {
+                // Determine image source
+                const isImageUrl = typeof p.image === 'string' && p.image.length > 0 && (p.image.startsWith("http") || p.image.startsWith("data:"));
+                const imgDisplay = isImageUrl
+                    ? `<img src="${p.image}" class="w-10 h-10 rounded object-cover">`
+                    : `<div class="w-10 h-10 rounded bg-rose-50 flex items-center justify-center text-xl text-rose-500"><i class="fa-solid fa-image"></i></div>`;
+
+                // Calculate Price Range
+                let priceDisplay = `₹${p.price}`;
+                if (p.variants && p.variants.length > 0) {
+                    const prices = p.variants.map(v => v.price);
+                    const minP = Math.min(...prices);
+                    const maxP = Math.max(...prices);
+                    priceDisplay = minP === maxP ? `₹${minP}` : `₹${minP} – ₹${maxP}`;
+                }
+
+                const tr = document.createElement("tr");
+                tr.className = "border-b border-slate-50 hover:bg-slate-50";
+                tr.innerHTML = `
+                    <td class="py-3 px-2">${imgDisplay}</td>
+                    <td class="py-3 px-2 font-semibold text-slate-800">
+                        ${p.name}<br>
+                        <span class="text-[10px] text-slate-400">${p.tag || ""}</span>
+                    </td>
+                    <td class="py-3 px-2"><span class="bg-slate-100 text-[10px] uppercase font-bold px-2 py-1 rounded text-slate-500">${p.category}</span></td>
+                    <td class="py-3 px-2 text-sm font-bold text-slate-700">${priceDisplay}</td>
+                    <td class="py-3 px-2">
+                        ${p.variants && p.variants.length > 0 ?
+                        `<button onclick="toggleVariantRow('${p.id}')" class="text-xs font-bold text-rose-600 hover:bg-rose-50 px-2 py-1 rounded transition flex items-center gap-1">
+                            ${p.variants.length} variants <i class="fa-solid fa-caret-down"></i>
+                        </button>` :
+                        '<span class="text-xs text-slate-400">NA</span>'}
+                    </td>
+                    <td class="py-3 px-2 flex gap-2">
+                        <button onclick="editProduct('${p.id}')" class="text-slate-400 hover:text-blue-600" title="Edit Item"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button onclick="deleteProduct('${p.id}')" class="text-slate-400 hover:text-red-600" title="Delete Item"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+
+                // Detail Row (Compact Table)
+                if (p.variants && p.variants.length > 0) {
+                    const trDetail = document.createElement("tr");
+                    trDetail.id = `variants-${p.id}`;
+                    trDetail.className = "hidden bg-slate-50";
+                    trDetail.innerHTML = `
+                        <td colspan="6" class="p-4 border-b border-slate-100 shadow-inner">
+                            <div class="bg-white rounded border border-slate-200 overflow-hidden w-full max-w-2xl">
+                                <table class="w-full text-left text-xs">
+                                    <thead class="bg-slate-100 text-slate-500 font-bold uppercase border-b border-slate-200">
+                                        <tr>
+                                            <th class="px-4 py-2">Image</th>
+                                            <th class="px-4 py-2">Details (Type / Unit)</th>
+                                            <th class="px-4 py-2">Color</th>
+                                            <th class="px-4 py-2 text-right">Selling Price</th>
+                                            <th class="px-4 py-2 text-right text-slate-400">MRP</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-100">
+                                        ${p.variants.map(v => `
+                                            <tr class="hover:bg-slate-50">
+                                                <td class="px-4 py-2">
+                                                    ${v.image_url ? `<img src="${v.image_url}" class="w-6 h-6 object-cover rounded border">` : '<div class="w-6 h-6 bg-slate-50 rounded border flex items-center justify-center text-slate-300"><i class="fa-solid fa-image"></i></div>'}
+                                                </td>
+                                                <td class="px-4 py-2 font-medium text-slate-700">${v.value} ${v.unit} <span class="text-[10px] text-slate-400 uppercase ml-1">(${v.type})</span></td>
+                                                <td class="px-4 py-2">
+                                                    ${v.color ? `<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full border" style="background-color: ${v.color}"></div> <span class="text-slate-500">${v.color}</span></div>` : '<span class="text-slate-300">-</span>'}
+                                                </td>
+                                                <td class="px-4 py-2 text-right font-bold text-rose-600">₹${v.price}</td>
+                                                <td class="px-4 py-2 text-right text-slate-400 line-through">₹${v.mrp}</td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    `;
+                    tbody.appendChild(trDetail);
+                }
+            });
+        }
+
+        function toggleVariantRow(id) {
+            const row = document.getElementById(`variants-${id}`);
+            if (row) {
+                row.classList.toggle('hidden');
+            }
+        }
+
+        // --- DYNAMIC VARIANTS LOGIC ---
+
+        function handleCategoryChange() {
+            // Function logic removed as we now show color for ALL categories (including Raw Materials)
+            const headers = document.querySelectorAll('.color-col');
+            headers.forEach(h => h.style.display = 'block');
+
+            const rowColorInputs = document.querySelectorAll('.variant-color-input');
+            rowColorInputs.forEach(input => {
+                input.parentElement.style.display = 'block';
+            });
+        }
+
+        function addVariantRow(data = null) {
+            const container = document.getElementById('variant-rows-container');
+
+            // Current Type/Unit from top selectors (used as defaults if new)
+            const type = document.getElementById('variant-type-select').value;
+            const unit = document.getElementById('variant-unit-select').value;
+
+            // If data exists, use its type/unit, else use current selection
+            const rowType = data ? data.type : type;
+            const rowUnit = data ? data.unit : unit;
+            const rowValue = data ? data.value : '';
+            const rowPrice = data ? data.price : '';
+            const rowMrp = data ? data.mrp : '';
+            const rowColor = data ? data.color : '';
+
+            // Always show color
+            const colorDisplay = 'block';
+
+            const rowId = 'var-' + Date.now() + Math.random().toString(36).substr(2, 5);
+
+            const div = document.createElement('div');
+            div.className = 'grid grid-cols-6 gap-2 items-center variant-row';
+            div.id = rowId;
+
+            // Hidden inputs for type/unit to keep state per row if needed, 
+            // OR just visual inputs. 
+            // The user req: "new variant fields need to be populated with those type and unit values"
+            // So we fix them for this row? 
+            // Requirement says "populated with those type and unit... admin will manually type other details"
+            // It implies the row is bound to that type/unit. Let's store them as data attributes or hidden inputs.
+
+            div.innerHTML = `
+                <div class="col-span-1 border rounded px-2 py-1 text-xs bg-slate-50 flex items-center justify-between">
+                    <span>${rowValue || (rowType.toUpperCase() + ' ' + rowUnit)}</span>
+                    <input type="text" class="w-full bg-transparent outline-none text-right font-bold variant-value" placeholder="Value" value="${rowValue}">
+                    <input type="hidden" class="variant-type" value="${rowType}">
+                    <input type="hidden" class="variant-unit" value="${rowUnit}">
+                </div>
+                <div class="col-span-1">
+                    <input type="number" class="w-full px-2 py-1 border rounded text-xs variant-price" placeholder="Price" value="${rowPrice}">
+                </div>
+                <div class="col-span-1">
+                    <input type="number" class="w-full px-2 py-1 border rounded text-xs variant-mrp" placeholder="MRP" value="${rowMrp}">
+                </div>
+                <div class="col-span-1 color-col" style="display: ${colorDisplay}">
+                    <input type="text" class="w-full px-2 py-1 border rounded text-xs variant-color-input" placeholder="Color" value="${rowColor}">
+                </div>
+                <div class="col-span-1">
+                     <div class="flex items-center gap-1">
+                        <label class="cursor-pointer text-slate-500 hover:text-rose-600">
+                            <i class="fa-solid fa-cloud-arrow-up text-lg"></i>
+                            <input type="file" class="hidden variant-image-input" accept="image/*" onchange="previewVariantImage(this)">
+                        </label>
+                        <span class="text-[10px] ${data && (data.image || data.image_url) ? 'text-rose-600 font-bold' : 'text-slate-400'} truncate max-w-[60px] variant-file-name" title="${data && (data.image || data.image_url) ? 'Existing Image' : ''}">
+                            ${data && (data.image || data.image_url) ? 'Existing' : 'No file'}
+                        </span>
+                    </div>
+                </div>
+                <div class="col-span-1 text-center">
+                    <button type="button" onclick="document.getElementById('${rowId}').remove()" class="text-slate-400 hover:text-red-500"><i class="fa-solid fa-times"></i></button>
+                </div>
+            `;
+            container.appendChild(div);
+        }
+
+        // --- FILE UPLOAD LOGIC ---
+        let mainFiles = [];
+        let variantFiles = [];
+
+        function handleFileSelect(input, type) {
+            if (type === 'main') {
+                const files = Array.from(input.files);
+                if (files.length > 0) {
+                    mainFiles = [files[0]]; // Single file
+                    renderFileList('main', 'main-images-list');
+                }
+            }
+            input.value = '';
+        }
+
+        function renderFileList(type, containerId) {
+            const container = document.getElementById(containerId);
+            const files = mainFiles;
+            const statusEl = document.getElementById('main-file-status');
+
+            if (statusEl) {
+                statusEl.innerHTML = files.length > 0 ? files[0].name : 'No file chosen';
+                statusEl.className = files.length > 0 ? "text-xs text-rose-600 font-bold" : "text-xs text-slate-400";
+            }
+
+            if (!container) return;
+
+            // Simplified display for single file (optional, or just rely on status text)
+            // User asked for "remove that if one image also choosen" -> Status text updates nicely above.
+            // But let's show a small remove button below too?
+            container.innerHTML = files.map((file, index) => `
+                <div class="flex items-center justify-between text-xs bg-slate-100 p-2 rounded mb-1">
+                    <span class="truncate max-w-[150px]">${file.name}</span>
+                    <button type="button" onclick="removeMainFile()" class="text-red-500 hover:text-red-700">
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function removeMainFile() {
+            mainFiles = [];
+            renderFileList('main', 'main-images-list');
+        }
+
+        function previewVariantImage(input) {
+            const file = input.files[0];
+            const nameSpan = input.closest('div').querySelector('.variant-file-name');
+            if (file) {
+                nameSpan.innerText = file.name;
+                nameSpan.title = file.name;
+                nameSpan.classList.add('text-rose-600', 'font-bold');
+                nameSpan.classList.remove('text-slate-400');
+            } else {
+                nameSpan.innerText = 'No file';
+                nameSpan.classList.remove('text-rose-600', 'font-bold');
+                nameSpan.classList.add('text-slate-400');
+            }
+        }
+
+        async function createItem() {
+            // Renamed from addNewProduct to match plan
+            const name = document.getElementById("admin-name").value;
+            const categoryId = document.getElementById("admin-category").value;
+            const story = document.getElementById("admin-story").value;
+            const tag = document.getElementById("admin-tag").value;
+
+            // Variant images are now collected directly from DOM inputs
+
+            // Collect Variants
+            const rows = document.querySelectorAll('.variant-row');
+            const variants = [];
+
+            rows.forEach(row => {
+                const type = row.querySelector('.variant-type').value;
+                const unit = row.querySelector('.variant-unit').value;
+                const value = row.querySelector('.variant-value').value;
+                const price = row.querySelector('.variant-price').value;
+                const mrp = row.querySelector('.variant-mrp').value;
+                const colorInput = row.querySelector('.variant-color-input');
+                const color = colorInput ? colorInput.value : '';
+
+                if (value && price) {
+                    variants.push({
+                        type, unit, value, price: parseFloat(price), mrp: parseFloat(mrp) || 0, color
+                    });
+                }
+            });
+
+            if (variants.length === 0) {
+                alert("Please add at least one variant.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('category_id_fk', categoryId);
+            formData.append('special_tag', tag);
+            formData.append('story', story);
+            formData.append('variants', JSON.stringify(variants));
+
+            // Append Main Image
+            if (mainFiles.length > 0) {
+
+                formData.append('images', mainFiles[0]);
+            }
+
+            // Append Variant Images from Rows
+            // We iterate rows again to capture files corresponding to the variants we found?
+            // Actually, we already iterated rows to build `variants` array.
+            // But we need to grab files. Let's do it here.
+            // Issue: We need to know which file belongs to which variant if backend supports it.
+            // Assumption: Backend takes 'variantImages' as a pool. We just send all selected files.
+            const rowInputs = document.querySelectorAll('.variant-image-input');
+            rowInputs.forEach(input => {
+                if (input.files.length > 0) {
+                    formData.append('variantImages', input.files[0]);
+                }
+            });
+
+            try {
+                const url = editingProductId
+                    ? `http://13.205.12.242:8443/items/${editingProductId}`
+                    : "http://13.205.12.242:8443/items";
+                const method = editingProductId ? "PUT" : "POST";
+
+                // No extra image logic needed here as it's handled above with conditional key
+                const response = await fetch(url, {
+                    method: method,
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    alert(editingProductId ? "Product Updated!" : "Product Created!");
+                    if (editingProductId) cancelEdit();
+                    else {
+                        document.getElementById("admin-product-form").reset();
+                        document.getElementById("variant-rows-container").innerHTML = "";
+                        // Reset Files
+                        mainFiles = [];
+                        document.getElementById('main-images-list').innerHTML = '';
+                        if (document.getElementById('main-file-status')) {
+                            document.getElementById('main-file-status').innerHTML = 'No file chosen';
+                            document.getElementById('main-file-status').className = 'text-xs text-slate-400';
+                        }
+                    }
+                    fetchProducts();
+                } else {
+                    const txt = await response.text();
+                    alert("Operation failed: " + txt);
+                }
+
+            } catch (e) {
+                console.error(e);
+                alert("API Error");
+            }
+        }
+
+        // Alias for the form submit
+        function addNewProduct() { createItem(); }
+
+        async function editProduct(id) {
+            try {
+                const response = await fetch(`http://13.205.12.242:8443/items/${id}`);
+                const result = await response.json();
+
+                if (result.success && result.data) {
+                    const product = result.data;
+                    editingProductId = id;
+
+                    document.getElementById("admin-form-title").innerText = "Edit Product";
+                    document.getElementById("admin-submit-btn").innerText = "Update Product";
+
+                    if (!document.getElementById("cancel-edit-btn")) {
+                        const cancelBtn = document.createElement("button");
+                        cancelBtn.id = "cancel-edit-btn";
+                        cancelBtn.type = "button";
+                        cancelBtn.className = "w-full py-2 mt-2 bg-slate-200 text-slate-700 font-bold rounded-lg hover:bg-slate-300 transition";
+                        cancelBtn.innerText = "Cancel Edit";
+                        cancelBtn.onclick = cancelEdit;
+                        document.getElementById("admin-submit-btn").after(cancelBtn);
+                    }
+
+                    document.getElementById("admin-name").value = product.name;
+                    // Removed root prices logic
+                    document.getElementById("admin-category").value = product.category_id_fk;
+                    document.getElementById("admin-tag").value = product.special_tag || "";
+                    document.getElementById("admin-story").value = product.story || "";
+
+                    // Variants
+                    const container = document.getElementById("variant-rows-container");
+                    container.innerHTML = "";
+
+                    // Dynamic Defaults for Type/Unit
+                    if (product.variants && product.variants.length > 0) {
+                        const firstVar = product.variants[0];
+                        if (firstVar.type) {
+                            const typeSel = document.getElementById('variant-type-select');
+                            if (typeSel.querySelector(`option[value="${firstVar.type}"]`)) {
+                                typeSel.value = firstVar.type;
+                                updateVariantUnits(); // Trigger unit update
+                            }
+                        }
+                        if (firstVar.unit) {
+                            const unitSel = document.getElementById('variant-unit-select');
+                            // Wait for updateVariantUnits if needed? It's sync.
+                            if (unitSel.querySelector(`option[value="${firstVar.unit}"]`)) {
+                                unitSel.value = firstVar.unit;
+                            }
+                        }
+                    }
+
+                    if (product.variants && Array.isArray(product.variants)) {
+                        product.variants.forEach(v => {
+                            addVariantRow(v);
+                        });
+                    }
+
+                    document.querySelector(".lg\\:col-span-1").scrollIntoView({ behavior: 'smooth' });
+
+                    // Update Color visibility
+                    handleCategoryChange();
+                }
+            } catch (error) {
+                console.error("Failed to fetch product:", error);
+                alert("Could not load details");
+            }
+        }
+
+        function cancelEdit() {
+            editingProductId = null;
+            document.getElementById("admin-form-title").innerText = "Add New Item";
+            document.getElementById("admin-submit-btn").innerText = "Add Product";
+            const cancelBtn = document.getElementById("cancel-edit-btn");
+            if (cancelBtn) cancelBtn.remove();
+            document.getElementById("admin-product-form").reset();
+            document.getElementById("variant-rows-container").innerHTML = "";
+            mainFiles = [];
+            document.getElementById('main-images-list').innerHTML = '';
+            // document.getElementById('variant-images-list').innerHTML = ''; // Removed
+            if (document.getElementById('main-file-status')) {
+                document.getElementById('main-file-status').innerHTML = 'No file chosen';
+                document.getElementById('main-file-status').className = 'text-xs text-slate-400';
+            }
+            handleCategoryChange();
+        }
+
+        async function deleteProduct(id) {
+            if (confirm('Are you sure you want to delete this item?')) {
+                try {
+                    const response = await fetch(`http://13.205.12.242:8443/items/${id}`, {
+                        method: 'DELETE'
+                    });
+
+                    if (response.ok) {
+                        const idx = products.findIndex(p => p.id === id);
+                        if (idx > -1) {
+                            products.splice(idx, 1);
+                            renderAdminList();
+                            renderProducts();
+                        }
+                    } else {
+                        alert("Failed to delete product");
+                    }
+                } catch (e) {
+                    console.error(e);
+                    alert("Error deleting product");
+                }
+            }
+        }
+
+        // --- CORE FUNCTIONS ---
+
+        // Render Products Grid
+        function renderProducts(filter = 'all', searchQuery = '') {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            let filtered = products;
+
+            // Category Filter
+            if (filter !== 'all') {
+                filtered = filtered.filter(p => p.category === filter);
+            }
+
+            // Search Filter
+            if (searchQuery) {
+                const lowerQ = searchQuery.toLowerCase();
+                filtered = filtered.filter(p =>
+                    p.name.toLowerCase().includes(lowerQ) ||
+                    (p.category && p.category.toLowerCase().includes(lowerQ)) ||
+                    (p.tag && p.tag.toLowerCase().includes(lowerQ))
+                );
+            }
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-20">
+                        <i class="fa-solid fa-cloud-moon text-6xl text-slate-200 mb-4"></i>
+                        <p class="text-slate-500 font-semibold">No products found matching your search.</p>
+                        <button onclick="filterBySearch('')" class="mt-4 text-rose-600 font-bold hover:underline">Clear Search</button>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(product => {
+                const discount = product.originalPrice ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100) : 0;
+                const isImageUrl = product.image && (product.image.startsWith('http') || product.image.startsWith('data:'));
+
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full border border-slate-100 cursor-pointer relative';
+                card.onclick = (e) => {
+                    if (!e.target.closest('button')) openProductModal(product.id);
+                };
+
+                let badgeHtml = '';
+                if (product.isNew) badgeHtml = '<span class="absolute top-3 left-3 bg-rose-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm z-10">NEW</span>';
+                else if (product.badge) badgeHtml = `<span class="absolute top-3 left-3 bg-slate-900 text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm z-10 uppercase">${product.badge}</span>`;
+                else if (product.tag) badgeHtml = `<span class="absolute top-3 left-3 bg-slate-900 text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm z-10 uppercase">${product.tag}</span>`;
+
+                if (discount > 0) badgeHtml += `<span class="absolute top-3 right-3 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm z-10">-${discount}%</span>`;
+
+                const imageHtml = isImageUrl
+                    ? `<img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">`
+                    : `<div class="w-full h-full bg-slate-50 flex items-center justify-center text-6xl group-hover:scale-110 transition duration-500">${product.image}</div>`;
+
+                // Calculate price label
+                const priceLabel = (product.variants && product.variants.length > 1)
+                    ? `₹${product.price}`
+                    : `₹${product.price}`;
+
+                card.innerHTML = `
+                    <div class="relative h-64 overflow-hidden shrink-0 bg-slate-100">
+                        ${badgeHtml}
+                        ${imageHtml}
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="mb-3">
+                             <div class="inline-block bg-gradient-to-r from-rose-50 to-white text-rose-700 text-xs px-3 py-2 rounded-lg border-l-2 border-rose-400 font-semibold italic w-full">
+                                "${product.story}"
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-1 leading-tight">${product.name}</h3>
+                        <div class="mt-auto pt-4 flex justify-between items-center border-t border-slate-100">
+                            <div class="flex flex-col">
+                                <span class="text-xs text-slate-400 strike-price">₹${product.originalPrice || product.price * 1.2}</span>
+                                <span class="text-slate-900 font-bold text-lg">${priceLabel}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterBySearch(query) {
+            const currentDropdown = document.querySelector('.custom-dropdown-btn');
+            const category = currentDropdown ? currentDropdown.dataset.value : 'all';
+            renderProducts(category, query);
+
+            // Sync both search bars
+            if (document.getElementById('desktop-search')) document.getElementById('desktop-search').value = query;
+            // If we had a consistent ID for mobile search, sync it too, but simpler to leave for now or querySelectorAll inputs
+        }
+
+        function renderFilters() {
+            const container = document.getElementById('filter-container');
+            if (!container) return;
+
+            // Get unique categories
+            const categories = ['all', ...new Set(products.map(p => p.category))];
+
+            // Get current active filter
+            const currentFilter = document.querySelector('.custom-dropdown-btn') ? document.querySelector('.custom-dropdown-btn').dataset.value : 'all';
+            const currentLabel = categories.find(c => c === currentFilter) || 'All Collections';
+            const displayLabel = currentLabel === 'all' ? 'All Collections' : currentLabel.charAt(0).toUpperCase() + currentLabel.slice(1);
+
+            // Custom Dropdown HTML
+            const dropdownHtml = `
+                <div class="relative inline-block text-left w-64 z-30">
+                    <button onclick="toggleDropdown()" class="custom-dropdown-btn flex items-center justify-between w-full px-5 py-3 bg-white border-2 border-slate-100 rounded-xl text-slate-700 font-bold text-sm shadow-sm hover:border-rose-200 hover:shadow-md transition focus:outline-none" data-value="${currentFilter}">
+                        <span id="selected-filter-label">${displayLabel}</span>
+                        <i class="fa-solid fa-chevron-down text-rose-500 text-xs transition-transform duration-200" id="dropdown-arrow"></i>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div id="filter-dropdown-menu" class="hidden absolute right-0 mt-2 w-full bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden transform origin-top-right transition-all duration-200 opacity-0 scale-95 z-50">
+                        <div class="py-1 max-h-64 overflow-y-auto custom-scrollbar">
+                            ${categories.map(cat => {
+                const label = cat === 'all' ? 'All Collections' : cat.charAt(0).toUpperCase() + cat.slice(1);
+                const isActive = cat === currentFilter;
+                return `
+                                    <button onclick="selectFilter('${cat}')" class="w-full text-left px-5 py-3 text-sm font-medium hover:bg-rose-50 hover:text-rose-600 transition flex items-center justify-between ${isActive ? 'bg-rose-50 text-rose-600' : 'text-slate-600'}">
+                                        ${label}
+                                        ${isActive ? '<i class="fa-solid fa-check text-rose-600 text-xs"></i>' : ''}
+                                    </button>
+                                `;
+            }).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            container.innerHTML = dropdownHtml;
+
+            // Close dropdown when clicking outside
+            // Remove previous listener to avoid duplicates if any (though difficult in anonymous func)
+            // Just add new one, simple enough for this scope.
+            document.addEventListener('click', function (e) {
+                const dropdown = document.getElementById('filter-dropdown-menu');
+                const btn = document.querySelector('.custom-dropdown-btn');
+                if (dropdown && !dropdown.classList.contains('hidden') && btn && !btn.contains(e.target) && !dropdown.contains(e.target)) {
+                    toggleDropdown();
+                }
+            });
+        }
+
+        function toggleDropdown() {
+            const menu = document.getElementById('filter-dropdown-menu');
+            const arrow = document.getElementById('dropdown-arrow');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                // Small delay to allow transition
+                setTimeout(() => {
+                    menu.classList.remove('opacity-0', 'scale-95');
+                    menu.classList.add('opacity-100', 'scale-100');
+                }, 10);
+                arrow.classList.add('rotate-180');
+            } else {
+                menu.classList.remove('opacity-100', 'scale-100');
+                menu.classList.add('opacity-0', 'scale-95');
+                arrow.classList.remove('rotate-180');
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 200);
+            }
+        }
+
+        function selectFilter(category) {
+            renderProducts(category);
+            // Manually update UI state
+            const btn = document.querySelector('.custom-dropdown-btn');
+            if (btn) btn.dataset.value = category;
+            renderFilters();
+        }
+
+        // --- CART LOGIC ---
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-overlay');
+            const panel = document.getElementById('cart-panel');
+
+            if (drawer.classList.contains('hidden')) {
+                drawer.classList.remove('hidden');
+                void drawer.offsetWidth;
+                overlay.classList.remove('opacity-0');
+                panel.classList.remove('translate-x-full');
+            } else {
+                overlay.classList.add('opacity-0');
+                panel.classList.add('translate-x-full');
+                setTimeout(() => {
+                    drawer.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        function updateCartBadge() {
+            const badge = document.getElementById('cart-count');
+            const count = cart.reduce((acc, item) => acc + item.qty, 0);
+            badge.innerText = count;
+            badge.classList.remove('scale-0');
+            badge.classList.add('scale-100', 'bg-green-500');
+            setTimeout(() => {
+                badge.classList.remove('bg-green-500');
+                badge.classList.add('bg-rose-600');
+            }, 200);
+        }
+
+        function renderCartItems() {
+            const container = document.getElementById('cart-items');
+            const totalEl = document.getElementById('cart-total');
+            const formContainer = document.getElementById('checkout-form-container');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="flex flex-col items-center justify-center h-48 text-slate-400">
+                        <i class="fa-solid fa-basket-shopping text-6xl mb-4 text-slate-200"></i>
+                        <p>Your bag is empty.</p>
+                        <button onclick="toggleCart()" class="mt-4 text-rose-600 font-bold hover:underline">Start Shopping</button>
+                    </div>
+                `;
+                totalEl.innerText = "₹0";
+                if (formContainer) formContainer.classList.add('hidden');
+                if (checkoutBtn) {
+                    checkoutBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    checkoutBtn.disabled = true;
+                }
+                return;
+            }
+
+            if (formContainer) formContainer.classList.remove('hidden');
+            if (checkoutBtn) {
+                checkoutBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                checkoutBtn.disabled = false;
+            }
+
+            let html = '';
+            let total = 0;
+            let totalSavings = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price * item.qty;
+                if (item.originalPrice) {
+                    totalSavings += (item.originalPrice - item.price) * item.qty;
+                }
+
+                const isImageUrl = item.image && (item.image.startsWith('http') || item.image.startsWith('data:'));
+                const imgDisplay = isImageUrl
+                    ? `<img src="${item.image}" class="w-20 h-20 rounded-lg object-cover border border-slate-100">`
+                    : `<div class="w-20 h-20 rounded-lg bg-slate-50 flex items-center justify-center text-4xl border border-slate-100">${item.image}</div>`;
+
+                html += `
+                    <div class="flex gap-4">
+                        ${imgDisplay}
+                        <div class="flex-1">
+                            <h4 class="font-bold text-sm text-slate-900">${item.name}</h4>
+                            <div class="flex flex-wrap gap-2 text-xs text-slate-500 mb-1">
+                                ${item.size ? `<span class="bg-slate-100 px-1 rounded">Size: ${item.size}</span>` : ''}
+                                ${item.color ? `<span class="bg-slate-100 px-1 rounded">Color: ${item.color}</span>` : ''}
+                            </div>
+                            ${item.tag ? `<span class="text-[10px] bg-slate-100 px-1 rounded text-slate-500">${item.tag}</span>` : ''}
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="font-bold text-rose-600">₹${item.price}</span>
+                                <div class="flex items-center gap-3 bg-slate-100 rounded-full px-2 py-1">
+                                    <button onclick="updateQty(${index}, -1)" class="text-slate-500 hover:text-slate-800 text-xs"><i class="fa-solid fa-minus"></i></button>
+                                    <span class="text-xs font-bold w-4 text-center">${item.qty}</span>
+                                    <button onclick="updateQty(${index}, 1)" class="text-slate-500 hover:text-slate-800 text-xs"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            if (totalSavings > 0) {
+                html += `<div class="bg-green-50 text-green-700 text-xs font-bold p-2 rounded text-center border border-green-100 mt-2">✨ You are saving ₹${totalSavings} on this order!</div>`;
+            }
+
+            container.innerHTML = html;
+            totalEl.innerText = "₹" + total;
+        }
+
+        function updateQty(index, change) {
+            cart[index].qty += change;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            renderCartItems();
+            updateCartBadge();
+        }
+
+        function addToCartFromModal() {
+            if (currentModalProduct.variants && currentModalProduct.variants.length > 0) {
+                const hasColors = currentModalProduct.variants.some(v => v.color);
+
+                if (!currentSize) {
+                    // Determine label
+                    const isRawMaterial = (currentModalProduct.category || "").toLowerCase().includes("raw") || (currentModalProduct.category || "").toLowerCase().includes("diy");
+                    const label = isRawMaterial ? "Quantity/Type" : "Size";
+                    alert(`Please select a ${label}`);
+                    return;
+                }
+                if (hasColors && !currentColor) {
+                    alert("Please select a Color");
+                    return;
+                }
+
+                // Try to find the specific variant
+                const variant = currentModalProduct.variants.find(v => v.value == currentSize && (!hasColors || (v.color && currentColor && v.color.toLowerCase() == currentColor.toLowerCase())));
+
+                if (!variant) {
+                    alert("This combination is not available.");
+                    return;
+                }
+
+                selectedVariant = variant;
+            }
+
+            const sizeToAdd = selectedVariant ? selectedVariant.value : (currentSize || 'Standard');
+            const colorToAdd = selectedVariant ? (selectedVariant.color || 'Standard') : (currentColor || 'Standard');
+            const priceToAdd = selectedVariant ? parseFloat(selectedVariant.price) : currentModalProduct.price;
+            const originalPriceToAdd = selectedVariant ? parseFloat(selectedVariant.mrp) : currentModalProduct.originalPrice;
+            const variantId = selectedVariant ? `${currentModalProduct.id}-${selectedVariant.value}-${selectedVariant.color || 'std'}` : currentModalProduct.id;
+
+            const existingItem = cart.find(item => item.variantId === variantId);
+
+            if (existingItem) {
+                existingItem.qty++;
+            } else {
+                cart.push({
+                    id: currentModalProduct.id,
+                    variantId: variantId, // Unique ID for cart aggregation
+                    name: currentModalProduct.name,
+                    price: priceToAdd,
+                    originalPrice: originalPriceToAdd,
+                    image: currentModalProduct.image,
+                    size: sizeToAdd,
+                    color: colorToAdd,
+                    tag: currentModalProduct.badge || currentModalProduct.tag,
+                    qty: 1
+                });
+            }
+
+            closeModal();
+            updateCartBadge();
+            renderCartItems();
+            toggleCart();
+            showToast('Added to bag successfully!');
+        }
+
+        // --- CHECKOUT LOGIC ---
+
+        function openMatchOutfitChat(form) {
+            const name = document.getElementById('match-name').value;
+            const note = document.getElementById('match-note').value;
+
+            if (!name) {
+                alert("Please enter your name");
+                return;
+            }
+
+            const message = `*MATCH MY OUTFIT REQUEST* 📸\n\nName: ${name}\nNote: ${note}\n\nI will share the photo now. Please suggest matching bangles.`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        function shopRawMaterials() {
+            const message = "Hi, I am interested in buying DIY Raw Materials (Silk threads, kundans, bangle bases, etc). Please share your catalog and prices. (I understand shipping charges will be extra)";
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        function buyNowDirect() {
+            if (currentModalProduct.variants && currentModalProduct.variants.length > 0) {
+                const hasColors = currentModalProduct.variants.some(v => v.color);
+
+                if (!currentSize) {
+                    const isRawMaterial = (currentModalProduct.category || "").toLowerCase().includes("raw") || (currentModalProduct.category || "").toLowerCase().includes("diy");
+                    const label = isRawMaterial ? "Quantity/Type" : "Size";
+                    alert(`Please select a ${label}`);
+                    return;
+                }
+                if (hasColors && !currentColor) {
+                    alert("Please select a Color");
+                    return;
+                }
+                // Match variant
+                const variant = currentModalProduct.variants.find(v => v.value == currentSize && (!hasColors || (v.color && currentColor && v.color.toLowerCase() == currentColor.toLowerCase())));
+                if (!variant) { alert("This combination is not available."); return; }
+                selectedVariant = variant;
+            }
+
+            const sizeToBuy = selectedVariant ? selectedVariant.value : (currentSize || 'Standard');
+            const colorToBuy = selectedVariant ? selectedVariant.color : (currentColor || 'Standard');
+            const priceToBuy = selectedVariant ? selectedVariant.price : currentModalProduct.price;
+            const originalToBuy = selectedVariant ? selectedVariant.mrp : currentModalProduct.originalPrice;
+
+            const discountMsg = originalToBuy ? `(Savings: ₹${originalToBuy - priceToBuy})` : '';
+            const message = `*NEW EXPRESS ORDER* 🚀\n\nI want to buy:\nProduct: *${currentModalProduct.name}*\nSize: *${sizeToBuy}*\nColor: *${colorToBuy}*\nPrice: ₹${priceToBuy} ${discountMsg}\n\nPlease confirm stock and send payment details.`;
+
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+            closeModal();
+        }
+
+        const phoneInput = document.getElementById('cust-phone');
+        const countryCodeInput = document.getElementById('cust-country-code');
+        const phoneError = document.getElementById('phone-error');
+
+        phoneInput.addEventListener('input', () => {
+            phoneError.classList.add('hidden');
+
+            // Allow only numbers
+            phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '');
+        });
+
+        // Hide error when country code changes
+        countryCodeInput.addEventListener('change', () => {
+            phoneError.classList.add('hidden');
+        });
+
+        function isValidPhone(phone, countryCode) {
+            // Remove spaces
+            phone = phone.replace(/\s+/g, '');
+            if (phone.startsWith('-')) return false;
+            if (/^(\d)\1+$/.test(phone)) return false;
+            if (countryCode === '+91') {
+                return /^[6-9]\d{9}$/.test(phone);
+            }
+            return /^\d{7,15}$/.test(phone);
+        }
+
+        function processCartCheckout() {
+            if (cart.length === 0) return;
+
+            const name = document.getElementById('cust-name').value.trim();
+            const countryCode = document.getElementById('cust-country-code').value;
+            const phone = document.getElementById('cust-phone').value.trim();
+            const address = document.getElementById('cust-address').value.trim();
+            const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+
+            const phoneError = document.getElementById('phone-error');
+            phoneError.classList.add('hidden');
+            if (!isValidPhone(phone, countryCode)) {
+                phoneError.classList.remove('hidden');
+                document.getElementById('cust-phone').focus();
+                return;
+            }
+            if (!name || name.length < 3) {
+                alert("Please enter a valid full name (at least 3 characters).");
+                document.getElementById('checkout-form-container').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('cust-name').focus();
+                return;
+            }
+
+            // Address Validation
+            if (!address || address.length < 10) {
+                alert("Please enter a complete address (House No, Street, City).");
+                document.getElementById('checkout-form-container').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('cust-address').focus();
+                return;
+            }
+
+            // Pincode Validation (Inside Address)
+            // Look for 6 consecutive digits
+            if (!/\b\d{6}\b/.test(address)) {
+                alert("Please include a valid 6-digit Pincode in your address field.");
+                document.getElementById('checkout-form-container').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('cust-address').focus();
+                return;
+            }
+
+            if (!name || !phone || !address) {
+                alert("Please fill in your Shipping Details (Name, Phone, Address) to place the order.");
+                document.getElementById('checkout-form-container').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+            const fullPhone = `${countryCode} ${phone}`;
+            let message = `*NEW WEB ORDER* 🛍️\n------------------\n*Customer Details:*\nName: ${name}\nPhone: ${fullPhone}\nAddress: ${address}\nPayment Mode: ${paymentMethod}\n------------------\n\n*Order Summary:*\n`;
+            let total = 0;
+            let totalSavings = 0;
+
+            cart.forEach(item => {
+                message += `• ${item.name} (Size: ${item.size} | Color: ${item.color}) x ${item.qty} - ₹${item.price * item.qty}\n`;
+                total += item.price * item.qty;
+                if (item.originalPrice) totalSavings += (item.originalPrice - item.price) * item.qty;
+            });
+
+            message += `\n*Total Order Value: ₹${total}*`;
+            if (totalSavings > 0) message += `\n_(You Saved: ₹${totalSavings})_`;
+
+
+
+
+            message += `\n------------------\n\nPlease verify availability and confirm my order.`;
+
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // --- MODAL LOGIC ---
+        function openProductModal(id) {
+            currentModalProduct = products.find(p => p.id === id);
+            if (!currentModalProduct) return;
+
+            // Reset Selection State
+            currentSize = null;
+            currentColor = null;
+            selectedVariant = null;
+            currentImageIndex = 0;
+
+            // Render Carousel
+            renderModalCarousel(getProductImages());
+
+            document.getElementById('modal-title').innerText = currentModalProduct.name;
+
+            // Set Base Price (Min Price)
+            document.getElementById('modal-price').innerText = "₹" + currentModalProduct.price;
+            if (currentModalProduct.originalPrice && currentModalProduct.originalPrice > currentModalProduct.price) {
+                document.getElementById('modal-mrp').innerText = "₹" + currentModalProduct.originalPrice;
+                document.getElementById('modal-discount').classList.remove('hidden');
+            } else {
+                document.getElementById('modal-mrp').innerText = "";
+                document.getElementById('modal-discount').classList.add('hidden');
+            }
+
+            document.getElementById('modal-story').innerText = `"${currentModalProduct.story}"`;
+            document.getElementById('modal-category').innerText = currentModalProduct.category;
+
+            // Render Variant Selectors
+            renderVariantSelectors();
+
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+        function getProductImages() {
+            if (Array.isArray(currentModalProduct.images) && currentModalProduct.images.length) {
+                return currentModalProduct.images;
+            }
+
+            if (currentModalProduct.image) {
+                return [currentModalProduct.image];
+            }
+            return [];
+        }
+
+        function getVariantImages(variant) {
+            if (!variant || !variant.image_url) return [];
+            return Array.isArray(variant.image_url)
+                ? variant.image_url
+                : [variant.image_url];
+        }
+
+        function renderModalCarousel(images = null) {
+            const container = document.getElementById('modal-image-container');
+
+            const finalImages = images && images.length
+                ? images
+                : getProductImages();
+
+            currentImageIndex = 0;
+
+            if (finalImages.length === 1) {
+                container.innerHTML = `
+            <img src="${finalImages[0]}" class="w-full h-full object-cover">
+        `;
+                return;
+            }
+
+            container.innerHTML = `
+        <div class="relative w-full h-full group">
+            <img id="carousel-img" src="${finalImages[0]}"
+                class="w-full h-full object-cover transition duration-300">
+
+            <button onclick="updateCarousel(-1)"
+                class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/60 p-2 rounded-full">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <button onclick="updateCarousel(1)"
+                class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/60 p-2 rounded-full">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                ${finalImages.map((_, i) => `
+                    <div id="carousel-dot-${i}"
+                        class="w-2 h-2 rounded-full ${i === 0 ? 'bg-white scale-125' : 'bg-white/50'}">
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+
+            window.currentCarouselImages = finalImages;
+        }
+
+        function updateCarousel(dir) {
+            const images = window.currentCarouselImages;
+            if (!images || images.length <= 1) return;
+
+            currentImageIndex = (currentImageIndex + dir + images.length) % images.length;
+
+            document.getElementById('carousel-img').src = images[currentImageIndex];
+
+            images.forEach((_, idx) => {
+                const dot = document.getElementById(`carousel-dot-${idx}`);
+                dot.className = `w-2 h-2 rounded-full ${idx === currentImageIndex ? 'bg-white scale-125' : 'bg-white/50'
+                    }`;
+            });
+        }
+
+        function renderVariantSelectors() {
+            const container = document.getElementById('modal-variants-container');
+            if (!container) return;
+
+            container.innerHTML = '';
+
+            const variants = currentModalProduct.variants || [];
+
+            if (variants.length === 0) {
+                container.innerHTML = '<p class="text-sm text-slate-400 italic">One Size / Standard</p>';
+                return;
+            }
+
+            // Extract Unique Values
+            const allValues = [...new Set(variants.map(v => v.value))].sort();
+            const allColors = [...new Set(variants.map(v => v.color))].filter(Boolean).sort();
+
+            // Determine likely type: "Size" or "Unit/Quantity"
+            // 1. Check Category
+            const isRawMaterial = (currentModalProduct.category || "").toLowerCase().includes("raw") || (currentModalProduct.category || "").toLowerCase().includes("diy");
+            // 2. Check Heuristic (if values contain letters e.g. "50ml")
+            const hasLetters = allValues.some(val => /[a-zA-Z]/.test(val));
+
+            const displayUnit = isRawMaterial || hasLetters;
+            const labelText = displayUnit ? "Select Quantity / Type" : "Select Size";
+
+            // 1. PRIMARY SECTION (Size / Unit)
+            const valSection = document.createElement('div');
+            valSection.className = "mb-4";
+            valSection.innerHTML = `<label class="block text-sm font-bold text-slate-700 mb-2">${labelText} <span class="text-rose-500">*</span></label>`;
+            const valBtnContainer = document.createElement('div');
+            valBtnContainer.className = "flex flex-wrap gap-3";
+
+            allValues.forEach(val => {
+                // Check availability
+                // If allColors is empty, ignore color check
+                const isAvailable = variants.some(v => v.value === val && (allColors.length === 0 || !currentColor || v.color.toLowerCase() === currentColor.toLowerCase()));
+
+                const btn = document.createElement('button');
+                // Style: Pill if Unit, Circle/Square if Size
+                const baseClass = displayUnit
+                    ? "px-4 py-2 rounded-full border-2 font-bold text-sm transition focus:outline-none"
+                    : "w-12 h-12 rounded-full border-2 flex items-center justify-center font-bold text-sm transition focus:outline-none";
+
+                const stateClass = isAvailable
+                    ? 'hover:border-rose-600 hover:text-rose-600 border-slate-200 text-slate-600'
+                    : 'border-slate-100 text-slate-300 cursor-not-allowed';
+
+                let activeClass = "";
+                if (currentSize === val) {
+                    activeClass = "bg-rose-600 text-white border-rose-600 shadow-md";
+                    btn.className = `${baseClass} ${activeClass}`;
+                } else {
+                    btn.className = `${baseClass} ${stateClass}`;
+                }
+
+                // Infer Unit for display from Data
+                let displayVal = val;
+                // Find variant metadata for this value
+                const repVariant = variants.find(v => v.value === val);
+                if (repVariant && repVariant.unit && repVariant.unit.toLowerCase() !== 'size') {
+                    displayVal = `${val} ${repVariant.unit}`;
+                }
+
+                btn.innerText = displayVal;
+                btn.onclick = () => { if (isAvailable) selectSize(val); };
+                valBtnContainer.appendChild(btn);
+            });
+            valSection.appendChild(valBtnContainer);
+            container.appendChild(valSection);
+
+            // 2. COLORS SECTION
+            if (allColors.length > 0) {
+                const colorSection = document.createElement('div');
+                colorSection.className = "mb-4";
+                colorSection.innerHTML = `<label class="block text-sm font-bold text-slate-700 mb-2">Select Color <span class="text-rose-500">*</span></label>`;
+                const colorBtnContainer = document.createElement('div');
+                colorBtnContainer.className = "flex flex-wrap gap-3";
+
+                allColors.forEach(color => {
+                    // Check availability
+                    const isAvailable = variants.some(v => v.color === color && (!currentSize || v.value === currentSize));
+
+                    const btn = document.createElement('button');
+                    btn.className = `px-4 py-2 rounded-full border-2 font-bold text-sm transition focus:outline-none ${isAvailable ? 'hover:border-rose-600 border-slate-200 text-slate-600' : 'border-slate-100 text-slate-300 cursor-not-allowed'}`;
+
+                    if (currentColor && currentColor.toLowerCase() === color.toLowerCase()) {
+                        btn.className = "px-4 py-2 rounded-full border-2 font-bold text-sm transition focus:outline-none bg-rose-600 text-white border-rose-600 shadow-md";
+                    }
+
+                    btn.innerText = color;
+                    btn.onclick = () => { if (isAvailable) selectColor(color); };
+                    colorBtnContainer.appendChild(btn);
+                });
+
+                colorSection.appendChild(colorBtnContainer);
+                container.appendChild(colorSection);
+            }
+        }
+
+        function selectSize(size) {
+            if (currentSize === size) currentSize = null; // Toggle off
+            else currentSize = size;
+
+            checkVariantMatch();
+            renderVariantSelectors(); // Re-render to update availability/styles
+        }
+
+        function selectColor(color) {
+            if (currentColor === color) currentColor = null; // Toggle off
+            else currentColor = color;
+
+            checkVariantMatch();
+            renderVariantSelectors();
+        }
+
+        function checkVariantMatch() {
+            const variants = currentModalProduct.variants || [];
+            const hasColors = variants.some(v => v.color);
+
+            if (currentSize && (!hasColors || currentColor)) {
+                const variant = variants.find(v =>
+                    v.value === currentSize &&
+                    (!hasColors || (v.color && currentColor && v.color.toLowerCase() === currentColor.toLowerCase()))
+                );
+
+                if (variant) {
+                    selectedVariant = variant;
+
+                    document.getElementById('modal-price').innerText = "₹" + variant.price;
+
+                    if (variant.mrp && variant.mrp > variant.price) {
+                        document.getElementById('modal-mrp').innerText = "₹" + variant.mrp;
+                        const d = Math.round(((variant.mrp - variant.price) / variant.mrp) * 100);
+                        document.getElementById('modal-discount').innerText = d + "% OFF";
+                        document.getElementById('modal-discount').classList.remove('hidden');
+                    } else {
+                        document.getElementById('modal-mrp').innerText = "";
+                        document.getElementById('modal-discount').classList.add('hidden');
+                    }
+
+                    const variantImages = getVariantImages(variant);
+                    if (variantImages.length) {
+                        renderModalCarousel(variantImages);
+                    }
+
+                    return;
+                }
+            }
+
+
+            selectedVariant = null;
+            document.getElementById('modal-price').innerText = "₹" + currentModalProduct.price;
+
+            if (currentModalProduct.originalPrice) {
+                document.getElementById('modal-mrp').innerText = "₹" + currentModalProduct.originalPrice;
+                document.getElementById('modal-discount').classList.remove('hidden');
+            }
+
+            renderModalCarousel(getProductImages());
+        }
+
+        function closeModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+
+        function dummySelectSize(btn, size) {
+            // Deprecated old function kept to prevent reference errors if HTML mismatch occurs temporarily
+        }
+
+
+
+        // --- INFO MODAL LOGIC ---
+        const INFO_CONTENT = {
+            'size': `
+                <h3 class="font-bold text-lg mb-2">Finding Your Bangle Size</h3>
+                <p class="mb-4">Measure the diameter of your hand at the knuckles (the widest part when you tuck your thumb in). This is not the wrist size!</p>
+                <ul class="list-disc pl-5 space-y-2 mb-4">
+                    <li><strong>2.4 Size:</strong> 2.25 inches diameter</li>
+                    <li><strong>2.6 Size:</strong> 2.37 inches diameter (Standard)</li>
+                    <li><strong>2.8 Size:</strong> 2.5 inches diameter</li>
+                    <li><strong>2.10 Size:</strong> 2.62 inches diameter</li>
+                </ul>
+                <div class="bg-rose-50 p-4 rounded-lg text-rose-800 text-sm font-semibold">
+                    Tip: If you are between sizes, always go for the larger size for a comfortable fit!
+                </div>
+            `,
+            'shipping': `
+                <h3 class="font-bold text-lg mb-2">Shipping Policy</h3>
+                <p class="mb-4">We ship all over India and globally!</p>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-bold text-sm uppercase text-rose-600">Domestic (India)</h4>
+                        <p class="text-sm">• Free shipping on orders above ₹999.<br>• Standard delivery takes 5-7 business days.<br>• Express delivery available for select pincodes.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm uppercase text-rose-600">International</h4>
+                        <p class="text-sm">• Shipping charges calculated at checkout based on weight.<br>• Delivery takes 10-15 business days.</p>
+                    </div>
+                </div>
+            `,
+            'track': `
+                <h3 class="font-bold text-lg mb-2">Track Your Order</h3>
+                <p class="mb-4">Once your order is shipped, you will receive a <strong>Tracking ID</strong> via SMS and WhatsApp.</p>
+                <p>To track manually, please message us on WhatsApp with your Order Name.</p>
+                <a href="https://wa.me/${WHATSAPP_NUMBER}" target="_blank" class="inline-block mt-4 bg-green-500 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-green-600 transition"><i class="fa-brands fa-whatsapp"></i> Track via WhatsApp</a>
+            `,
+            'contact': `
+                <h3 class="font-bold text-lg mb-2">Contact Us</h3>
+                <p class="mb-4">We are here to help you 24/7.</p>
+                <div class="space-y-3">
+                    <p><i class="fa-solid fa-location-dot w-6 text-rose-600"></i> Hyderabad, Telangana, India</p>
+                    <p><i class="fa-solid fa-phone w-6 text-rose-600"></i> +91 9553655562</p>
+                    <p><i class="fa-solid fa-envelope w-6 text-rose-600"></i> Banglebychoice@gmail.com</p>
+                </div>
+            `
+        };
+
+        function openInfoModal(type) {
+            const modal = document.getElementById('info-modal');
+            const contentDiv = document.getElementById('info-modal-content');
+            const title = document.getElementById('info-modal-title');
+
+            if (INFO_CONTENT[type]) {
+                contentDiv.innerHTML = INFO_CONTENT[type];
+
+                // Set Title nicely
+                if (type === 'size') title.innerText = "Size Guide";
+                else if (type === 'shipping') title.innerText = "Shipping Policy";
+                else if (type === 'track') title.innerText = "Track Order";
+                else if (type === 'contact') title.innerText = "Contact Us";
+
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closeInfoModal() {
+            document.getElementById('info-modal').classList.add('hidden');
+        }
+
+    </script>
+    <!-- Admin Portal (MOVED HERE) -->
+    <div id="admin-portal" class="fixed inset-0 z-[9999] hidden bg-slate-100 overflow-auto font-sans"
+        style="z-index: 9999;">
+
+        <!-- Admin Login View -->
+        <div id="admin-login-view"
+            class="min-h-screen flex items-center justify-center bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-fixed">
+            <div
+                class="bg-white/80 backdrop-blur-xl p-10 rounded-3xl shadow-2xl w-full max-w-md border border-white/50 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-rose-400 to-rose-600"></div>
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-serif font-bold text-slate-800 mb-2">Admin Portal</h2>
+                    <p class="text-slate-500 text-sm">Secure Access Only</p>
+                </div>
+                <form onsubmit="event.preventDefault(); performAdminLogin();" class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2 tracking-wider">Email
+                            Address</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-envelope absolute left-4 top-3.5 text-slate-400"></i>
+                            <input type="email" id="login-email"
+                                class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-rose-500 focus:bg-white transition shadow-sm text-slate-700"
+                                placeholder="Banglebychoice@gmail.com" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label
+                            class="block text-xs font-bold uppercase text-slate-500 mb-2 tracking-wider">Password</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-lock absolute left-4 top-3.5 text-slate-400"></i>
+                            <input type="password" id="login-password"
+                                class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-rose-500 focus:bg-white transition shadow-sm text-slate-700"
+                                placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="w-full py-4 bg-rose-600 text-white font-bold rounded-xl shadow-lg hover:bg-rose-700 hover:shadow-rose-500/30 transition transform hover:-translate-y-1">
+                        Login to Dashboard
+                    </button>
+                </form>
+                <div class="mt-8 text-center">
+                    <button onclick="toggleAdmin()" type="button"
+                        class="text-slate-400 hover:text-slate-600 text-sm font-semibold transition flex items-center justify-center gap-2 mx-auto">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard View (Hidden until Login) -->
+        <div id="admin-dashboard-view" class="hidden container mx-auto px-4 py-8">
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-bold text-slate-900">Admin Portal <span
+                        class="text-sm font-normal text-slate-500">| Product Manager</span></h1>
+                <button onclick="toggleAdmin()" type="button"
+                    class="bg-slate-800 text-white px-6 py-2 rounded-full hover:bg-slate-700 flex items-center gap-2">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </button>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Add Product Form -->
+                <div class="lg:col-span-1">
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-lg sticky top-6 max-h-[90vh] overflow-y-auto no-scrollbar">
+                        <h2 id="admin-form-title" class="text-xl font-bold mb-4">Add New Item</h2>
+                        <form id="admin-product-form" onsubmit="event.preventDefault(); addNewProduct();"
+                            class="space-y-3">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Product
+                                    Name<span class="text-red-500">*</span></label>
+                                <input type="text" id="admin-name"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-rose-500"
+                                    placeholder="e.g. Silk Thread Set" required>
+                            </div>
+
+                            <!-- Categories (Existing) -->
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Category<span
+                                        class="text-red-500">*</span></label>
+                                <div class="flex gap-2">
+                                    <select id="admin-category" onchange="handleCategoryChange()"
+                                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-rose-500">
+                                        <!-- Populated via API -->
+                                    </select>
+                                    <button type="button" onclick="toggleCategoryForm()"
+                                        class="px-3 py-2 bg-slate-200 rounded-lg hover:bg-slate-300 text-slate-600 font-bold text-xs shrink-0"
+                                        title="Add New Category">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Hidden Create Category Form -->
+                                <div id="new-cate-form"
+                                    class="hidden mt-2 p-3 bg-slate-50 rounded-lg border border-slate-200">
+                                    <input type="text" id="new-cat-name" placeholder="Category Name"
+                                        class="w-full mb-2 px-3 py-1 border rounded text-xs">
+                                    <input type="text" id="new-cat-desc" placeholder="Description"
+                                        class="w-full mb-2 px-3 py-1 border rounded text-xs">
+                                    <button type="button" onclick="createCategory()"
+                                        class="w-full py-1 bg-slate-800 text-white text-xs font-bold rounded hover:bg-slate-900">Create</button>
+                                </div>
+                            </div>
+
+                            <!-- Special Tag -->
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Special Tag /
+                                    Shape</label>
+                                <input type="text" id="admin-tag"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-rose-500"
+                                    placeholder="e.g. Kids Special, Round Shape">
+                            </div>
+
+                            <!-- Dynamic Variants Section -->
+                            <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                                <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Variants
+                                    Configuration</label>
+                                <div class="flex gap-2 mb-2">
+                                    <div class="w-1/2">
+                                        <label class="text-[10px] text-slate-400 font-bold uppercase">Type</label>
+                                        <select id="variant-type-select"
+                                            class="w-full px-3 py-2 border rounded-lg text-xs outline-none focus:border-rose-500"
+                                            onchange="updateVariantUnits()">
+                                            <!-- Populated via JS -->
+                                        </select>
+                                    </div>
+                                    <div class="w-1/2">
+                                        <label class="text-[10px] text-slate-400 font-bold uppercase">Unit</label>
+                                        <select id="variant-unit-select"
+                                            class="w-full px-3 py-2 border rounded-lg text-xs outline-none focus:border-rose-500">
+                                            <!-- Populated via JS -->
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div id="variant-headers"
+                                    class="grid grid-cols-6 gap-2 text-[10px] font-bold text-slate-400 uppercase mb-1 items-center text-center">
+                                    <div class="col-span-1">Value</div>
+                                    <div class="col-span-1">Price</div>
+                                    <div class="col-span-1">MRP</div>
+                                    <div class="col-span-1 color-col">Color</div>
+                                    <div class="col-span-1">Image</div>
+                                    <div class="col-span-1">Action</div>
+                                </div>
+                                <div id="variant-rows-container" class="space-y-2 mb-3">
+                                    <!-- Rows to be injected here -->
+                                </div>
+                                <button type="button" onclick="addVariantRow()"
+                                    class="text-xs text-rose-600 font-bold hover:underline flex items-center gap-1">
+                                    <i class="fa-solid fa-plus-circle"></i> Add Variant Row
+                                </button>
+                            </div>
+
+                            <!-- Images Upload Section -->
+                            <div class="grid grid-cols-1 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Main Image
+                                        (Max 1) <span class="text-red-500">*</span></label>
+                                    <div class="flex items-center gap-2">
+                                        <button type="button" onclick="document.getElementById('admin-images').click()"
+                                            class="bg-rose-50 text-rose-700 text-xs font-bold px-4 py-2 rounded-full hover:bg-rose-100 transition">
+                                            Choose Image
+                                        </button>
+                                        <span id="main-file-status" class="text-xs text-slate-400">No file
+                                            chosen</span>
+                                    </div>
+                                    <input type="file" id="admin-images" accept="image/*"
+                                        onchange="handleFileSelect(this, 'main')" class="hidden">
+                                    <div id="main-images-list" class="mt-2 space-y-1"></div>
+                                </div>
+                                <!-- Variant Images moved to variant rows -->
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Catchy
+                                    One-Liner /
+                                    Story</label>
+                                <textarea id="admin-story"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-rose-500"
+                                    rows="2" placeholder="e.g. Perfect for weddings..."></textarea>
+                            </div>
+                            <button id="admin-submit-btn" type="submit"
+                                class="w-full py-3 bg-rose-600 text-white font-bold rounded-lg hover:bg-rose-700 transition">Add
+                                Product</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Product List -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h2 class="text-xl font-bold mb-4">Current Inventory</h2>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="text-xs font-bold text-slate-500 uppercase border-b border-slate-100">
+                                        <th class="py-3 px-2">Image</th>
+                                        <th class="py-3 px-2">Name</th>
+                                        <th class="py-3 px-2">Category</th>
+                                        <th class="py-3 px-2">Price</th>
+                                        <th class="py-3 px-2">Variants</th>
+                                        <th class="py-3 px-2">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-product-list" class="text-sm">
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

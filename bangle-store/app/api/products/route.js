@@ -1,0 +1,70 @@
+import { supabase } from '@/lib/supabase';
+import { NextResponse } from 'next/server';
+
+// GET /api/products - Fetch all products
+export async function GET() {
+  try {
+    const { data, error } = await supabase
+      .from('products')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) throw error;
+
+    // Supabase returns sizes as standard arrays. We map db structure 'desc_text' to json response field 'desc'.
+    const mappedProducts = data.map(p => ({
+      id: p.id,
+      name: p.name,
+      price: p.price,
+      mrp: p.mrp,
+      cat: p.cat,
+      bg: p.bg,
+      emoji: p.emoji,
+      desc: p.desc_text,
+      tag: p.tag || '',
+      sizes: p.sizes || []
+    }));
+
+    return NextResponse.json(mappedProducts);
+  } catch (err) {
+    console.error("GET /api/products failed:", err);
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
+}
+
+// POST /api/products - Insert a new custom product
+export async function POST(req) {
+  try {
+    const body = await req.json();
+    const { name, cat, tag, price, mrp, bg, emoji, desc, sizes } = body;
+
+    if (!name || !cat || !price) {
+      return NextResponse.json({ error: "Missing required fields: name, cat, price" }, { status: 400 });
+    }
+
+    const { data, error } = await supabase
+      .from('products')
+      .insert([
+        {
+          id: 'CUSTOM_' + Date.now(),
+          name,
+          price: parseInt(price),
+          mrp: mrp ? parseInt(mrp) : null,
+          cat,
+          bg,
+          emoji: emoji || '🌸',
+          desc_text: desc || '',
+          tag: tag || '',
+          sizes: sizes || ['2.2', '2.4', '2.6', '2.8']
+        }
+      ])
+      .select();
+
+    if (error) throw error;
+
+    return NextResponse.json({ success: true, product: data[0] });
+  } catch (err) {
+    console.error("POST /api/products failed:", err);
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
+}

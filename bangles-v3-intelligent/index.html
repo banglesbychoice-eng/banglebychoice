@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>BangleByChoice V3 | Intelligent Boutique</title>
+
+    <!-- Tailwind v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Mulish', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .font-serif {
+            font-family: var(--font-serif);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Snap Scroll for Story Mode */
+        .snap-y-mandatory {
+            scroll-snap-type: y mandatory;
+        }
+
+        .snap-center {
+            scroll-snap-align: center;
+        }
+
+        /* Hide Scrollbar in Stories */
+        #story-view::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-stone-50 text-slate-900 antialiased selection:bg-rose-900 selection:text-white overflow-hidden">
+
+    <!-- APP SHELL -->
+    <div id="app-shell"
+        class="h-screen w-full flex flex-col relative bg-white overflow-hidden mx-auto max-w-md md:max-w-full md:border-x md:border-slate-200">
+
+        <!-- HEADER (Intelligent) -->
+        <header class="absolute top-0 left-0 w-full z-50 transition-all duration-300 pointer-events-none"
+            id="main-header">
+            <div
+                class="pointer-events-auto glass border-b border-stone-100/50 px-5 py-3 flex justify-between items-center shadow-sm">
+
+                <!-- AI Controls (Left) -->
+                <div class="flex gap-3">
+                    <button onclick="startVoiceSearch()"
+                        class="w-9 h-9 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 hover:text-rose-600 transition shadow-sm bg-white/50 backdrop-blur-sm">
+                        <i class="fa-solid fa-microphone"></i>
+                    </button>
+                    <button onclick="startCameraSearch()"
+                        class="w-9 h-9 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 hover:text-rose-600 transition shadow-sm bg-white/50 backdrop-blur-sm">
+                        <i class="fa-solid fa-camera"></i>
+                    </button>
+                </div>
+
+                <!-- Brand -->
+                <div class="flex flex-col items-center">
+                    <h1 class="font-serif font-bold text-xl tracking-tight text-rose-950">Bangle<span
+                            class="italic font-normal text-rose-600">App</span></h1>
+                </div>
+
+                <!-- Cart -->
+                <button
+                    class="w-9 h-9 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-800 hover:text-rose-600 transition relative">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-badge"
+                        class="absolute top-0 right-0 w-2.5 h-2.5 bg-rose-600 rounded-full border-2 border-white hidden"></span>
+                </button>
+            </div>
+
+            <!-- View Toggle (Grid vs Story) -->
+            <div class="pointer-events-auto flex justify-center py-2">
+                <div class="bg-black/80 backdrop-blur-md rounded-full p-1 flex shadow-lg">
+                    <button onclick="switchView('grid')" id="btn-view-grid"
+                        class="w-10 h-8 rounded-full flex items-center justify-center text-white/50 hover:text-white transition bg-white/20">
+                        <i class="fa-solid fa-grid-2"></i>
+                    </button>
+                    <button onclick="switchView('story')" id="btn-view-story"
+                        class="w-10 h-8 rounded-full flex items-center justify-center text-white/50 hover:text-white transition">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT (Hybrid) -->
+        <main class="flex-1 relative w-full h-full bg-stone-100">
+
+            <!-- MODE A: GRID VIEW (Classic V2 Style) -->
+            <div id="grid-view" class="absolute inset-0 overflow-y-auto pt-[120px] pb-24 px-4 hidden">
+                <!-- Filters -->
+                <div class="flex gap-3 overflow-x-auto no-scrollbar pb-4 mb-2" id="grid-filters">
+                    <!-- JS Injected -->
+                </div>
+                <!-- Grid -->
+                <div id="product-grid" class="grid grid-cols-2 gap-3 pb-10">
+                    <!-- JS Injected -->
+                </div>
+            </div>
+
+            <!-- MODE B: STORY VIEW (Immersive) -->
+            <div id="story-view"
+                class="absolute inset-0 overflow-y-auto snap-y-mandatory bg-black h-full pb-0 no-scrollbar">
+                <!-- JS Injected Stories -->
+            </div>
+
+        </main>
+
+        <!-- "Story" Overlay Controls (Floating Bottom) -->
+        <div id="story-controls" class="absolute bottom-6 left-0 w-full px-6 z-40 pointer-events-none hidden">
+            <!-- Only visible in Story Mode -->
+        </div>
+
+    </div>
+
+    <!-- AI OVERLAYS -->
+
+    <!-- Voice Search Overlay -->
+    <div id="voice-overlay"
+        class="fixed inset-0 bg-black/90 z-[60] flex flex-col items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="w-32 h-32 rounded-full bg-rose-500/20 flex items-center justify-center animate-pulse">
+            <div class="w-24 h-24 rounded-full bg-rose-500/40 flex items-center justify-center">
+                <i class="fa-solid fa-microphone text-4xl text-white"></i>
+            </div>
+        </div>
+        <h3 id="voice-status" class="text-white font-serif text-2xl mt-8 font-bold">Listening...</h3>
+        <p class="text-slate-400 mt-2">Try saying "Red Bridal Bangles"</p>
+        <button onclick="closeAiOverlays()" class="absolute top-8 right-8 text-white/50 hover:text-white">
+            <i class="fa-solid fa-xmark text-3xl"></i>
+        </button>
+    </div>
+
+    <!-- Camera Search Overlay -->
+    <div id="camera-overlay" class="fixed inset-0 bg-black z-[60] hidden opacity-0 transition-opacity duration-300">
+        <!-- Camera Viewfinder UI -->
+        <div class="absolute inset-0 flex flex-col">
+            <div class="h-24 bg-black/50 backdrop-blur-sm z-10 flex justify-between items-end pb-4 px-6">
+                <span class="text-white font-bold">Outfit Match</span>
+                <button onclick="closeAiOverlays()" class="text-white"><i
+                        class="fa-solid fa-xmark text-2xl"></i></button>
+            </div>
+            <div class="flex-1 relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3"
+                    class="w-full h-full object-cover opacity-50">
+                <div
+                    class="absolute inset-0 border-2 border-rose-500/50 m-12 rounded-3xl animate-pulse flex items-center justify-center">
+                    <span
+                        class="bg-black/80 text-white px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase">Scanning...</span>
+                </div>
+            </div>
+            <div class="h-32 bg-black/60 backdrop-blur-sm z-10 flex items-center justify-center gap-8">
+                <button class="w-16 h-16 rounded-full border-4 border-white flex items-center justify-center">
+                    <div class="w-14 h-14 bg-white rounded-full"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Like Animation Container -->
+    <div id="like-animation-container" class="pointer-events-none fixed inset-0 z-50 overflow-hidden"></div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
