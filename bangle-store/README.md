@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BangleByChoice Next.js Store
 
-## Getting Started
+This is the production-ready full-stack e-commerce PWA for **BangleByChoice**, built using the Next.js App Router, styled with vanilla CSS/Tailwind rules, powered by a **Supabase PostgreSQL** database, and hosted on **Netlify**.
 
-First, run the development server:
+## 🚀 Live Site
+- **Production URL**: [https://banglebychoice.netlify.app](https://banglebychoice.netlify.app)
+- **Admin Portal**: Accessible via the UI toggle with password/PIN verification.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🛠️ Architecture & Tech Stack
+
+- **Frontend**: Next.js App Router (React)
+  - Designed for dual views: behaves like a **native mobile app** on mobile screens, and a **full desktop website** on desktop screens.
+  - Interactive features: Search overlay, size selector (2.2, 2.4, 2.6, 2.8), color filters, category chips.
+  - Cart persistency using local storage.
+- **Backend / API**: Next.js Serverless Route Handlers (`/api/products`, `/api/categories`, `/api/colors`).
+- **Database**: Supabase PostgreSQL.
+- **Hosting**: Netlify with Next.js Runtime integration (supporting Edge functions).
+- **Checkout**: Direct WhatsApp integration (Retail Checkout format & Wholesale PO format).
+
+---
+
+## 💾 Database Schema
+
+The PostgreSQL schema is managed in Supabase and comprises three main tables:
+1. `categories`: Defines available bangle categories (e.g., Silk, Glass, Bridal).
+2. `colors`: Color themes with custom gradients (e.g., Ruby Crimson, Soft Pink).
+3. `products`: The product catalog linking categories, sizes, and colors, including pricing and image metadata.
+
+The SQL setup script can be found in the repository at `setup_db.sql` or run directly in the Supabase SQL editor.
+
+---
+
+## ⚙️ Environment Variables
+
+To run the application locally or deploy it elsewhere, the following environment variables are required:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://<your-project-id>.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-anon-api-key>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 💻 Local Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-## Learn More
+2. **Run the local development server**:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+3. **Compile build locally**:
+   ```bash
+   npm run build
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Deployment
 
-## Deploy on Vercel
+The site is linked to Netlify. To deploy updates directly from the CLI:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Set environment variables (only once)
+npx netlify env:set NEXT_PUBLIC_SUPABASE_URL <url>
+npx netlify env:set NEXT_PUBLIC_SUPABASE_ANON_KEY <key>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Deploy production version
+npx netlify deploy --prod
+```

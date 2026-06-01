@@ -38,3 +38,6 @@ yarn-error.log*
 .agent/
 .agents/
 .gemini/
+
+# Local Netlify folder
+.netlify
