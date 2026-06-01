@@ -15,6 +15,7 @@ export async function GET() {
     const mappedProducts = data.map(p => ({
       id: p.id,
       name: p.name,
+      slug: p.slug || p.id.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
       price: p.price,
       mrp: p.mrp,
       cat: p.cat,
@@ -42,12 +43,15 @@ export async function POST(req) {
       return NextResponse.json({ error: "Missing required fields: name, cat, price" }, { status: 400 });
     }
 
+    const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
     const { data, error } = await supabase
       .from('products')
       .insert([
         {
           id: 'CUSTOM_' + Date.now(),
           name,
+          slug,
           price: parseInt(price),
           mrp: mrp ? parseInt(mrp) : null,
           cat,

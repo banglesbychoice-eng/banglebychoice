@@ -19,17 +19,22 @@ const jetBrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
+  viewportFit: 'cover',
+  themeColor: '#E3244D',
+};
+
 export const metadata = {
   title: "BangleByChoice — Designer Bangles & Craft Materials",
   description: "Shop Hyderabad's finest glass bangles, customized silk thread bangles, and premium bangle-making materials.",
-  viewport: "width=device-width, initial-scale=1.0, viewport-fit=cover",
-  themeColor: "#E3244D",
   appleMobileWebAppCapable: "yes",
   appleMobileWebAppStatusBarStyle: "black-translucent",
   openGraph: {
     title: "BangleByChoice — Premium Handcrafted Bangles",
     description: "Shop Hyderabad's finest glass bangles, customized silk thread bangles, and premium bangle-making materials.",
-    url: "https://banglebychoice.vercel.app",
+    url: "https://banglebychoice.netlify.app",
     type: "website",
   },
 };
@@ -43,6 +48,44 @@ export default function RootLayout({ children }) {
       <head>
         {/* FontAwesome Link */}
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+        {/* Organization JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "BangleByChoice",
+              "url": "https://banglebychoice.netlify.app",
+              "logo": "https://banglebychoice.netlify.app/banglebychoice_logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-9553655562",
+                "contactType": "customer service"
+              },
+              "sameAs": []
+            }),
+          }}
+        />
+
+        {/* WebSite JSON-LD with SearchAction */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "BangleByChoice",
+              "url": "https://banglebychoice.netlify.app",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://banglebychoice.netlify.app/?search={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }),
+          }}
+        />
         
         {/* Microsoft Clarity */}
         <script
