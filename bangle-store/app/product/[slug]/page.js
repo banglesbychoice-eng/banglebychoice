@@ -57,6 +57,7 @@ export async function generateMetadata({ params }) {
       description,
       url,
       type: 'website',
+      ...(product.image_url && { images: [{ url: product.image_url }] }),
     },
     twitter: {
       card: 'summary_large_image',
@@ -168,7 +169,11 @@ export default async function ProductPage({ params }) {
           {/* ---- Image / Visual ---- */}
           <div style={styles.imageCol}>
             <div style={styles.imageCard}>
-              <span style={styles.emoji}>{product.emoji || '🌸'}</span>
+              {product.image_url ? (
+                <img src={product.image_url} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px' }} />
+              ) : (
+                <span style={styles.emoji}>{product.emoji || '🌸'}</span>
+              )}
             </div>
           </div>
 
@@ -185,10 +190,7 @@ export default async function ProductPage({ params }) {
                 <>
                   <span style={styles.mrp}>₹{product.mrp}</span>
                   <span style={styles.discount}>
-                    {Math.round(
-                      ((product.mrp - product.price) / product.mrp) * 100,
-                    )}
-                    % off
+                    Save ₹{product.mrp - product.price}
                   </span>
                 </>
               )}

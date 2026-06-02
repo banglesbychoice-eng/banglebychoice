@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { supabase } from '@/lib/supabase';
 
 export default function Home() {
   // Database-backed states
@@ -40,6 +41,8 @@ export default function Home() {
     '2.6': true,
     '2.8': true,
   });
+  const [adminProdImageFile, setAdminProdImageFile] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
 
   // Fetch all DB records
   const fetchData = async () => {
@@ -119,10 +122,12 @@ export default function Home() {
           id: product.id,
           name: product.name,
           price: product.price,
+          mrp: product.mrp,
           emoji: product.emoji,
           bg: product.bg,
           size: size,
-          qty: 1
+          qty: 1,
+          image_url: product.image_url
         }
       ];
     }
@@ -150,6 +155,13 @@ export default function Home() {
     window.open(`https://wa.me/919553655562?text=${encodeURIComponent(text)}`, '_blank');
   };
 
+  const getDiscountPercent = (qty) => {
+    if (qty >= 50) return 0.3;
+    if (qty >= 25) return 0.2;
+    if (qty >= 10) return 0.1;
+    return 0;
+  };
+
   const handleCheckoutCart = (e) => {
     e.preventDefault();
     const name = document.getElementById('custName').value.trim();
@@ -162,13 +174,30 @@ export default function Home() {
 
     let text = `*New Order - BangleByChoice*\n\n*Name:* ${name}\n*Address:* ${address}\n\n*Items:*`;
     let total = 0;
+    let totalSavings = 0;
     
     cart.forEach(item => {
-      text += `\n- ${item.name} (${item.size !== 'N/A' ? `Size: ${item.size}` : 'Material'}) x${item.qty} -> ₹${item.price * item.qty}`;
-      total += item.price * item.qty;
+      const discountPct = getDiscountPercent(item.qty);
+      const discountMultiplier = 1 - discountPct;
+      const finalPrice = Math.round(item.price * discountMultiplier);
+      const lineTotal = finalPrice * item.qty;
+      const baseSavings = item.mrp ? (item.mrp - item.price) * item.qty : 0;
+      const volSavings = (item.price - finalPrice) * item.qty;
+      
+      totalSavings += baseSavings + volSavings;
+      total += lineTotal;
+
+      text += `\n- ${item.name} (${item.size !== 'N/A' ? `Size: ${item.size}` : 'Material'}) x${item.qty}`;
+      if (discountPct > 0) {
+        text += `\n  ~₹${item.price}~ -> ₹${finalPrice} each (-${discountPct*100}%)`;
+      }
+      text += `\n  Line Total: ₹${lineTotal}`;
     });
 
     text += `\n\n*Total Amount:* ₹${total}`;
+    if (totalSavings > 0) {
+      text += `\n*You Saved:* ₹${totalSavings} 🎉`;
+    }
 
     window.open(`https://wa.me/919553655562?text=${encodeURIComponent(text)}`, '_blank');
     
@@ -279,6 +308,35 @@ export default function Home() {
     else if (adminProdCat === 'bridal') emoji = '💒';
     else if (adminProdCat === 'materials') emoji = '📦';
 
+    let uploadedImageUrl = null;
+    if (adminProdImageFile) {
+      setIsUploading(true);
+      try {
+        const fileExt = adminProdImageFile.name.split('.').pop();
+        const fileName = `${Date.now()}.${fileExt}`;
+        const filePath = `${fileName}`;
+
+        const { data: uploadData, error: uploadError } = await supabase.storage
+          .from('products')
+          .upload(filePath, adminProdImageFile);
+
+        if (uploadError) {
+          throw uploadError;
+        }
+
+        const { data: publicUrlData } = supabase.storage
+          .from('products')
+          .getPublicUrl(filePath);
+
+        uploadedImageUrl = publicUrlData.publicUrl;
+      } catch (err) {
+        alert(`Image upload failed: ${err.message}`);
+        setIsUploading(false);
+        return;
+      }
+      setIsUploading(false);
+    }
+
     const newProduct = {
       name: adminProdName,
       cat: adminProdCat,
@@ -288,7 +346,8 @@ export default function Home() {
       bg: adminProdColorTheme,
       desc: adminProdDesc,
       emoji,
-      sizes
+      sizes,
+      image_url: uploadedImageUrl
     };
 
     try {
@@ -308,6 +367,7 @@ export default function Home() {
       setAdminProdMRP('');
       setAdminProdDesc('');
       setAdminProdSizes({ '2.2': true, '2.4': true, '2.6': true, '2.8': true });
+      setAdminProdImageFile(null);
       fetchData();
     } catch (err) {
       alert(`Failed to save product: ${err.message}`);
@@ -710,12 +770,23 @@ export default function Home() {
                     ></textarea>
                   </div>
 
+                  <div className="form-group">
+                    <label className="form-label">Product Image</label>
+                    <input
+                      type="file"
+                      className="form-control"
+                      accept="image/*"
+                      onChange={(e) => setAdminProdImageFile(e.target.files[0])}
+                    />
+                  </div>
+
                   <button
                     type="submit"
                     className="btn btn-primary"
                     style={{ width: '100%', padding: '14px' }}
+                    disabled={isUploading}
                   >
-                    <i className="fa-solid fa-plus"></i> Add Product
+                    {isUploading ? <><i className="fa-solid fa-spinner fa-spin"></i> Uploading...</> : <><i className="fa-solid fa-plus"></i> Add Product</>}
                   </button>
 
                 </form>
@@ -791,9 +862,16 @@ export default function Home() {
           <div
             className="sheet-image-wrap"
             id="sheetImgWrap"
-            style={{ background: gradients[currentProduct.bg] || gradients['bg-rainbow'] }}
+            style={{ 
+              background: currentProduct.image_url ? 'none' : (gradients[currentProduct.bg] || gradients['bg-rainbow']),
+              overflow: 'hidden'
+            }}
           >
-            {currentProduct.emoji || '🌸'}
+            {currentProduct.image_url ? (
+              <img src={currentProduct.image_url} alt={currentProduct.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            ) : (
+              currentProduct.emoji || '🌸'
+            )}
           </div>
           <h2 className="sheet-name">{currentProduct.name}</h2>
           <div className="sheet-price-row">
@@ -873,16 +951,37 @@ export default function Home() {
               <div key={`${item.id}-${item.size}`} className="cart-item">
                 <div
                   className="cart-item-img"
-                  style={{ background: gradients[item.bg] || gradients['bg-rainbow'] }}
+                  style={{ 
+                    background: item.image_url ? 'none' : (gradients[item.bg] || gradients['bg-rainbow']),
+                    overflow: 'hidden'
+                  }}
                 >
-                  {item.emoji || '🌸'}
+                  {item.image_url ? (
+                    <img src={item.image_url} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  ) : (
+                    item.emoji || '🌸'
+                  )}
                 </div>
                 <div className="cart-item-info">
                   <h4 className="cart-item-name">{item.name}</h4>
                   <div className="cart-item-meta">
                     {item.size !== 'N/A' ? `Size: ${item.size}` : 'Craft Material'}
                   </div>
-                  <div className="cart-item-price">₹{item.price}</div>
+                  <div className="cart-item-price">
+                    {(() => {
+                      const pct = getDiscountPercent(item.qty);
+                      if (pct > 0) {
+                        const finalPrice = Math.round(item.price * (1 - pct));
+                        return (
+                          <>
+                            <span style={{ textDecoration: 'line-through', color: 'var(--ink-light)', marginRight: '6px', fontSize: '12px' }}>₹{item.price}</span>
+                            <span style={{ color: '#E3244D' }}>₹{finalPrice} (-{pct * 100}%)</span>
+                          </>
+                        );
+                      }
+                      return `₹${item.price}`;
+                    })()}
+                  </div>
                   <div className="cart-item-qty">
                     <button
                       className="qty-btn"
@@ -905,30 +1004,50 @@ export default function Home() {
         </div>
         
         {cart.length > 0 && (
-          <div className="cart-footer" id="cartFooter">
-            <div className="cart-total-row">
-              <span>Total Amount:</span>
-              <span id="cartTotalPrice">
-                ₹{cart.reduce((sum, item) => sum + item.price * item.qty, 0)}
-              </span>
-            </div>
-            <form onSubmit={handleCheckoutCart}>
-              <div className="cart-form-field">
-                <input type="text" id="custName" placeholder="Your Name" required />
+          (() => {
+            let total = 0;
+            let totalSavings = 0;
+            cart.forEach(item => {
+              const discountPct = getDiscountPercent(item.qty);
+              const discountMultiplier = 1 - discountPct;
+              const finalPrice = Math.round(item.price * discountMultiplier);
+              const lineTotal = finalPrice * item.qty;
+              const baseSavings = item.mrp ? (item.mrp - item.price) * item.qty : 0;
+              const volSavings = (item.price - finalPrice) * item.qty;
+              totalSavings += baseSavings + volSavings;
+              total += lineTotal;
+            });
+            return (
+              <div className="cart-footer" id="cartFooter">
+                <div className="cart-total-row">
+                  <span>Total Amount:</span>
+                  <span id="cartTotalPrice">₹{total}</span>
+                </div>
+                {totalSavings > 0 && (
+                  <div className="cart-total-row" style={{ color: '#10b981', fontSize: '14px', marginTop: '4px' }}>
+                    <span>You Save:</span>
+                    <span>₹{totalSavings} 🎉</span>
+                  </div>
+                )}
+                <form onSubmit={handleCheckoutCart} style={{ marginTop: '16px' }}>
+                  <div className="cart-form-field">
+                    <input type="text" id="custName" placeholder="Your Name" required />
+                  </div>
+                  <div className="cart-form-field">
+                    <textarea id="custAddress" rows={2} placeholder="Delivery Address (with Pincode)" required></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    className="btn btn-whatsapp"
+                    id="checkoutBtn"
+                    style={{ width: '100%' }}
+                  >
+                    <i className="fa-brands fa-whatsapp"></i> Order on WhatsApp
+                  </button>
+                </form>
               </div>
-              <div className="cart-form-field">
-                <textarea id="custAddress" rows={2} placeholder="Delivery Address (with Pincode)" required></textarea>
-              </div>
-              <button
-                type="submit"
-                className="btn btn-whatsapp"
-                id="checkoutBtn"
-                style={{ width: '100%' }}
-              >
-                <i className="fa-brands fa-whatsapp"></i> Order on WhatsApp
-              </button>
-            </form>
-          </div>
+            );
+          })()
         )}
       </div>
 
