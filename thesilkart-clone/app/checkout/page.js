@@ -6,6 +6,7 @@ import { useEffect, useState, useSyncExternalStore } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { useCommerce } from '@/components/CommerceContext';
 import { analyticsItems, trackEvent } from '@/lib/analytics-client';
+import { DEFAULT_DELIVERY_METHOD, DELIVERY_METHODS } from '@/lib/delivery';
 import { buildStaticUpiQrLink, buildUpiPaymentLink, isUpiConfigured, upiPayeeAddress } from '@/lib/payments';
 import { FREE_SHIPPING_MIN, MINIMUM_SHIPPING_FEE, SHIPPING_RATE_PER_KG, getShippingQuote } from '@/lib/pricing';
 import styles from './checkout.module.css';
@@ -23,6 +24,19 @@ function buildWhatsAppOrderMessage(order) {
     `   Price: Rs ${item.unitPrice} each | Amount: Rs ${item.lineTotal}`,
   ].join('\n')).join('\n');
   const paymentLabel = order.paymentMethod === 'razorpay' ? 'UPI / Card' : 'Direct UPI';
+  const deliveryLabel = order.deliveryLabel || DELIVERY_METHODS[order.deliveryMethod]?.label || DELIVERY_METHODS.shipping.label;
+  const deliveryLines = order.deliveryMethod === 'shipping' || !order.deliveryMethod
+    ? [
+      `Calculated delivery charge: Rs ${order.deliveryCharge ?? order.shipping}`,
+      ...(Number(order.deliveryDiscount) ? [`Free-shipping deduction: Rs ${order.deliveryDiscount}`] : []),
+      `Delivery payable: ${Number(order.shipping) ? `Rs ${order.shipping}` : 'Free'}`,
+    ]
+    : [
+      `Delivery method: ${deliveryLabel}`,
+      order.deliveryMethod === 'customer_arranged'
+        ? 'Website delivery charge: Rs 0 (pickup service is arranged and paid by the customer)'
+        : 'Delivery payable: Rs 0',
+    ];
   return [
     'Hello Bangle by Choice 👋',
     `Please confirm my order ${order.orderNumber}:`,
@@ -30,9 +44,7 @@ function buildWhatsAppOrderMessage(order) {
     itemLines,
     '',
     `Subtotal: Rs ${order.subtotal}`,
-    `Calculated delivery charge: Rs ${order.deliveryCharge ?? order.shipping}`,
-    ...(Number(order.deliveryDiscount) ? [`Free-shipping deduction: Rs ${order.deliveryDiscount}`] : []),
-    `Delivery payable: ${Number(order.shipping) ? `Rs ${order.shipping}` : 'Free'}`,
+    ...deliveryLines,
     `Total amount payable: Rs ${order.total}`,
     `Payment method: ${paymentLabel}`,
     `Track order: ${trackingUrl}`,
@@ -60,15 +72,17 @@ export default function CheckoutPage() {
   const { cart, cartTotal, clearCart } = useCommerce();
   const hydrated = useSyncExternalStore(subscribeToHydration, () => true, () => false);
   const [customer, setCustomer] = useState({ name: '', mobile: '', email: '', address: '', city: '', state: '', postalCode: '', notes: '' });
+  const [deliveryMethod, setDeliveryMethod] = useState(DEFAULT_DELIVERY_METHOD);
   const [paymentMethod, setPaymentMethod] = useState(RAZORPAY_ENABLED ? 'razorpay' : isUpiConfigured() ? 'upi' : '');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [placed, setPlaced] = useState(null);
   const [copyStatus, setCopyStatus] = useState('');
   const shippingQuote = getShippingQuote(cart, cartTotal);
-  const shipping = shippingQuote.fee;
+  const requiresAddress = DELIVERY_METHODS[deliveryMethod].requiresAddress;
+  const shipping = requiresAddress ? shippingQuote.fee : 0;
   const savings = cartSavings(cart);
-  const totalSavings = savings + shippingQuote.freeShippingSavings;
+  const totalSavings = savings + (requiresAddress ? shippingQuote.freeShippingSavings : 0);
   const orderTotal = cartTotal + shipping;
 
   useEffect(() => {
@@ -125,7 +139,7 @@ export default function CheckoutPage() {
     try {
       const response = await fetch('/api/orders', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ customer, paymentMethod, items: cart.map(({ id, packSize, quantity }) => ({ id, packSize, quantity })) }),
+        body: JSON.stringify({ customer, deliveryMethod, paymentMethod, items: cart.map(({ id, packSize, quantity }) => ({ id, packSize, quantity })) }),
       });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || 'Unable to place the order.');
@@ -170,16 +184,19 @@ export default function CheckoutPage() {
   return <main className={styles.page}>
     <section className={styles.checkout}>
       <p className={styles.eyebrow}>Secure checkout</p><h1>Delivery and payment</h1>
-      <p className={styles.intro}>Enter your delivery details once, choose how you would like to pay, and receive an order number immediately.</p>
+      <p className={styles.intro}>Choose delivery, pickup or your own pickup service, then complete payment and receive an order number immediately.</p>
       <form className={styles.form} onSubmit={submitOrder}>
+        <fieldset className={styles.deliveryChoices}><legend>How would you like to receive the order?</legend>
+          {Object.entries(DELIVERY_METHODS).map(([value, option]) => <label key={value}><input type="radio" name="deliveryMethod" checked={deliveryMethod === value} onChange={() => setDeliveryMethod(value)} /><span><b>{option.label}</b><small>{option.description}</small></span></label>)}
+        </fieldset>
         <div className={styles.formGrid}>
           <label>Full name<input required autoComplete="name" name="name" value={customer.name} onChange={updateCustomer} /></label>
           <label>Mobile number<input required inputMode="numeric" pattern="[0-9]{10}" maxLength="10" autoComplete="tel" name="mobile" value={customer.mobile} onChange={updateCustomer} /></label>
           <label>Email (optional)<input type="email" autoComplete="email" name="email" value={customer.email} onChange={updateCustomer} /></label>
-          <label>PIN code<input required inputMode="numeric" pattern="[0-9]{6}" maxLength="6" autoComplete="postal-code" name="postalCode" value={customer.postalCode} onChange={updateCustomer} /></label>
+          {requiresAddress ? <><label>PIN code<input required inputMode="numeric" pattern="[0-9]{6}" maxLength="6" autoComplete="postal-code" name="postalCode" value={customer.postalCode} onChange={updateCustomer} /></label>
           <label className={styles.fullField}>Delivery address<textarea required autoComplete="street-address" name="address" value={customer.address} onChange={updateCustomer} rows="3" /></label>
           <label>City<input required autoComplete="address-level2" name="city" value={customer.city} onChange={updateCustomer} /></label>
-          <label>State<input required autoComplete="address-level1" name="state" value={customer.state} onChange={updateCustomer} /></label>
+          <label>State<input required autoComplete="address-level1" name="state" value={customer.state} onChange={updateCustomer} /></label></> : <p className={`${styles.fullField} ${styles.pickupNotice}`}>{deliveryMethod === 'pickup' ? 'We will confirm when the order is packed and ready for collection.' : 'Arrange the pickup only after we confirm the order is ready. Pay the pickup provider directly.'}</p>}
           <label className={styles.fullField}>Order note (optional)<input name="notes" value={customer.notes} onChange={updateCustomer} placeholder="Colour or delivery note" /></label>
         </div>
         <fieldset className={styles.paymentChoices}><legend>Payment method</legend>
@@ -196,9 +213,9 @@ export default function CheckoutPage() {
     <aside className={styles.summary}>
       <p>Order summary</p><h2>{cart.length} {cart.length === 1 ? 'item' : 'items'}</h2>
       <div className={styles.items}>{cart.map((item) => <article key={item.key}><Image src={item.image} alt={item.name} width={72} height={82} /><div><h3>{item.name}</h3><p>{item.packSize || 'Standard'} · Qty {item.quantity}</p><strong>₹{item.price * item.quantity}</strong></div></article>)}</div>
-      <dl><div><dt>Subtotal</dt><dd>₹{cartTotal}</dd></div>{savings ? <div><dt>Product savings</dt><dd>₹{savings}</dd></div> : null}<div><dt>{shippingQuote.deliveryDiscount ? 'Calculated delivery' : 'Delivery'}</dt><dd>₹{shippingQuote.regularFee}</dd></div>{shippingQuote.deliveryDiscount ? <div className={styles.discountLine}><dt>Free-shipping deduction</dt><dd>−₹{shippingQuote.deliveryDiscount}</dd></div> : null}{shippingQuote.deliveryDiscount ? <div><dt>Delivery payable</dt><dd>{shipping ? `₹${shipping}` : 'Free'}</dd></div> : null}{totalSavings ? <div className={styles.discountLine}><dt>Total saved today</dt><dd>₹{totalSavings}</dd></div> : null}<div><dt>Total</dt><dd>₹{orderTotal}</dd></div></dl>
-      {shippingQuote.remainingForFreeShipping > 0 ? <Link className={styles.freeShippingUpsell} href="/#catalog">Add ₹{shippingQuote.remainingForFreeShipping} more to unlock free shipping on eligible products</Link> : null}
-      <p className={styles.shippingNote}>Delivery is minimum ₹{MINIMUM_SHIPPING_FEE}, calculated at ₹{SHIPPING_RATE_PER_KG}/kg. Orders from ₹{FREE_SHIPPING_MIN} ship free, except bangle boxes.</p>
+      <dl><div><dt>Subtotal</dt><dd>₹{cartTotal}</dd></div>{savings ? <div><dt>Product savings</dt><dd>₹{savings}</dd></div> : null}{requiresAddress ? <><div><dt>{shippingQuote.deliveryDiscount ? 'Calculated delivery' : 'Delivery'}</dt><dd>₹{shippingQuote.regularFee}</dd></div>{shippingQuote.deliveryDiscount ? <div className={styles.discountLine}><dt>Free-shipping deduction</dt><dd>−₹{shippingQuote.deliveryDiscount}</dd></div> : null}{shippingQuote.deliveryDiscount ? <div><dt>Delivery payable</dt><dd>{shipping ? `₹${shipping}` : 'Free'}</dd></div> : null}</> : <div><dt>{DELIVERY_METHODS[deliveryMethod].label}</dt><dd>₹0</dd></div>}{totalSavings ? <div className={styles.discountLine}><dt>Total saved today</dt><dd>₹{totalSavings}</dd></div> : null}<div><dt>Total</dt><dd>₹{orderTotal}</dd></div></dl>
+      {requiresAddress && shippingQuote.remainingForFreeShipping > 0 ? <Link className={styles.freeShippingUpsell} href="/#catalog">Add ₹{shippingQuote.remainingForFreeShipping} more to unlock free shipping on eligible products</Link> : null}
+      <p className={styles.shippingNote}>{requiresAddress ? `Delivery is minimum ₹${MINIMUM_SHIPPING_FEE}, calculated at ₹${SHIPPING_RATE_PER_KG}/kg. Orders from ₹${FREE_SHIPPING_MIN} ship free, except bangle boxes.` : deliveryMethod === 'pickup' ? 'Pickup has no delivery charge. Collect only after receiving the ready-for-pickup confirmation.' : 'No website delivery charge. You arrange and pay Rapido, Porter or your chosen pickup provider directly.'}</p>
     </aside>
   </main>;
 }

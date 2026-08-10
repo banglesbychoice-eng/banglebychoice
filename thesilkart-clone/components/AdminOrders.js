@@ -11,6 +11,10 @@ function trackingUrl(orderNumber) {
   return `${window.location.origin}/account?order=${encodeURIComponent(orderNumber)}`;
 }
 
+function deliveryLabel(order) {
+  return order?.notes?.match(/^Delivery method:\s*(.+)$/m)?.[1] || 'Bangle by Choice delivery';
+}
+
 export default function AdminOrders({ orders, onRefresh }) {
   const dialogRef = useRef(null);
   const [selectedId, setSelectedId] = useState('');
@@ -18,6 +22,7 @@ export default function AdminOrders({ orders, onRefresh }) {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const selectedOrder = useMemo(() => orders.find((order) => order.id === selectedId) || null, [orders, selectedId]);
+  const selectedDelivery = deliveryLabel(selectedOrder);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -69,7 +74,7 @@ export default function AdminOrders({ orders, onRefresh }) {
         <button disabled={busy} onClick={() => copyTrackingLink(selectedOrder)}>Copy tracking link</button>
         <a href={`/account?order=${encodeURIComponent(selectedOrder.order_number)}`} target="_blank" rel="noreferrer">Open tracking page</a>
       </div>
-      <div className={styles.orderFacts}><div><small>Customer</small><b>{selectedOrder.customer_name}</b><span>{selectedOrder.customer_mobile}</span>{selectedOrder.customer_email ? <span>{selectedOrder.customer_email}</span> : null}</div><div><small>Delivery address</small><b>{selectedOrder.address}</b><span>{selectedOrder.city}, {selectedOrder.state} - {selectedOrder.postal_code}</span></div><div><small>Order value</small><span>Subtotal ₹{selectedOrder.subtotal}</span><span>Delivery {Number(selectedOrder.shipping) ? `₹${selectedOrder.shipping}` : 'Free'}</span><b>Total ₹{selectedOrder.total}</b></div><div><small>Placed</small><b>{new Date(selectedOrder.created_at).toLocaleString('en-IN')}</b>{selectedOrder.notes ? <span>{selectedOrder.notes}</span> : null}</div></div>
+      <div className={styles.orderFacts}><div><small>Customer</small><b>{selectedOrder.customer_name}</b><span>{selectedOrder.customer_mobile}</span>{selectedOrder.customer_email ? <span>{selectedOrder.customer_email}</span> : null}</div><div><small>Fulfilment</small><b>{selectedDelivery}</b>{selectedOrder.city ? <><span>{selectedOrder.address}</span><span>{selectedOrder.city}, {selectedOrder.state} - {selectedOrder.postal_code}</span></> : <span>Confirm readiness before customer or pickup agent arrives.</span>}</div><div><small>Order value</small><span>Subtotal ₹{selectedOrder.subtotal}</span><span>Delivery {Number(selectedOrder.shipping) ? `₹${selectedOrder.shipping}` : '₹0'}</span><b>Total ₹{selectedOrder.total}</b></div><div><small>Placed</small><b>{new Date(selectedOrder.created_at).toLocaleString('en-IN')}</b>{selectedOrder.notes ? <span>{selectedOrder.notes}</span> : null}</div></div>
       <div className={styles.orderLineItems}>{(selectedOrder.order_items || []).map((item) => <div key={item.id || `${item.product_id}-${item.pack_size}`}>
         {item.image_url ? <Image src={item.image_url} alt={item.product_name} width={64} height={72} /> : null}
         <span><b>{item.product_name}</b><small>{item.pack_size || 'Standard'} · Qty {item.quantity} · ₹{item.unit_price} each</small></span><strong>₹{item.line_total}</strong>

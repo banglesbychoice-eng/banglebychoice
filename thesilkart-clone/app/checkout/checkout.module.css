@@ -35,13 +35,14 @@
 .form input,.form textarea { background: #fff; border: 1px solid #d9cdc6; color: #302925; font: inherit; min-height: 48px; padding: 11px 12px; width: 100%; }
 .form textarea { min-height: 88px; resize: vertical; }
 .fullField { grid-column: 1 / -1; }
-.paymentChoices { border: 0; display: grid; gap: 10px; }
-.paymentChoices legend { font-family: var(--font-playfair); font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
-.paymentChoices label { align-items: center; border: 1px solid #ded2cb; cursor: pointer; display: grid; gap: 12px; grid-template-columns: 22px 1fr; min-height: 70px; padding: 13px 16px; }
-.paymentChoices label:has(input:checked) { background: #fff8f2; border-color: #8a1538; }
-.paymentChoices input { accent-color: #6e1734; min-height: auto; width: 18px; }
-.paymentChoices span { display: grid; gap: 3px; }
-.paymentChoices small { color: #796c65; font-size: .7rem; font-weight: 500; }
+.paymentChoices,.deliveryChoices { border: 0; display: grid; gap: 10px; }
+.paymentChoices legend,.deliveryChoices legend { font-family: var(--font-playfair); font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
+.paymentChoices label,.deliveryChoices label { align-items: center; border: 1px solid #ded2cb; cursor: pointer; display: grid; gap: 12px; grid-template-columns: 22px 1fr; min-height: 70px; padding: 13px 16px; }
+.paymentChoices label:has(input:checked),.deliveryChoices label:has(input:checked) { background: #fff8f2; border-color: #8a1538; }
+.paymentChoices input,.deliveryChoices input { accent-color: #6e1734; min-height: auto; width: 18px; }
+.paymentChoices span,.deliveryChoices span { display: grid; gap: 3px; }
+.paymentChoices small,.deliveryChoices small { color: #796c65; font-size: .7rem; font-weight: 500; }
+.pickupNotice { background: #f3faf5; border: 1px solid #b9d8c2; color: #28643a; font-size: .76rem; font-weight: 750; line-height: 1.55; padding: 12px 14px; }
 .primaryButton { background: #6e1734; border: 0; color: #fff; cursor: pointer; font: inherit; font-weight: 850; min-height: 56px; padding: 13px 20px; }
 .primaryButton:disabled { cursor: wait; opacity: .65; }
 .error { background: #fff1f0; border: 1px solid #e2aaa3; color: #8c201d; font-size: .78rem; padding: 12px; }

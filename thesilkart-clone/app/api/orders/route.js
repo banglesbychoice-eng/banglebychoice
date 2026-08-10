@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { isAdmin } from '@/lib/admin-auth';
 import { normalizeDatabaseProduct } from '@/lib/catalog-server';
+import { DELIVERY_METHODS, getDeliveryDetails } from '@/lib/delivery';
 import { getPackChoices, getPackPrice, getShippingQuote } from '@/lib/pricing';
 import { rateLimit, requestIp } from '@/lib/rate-limit';
 import { getServiceSupabase } from '@/lib/supabase-server';
@@ -15,7 +16,10 @@ function clean(value, max = 300) {
 
 function validateOrder(body) {
   const { customer, items } = body || {};
-  if (!customer?.name || !/^\d{10}$/.test(customer.mobile || '') || !customer.address || !customer.city || !customer.state || !/^\d{6}$/.test(customer.postalCode || '')) return 'Please provide complete delivery details.';
+  if (body.deliveryMethod && !DELIVERY_METHODS[body.deliveryMethod]) return 'Please choose a valid delivery method.';
+  const delivery = getDeliveryDetails(body.deliveryMethod);
+  if (!customer?.name || !/^\d{10}$/.test(customer.mobile || '')) return 'Please provide your name and 10-digit mobile number.';
+  if (delivery.requiresAddress && (!customer.address || !customer.city || !customer.state || !/^\d{6}$/.test(customer.postalCode || ''))) return 'Please provide complete delivery details.';
   if (!PAYMENT_METHODS.has(body.paymentMethod)) return 'Please choose a valid payment method.';
   if (!Array.isArray(items) || !items.length || items.length > 50) return 'Your cart is empty or too large.';
   if (items.some((item) => !item.id || !Number.isInteger(item.quantity) || item.quantity < 1 || item.quantity > 50)) return 'One or more cart items are invalid.';
@@ -85,6 +89,7 @@ export async function POST(request) {
     const body = await request.json();
     const validationError = validateOrder(body);
     if (validationError) return NextResponse.json({ error: validationError }, { status: 400 });
+    const delivery = getDeliveryDetails(body.deliveryMethod);
 
     const supabase = getServiceSupabase();
     const requestedIds = [...new Set(body.items.map((item) => String(item.id)))];
@@ -108,15 +113,17 @@ export async function POST(request) {
     });
     const subtotal = items.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
     const shippingQuote = getShippingQuote(items, subtotal);
-    const shipping = shippingQuote.fee;
+    const shipping = delivery.requiresAddress ? shippingQuote.fee : 0;
     const total = subtotal + shipping;
     const orderNumber = makeOrderNumber();
     const paymentLabel = body.paymentMethod === 'razorpay' ? 'Razorpay' : 'Direct UPI';
     const customerNotes = clean(body.customer.notes, 500);
     const notes = [
       `Payment method: ${paymentLabel}`,
-      `Calculated delivery: Rs ${shippingQuote.regularFee}`,
-      shippingQuote.deliveryDiscount ? `Free-shipping deduction: Rs ${shippingQuote.deliveryDiscount}` : '',
+      `Delivery method: ${delivery.label}`,
+      delivery.requiresAddress ? `Calculated delivery: Rs ${shippingQuote.regularFee}` : '',
+      delivery.requiresAddress && shippingQuote.deliveryDiscount ? `Free-shipping deduction: Rs ${shippingQuote.deliveryDiscount}` : '',
+      delivery.method === 'customer_arranged' ? 'Pickup service charge is arranged and paid directly by the customer.' : '',
       customerNotes,
     ].filter(Boolean).join('\n');
 
@@ -124,8 +131,10 @@ export async function POST(request) {
       order_number: orderNumber,
       customer_name: clean(body.customer.name, 100), customer_mobile: body.customer.mobile,
       customer_email: clean(body.customer.email, 160) || null,
-      address: clean(body.customer.address, 400), city: clean(body.customer.city, 100),
-      state: clean(body.customer.state, 100), postal_code: body.customer.postalCode,
+       address: delivery.requiresAddress ? clean(body.customer.address, 400) : delivery.label,
+       city: delivery.requiresAddress ? clean(body.customer.city, 100) : '',
+       state: delivery.requiresAddress ? clean(body.customer.state, 100) : '',
+       postal_code: delivery.requiresAddress ? body.customer.postalCode : '',
       notes, subtotal, shipping, total,
     }).select('id,order_number').single();
     if (orderError) throw orderError;
@@ -146,8 +155,10 @@ export async function POST(request) {
 
     return NextResponse.json({
       success: true, orderId: order.id, orderNumber: order.order_number, subtotal, shipping, total,
-      deliveryCharge: shippingQuote.regularFee,
-      deliveryDiscount: shippingQuote.deliveryDiscount,
+      deliveryMethod: delivery.method,
+      deliveryLabel: delivery.label,
+      deliveryCharge: delivery.requiresAddress ? shippingQuote.regularFee : 0,
+      deliveryDiscount: delivery.requiresAddress ? shippingQuote.deliveryDiscount : 0,
       items: items.map((item) => ({
         name: item.name,
         packSize: item.packSize || 'Standard',
