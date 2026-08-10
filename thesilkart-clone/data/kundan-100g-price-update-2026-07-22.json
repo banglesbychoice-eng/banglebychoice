@@ -1,0 +1,1205 @@
+{
+  "generated_at": "2026-07-22T01:16:49.769Z",
+  "applied": true,
+  "previous_100g_price": 160,
+  "next_100g_price": 150,
+  "products": [
+    {
+      "id": "f9848d9d-bf54-4b5b-938e-877cd2d6b90e",
+      "name": "3×7 Rectangle Ceramic White Kundans",
+      "slug": "3-7-rectangle-ceramic-white-kundans"
+    },
+    {
+      "id": "1b3a5fd6-1e41-4e08-bcc8-f9de290b72e7",
+      "name": "3×7 Rectangle Dark Blue Glossy Kundans",
+      "slug": "3-7-reactangle-dark-blue-glossy-kundans"
+    },
+    {
+      "id": "3f20d054-81b8-4e25-bd97-dd3c3e33a49d",
+      "name": "3×7 Rectangle Dark Green Glossy Kundans",
+      "slug": "3-7-reactangle-dark-green-glossy"
+    },
+    {
+      "id": "0f4ae6db-b4c1-48c4-8277-41181dd47556",
+      "name": "3×7 Rectangle Dark Pink Glossy Kundans",
+      "slug": "3-7-reactangle-dark-pink-glossy"
+    },
+    {
+      "id": "a93cf149-220b-4742-a867-ac059ba6971c",
+      "name": "3×7 Rectangle Glossy Gold Kundans",
+      "slug": "3-7-reactangle-glossy-gold"
+    },
+    {
+      "id": "1bc76e5b-b7d0-4f2a-80ba-ed989ddd0130",
+      "name": "3×7 Rectangle Light Green Glossy Kundans",
+      "slug": "3-7-reactangle-light-green-glossy"
+    },
+    {
+      "id": "e5b4af28-8148-495e-954c-033f4a38c423",
+      "name": "3×7 Rectangle Light Pink Glossy Kundans",
+      "slug": "3-7-reactangle-light-pink-glossy"
+    },
+    {
+      "id": "8a5256e5-9788-4658-aa54-bec90ba8db80",
+      "name": "3×7 Rectangle Orange Glossy Kundans",
+      "slug": "3-7-reactangle-orange-glossy"
+    },
+    {
+      "id": "3a911b53-fb6b-41c0-ba3a-c54010ffee5d",
+      "name": "3×7 Rectangle Purple Glossy Kundans",
+      "slug": "3-7-reactangle-purpule-glossy"
+    },
+    {
+      "id": "c0731e7d-928c-44a8-93e4-8f75e8d78f32",
+      "name": "3×7 Rectangle Shape Ceramic Gold Kundans",
+      "slug": "3-7-reactangle-shape-ceramic-gold"
+    },
+    {
+      "id": "7e2c2986-3ec6-4017-9000-b053e93d219c",
+      "name": "3mm Round Baby Pink Glass Kundans",
+      "slug": "3mm-round-baby-pink-glass-kundans"
+    },
+    {
+      "id": "3828c416-3014-4e52-a6e1-68271f743ad1",
+      "name": "3mm Round Black Glass Kundans",
+      "slug": "3mm-round-black-glass-kundans"
+    },
+    {
+      "id": "aeb72afa-40b5-41bf-8bd6-537cf854c402",
+      "name": "3mm Round Ceramic Gold Kundans",
+      "slug": "3mm-round-ceramic-gold-kundans"
+    },
+    {
+      "id": "831a7c0d-4f42-4917-8524-ccc2af1d379b",
+      "name": "3mm Round Ceramic White Kundans",
+      "slug": "3mm-round-ceramic-white-kundans"
+    },
+    {
+      "id": "0bd0c6bd-76f7-4759-aa87-83d66e8c2de6",
+      "name": "3mm Round Dark Blue Glass Kundans",
+      "slug": "3mm-round-dark-blue-glass-kundans"
+    },
+    {
+      "id": "84cdd61b-38c5-4163-91fa-e6fe4b10a45d",
+      "name": "3mm Round Dark green  Glass Kundans",
+      "slug": "3mm-round-dark-green-glass-kundans"
+    },
+    {
+      "id": "f8b9fea6-ea6c-44e4-8742-a2f67aa84ced",
+      "name": "3mm Round Dark Pink Glass Kundans",
+      "slug": "3mm-round-dark-pink-glass-kundans"
+    },
+    {
+      "id": "a702edb8-843f-479f-9048-8dde9a1531c7",
+      "name": "3mm Round Dark Purple Glass Kundans",
+      "slug": "3mm-round-dark-purple-glass-kundans"
+    },
+    {
+      "id": "9298d094-de6e-4640-a4ca-ffc6bdd06b2f",
+      "name": "3mm Round Glass Light Green Colour Kundans",
+      "slug": "3mm-round-glass-light-green-colour-kundans"
+    },
+    {
+      "id": "e3ec0a44-1b30-4665-a8ac-80482c063190",
+      "name": "3mm Round Light Blue Glass Kundans",
+      "slug": "3mm-round-light-blue-glass-kundans"
+    },
+    {
+      "id": "b4d1de5c-28db-47f4-8f07-5b094a66b33c",
+      "name": "3mm Round Orange Glass Kundans",
+      "slug": "3mm-round-orange-glass-kundans"
+    },
+    {
+      "id": "3dd1b25e-d1b6-4233-b4b7-f3db0d98baf1",
+      "name": "3mm Round Red Glass Kundans",
+      "slug": "3mm-round-red-glass-kundans"
+    },
+    {
+      "id": "22b93e5f-5fd1-46bd-9dcc-948217dc74e2",
+      "name": "3mm Round Yellow Glass Kundans",
+      "slug": "3mm-round-yellow-glass-colour-kundans"
+    },
+    {
+      "id": "fe72c67e-154f-41f7-a130-9aef3efa12d7",
+      "name": "3x3 Square Glossy Gold Kundans",
+      "slug": "3x3-square-glossy-gold-kundans"
+    },
+    {
+      "id": "c38f4589-0c15-41b2-b2e9-8683b871df50",
+      "name": "4×4 Skyblue Matte Kundans",
+      "slug": "4-4-skyblue-colour-matt"
+    },
+    {
+      "id": "23953a35-e993-4ccb-9769-03732941012b",
+      "name": "4×4 Square Dark Blue Matte Kundans",
+      "slug": "4-4-square-dark-blue-matt"
+    },
+    {
+      "id": "ae8702bb-b18a-4661-ad4e-c404dfe3f60e",
+      "name": "4×4 Square Dark Purple Glossy Kundans",
+      "slug": "4-4-square-dark-purple-glossy-kundans"
+    },
+    {
+      "id": "670cc7fc-dcb2-4ec4-8d40-a321dc529aed",
+      "name": "4×4 Square Leaf Green Matte Kundans",
+      "slug": "4-4-square-leaf-green-matt"
+    },
+    {
+      "id": "1673c45f-8701-417c-993d-7dec53627073",
+      "name": "4×4 Square Light Orange Matte Kundans",
+      "slug": "4-4-square-light-orange-matt"
+    },
+    {
+      "id": "08ed77e9-db29-4b60-8f02-bbde8e64219b",
+      "name": "4×4 Square Marr Light Lilac Kundans",
+      "slug": "4-4-square-marr-light-lilac-colour-kundans"
+    },
+    {
+      "id": "c7efa141-7e0b-4cf0-9501-34b283a17b02",
+      "name": "4×4 Square Matte Light Lavender Kundans",
+      "slug": "4-4-square-matt-light-lavender-colour-kundans"
+    },
+    {
+      "id": "ee404c1d-a1dc-4620-88fb-feb3c65b8495",
+      "name": "4×4 Square Matte Light Pista Green Kundans",
+      "slug": "4-4-square-matt-light-pista-green-colour-kundans"
+    },
+    {
+      "id": "72476ffa-a8fc-4c01-8aaf-f6a8bd021681",
+      "name": "4×4 Square Matte Mint Green Kundans",
+      "slug": "4-4-square-matt-mint-green-colour-kundans"
+    },
+    {
+      "id": "1af08f0d-867a-41f4-8230-530fa08ee665",
+      "name": "4×4 Square Matte Orange Kundans",
+      "slug": "4-4-square-matt-orange-colour-kundans"
+    },
+    {
+      "id": "935918e2-9449-4171-be35-1449ed8b60bd",
+      "name": "4×4 Square Matte Peach Kundans",
+      "slug": "4-4-square-matt-peach-colour-kundans"
+    },
+    {
+      "id": "bd848d07-c834-42b1-bcaf-0e6ed4fa10e4",
+      "name": "4×4 Square Matte Red Arecanut Kundans",
+      "slug": "4-4-square-matt-red-arecanut-colour-kundans"
+    },
+    {
+      "id": "560d0df5-b194-4924-9b42-d784495f7084",
+      "name": "4×4 Square Matte Violet Kundans",
+      "slug": "4-4-square-matt-violet-colour-kundans"
+    },
+    {
+      "id": "531cf0f3-077c-43bc-9ce6-466f1040a170",
+      "name": "4×4 Square Rainbow Glossy Kundans",
+      "slug": "4-4-square-rainbow-glossy-kundans"
+    },
+    {
+      "id": "eb5c67bd-c36b-4f55-9e0e-4d6d6a08dcd4",
+      "name": "4×4 Square Red Matte Kundans",
+      "slug": "4-4-square-red-matt"
+    },
+    {
+      "id": "184095c7-9a7f-4d68-b43d-d5c423357425",
+      "name": "4×4 Square Tomato Red Matte Kundans",
+      "slug": "4-4-square-tomato-red-matt"
+    },
+    {
+      "id": "459fbb6b-51f0-491e-9936-580a6c326dd1",
+      "name": "4×4 Square Yellow Matte Kundans",
+      "slug": "4-4-squre-yellow-matt"
+    },
+    {
+      "id": "e48f5a31-c283-4e7b-a13e-09c926adcbe3",
+      "name": "4mm Ceramic White Kundans",
+      "slug": "4mm-ceramic-white-kundans"
+    },
+    {
+      "id": "e3dc7ab3-f26d-4a3b-a221-05c6ac1c987d",
+      "name": "4mm Round C Green Glossy Kundans",
+      "slug": "4mm-round-c-green-glossy-kundans"
+    },
+    {
+      "id": "6cc18b76-885c-4ea7-9291-7916abbeef4a",
+      "name": "4mm Round Ceramic Gold Kundans",
+      "slug": "4mm-round-ceramic-gold-kundans"
+    },
+    {
+      "id": "07a51a88-0925-4d2c-b9d2-fec316afa154",
+      "name": "4mm Round Dark Blue Glass Kundans",
+      "slug": "4mm-round-dark-blue-glass-kundans"
+    },
+    {
+      "id": "889fe14b-bfbe-4d2c-b018-fecd25dcebd6",
+      "name": "4mm Round Light Green Glass Kundans",
+      "slug": "4mm-round-light-green-glass-kundans"
+    },
+    {
+      "id": "05f60da1-115b-42b0-859c-f64702107803",
+      "name": "4mm Round orange  Glass Kundans",
+      "slug": "4mm-round-orange-glass-kundans"
+    },
+    {
+      "id": "f84236cc-72ba-4d6d-914e-7e2d0e4e4526",
+      "name": "4mm Round Purple Glass Kundans",
+      "slug": "4mm-round-purple-glass-kundans"
+    },
+    {
+      "id": "2ab5f877-7fd5-4f38-9f63-fd0458a53b0e",
+      "name": "4mm Round Rani Pink Glass Kundans",
+      "slug": "4mm-round-rani-pink-glass-kundans"
+    },
+    {
+      "id": "167fc2ca-bc01-49a0-84af-706f02b2400a",
+      "name": "4mm Round Red Glass Kundans",
+      "slug": "4mm-round-red-glass-kundans"
+    },
+    {
+      "id": "445333b6-dae1-4551-af12-e3e9abd47ff2",
+      "name": "4mm Round Sky Blye Glass Kundans",
+      "slug": "4mm-round-sky-blye-glass-kundans"
+    },
+    {
+      "id": "727c2974-7154-49e2-a3a7-8da2f5a62baf",
+      "name": "4mm Round Yellow Glossy Kundans",
+      "slug": "4mm-round-yellow-glossy-kundans"
+    },
+    {
+      "id": "02c28e6a-0f68-41c3-ace0-f294e9f5c636",
+      "name": "4x4 Square Ceramic Gold Kundans",
+      "slug": "4x4-square-ceramic-gold-kundans"
+    },
+    {
+      "id": "50de75e7-2e88-4343-9c7e-f1c91b6d3f26",
+      "name": "4x4 Square Ceramic White Kundans",
+      "slug": "4x4-square-ceramic-white-kundans"
+    },
+    {
+      "id": "fb9260b7-77f7-4225-af37-694d2faad4e8",
+      "name": "4x4 Square Purple Glossy Kundans",
+      "slug": "4x4-square-purple-glossy-kundans"
+    },
+    {
+      "id": "b426afbf-c1e2-4bf2-b9c5-b7a261e1411d",
+      "name": "4x4 Square Red Glossy Kundans",
+      "slug": "4x4-square-red-glossy-kundans"
+    },
+    {
+      "id": "eaa06294-c6bc-49cb-8ff6-a7111b5a27a2",
+      "name": "4x4 Square Rose Pink Glossy Kundans",
+      "slug": "4x4-square-rose-pink-glossy-kundans"
+    },
+    {
+      "id": "36249b38-ae48-4953-bd50-770b79edeab9",
+      "name": "4x4 Square Yellow Glossy Kundans",
+      "slug": "4x4-square-yellow-glossy-kundans"
+    },
+    {
+      "id": "ba052cc6-7be7-4af5-a79a-71747baaed0c",
+      "name": "5mm Round Ceramic Gold Kundans",
+      "slug": "5mm-round-ceramic-gold"
+    },
+    {
+      "id": "c7150528-4b9c-4156-a46f-3c95c0276ba0",
+      "name": "5mm Round Ceramic White Kundans",
+      "slug": "5mm-round-ceramic-white"
+    },
+    {
+      "id": "3364ce1f-31a3-49fe-b38d-e8d4db94c24e",
+      "name": "6×6 Square Glossy White Kundans",
+      "slug": "6-6-square-glossy-white"
+    },
+    {
+      "id": "ebf3e119-1e3f-4890-9a45-e01d4b6f153f",
+      "name": "Tilakam Shape C Green Glass Kundans",
+      "slug": "6k-drop-c-green-glass-kundans"
+    },
+    {
+      "id": "10d18bf6-a8ec-426d-9287-8acb765a66a3",
+      "name": "6K Drop Ceramic Gold Kundans",
+      "slug": "6k-drop-ceramic-gold-kundans"
+    },
+    {
+      "id": "e4f518c5-fa46-4869-9aaf-f0fdeef788f6",
+      "name": "6K Drop Ceramic White Kundans",
+      "slug": "6k-drop-ceramic-white-kundans"
+    },
+    {
+      "id": "5c576d71-2847-4d06-be82-3590f731d570",
+      "name": "Tilakam Shape Dark Blue Glossy Kundans",
+      "slug": "6k-drop-dark-blue-glossy-kundans"
+    },
+    {
+      "id": "75edb89a-8125-40bc-ab8f-1dc51e5d9881",
+      "name": "6K Drop Dark Pink Glass Kundans",
+      "slug": "6k-drop-dark-pink-glass-kundans"
+    },
+    {
+      "id": "7dca6cc0-a5da-4167-a0ce-0027d23c960d",
+      "name": "6K Drop Dark Pink Matte Kundans",
+      "slug": "6k-drop-dark-pink-matt"
+    },
+    {
+      "id": "65fd5c53-c5a1-47ea-a801-81a6f0b70aaa",
+      "name": "6K Drop Glossy Gold Kundans",
+      "slug": "6k-drop-glossy-gold-kundans"
+    },
+    {
+      "id": "e4d55eda-5b57-47fe-8233-ee3fd0c481e7",
+      "name": "Tilakam Shape Clear White Glossy Kundans",
+      "slug": "6k-drop-glossy-white-kundans"
+    },
+    {
+      "id": "5ac026b7-c65e-4491-8da3-7fad39dd70f0",
+      "name": "Tilakam Shape Green Glass Kundans",
+      "slug": "6k-drop-green-glass-kundans"
+    },
+    {
+      "id": "18205e87-4deb-4028-a0a9-28819ebe1cf7",
+      "name": "6K Drop Light Green Glass Kundans",
+      "slug": "6k-drop-light-green-glass-kundans"
+    },
+    {
+      "id": "b13cd8ca-025b-499c-a8bf-e104058e4a15",
+      "name": "6K Drop Light Pink Matte Kundans",
+      "slug": "6k-drop-light-pink-matt"
+    },
+    {
+      "id": "efe5635d-9639-4407-a43d-ea4a5f344656",
+      "name": "6K Drop Light Purple Glass Kundans",
+      "slug": "6k-drop-light-purple-glass-kundans"
+    },
+    {
+      "id": "a2bfad22-28a8-4bd0-aa46-a9081ef2555c",
+      "name": "6K Drop Nemalikantam Matte Kundans",
+      "slug": "6k-drop-nemalikantam-matt"
+    },
+    {
+      "id": "98485d5b-2c0b-4a38-a544-18f7d916a023",
+      "name": "6K Drop Peach Glass Kundans",
+      "slug": "6k-drop-peach-glass-kundans"
+    },
+    {
+      "id": "f6ab9ec3-50fb-4bd4-be33-c04a0f725afb",
+      "name": "6K Drop Pink Matte Kundans",
+      "slug": "6k-drop-pink-matt"
+    },
+    {
+      "id": "19e62084-92e8-4f82-9279-2589d84b0768",
+      "name": "6K Drop Purple Matte Kundans",
+      "slug": "6k-drop-purpule-matt"
+    },
+    {
+      "id": "ed2dbb65-2dfd-4ad6-8fbf-0fc17b6e07e4",
+      "name": "6K Drop Red Matte Kundans",
+      "slug": "6k-drop-red-matt"
+    },
+    {
+      "id": "8f20b88b-3cba-4452-88bb-d77c11d0f610",
+      "name": "6K Drop Sky Blue Glossy Kundans",
+      "slug": "6k-droup-sky-blue-glossy"
+    },
+    {
+      "id": "9ece9826-6b0f-460b-9874-9d6579432a31",
+      "name": "6K Drop Skyblue Matte Kundans",
+      "slug": "6k-drop-skyblue-matt"
+    },
+    {
+      "id": "52035c1d-e376-445e-ba5a-da218acf7cc2",
+      "name": "6K Drop White Matte Kundans",
+      "slug": "6k-drop-white-matt"
+    },
+    {
+      "id": "c6d9db9b-5c09-4886-b350-d07428784ce9",
+      "name": "6K Eye Nemali Kantam Matte Kundans",
+      "slug": "6k-eye-nemali-kantam-matt"
+    },
+    {
+      "id": "76bc21a6-cf34-41bb-9bc7-bd8805acd96c",
+      "name": "6K Eye Peach Pink Kundans",
+      "slug": "6k-eye-peach-pink"
+    },
+    {
+      "id": "3c91fe2b-35fb-4b41-8c0a-dfe5e39c5075",
+      "name": "6K Eye Pinkish Marron Matte Kundans",
+      "slug": "6k-eye-pinkish-marron-matt"
+    },
+    {
+      "id": "97aa792f-f061-4fa7-9ba5-84a7061b4663",
+      "name": "6K Eye Purple Matte Kundans",
+      "slug": "6k-eye-purpule-matt"
+    },
+    {
+      "id": "66ab7b9e-25f9-442c-a5a8-d094838679ac",
+      "name": "6K Eye Red Matte Kundans",
+      "slug": "6k-eye-red-matt"
+    },
+    {
+      "id": "af7e39b7-aa71-40a3-9267-81b099765bb3",
+      "name": "6K Eye Shape Ceramic Gold Kundans",
+      "slug": "6k-eye-shape-ceramic-gold"
+    },
+    {
+      "id": "2f22fb48-d9da-464a-b8a2-a771e3a870e2",
+      "name": "6K Eye Shape Ceramic White Kundans",
+      "slug": "6k-eye-shape-ceramic-white-kundans"
+    },
+    {
+      "id": "8d40f770-93d8-4e8f-a20c-fa81d8d4cc61",
+      "name": "6K Eye Shape Dark Blue Glossy Kundans",
+      "slug": "6k-eye-shape-dark-blue-glossy-kundans"
+    },
+    {
+      "id": "f746e49b-5512-4c57-9a3b-c936e9ae9090",
+      "name": "6K Eye Shape Dark Green Glossy Kundans",
+      "slug": "6k-eye-shape-dark-green-glossy-kundans"
+    },
+    {
+      "id": "9535fe92-82fc-4f43-8836-04baca8100d7",
+      "name": "6K Eye Shape Dark Pink Glossy Kundans",
+      "slug": "6k-eye-shape-dark-pink-glossy-kundans"
+    },
+    {
+      "id": "e1729a25-afa3-4180-a1f0-ea93ad903653",
+      "name": "6K Eye Shape Dark Purple Glossy Kundans",
+      "slug": "6k-eye-shape-dark-purple-glossy-kundans"
+    },
+    {
+      "id": "76994be1-ba7d-426b-a75d-2b5ec41296b6",
+      "name": "6K Eye Shape Glossy Gold Kundans",
+      "slug": "6k-eye-shape-glossy-gold"
+    },
+    {
+      "id": "812a633d-efbe-48b7-9519-89ad13ec2662",
+      "name": "6K Eye Shape Light Green Glossy Kundans",
+      "slug": "6k-eye-shape-light-green-glossy-kundans"
+    },
+    {
+      "id": "4abc8ba5-1af4-4fec-8779-21ef6cbb8b74",
+      "name": "6K Eye Shape light Pink Glossy Kundans",
+      "slug": "6k-eye-shape-light-pink-glossy-kundans"
+    },
+    {
+      "id": "aa9fc064-f22a-45da-a1f1-efbb3c004404",
+      "name": "6K Eye Shape Light Pink Glossy Kundans",
+      "slug": "6k-eye-shape-light-pink-colour-glossy-kundans"
+    },
+    {
+      "id": "deeacbe8-dff7-4a39-b4e0-1bc65d4221ec",
+      "name": "6K Eye Shape Matte Brown Matte Kundans",
+      "slug": "6k-eye-shape-matt-brown-colour-matt"
+    },
+    {
+      "id": "3d4adbdd-0cd3-4a65-a8ea-36bbff98d91e",
+      "name": "6K Eye Shape Matte Dark Marron Kundans",
+      "slug": "6k-eye-shape-matt-dark-marron-colour-kundans"
+    },
+    {
+      "id": "8a2ad6e3-68c3-444b-955e-e48373e5cd28",
+      "name": "6K Eye Shape Matte Lavender Kundans",
+      "slug": "6k-eye-shape-matt-lavender-colour-kundans"
+    },
+    {
+      "id": "2f410e9b-ea41-4adc-aaa2-1326505d6d43",
+      "name": "6K Eye Shape Matte Peach Kundans",
+      "slug": "6k-eye-shape-matt-peach-colour-kundans"
+    },
+    {
+      "id": "4597b585-ba98-4905-8fb7-40739ab14a44",
+      "name": "6K Eye Shape Matte Violet Kundans",
+      "slug": "6k-eye-shape-matt-violet-colour-kundans"
+    },
+    {
+      "id": "5f5a1b90-25e7-4afd-a4bc-46689b0002e4",
+      "name": "6K Eye Shape Orange Glossy Kundans",
+      "slug": "6k-eye-shape-orange-glossy"
+    },
+    {
+      "id": "7e1e979e-9edf-4b8e-aa0a-27eba04e5633",
+      "name": "6K Eye Shape Purple Glossy Kundans",
+      "slug": "6k-eye-shape-purpule-glossy-kundans"
+    },
+    {
+      "id": "fbe2ddd7-13e4-4803-9f84-1ab8f3b54ceb",
+      "name": "6K Eye Shape rama Green Glossy Kundans",
+      "slug": "6k-eye-shape-rama-green-glossy-kundans"
+    },
+    {
+      "id": "64989c55-1e99-46b1-91ec-85007af1574c",
+      "name": "6K Eye Shape Sky Blue Glossy Kundans",
+      "slug": "6k-eye-shape-sky-blue-glossy-kundans"
+    },
+    {
+      "id": "653a9aec-96bc-4321-a742-36a23b40c49e",
+      "name": "6K Eye Shaped Yellow Kundans",
+      "slug": "6k-eye-shaped-yellow-colour-kundans"
+    },
+    {
+      "id": "cb6fb744-d949-4d5a-97eb-1215e4ad1925",
+      "name": "6K Eye Sky Blue Matte Kundans",
+      "slug": "6k-eye-sky-blue-matt"
+    },
+    {
+      "id": "51828473-d9d7-4ae6-923b-b59c9da3b0e9",
+      "name": "6K Eye Yash Matte Kundans",
+      "slug": "6k-eye-yash-matt"
+    },
+    {
+      "id": "bf0f97b7-d99f-41b4-9a01-e949915af962",
+      "name": "6K Orange Matte Kundans",
+      "slug": "6k-orange-matt"
+    },
+    {
+      "id": "a3098f62-97af-4c5b-a8eb-067a4deb6a59",
+      "name": "8××4 Size Eye Shape Tomato Red Raindrop Kundans",
+      "slug": "8-4-size-eye-shape-tomato-red-colour-raindrop-kundans"
+    },
+    {
+      "id": "50a46d20-4abf-47fc-ac32-59ae1617f7bd",
+      "name": "8×4 Size Eye Shape Peacock Blue Raindrop Kundans",
+      "slug": "8-4-size-eye-shape-peacock-blue-colour-raindroup-kundans"
+    },
+    {
+      "id": "d0a867af-51a1-4616-a4dc-683c1410bf03",
+      "name": "8×4 Size Eye Shape Pesara Green Raindrop Kundans",
+      "slug": "8-4-size-eye-shape-pesara-green-colour-raindroup-kundans"
+    },
+    {
+      "id": "fcd725ed-4da3-43fa-8cf1-0ff2059aa844",
+      "name": "8×4 Size Eye Shape Pink Raindrop Kundans",
+      "slug": "8-4-size-eye-shape-pink-colour-raindroup-kundans"
+    },
+    {
+      "id": "2f1b38c3-7f9d-428d-8d29-ac1b71b5c9f2",
+      "name": "8×4 Size Eye Shape Rainbow Raindrop Kundans",
+      "slug": "8-4-size-eye-shape-rainbow-colour-raindroup-kundans"
+    },
+    {
+      "id": "2452fb32-4ef2-47c5-a04b-ca1139b5535d",
+      "name": "8×4 Size Eye Shape Red Raindrop Kundans",
+      "slug": "8-4-size-eye-shape-red-colour-raindrop-kundans"
+    },
+    {
+      "id": "e803ea11-3bf3-4385-ae81-5d2d8f14d4c8",
+      "name": "8×4 Size Eye Shape Rose Pink Raindrop Kundans",
+      "slug": "8-4-size-eye-shape-rose-pink-colour-raindrop-kundans"
+    },
+    {
+      "id": "cc64a6f7-03b9-4a16-96ba-abe28e96a113",
+      "name": "8×4 Size Eye Shape Silver Raindrop Kundans",
+      "slug": "8-4-size-eye-shape-silver-colour-raindrop-kundans"
+    },
+    {
+      "id": "ce842bcb-dff3-4d1c-8f67-c06944d5d22f",
+      "name": "8K Drop Ceramic White Kundans",
+      "slug": "8k-drop-ceramic-white"
+    },
+    {
+      "id": "97e3787c-c8d7-4c10-96f4-e85fd0f68b96",
+      "name": "8K Drop Glossy White Kundans",
+      "slug": "8k-drop-glossy-white"
+    },
+    {
+      "id": "c40f2262-61da-4c78-8faa-95146e18a801",
+      "name": "8K Eye C Green Matte Kundans",
+      "slug": "8k-eye-c-green-matt"
+    },
+    {
+      "id": "d32fac27-ab9a-418c-ae7a-d7ab9ec04a44",
+      "name": "8K Eye Ceramic White Kundans",
+      "slug": "8k-eye-ceramic-white-kundans"
+    },
+    {
+      "id": "47986905-6102-41c1-a047-2335ceeeb399",
+      "name": "8K Eye Dark Blue Matte Kundans",
+      "slug": "8k-eye-dark-blue-matt"
+    },
+    {
+      "id": "8578b06d-9b80-46c3-878a-8b8f5ed56c24",
+      "name": "8K Eye Dark Green Matte Kundans",
+      "slug": "8k-eye-dark-green-matt"
+    },
+    {
+      "id": "e8987aac-b5bc-460c-a566-bee2d8950e31",
+      "name": "8K Eye glossy orange Kundans",
+      "slug": "8k-eye-glossy-orange-kundans"
+    },
+    {
+      "id": "f68c6dce-504f-46e5-a717-6ab3fe535c94",
+      "name": "8K Eye Purple Matte Kundans",
+      "slug": "8k-eye-purpule-matt"
+    },
+    {
+      "id": "77c0b83d-3a17-44e9-92fe-3b38294eb189",
+      "name": "8K Eye Shape Ceramic Gold Kundans",
+      "slug": "8k-eye-shape-ceramic-gold-kundans"
+    },
+    {
+      "id": "ed9b987e-e4ba-4e4e-b115-44ba665d988e",
+      "name": "8K Eye Shape dark Green Glossy Kundans",
+      "slug": "8k-eye-shape-dark-green-glossy-kundans"
+    },
+    {
+      "id": "d917cebf-c074-4800-be33-e51b6c686187",
+      "name": "8K Eye Shape Dark Pink Glossy Kundans",
+      "slug": "8k-eye-shape-dark-pink-glossy-kundans"
+    },
+    {
+      "id": "c30b5737-5587-45aa-a8c3-23ceb3235b2a",
+      "name": "8K Eye Shape Light Green Glossy Kundans",
+      "slug": "8k-eye-shape-light-green-glossy-kundans"
+    },
+    {
+      "id": "37bff753-a4aa-4dd7-ba99-91e8ee70ccc5",
+      "name": "8K Eye Shape Light Purple Glossy Kundans",
+      "slug": "8k-eye-shape-light-purple-glossy-kundans"
+    },
+    {
+      "id": "dafbeee0-1c49-4a1d-a753-c52e77575ca9",
+      "name": "8K Eye Shape Matte Dark Marron Kundans",
+      "slug": "8k-eye-shape-matt-dark-marron-colour-kundans"
+    },
+    {
+      "id": "68939786-f8bf-4ed7-a8a4-99045d9e5bde",
+      "name": "8K Eye Shape Matte Lavender Kundans",
+      "slug": "8k-eye-shape-matt-lavender-colour-kundans"
+    },
+    {
+      "id": "b70ce426-9db5-4c1b-8d0c-fccd3d2e6f19",
+      "name": "8K Eye Shape Red Glossy Kundans",
+      "slug": "8k-eye-shape-red-glossy-kundans"
+    },
+    {
+      "id": "ab03723c-fbcf-45d8-9bfa-80f086b4cf38",
+      "name": "8K Eye Shape Rose Pink Glass Kundans",
+      "slug": "8k-eye-shape-rose-pink-glass-kundans"
+    },
+    {
+      "id": "1b3e0966-d005-43a2-a831-36eaac911cbd",
+      "name": "8K Eye Shape Sky Blue Glossy Kundans",
+      "slug": "8k-eye-shape-sky-blue-glossy-kundans"
+    },
+    {
+      "id": "78199da7-4c90-4ed0-9fa2-117d0bd74018",
+      "name": "8K Eye Sky Blue Matte Kundans",
+      "slug": "8k-eye-sky-blue-matt"
+    },
+    {
+      "id": "9bfc7235-950e-440f-a6d8-47427a1fe3ef",
+      "name": "8K Eye Yellow glossy Kundans",
+      "slug": "8k-eye-yellow-glossy-kundans"
+    },
+    {
+      "id": "4cea733a-8c74-4b7b-8944-7a6b2d9203b2",
+      "name": "8K Size Drop Ceramic Gold Kundans",
+      "slug": "8k-size-drop-ceramic-gold"
+    },
+    {
+      "id": "1e96f8fa-81a8-4089-b6b9-a5e7f444eca2",
+      "name": "Big S Shape Glossy White Kundans",
+      "slug": "big-s-shape-glossy-white-kundans"
+    },
+    {
+      "id": "ce2076e7-ee1b-4a30-b717-590a8e2ae600",
+      "name": "Crown Shape Glossy White Kundans",
+      "slug": "crown-shape-glossy-white-kundans"
+    },
+    {
+      "id": "371fcaf3-d20d-47e6-8952-cbb821e54bba",
+      "name": "Dark Blue Coloue Moon Matte Kundans",
+      "slug": "dark-blue-coloue-moon-matt-kundans"
+    },
+    {
+      "id": "b6f78bdc-9342-4d8f-afbb-43eb5f8cd6c0",
+      "name": "Dark Green Half Moom Glass Kundans",
+      "slug": "dark-green-half-moom-glass-kundans"
+    },
+    {
+      "id": "63e7c02a-861e-47d5-a3ee-a1adeee9acdb",
+      "name": "Dark Green Moon Matte Kundans",
+      "slug": "dark-grren-colour-moon-matt-kundans"
+    },
+    {
+      "id": "aefc06fd-f415-4165-b450-4eb257ee9c0b",
+      "name": "Diamond Light Green Glossy Kundans",
+      "slug": "diamond-light-green-glossy-kundans"
+    },
+    {
+      "id": "04dd462e-9fc4-4b0a-b897-d2a5f4b878ac",
+      "name": "Diamond Orange Glossy Kundans",
+      "slug": "diamond-orange-glossy-kundans"
+    },
+    {
+      "id": "ed83fe97-0992-4fe9-9e00-a7c4be4a4ded",
+      "name": "Diamond Rose Pink Glossy Kundans",
+      "slug": "diamond-rose-pink-glossy-kundans"
+    },
+    {
+      "id": "0d0c9f9a-2a95-4608-9c69-c3da8781689f",
+      "name": "Diamond Shape Baby Pink Glossy Kundans",
+      "slug": "diamond-shape-baby-pink-glossy-kundans"
+    },
+    {
+      "id": "d924c182-9634-416f-8db3-588f4a89a878",
+      "name": "Diamond Shape Baby Pink Matte Kundans",
+      "slug": "diamond-shape-baby-pink-colour-matt"
+    },
+    {
+      "id": "ab665cca-ab60-458e-a34b-3f1f80392732",
+      "name": "Diamond Shape Dark Blue Matte Kundans",
+      "slug": "diamond-shape-dark-blue-matt"
+    },
+    {
+      "id": "1dd44e6d-a0a6-4a00-bef4-e1a329967ea2",
+      "name": "Diamond Shape Dark Green Glossy Kundans",
+      "slug": "diamond-shape-dark-green-glossy"
+    },
+    {
+      "id": "d321191b-d587-411e-9319-72ae77bd90c8",
+      "name": "Diamond Shape Dark Pesara Pacha Matte Kundans",
+      "slug": "diamond-shape-dark-pesara-pacha-colour-matt"
+    },
+    {
+      "id": "7fa1c761-09d7-468b-814c-d2be933cab8b",
+      "name": "Diamond Shape Dark Pink Matte Kundans",
+      "slug": "diamond-shape-dark-pink-matt"
+    },
+    {
+      "id": "7fd6d3bf-1dc2-442a-96df-1db24527504d",
+      "name": "Diamond Shape Green Matte Kundans",
+      "slug": "diamond-shape-green-colour-matt"
+    },
+    {
+      "id": "912947d6-1b0e-4de9-8aa7-5757f76c25f9",
+      "name": "Diamond Shape Ice Blue Matte Kundans",
+      "slug": "diamond-shape-ice-blue-colour-matt"
+    },
+    {
+      "id": "33e7a585-ed1b-42e3-9937-4f9f8175e32d",
+      "name": "Diamond Shape Kanakambaram Pink Matte Kundans",
+      "slug": "diamond-shape-kanakambaram-pink-colour-matt"
+    },
+    {
+      "id": "4bfcd457-9ff5-4e95-987d-a4fc74f9a419",
+      "name": "Diamond Shape Light Pistha Green Matte Kundans",
+      "slug": "diamond-shape-light-pistha-green-colour-matt"
+    },
+    {
+      "id": "a4c09097-d02f-45f4-bdec-0b84acfddd45",
+      "name": "Diamond Shape Marron Matte Kundans",
+      "slug": "diamond-shape-marron-colour-matt"
+    },
+    {
+      "id": "c512557f-14fb-4439-a12b-15c9d4adcd9c",
+      "name": "Diamond Shape Nemali Kantam Matte Kundans",
+      "slug": "diamond-shape-nemali-kantam-colour-matt"
+    },
+    {
+      "id": "60cdbefc-e80d-4832-bb0d-0f6584287f70",
+      "name": "Diamond Shape Orange Matte Kundans",
+      "slug": "diamond-shape-orange-colour-matt"
+    },
+    {
+      "id": "64b1230f-ba42-470c-8f38-cc64e2c948a6",
+      "name": "Diamond Shape Pesara Pacha Matte Kundans",
+      "slug": "diamond-shape-pesara-pacha-colour-matt"
+    },
+    {
+      "id": "51e7a8a1-835c-412c-8d2f-68a73852f11e",
+      "name": "Diamond Shape Purple Matte Kundans",
+      "slug": "diamond-shape-purpule-colour-matt"
+    },
+    {
+      "id": "e30c508a-9e42-4e49-bc08-a53f9e8a50aa",
+      "name": "Diamond Shape Red Matte Kundans",
+      "slug": "diamond-shape-red-colour-matt"
+    },
+    {
+      "id": "ed2da036-2964-4ef3-b080-eba978cf487a",
+      "name": "Diamond Shape Sky Blue Matte Kundans",
+      "slug": "diamond-shape-sky-blue-matt"
+    },
+    {
+      "id": "6e93536c-5d68-4216-917f-a0918d0049e2",
+      "name": "Half Moon Dark Blue Glass Kundans",
+      "slug": "half-moon-dark-blue-glass-kundans"
+    },
+    {
+      "id": "c2811f07-eb40-4c2b-ab5c-d88f951da377",
+      "name": "Half Moon Kanakambaram Pink Matte Kundans",
+      "slug": "half-moon-kanakambaram-pink-matt"
+    },
+    {
+      "id": "b21bf0a5-0489-4a73-b0c7-c6a48397474b",
+      "name": "Half Moon Light Green Matte Kundans",
+      "slug": "half-moon-light-green-matt"
+    },
+    {
+      "id": "ec6bde7b-7e36-4876-99ce-b5d082a64b1c",
+      "name": "Half Moon Light Pink Matte Kundans",
+      "slug": "half-moon-light-pink-matt"
+    },
+    {
+      "id": "97238f0b-79b9-4762-a4de-3b1ca50e5742",
+      "name": "Half Moon Marron Matte Kundans",
+      "slug": "half-moon-marron-matt"
+    },
+    {
+      "id": "d0df2c53-eb65-4f91-8722-7682b338a618",
+      "name": "Half Moon Orange Glass Kundans",
+      "slug": "half-moon-orange-glass-kundans"
+    },
+    {
+      "id": "7003e610-85ef-41f1-bd40-3b3da0c68d62",
+      "name": "Half Moon Orange Matte Kundans",
+      "slug": "half-moon-orange-matt"
+    },
+    {
+      "id": "3f8529b7-659e-44fc-a435-27913301b3a5",
+      "name": "Half Moon Purple Glass Kundans",
+      "slug": "half-moon-purple-glass-kundans"
+    },
+    {
+      "id": "0b30266b-90e4-410b-88f6-59eb5392f9e4",
+      "name": "Half Moon Red Glass Kundans",
+      "slug": "half-moon-red-glass-kundans"
+    },
+    {
+      "id": "489eae1c-4745-48cd-9030-2682bc48d2da",
+      "name": "Half Moon Red Matte Kundans",
+      "slug": "half-moon-red-matt"
+    },
+    {
+      "id": "ac9fb5b0-b2d2-4e28-b773-2e0bf0f60126",
+      "name": "Half Moon Sky Blue Glass Kundans",
+      "slug": "half-moon-sky-blue-glass-kundans"
+    },
+    {
+      "id": "56a172bc-e842-4ba9-969c-bbde7352e662",
+      "name": "Half Moon White Matte Kundans",
+      "slug": "half-moon-white-matt"
+    },
+    {
+      "id": "b6fd94ae-ff87-4906-bcf9-66609fa8eb9b",
+      "name": "Half Moon Yellow Matte Kundans",
+      "slug": "half-moon-yellow-matt"
+    },
+    {
+      "id": "595e09e1-2500-41fa-acfe-b6c8bd602098",
+      "name": "Heart Shape Ceramic Gold Kundans",
+      "slug": "heart-shape-ceramic-gold"
+    },
+    {
+      "id": "7f92fbf4-2f21-49b4-9d31-fe2b2a074318",
+      "name": "Heart Shape Ceramic White Kundans",
+      "slug": "heart-shape-ceramic-white"
+    },
+    {
+      "id": "05c457be-fccf-49ba-8df2-1b90fb9bfa05",
+      "name": "Lavender Moon Matte Kundans",
+      "slug": "lavender-colour-moon-matt-kundans"
+    },
+    {
+      "id": "6f877c29-642d-4e3a-9d69-6e1056dc21ad",
+      "name": "Light Green Moon Matte Kundans",
+      "slug": "light-green-colour-moon-matt-kundans"
+    },
+    {
+      "id": "36c9d594-293b-4100-9b0e-5e3a66151b90",
+      "name": "Light Lavender Moon Matte Kundans",
+      "slug": "light-lavender-colour-moon-matt-kundans"
+    },
+    {
+      "id": "2c5722c1-aee0-49c8-9a80-d89d1c28aad4",
+      "name": "Light Lilac Shade Moon Matte Kundans",
+      "slug": "light-lilac-shade-moon-matt-kundans"
+    },
+    {
+      "id": "97fc854a-d674-4264-a85d-588c3fddaff3",
+      "name": "Light Pistha Green Moon Matte Kundans",
+      "slug": "light-pistha-green-colour-moon-matt"
+    },
+    {
+      "id": "51c8519d-dcfc-4ec6-8894-1333cf003f3c",
+      "name": "Mint Green Moon Matte Kundans",
+      "slug": "mint-green-colour-moon-matt-kundans"
+    },
+    {
+      "id": "205dc58e-c533-4f27-bd0e-ca9471a9e8ba",
+      "name": "Multicolour Kundans-4×4 Square Shape",
+      "slug": "multicolour-kundans-4-4-square-shape"
+    },
+    {
+      "id": "bae2328c-b43f-47e5-b598-da0dff8eb8e4",
+      "name": "Multicolour Kundans-4mm Round Shape",
+      "slug": "multicolour-kundans-4mm-round-shape"
+    },
+    {
+      "id": "490fdc98-62c0-4028-9243-c97ef3dcdcee",
+      "name": "Multicolour Kundans-6k Drop Shape",
+      "slug": "multicolour-kundans-6k-drop-shape"
+    },
+    {
+      "id": "7f80a7ad-da40-4ab9-b3a6-53d0f3700423",
+      "name": "Multicolour Kundans-6k Eye Shape",
+      "slug": "multicolour-kundans-6k-eye-shape"
+    },
+    {
+      "id": "e6ae6e20-3d01-4322-a53e-04f93d83e622",
+      "name": "Multicolour Kundans-8k Eye Shape",
+      "slug": "multicolour-kundans-8k-eye-shape"
+    },
+    {
+      "id": "f964c49e-a1e2-43a7-8008-b36c4ae832a9",
+      "name": "Multicolour Kundans-diamond Shape",
+      "slug": "multicolour-kundans-diamond-shape"
+    },
+    {
+      "id": "2ede8689-1301-4ac4-b702-abe723911623",
+      "name": "Multicolour Kundans-moon Shape",
+      "slug": "multicolour-kundans-moon-shape"
+    },
+    {
+      "id": "802d4b0a-c1a0-44ca-8bd7-5e1a5f569045",
+      "name": "Multicolour Kundans-tilakam(4k Drop)shape",
+      "slug": "multicolour-kundans-tilakam-4k-drop-shape"
+    },
+    {
+      "id": "4a9807b5-eab7-481f-acdc-7fdaeb3badaa",
+      "name": "Multicolour Matte Kundans-4×4 Square Shape",
+      "slug": "multicolour-matt-kundans-4-4-square-shape"
+    },
+    {
+      "id": "9dd0f1b7-3e47-49cc-8079-21816de5f47b",
+      "name": "Multicolour Matte Kundans-6k Drop Shape",
+      "slug": "multicolour-matt-kundans-6k-drop-shape"
+    },
+    {
+      "id": "ac6b6e79-b1ee-4747-83b7-be5f7ca161c6",
+      "name": "Multicolour Matte Kundans-6k Eye Shape",
+      "slug": "multicolour-matt-kundans-6k-eye-shape"
+    },
+    {
+      "id": "6bacb3bb-86f4-4e44-9b33-832cdb23c838",
+      "name": "Multicolour Matte Kundans-8k Eye Shape",
+      "slug": "multicolour-matt-kundans-8k-eye-shape"
+    },
+    {
+      "id": "637036f1-6b7a-4b3c-9d10-ea0daaad72d8",
+      "name": "Multicolour Matte Kundans-diamond Shape",
+      "slug": "multicolour-matt-kundans-diamond-shape"
+    },
+    {
+      "id": "7cc5e344-e73e-40ca-98af-8e5eadfc4a62",
+      "name": "Multicolour Matte Kundans-moon Shape",
+      "slug": "multicolour-matt-kundans-moon-shape"
+    },
+    {
+      "id": "1a597c8d-3487-4ad3-9de9-53bb79d18a88",
+      "name": "Pear Shaped Jadav Green Kundan With 2 Connectors Kundans",
+      "slug": "pear-shaped-jadav-green-kundan-with-2-connectors"
+    },
+    {
+      "id": "99f52c01-d3d0-4654-b1bc-0d0a13a4c0bc",
+      "name": "Pear Shaped Jadav Pink Kundan With 2 Connectors Kundans",
+      "slug": "pear-shaped-jadav-pink-kundan-with-2-connectors"
+    },
+    {
+      "id": "314e4ab0-e766-4234-b65d-3fbadc7cf348",
+      "name": "Rectangular Pink Kundan Jadav Pendent Kundans",
+      "slug": "rectangular-pink-kundan-jadav-pendent"
+    },
+    {
+      "id": "da6f14a4-e903-4bb1-a20a-ac7352feaf72",
+      "name": "Small S Shape Glossy White Kundans",
+      "slug": "small-s-shape-glossy-white"
+    },
+    {
+      "id": "1f656017-5cdd-4f0b-9fb5-9bd5ef5836a6",
+      "name": "Small Star Glossy White Kundans",
+      "slug": "small-star-glossy-white-kundans"
+    },
+    {
+      "id": "681e6387-21e2-4522-908f-303a09b054ed",
+      "name": "Tilakam Shape Baby Pink Glass Kundans",
+      "slug": "tilakam-shape-baby-pink-glass"
+    },
+    {
+      "id": "9eeed1dc-cb9f-4564-906f-d08f3a3bf151",
+      "name": "Tilakam Shape Dark Green Glass Kundans",
+      "slug": "tilakam-shape-dark-green-glass"
+    },
+    {
+      "id": "f09ecb44-d52e-4059-ba86-5601e9822519",
+      "name": "Tilakam Shape Dark Pink Glossy Kundans",
+      "slug": "tilakam-shape-dark-pink-glossy-kundans"
+    },
+    {
+      "id": "d67d7040-a84f-468e-8515-6725722a3a4b",
+      "name": "Tilakam Shape Glossy White Kundans",
+      "slug": "tilakam-shape-glossy-white"
+    },
+    {
+      "id": "edb2b810-dccd-4e53-88f0-5241f0e74a57",
+      "name": "Tilakam Shape Light Purple Glossy Kundans",
+      "slug": "tilakam-shape-light-purpule-glossy-kundans"
+    },
+    {
+      "id": "64106eba-43b4-4a45-96f4-ab540ebc7583",
+      "name": "Tilakam Shape Peach Glossy Kundans",
+      "slug": "tilakam-shape-peach-glossy"
+    },
+    {
+      "id": "d5b47cfb-5d6a-4b25-83aa-ae7651480e64",
+      "name": "Tilakam Shape Red Glass Kundans",
+      "slug": "tilakam-shape-red-glass"
+    },
+    {
+      "id": "f9012da8-3a07-4064-85db-2390729d0167",
+      "name": "Tilakam Shape Sea Green Glass Kundans",
+      "slug": "tilakam-shape-sea-green-glass"
+    },
+    {
+      "id": "4324c9c7-672f-4784-a470-432493b30643",
+      "name": "Tilakam Shape Sky Blue Glass Kundans",
+      "slug": "tilakam-shape-sky-blue-glass"
+    },
+    {
+      "id": "27e29eeb-de95-418d-a7ae-6646801c8fe1",
+      "name": "Tilakam Shape Yellow Glass Kundans",
+      "slug": "tilakam-shape-yellow-glass"
+    },
+    {
+      "id": "512fc31b-31e8-4e06-9cd8-4d796ae6f64d",
+      "name": "Triangle Dark Blue Glossy Kundans",
+      "slug": "triangle-dark-blue-glossy"
+    },
+    {
+      "id": "c51b35a3-603c-4417-9495-417a115e6dd7",
+      "name": "Triangle Dark Green Glossy Kundans",
+      "slug": "triangle-dark-green-glossy"
+    },
+    {
+      "id": "2ed4fdc7-3619-4f46-a08c-3f186a44bbef",
+      "name": "Triangle Dark Lavender Matte Kundans",
+      "slug": "triangle-dark-lavender-matt"
+    },
+    {
+      "id": "e150dd7c-7677-499c-960e-c40f6fc34a15",
+      "name": "Triangle Dark Pink Glossy Kundans",
+      "slug": "triangle-dark-pink-glossy"
+    },
+    {
+      "id": "48a5d057-9b25-40b8-95f2-d84917995f92",
+      "name": "Triangle Glossy Gold Kundans",
+      "slug": "triangle-glossy-gold-kundans"
+    },
+    {
+      "id": "8ccac1c8-6d9e-49c7-a105-0cc3255447f2",
+      "name": "Triangle Glossy White Kundans",
+      "slug": "triangle-glossy-white-kundans"
+    },
+    {
+      "id": "c5413b32-aed2-4936-b782-94f935b3cdb2",
+      "name": "Triangle Green Matte Kundans",
+      "slug": "triangle-green-matt"
+    },
+    {
+      "id": "bdb26599-b59e-4688-9001-a63f7d5c3edb",
+      "name": "Triangle Light Green Glossy Kundans",
+      "slug": "triangle-light-green-glossy"
+    },
+    {
+      "id": "56a78160-6090-41b5-93e3-f7ef9fba36c8",
+      "name": "Triangle Light Peach Matte Kundans",
+      "slug": "triangle-light-peach-colour-matt"
+    },
+    {
+      "id": "04cc16d7-801c-4bf5-9a5b-2ae2cc0b3b6e",
+      "name": "Triangle Maroon Matte Kundans",
+      "slug": "triangle-maroon-matt"
+    },
+    {
+      "id": "25806942-7e7b-490d-8868-82d190065ad6",
+      "name": "Triangle Orange Matte Kundans",
+      "slug": "triangle-orange-matt"
+    },
+    {
+      "id": "807caf87-acb9-42b9-9f38-c33393cb6bc8",
+      "name": "Triangle Purple Glossy Kundans",
+      "slug": "triangle-purpule-glossy"
+    },
+    {
+      "id": "18101860-2c92-430a-91eb-1de3d3a1bc41",
+      "name": "Triangle Purple Matte Kundans",
+      "slug": "triangle-purpule-matt"
+    },
+    {
+      "id": "f4057364-5c38-4435-9be9-7a0b2e9c2902",
+      "name": "Triangle Red Glossy Kundans",
+      "slug": "triangle-red-glossy"
+    },
+    {
+      "id": "1692ad66-2b70-417f-85c4-39ef989d0539",
+      "name": "Triangle Red Matte Kundans",
+      "slug": "triangle-red-matt"
+    },
+    {
+      "id": "e9d234ee-7b9f-4e64-8da0-02169446d0b8",
+      "name": "Triangle Sky Blue Glossy Kundans",
+      "slug": "triangle-sky-blue-glossy"
+    },
+    {
+      "id": "f1a1c5a5-6152-49f0-a267-7d32713a2e37",
+      "name": "Triangle Sky Blue Matte Kundans",
+      "slug": "triangle-sky-blue-matt"
+    },
+    {
+      "id": "30e815b5-c11d-4147-98d6-098587a503c7",
+      "name": "V Shape Dark Green Glossy Kundans",
+      "slug": "v-shape-dark-green-glossy-kundans"
+    },
+    {
+      "id": "241d5b1b-319d-41be-96d6-0b3acf6799ea",
+      "name": "V Shape Dark Pink Glossy Kundans",
+      "slug": "v-shape-dark-pink-glossy-kundans"
+    },
+    {
+      "id": "86a47ae4-b671-4a94-b975-2d95524b481f",
+      "name": "V Shape Dark Purple Glossy Kundans",
+      "slug": "v-shape-dark-purple-glossy-kundans"
+    },
+    {
+      "id": "5c0d07fc-0ea4-4fe3-a0b0-27605231fb02",
+      "name": "V Shape Glossy Gold Kundans",
+      "slug": "v-shape-glossy-gold-kundans"
+    },
+    {
+      "id": "7090872b-3164-4ec1-b0b8-a28c1260400f",
+      "name": "V Shape Glossy White Kundans",
+      "slug": "v-shape-glossy-white-kundans"
+    },
+    {
+      "id": "d24eb93e-3dee-4905-a511-d63f118d489e",
+      "name": "V Shape Light Green Glossy Kundans",
+      "slug": "v-shape-light-green-glossy-kundans"
+    },
+    {
+      "id": "e9dee45b-6496-405d-b4a2-bb19295a5f0e",
+      "name": "V Shape Orange Glossy Kundans",
+      "slug": "v-shape-orange-glossy-kundans"
+    },
+    {
+      "id": "591d0300-33bb-4c2f-aa9d-6701a332f80b",
+      "name": "V Shape Sky Blue Glossy Kundans",
+      "slug": "v-shape-sky-blue-glossy-kundans"
+    }
+  ],
+  "active_products": 109,
+  "draft_products": 129,
+  "local_products_updated": 160,
+  "verification": {
+    "database_products_at_150": 238,
+    "database_products_still_at_160": 0
+  }
+}

@@ -1,0 +1,13 @@
+.page { margin: auto; max-width: 1440px; min-height: 65vh; padding: 54px 36px 100px; position: relative; }
+.heading,.controls,.card span,.card i,.card b { animation: shimmer 1.1s ease-in-out infinite alternate; background: #f0e8e3; }
+.heading { height: 66px; margin-bottom: 32px; max-width: 520px; }
+.controls { height: 54px; margin-bottom: 36px; max-width: 900px; }
+.grid { display: grid; gap: 34px 18px; grid-template-columns: repeat(4,minmax(0,1fr)); }
+.card { display: grid; gap: 10px; }
+.card span { aspect-ratio: 1; display: block; }
+.card i { height: 12px; width: 45%; }
+.card b { height: 22px; width: 82%; }
+.page p { clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; width: 1px; }
+@keyframes shimmer { to { background: #faf7f5; } }
+@media (prefers-reduced-motion:reduce) { .heading,.controls,.card span,.card i,.card b { animation: none; } }
+@media (max-width:760px) { .page { padding: 28px 12px 100px; }.heading { height: 48px; width: 72%; }.controls { height: 46px; }.grid { gap: 26px 9px; grid-template-columns: repeat(2,minmax(0,1fr)); } }

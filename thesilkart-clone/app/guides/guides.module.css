@@ -1,0 +1,25 @@
+.page,.article { max-width: 1320px; margin: auto; padding: 34px 36px 100px; }
+.page header,.article header { max-width: 820px; padding: 60px 0 46px; }
+.page header>p,.article header>p { color: #8a1538; font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.page h1,.article h1 { font-size: clamp(3rem,7vw,6.4rem); letter-spacing: -.045em; line-height: .94; margin: 10px 0 22px; }
+.page header>div,.article header>div { color: #665a55; font-size: 1rem; line-height: 1.75; max-width: 680px; }
+.grid { display: grid; gap: 48px 24px; grid-template-columns: repeat(3,1fr); }
+.grid article>a>span { aspect-ratio: 1.15; background: #f4efeb; display: block; overflow: hidden; position: relative; }
+.grid img { object-fit: cover; transition: transform .3s ease; }
+.grid article:hover img { transform: scale(1.03); }
+.grid small { color: #9a6f4b; display: block; font-size: .66rem; font-weight: 800; letter-spacing: .08em; margin-top: 17px; text-transform: uppercase; }
+.grid h2 { font-size: clamp(1.5rem,2.4vw,2.25rem); line-height: 1.05; margin: 9px 0 12px; }
+.grid p { color: #6f625c; font-size: .84rem; line-height: 1.7; }
+.grid b { color: #761a37; display: inline-block; font-size: .78rem; margin-top: 14px; border-bottom: 1px solid; }
+.article>nav { color: #8b7d75; display: flex; font-size: .72rem; gap: 9px; }
+.article>figure { aspect-ratio: 1.9; background: #f4efeb; margin: 0; overflow: hidden; position: relative; }
+.article>figure img { object-fit: cover; }
+.body { margin: 58px auto 0; max-width: 820px; }
+.body section { border-top: 1px solid #e6dcd6; display: grid; gap: 28px; grid-template-columns: 230px 1fr; padding: 28px 0; }
+.body h2 { font-size: 1.65rem; line-height: 1.1; }
+.body section p { color: #665a55; font-size: .94rem; line-height: 1.85; margin: 0; }
+.body aside { background: #f8f2ed; margin-top: 46px; padding: 38px; }
+.body aside>p { color: #8a1538; font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.body aside h2 { font-size: 2.2rem; margin: 8px 0 24px; }
+.body aside a { background: #6e1734; color: #fff; display: inline-flex; font-size: .8rem; font-weight: 800; padding: 14px 18px; }
+@media(max-width:760px){.page,.article{padding:22px 14px 100px}.page header,.article header{padding:42px 0 34px}.grid{grid-template-columns:1fr}.article>figure{aspect-ratio:1.1}.body{margin-top:38px}.body section{display:block}.body section p{margin-top:12px}.body aside{padding:28px 22px}}

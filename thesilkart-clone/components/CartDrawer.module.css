@@ -1,0 +1,36 @@
+.backdrop { position: fixed; inset: 0; z-index: 1090; border: 0; background: rgba(24,12,17,.48); opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+.backdrop.visible { opacity: 1; pointer-events: auto; }
+.drawer { position: fixed; right: 0; top: 0; bottom: 0; z-index: 1100; width: min(460px,100vw); background: #fff; display: grid; grid-template-rows: auto 1fr auto; transform: translateX(101%); transition: transform .3s cubic-bezier(.2,.75,.2,1); box-shadow: -20px 0 60px rgba(35,15,22,.18); }
+.drawer.open { transform: translateX(0); }
+.drawer header { display: flex; justify-content: space-between; align-items: start; padding: 24px; border-bottom: 1px solid #e7ddd7; }
+.drawer header p { color: #8a1538; text-transform: uppercase; letter-spacing: .12em; font-size: .66rem; font-weight: 800; }
+.drawer header h2 { margin-top: 5px; font-size: 1.55rem; }
+.drawer header button { border: 0; background: transparent; font-size: 2rem; cursor: pointer; }
+.drawer header button svg { height: 24px; width: 24px; }
+.items { overflow-y: auto; padding: 8px 24px; }
+.items article { display: grid; grid-template-columns: 92px 1fr; gap: 14px; padding: 18px 0; border-bottom: 1px solid #eee5df; }
+.items img { width: 92px; height: 104px; object-fit: contain; background: #f7f1ec; }
+.items h3 { font-family: var(--font-jakarta); font-size: .82rem; text-transform: capitalize; line-height: 1.4; }
+.items p { color: #8a7d76; font-size: .7rem; margin: 4px 0; }
+.items strong { color: #751a36; font-size: .88rem; }
+.items .itemSaving { color: #2d8c4d; display: block; font-size: .66rem; font-weight: 800; margin-top: 3px; }
+.quantity { display: flex; align-items: center; gap: 9px; margin-top: 12px; }
+.quantity button { border: 1px solid #d9cec8; background: #fff; min-width: 28px; height: 28px; cursor: pointer; }
+.quantity button svg { height: 14px; vertical-align: middle; width: 14px; }
+.quantity button:last-child { border: 0; margin-left: auto; color: #8a1538; font-size: .68rem; }
+.quantity button:last-child { align-items: center; display: inline-flex; gap: 4px; }
+.quantity span { font-size: .78rem; }
+.empty { min-height: 60vh; display: grid; place-content: center; justify-items: center; gap: 14px; color: #786c66; text-align: center; }
+.empty>span { font-size: 3rem; color: #b89358; }
+.empty a { color: #761a37; font-weight: 800; border-bottom: 1px solid; }
+.drawer footer { border-top: 1px solid #e7ddd7; padding: 20px 24px 26px; background: #fffaf6; }
+.drawer footer div { display: flex; justify-content: space-between; }
+.drawer footer p { color: #81746d; font-size: .7rem; margin: 7px 0 16px; }
+.drawer footer small { color: #81746d; display: block; font-size: .68rem; margin: -9px 0 16px; }
+.drawer footer .savingsLine { color: #2d8c4d; font-size: .85rem; font-weight: 850; margin-top: 7px; }
+.shippingProgress { background: #eadfd8; border-radius: 999px; display: block !important; height: 5px; margin-top: 13px; overflow: hidden; }
+.shippingProgress span { background: #2d8c4d; display: block; height: 100%; transition: width .25s ease; }
+.shippingUnlocked span { background: #d6ad52; }
+.drawer footer .unlockedCopy { color: #8a6a1f; font-weight: 850; }
+.drawer footer>a { display: flex; gap: 7px; min-height: 50px; justify-content: center; align-items: center; background: #6e1734; color: white; font-weight: 800; font-size: .82rem; }
+.drawer footer>a svg { height: 17px; width: 17px; }

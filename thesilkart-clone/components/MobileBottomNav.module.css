@@ -1,0 +1,15 @@
+.nav { display: none; }
+
+@media (max-width:760px) {
+  .nav { position: fixed; display: grid; grid-template-columns: repeat(5,1fr); left: 0; right: 0; bottom: 0; z-index: 1000; min-height: 62px; padding: 7px 4px max(7px,env(safe-area-inset-bottom)); background: rgba(255,255,255,.97); backdrop-filter: blur(18px); border-top: 1px solid #ddd2cc; box-shadow: 0 -8px 28px rgba(50,24,32,.08); }
+  .nav a,.nav button { position: relative; border: 0; background: transparent; color: #766a64; display: grid; justify-items: center; align-content: center; gap: 3px; font: inherit; cursor: pointer; }
+  .nav svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .nav span { font-size: .58rem; font-weight: 750; letter-spacing: .01em; }
+  .nav .active { color: #751a36; }
+  .nav .active::after { content: ''; position: absolute; top: -7px; width: 28px; height: 2px; background: #751a36; }
+  .nav .badge { position: absolute; top: 0; left: calc(50% + 7px); min-width: 16px; height: 16px; padding: 0 4px; border-radius: 999px; display: grid; place-content: center; background: #751a36; color: white; font-size: .53rem; }
+  .nav .voice { align-content: end; color: #751a36; gap: 1px; transform: translateY(-8px); }
+  .nav .voice svg { background: #751a36; border: 4px solid white; border-radius: 50%; box-shadow: 0 5px 16px rgba(91,19,49,.28); color: white; height: 48px; padding: 10px; width: 48px; }
+  .nav .voice b { font-size: .58rem; line-height: 1; }
+  .nav .voice i { background: #fff; border-radius: 50%; height: 8px; position: absolute; top: 15px; width: 8px; }
+}

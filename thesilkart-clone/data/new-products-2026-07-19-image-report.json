@@ -1,0 +1,926 @@
+{
+  "processed": 115,
+  "errors": [],
+  "results": [
+    {
+      "sourceIndex": 1,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.21 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\assorted-mdf-round-ring-bases-for-jewellery-making-premium.webp",
+      "subjectWidth": 618,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.8651
+    },
+    {
+      "sourceIndex": 2,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.24 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\assorted-mdf-round-disc-bases-for-jewellery-making-premium.webp",
+      "subjectWidth": 643,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.7652
+    },
+    {
+      "sourceIndex": 4,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.24 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\assorted-mdf-round-and-oval-bases-for-jewellery-making-premium.webp",
+      "subjectWidth": 1100,
+      "subjectHeight": 644,
+      "alphaCoverage": 0.4871
+    },
+    {
+      "sourceIndex": 5,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.25 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\black-thin-elastic-hair-rubber-bands-premium.webp",
+      "subjectWidth": 1025,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.5945
+    },
+    {
+      "sourceIndex": 6,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.25 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\black-mini-claw-hair-clips-premium.webp",
+      "subjectWidth": 968,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.649
+    },
+    {
+      "sourceIndex": 7,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.26 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\gold-colour-tic-tac-hair-clips-pack-premium.webp",
+      "subjectWidth": 488,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6402
+    },
+    {
+      "sourceIndex": 8,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.26 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\black-colour-tic-tac-hair-clips-pack-premium.webp",
+      "subjectWidth": 452,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.7069
+    },
+    {
+      "sourceIndex": 9,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.27 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\assorted-colour-banana-hair-clips-premium.webp",
+      "subjectWidth": 605,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6082
+    },
+    {
+      "sourceIndex": 10,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.52 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\8-cm-gold-colour-centre-hair-clip-bases-premium.webp",
+      "subjectWidth": 1100,
+      "subjectHeight": 893,
+      "alphaCoverage": 0.2377
+    },
+    {
+      "sourceIndex": 12,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.52 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\gold-colour-memory-wire-for-jewellery-making-premium.webp",
+      "subjectWidth": 765,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.4924
+    },
+    {
+      "sourceIndex": 13,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.53 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\black-colour-u-pins-for-hair-styling-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 838,
+      "alphaCoverage": 0.0662
+    },
+    {
+      "sourceIndex": 14,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.53 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\gold-colour-eye-pins-for-jewellery-making-premium.webp",
+      "subjectWidth": 1063,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.4986
+    },
+    {
+      "sourceIndex": 15,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.53 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\gold-colour-u-pins-without-cap-premium.webp",
+      "subjectWidth": 879,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.083
+    },
+    {
+      "sourceIndex": 16,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.53 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\6-5-cm-gold-colour-centre-hair-clip-bases-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 839,
+      "alphaCoverage": 0.2513
+    },
+    {
+      "sourceIndex": 17,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.54 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\5-mm-gold-colour-metal-hair-band-base-premium.webp",
+      "subjectWidth": 796,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.1203
+    },
+    {
+      "sourceIndex": 18,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.54 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\green-colour-plastic-jercons-premium.webp",
+      "subjectWidth": 1093,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.7571
+    },
+    {
+      "sourceIndex": 19,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.54 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\red-colour-plastic-jercons-premium.webp",
+      "subjectWidth": 1100,
+      "subjectHeight": 975,
+      "alphaCoverage": 0.7016
+    },
+    {
+      "sourceIndex": 20,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.54 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\gold-colour-hair-slides-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 540,
+      "alphaCoverage": 0.2912
+    },
+    {
+      "sourceIndex": 21,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.55 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\gold-colour-plastic-jercons-premium.webp",
+      "subjectWidth": 1058,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.7439
+    },
+    {
+      "sourceIndex": 22,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.55 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\multicolour-plastic-jercons-premium.webp",
+      "subjectWidth": 1028,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.7285
+    },
+    {
+      "sourceIndex": 24,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.55 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\purple-colour-plastic-jercons-premium.webp",
+      "subjectWidth": 1096,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.7474
+    },
+    {
+      "sourceIndex": 23,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.55 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\2-0-bangle-size-sticker-sheet-premium.webp",
+      "subjectWidth": 392,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.5506
+    },
+    {
+      "sourceIndex": 25,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.56 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\2-2-bangle-size-sticker-sheet-premium.webp",
+      "subjectWidth": 1100,
+      "subjectHeight": 416,
+      "alphaCoverage": 0.7643
+    },
+    {
+      "sourceIndex": 26,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.56 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\2-4-bangle-size-sticker-sheet-premium.webp",
+      "subjectWidth": 386,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.5717
+    },
+    {
+      "sourceIndex": 27,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.56 AM (4).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\2-6-bangle-size-sticker-sheet-premium.webp",
+      "subjectWidth": 397,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.5425
+    },
+    {
+      "sourceIndex": 28,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.56 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\2-8-bangle-size-sticker-sheet-premium.webp",
+      "subjectWidth": 383,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.4806
+    },
+    {
+      "sourceIndex": 29,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.57 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\2-10-bangle-size-sticker-sheet-premium.webp",
+      "subjectWidth": 390,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.5323
+    },
+    {
+      "sourceIndex": 30,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.57 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\2-12-bangle-size-sticker-sheet-premium.webp",
+      "subjectWidth": 364,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.5348
+    },
+    {
+      "sourceIndex": 31,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.57 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\2-14-bangle-size-sticker-sheet-premium.webp",
+      "subjectWidth": 378,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.5525
+    },
+    {
+      "sourceIndex": 32,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.58 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\gold-colour-jump-rings-for-jewellery-making-premium.webp",
+      "subjectWidth": 973,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.7251
+    },
+    {
+      "sourceIndex": 34,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.58 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\white-rice-pearl-hanging-beads-premium.webp",
+      "subjectWidth": 960,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.5044
+    },
+    {
+      "sourceIndex": 36,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.59 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\green-fish-enamel-charm-premium.webp",
+      "subjectWidth": 709,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.4634
+    },
+    {
+      "sourceIndex": 37,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.59 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-fish-enamel-charm-premium.webp",
+      "subjectWidth": 862,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.4087
+    },
+    {
+      "sourceIndex": 38,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.59 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\black-lotus-enamel-charm-premium.webp",
+      "subjectWidth": 880,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.3867
+    },
+    {
+      "sourceIndex": 39,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.08.59 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\red-and-green-fish-enamel-charm-premium.webp",
+      "subjectWidth": 711,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.4729
+    },
+    {
+      "sourceIndex": 40,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.00 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\white-and-blue-mini-enamel-charms-premium.webp",
+      "subjectWidth": 756,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.1214
+    },
+    {
+      "sourceIndex": 41,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.00 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-mini-enamel-charms-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 760,
+      "alphaCoverage": 0.1231
+    },
+    {
+      "sourceIndex": 42,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.00 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\green-crescent-lotus-enamel-charm-premium.webp",
+      "subjectWidth": 885,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.5311
+    },
+    {
+      "sourceIndex": 43,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.00 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\green-mini-enamel-charms-premium.webp",
+      "subjectWidth": 815,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.0862
+    },
+    {
+      "sourceIndex": 44,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.01 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-and-white-fish-enamel-charm-premium.webp",
+      "subjectWidth": 429,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.257
+    },
+    {
+      "sourceIndex": 45,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.01 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-crescent-lotus-enamel-charm-premium.webp",
+      "subjectWidth": 845,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.5052
+    },
+    {
+      "sourceIndex": 46,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.01 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\white-turtle-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 724,
+      "alphaCoverage": 0.3522
+    },
+    {
+      "sourceIndex": 47,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.01 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\green-and-pink-fish-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 575,
+      "alphaCoverage": 0.4484
+    },
+    {
+      "sourceIndex": 48,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.02 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\blue-and-white-fish-enamel-charm-premium.webp",
+      "subjectWidth": 708,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.3632
+    },
+    {
+      "sourceIndex": 49,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.02 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-and-green-stone-peacock-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 616,
+      "alphaCoverage": 0.46
+    },
+    {
+      "sourceIndex": 50,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.02 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\white-stone-crescent-enamel-charm-premium.webp",
+      "subjectWidth": 842,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.4756
+    },
+    {
+      "sourceIndex": 53,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.03 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-bird-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 435,
+      "alphaCoverage": 0.3253
+    },
+    {
+      "sourceIndex": 54,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.03 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\twin-peacock-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 736,
+      "alphaCoverage": 0.358
+    },
+    {
+      "sourceIndex": 55,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.03 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\green-peacock-crescent-enamel-charm-premium.webp",
+      "subjectWidth": 723,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.4066
+    },
+    {
+      "sourceIndex": 57,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.04 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\red-and-pink-bird-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 586,
+      "alphaCoverage": 0.3497
+    },
+    {
+      "sourceIndex": 58,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.04 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-and-green-elephant-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 689,
+      "alphaCoverage": 0.4127
+    },
+    {
+      "sourceIndex": 59,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.04 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\green-bird-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 615,
+      "alphaCoverage": 0.3547
+    },
+    {
+      "sourceIndex": 64,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.06 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-stone-crescent-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 851,
+      "alphaCoverage": 0.5782
+    },
+    {
+      "sourceIndex": 69,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.07 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\green-parrot-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 545,
+      "alphaCoverage": 0.3799
+    },
+    {
+      "sourceIndex": 72,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.08 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-and-green-lotus-enamel-charm-premium.webp",
+      "subjectWidth": 796,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.4586
+    },
+    {
+      "sourceIndex": 73,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.08 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-and-green-stone-lotus-enamel-charm-premium.webp",
+      "subjectWidth": 885,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.5278
+    },
+    {
+      "sourceIndex": 75,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.09 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\green-lotus-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 737,
+      "alphaCoverage": 0.584
+    },
+    {
+      "sourceIndex": 76,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.09 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\multicolour-lotus-enamel-charm-premium.webp",
+      "subjectWidth": 836,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.4783
+    },
+    {
+      "sourceIndex": 77,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.09 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-lotus-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 759,
+      "alphaCoverage": 0.5669
+    },
+    {
+      "sourceIndex": 80,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.10 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\red-and-green-double-lotus-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 671,
+      "alphaCoverage": 0.5506
+    },
+    {
+      "sourceIndex": 82,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.10 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-lotus-pearl-drop-enamel-charm-premium.webp",
+      "subjectWidth": 617,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.4693
+    },
+    {
+      "sourceIndex": 83,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.11 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-lotus-pearl-fringe-enamel-charm-premium.webp",
+      "subjectWidth": 611,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.332
+    },
+    {
+      "sourceIndex": 84,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.11 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\multicolour-ganesh-pearl-drop-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 718,
+      "alphaCoverage": 0.4239
+    },
+    {
+      "sourceIndex": 85,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.11 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\green-stone-crescent-enamel-charm-premium.webp",
+      "subjectWidth": 886,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.5306
+    },
+    {
+      "sourceIndex": 86,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.11 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\blue-lotus-pearl-drop-enamel-charm-premium.webp",
+      "subjectWidth": 869,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.3222
+    },
+    {
+      "sourceIndex": 87,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.12 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\white-cow-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 774,
+      "alphaCoverage": 0.1665
+    },
+    {
+      "sourceIndex": 88,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.13 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\green-cow-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 754,
+      "alphaCoverage": 0.2682
+    },
+    {
+      "sourceIndex": 89,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.13 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\peach-cow-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 798,
+      "alphaCoverage": 0.3438
+    },
+    {
+      "sourceIndex": 90,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.13 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\pink-cow-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 718,
+      "alphaCoverage": 0.3377
+    },
+    {
+      "sourceIndex": 91,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.13 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\red-cow-enamel-charm-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 721,
+      "alphaCoverage": 0.2939
+    },
+    {
+      "sourceIndex": 94,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.14 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\assorted-cow-enamel-charms-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 846,
+      "alphaCoverage": 0.2872
+    },
+    {
+      "sourceIndex": 92,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.14 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\purple-hanging-acrylic-beads-premium.webp",
+      "subjectWidth": 1062,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6318
+    },
+    {
+      "sourceIndex": 93,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.14 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\peach-hanging-acrylic-beads-premium.webp",
+      "subjectWidth": 1048,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6593
+    },
+    {
+      "sourceIndex": 95,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.15 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\green-hanging-acrylic-beads-premium.webp",
+      "subjectWidth": 994,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6574
+    },
+    {
+      "sourceIndex": 96,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.15 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\olive-yellow-hanging-acrylic-beads-premium.webp",
+      "subjectWidth": 1038,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6135
+    },
+    {
+      "sourceIndex": 97,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.15 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\dark-pink-hanging-acrylic-beads-premium.webp",
+      "subjectWidth": 1100,
+      "subjectHeight": 983,
+      "alphaCoverage": 0.5814
+    },
+    {
+      "sourceIndex": 98,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.16 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\light-pink-hanging-acrylic-beads-premium.webp",
+      "subjectWidth": 1021,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6737
+    },
+    {
+      "sourceIndex": 99,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.16 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\dark-purple-hanging-acrylic-beads-premium.webp",
+      "subjectWidth": 918,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6074
+    },
+    {
+      "sourceIndex": 100,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.18 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\orange-hanging-acrylic-beads-premium.webp",
+      "subjectWidth": 981,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6656
+    },
+    {
+      "sourceIndex": 101,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.18 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\magenta-hanging-acrylic-beads-premium.webp",
+      "subjectWidth": 987,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6282
+    },
+    {
+      "sourceIndex": 102,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.18 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\golden-yellow-hanging-acrylic-beads-premium.webp",
+      "subjectWidth": 1020,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6507
+    },
+    {
+      "sourceIndex": 103,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.19 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\red-hanging-acrylic-beads-premium.webp",
+      "subjectWidth": 1052,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6145
+    },
+    {
+      "sourceIndex": 104,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.20 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\light-green-hanging-acrylic-beads-premium.webp",
+      "subjectWidth": 1008,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6595
+    },
+    {
+      "sourceIndex": 105,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.20 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\transparent-white-hanging-acrylic-beads-premium.webp",
+      "subjectWidth": 988,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.4053
+    },
+    {
+      "sourceIndex": 106,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.21 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\white-heart-shape-clipstones-premium.webp",
+      "subjectWidth": 1038,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.5725
+    },
+    {
+      "sourceIndex": 107,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.22 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\peach-heart-shape-clipstones-premium.webp",
+      "subjectWidth": 1034,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.7141
+    },
+    {
+      "sourceIndex": 109,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.29 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\gold-double-leaf-charms-premium.webp",
+      "subjectWidth": 884,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.1211
+    },
+    {
+      "sourceIndex": 110,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.29 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\gold-lakshmi-devi-charms-with-elephants-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 810,
+      "alphaCoverage": 0.3271
+    },
+    {
+      "sourceIndex": 111,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.29 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\antique-gold-pinecone-charms-premium.webp",
+      "subjectWidth": 814,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.2081
+    },
+    {
+      "sourceIndex": 112,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.30 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\antique-gold-sunflower-charms-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 333,
+      "alphaCoverage": 0.2361
+    },
+    {
+      "sourceIndex": 113,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.30 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\antique-gold-peacock-connector-charms-premium.webp",
+      "subjectWidth": 856,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.3048
+    },
+    {
+      "sourceIndex": 114,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.30 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\antique-gold-krishna-charms-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 666,
+      "alphaCoverage": 0.1375
+    },
+    {
+      "sourceIndex": 115,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.31 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\antique-gold-elephant-charms-premium.webp",
+      "subjectWidth": 851,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.2698
+    },
+    {
+      "sourceIndex": 116,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.31 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\antique-gold-peacock-charms-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 512,
+      "alphaCoverage": 0.2425
+    },
+    {
+      "sourceIndex": 118,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.32 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\antique-gold-ganesh-charms-premium.webp",
+      "subjectWidth": 843,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.2717
+    },
+    {
+      "sourceIndex": 119,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.32 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\bright-gold-lakshmi-devi-charms-premium.webp",
+      "subjectWidth": 701,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.1555
+    },
+    {
+      "sourceIndex": 120,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.32 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\antique-gold-butterfly-charms-premium.webp",
+      "subjectWidth": 742,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.2089
+    },
+    {
+      "sourceIndex": 121,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.33 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\antique-gold-lakshmi-devi-charms-premium.webp",
+      "subjectWidth": 669,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.1891
+    },
+    {
+      "sourceIndex": 122,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.33 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\antique-gold-peacock-round-connector-charms-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 786,
+      "alphaCoverage": 0.2327
+    },
+    {
+      "sourceIndex": 123,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.34 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\white-8-x-8-mm-square-clipstones-premium.webp",
+      "subjectWidth": 833,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.2304
+    },
+    {
+      "sourceIndex": 124,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.34 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\gold-8-x-8-mm-square-clipstones-premium.webp",
+      "subjectWidth": 801,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.2714
+    },
+    {
+      "sourceIndex": 126,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.35 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\dark-pink-8-x-8-mm-square-clipstones-premium.webp",
+      "subjectWidth": 806,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.3199
+    },
+    {
+      "sourceIndex": 127,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.35 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\dark-green-8-x-8-mm-square-clipstones-premium.webp",
+      "subjectWidth": 843,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.3679
+    },
+    {
+      "sourceIndex": 128,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.35 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\amber-gold-8-x-8-mm-square-clipstones-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 852,
+      "alphaCoverage": 0.2996
+    },
+    {
+      "sourceIndex": 129,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.35 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\crystal-white-8-x-8-mm-square-clipstones-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 808,
+      "alphaCoverage": 0.2337
+    },
+    {
+      "sourceIndex": 130,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.36 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\sky-blue-8-x-8-mm-square-clipstones-premium.webp",
+      "subjectWidth": 900,
+      "subjectHeight": 835,
+      "alphaCoverage": 0.3096
+    },
+    {
+      "sourceIndex": 131,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.36 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\light-green-8-x-8-mm-square-clipstones-premium.webp",
+      "subjectWidth": 818,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.3426
+    },
+    {
+      "sourceIndex": 132,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.36 AM (3).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\grass-green-8-x-8-mm-square-clipstones-premium.webp",
+      "subjectWidth": 829,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.3423
+    },
+    {
+      "sourceIndex": 125,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.34 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\gold-lotus-charms-premium.webp",
+      "subjectWidth": 778,
+      "subjectHeight": 860,
+      "alphaCoverage": 0.3552
+    },
+    {
+      "sourceIndex": 133,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.38 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\rhinestone-picker-wax-pencil-premium.webp",
+      "subjectWidth": 75,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.404
+    },
+    {
+      "sourceIndex": 134,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.39 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\b-7000-multipurpose-jewellery-glue-110-ml-premium.webp",
+      "subjectWidth": 398,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.5863
+    },
+    {
+      "sourceIndex": 135,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.39 AM (2).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\b-7000-multipurpose-jewellery-glue-50-ml-premium.webp",
+      "subjectWidth": 357,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.5552
+    },
+    {
+      "sourceIndex": 136,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.39 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\fevicryl-fabric-glue-30-g-premium.webp",
+      "subjectWidth": 249,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.4004
+    },
+    {
+      "sourceIndex": 137,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.40 AM (1).jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\rhinestone-picker-pen-with-glue-pad-premium.webp",
+      "subjectWidth": 693,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.3618
+    },
+    {
+      "sourceIndex": 138,
+      "source": "C:\\Users\\amigo\\Downloads\\Bangle BY choice\\Clip stones, charms, enamel charms and other\\WhatsApp Image 2026-07-19 at 9.09.40 AM.jpeg",
+      "destination": "public\\images\\new-products-2026-07-19\\fevicryl-fabric-glue-80-g-premium.webp",
+      "subjectWidth": 376,
+      "subjectHeight": 1030,
+      "alphaCoverage": 0.6794
+    }
+  ]
+}

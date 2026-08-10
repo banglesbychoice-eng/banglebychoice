@@ -20,6 +20,8 @@ bangle-store/.env
 .DS_Store
 Thumbs.db
 *.pem
+__pycache__/
+*.py[cod]
 .idea/
 .vscode/
 
@@ -41,3 +43,8 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+# Storefront local build and image-processing artifacts
+thesilkart-clone/.cache/
+thesilkart-clone/tmp/
+thesilkart-clone/eng.traineddata

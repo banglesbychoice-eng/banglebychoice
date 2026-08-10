@@ -1,0 +1,124 @@
+{
+  "generated_at": "2026-07-21T02:43:18.006Z",
+  "applied": true,
+  "reference": {
+    "slug": "2-0-bangle-size-sticker-sheet",
+    "selling_price": 5,
+    "mrp": 10
+  },
+  "marking_products": [
+    {
+      "id": "23e71d40-356f-4ad2-b72a-c79f755fa4aa",
+      "name": "Bangle marking paper",
+      "slug": "bangle-marking-paper",
+      "current_status": "active",
+      "next_status": "draft"
+    },
+    {
+      "id": "62150f57-10c9-41c4-a007-3e94ca537374",
+      "name": "Butterfly marking",
+      "slug": "butterfly-marking",
+      "current_status": "active",
+      "next_status": "draft"
+    },
+    {
+      "id": "6e501523-bb1a-4304-b22d-d8ea1f10dc71",
+      "name": "Double facing peacock marking",
+      "slug": "double-facing-peacock-marking",
+      "current_status": "draft",
+      "next_status": "draft"
+    },
+    {
+      "id": "43d45cc2-d494-43f7-8816-fbd2cdd3a08f",
+      "name": "Parrot marking",
+      "slug": "parrot-marking",
+      "current_status": "draft",
+      "next_status": "draft"
+    },
+    {
+      "id": "113e5448-6905-4248-a107-132f8685037e",
+      "name": "Single peacock pattern",
+      "slug": "single-peacock-pattern",
+      "current_status": "active",
+      "next_status": "draft"
+    }
+  ],
+  "size_sheets": [
+    {
+      "id": "c6cfbe45-e327-4b0f-bb1b-a27bbb2aa488",
+      "name": "2.0 Bangle Size Sticker Sheet",
+      "slug": "2-0-bangle-size-sticker-sheet",
+      "current_price": 5,
+      "current_mrp": 10,
+      "next_price": 5,
+      "next_mrp": 10
+    },
+    {
+      "id": "d27c9457-0145-4fda-afc3-c0fb3cf4cadd",
+      "name": "2.10 Bangle Size Sticker Sheet",
+      "slug": "2-10-bangle-size-sticker-sheet",
+      "current_price": 10,
+      "current_mrp": 15,
+      "next_price": 5,
+      "next_mrp": 10
+    },
+    {
+      "id": "dfbbb4a4-e96e-47cf-ba0e-296dd03858af",
+      "name": "2.12 Bangle Size Sticker Sheet",
+      "slug": "2-12-bangle-size-sticker-sheet",
+      "current_price": 10,
+      "current_mrp": 15,
+      "next_price": 5,
+      "next_mrp": 10
+    },
+    {
+      "id": "e51719cd-b75d-44a3-87ba-73a6750430fb",
+      "name": "2.14 Bangle Size Sticker Sheet",
+      "slug": "2-14-bangle-size-sticker-sheet",
+      "current_price": 10,
+      "current_mrp": 15,
+      "next_price": 5,
+      "next_mrp": 10
+    },
+    {
+      "id": "e1347ad0-1d09-4346-b815-b32a29de64fd",
+      "name": "2.2 Bangle Size Sticker Sheet",
+      "slug": "2-2-bangle-size-sticker-sheet",
+      "current_price": 10,
+      "current_mrp": 15,
+      "next_price": 5,
+      "next_mrp": 10
+    },
+    {
+      "id": "fb2fb35c-e8fa-4d1f-bf71-85f4edce523c",
+      "name": "2.4 Bangle Size Sticker Sheet",
+      "slug": "2-4-bangle-size-sticker-sheet",
+      "current_price": 10,
+      "current_mrp": 15,
+      "next_price": 5,
+      "next_mrp": 10
+    },
+    {
+      "id": "5721c617-580f-4c3b-9ee2-ca4dfbd996a9",
+      "name": "2.6 Bangle Size Sticker Sheet",
+      "slug": "2-6-bangle-size-sticker-sheet",
+      "current_price": 10,
+      "current_mrp": 15,
+      "next_price": 5,
+      "next_mrp": 10
+    },
+    {
+      "id": "908a5aeb-0731-43f2-9f41-ddf4f6c05455",
+      "name": "2.8 Bangle Size Sticker Sheet",
+      "slug": "2-8-bangle-size-sticker-sheet",
+      "current_price": 10,
+      "current_mrp": 15,
+      "next_price": 5,
+      "next_mrp": 10
+    }
+  ],
+  "verification": {
+    "marking_products_drafted": 5,
+    "size_sheet_prices_matched": 8
+  }
+}
