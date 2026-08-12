@@ -1,6 +1,6 @@
 {
   "website": "thesilkart.com",
-  "scraped_at": "2026-08-12T03:41:45.955Z",
+  "scraped_at": "2026-08-12T03:47:26.632Z",
   "total_products": 706,
   "products": [
     {
@@ -679,21 +679,35 @@
       ]
     },
     {
-      "id": "b709a6d2f3bc",
-      "url": "https://www.thesilkart.com/products/view/gold-sugar-beads",
-      "source": "thesilkart",
+      "id": "0ec8327c335a",
+      "url": "https://www.banglebychoice.in/products/gold-sugar-beads",
+      "source": "banglebychoice",
       "currency": "INR",
-      "name": "gold sugar beads",
+      "name": "Gold Sugar Beads",
       "price": 20,
-      "sale_price": 18,
+      "sale_price": 20,
       "category": "Jewellery Making",
-      "subcategory": "beads",
+      "subcategory": "sugar beads",
       "type": "sugar beads",
       "availability": "In Stock",
-      "weight": "10g, 50g",
-      "description": "DescriptionShipping & Delivery InformationOrder Processing:All orders are processed and dispatched on the same day based on order confirmation timing (business days only).Estimated Delivery Time (from date of dispatch):Andhra Pradesh & Telangana:1–3 business daysTamil Nadu, Puducherry & Karnataka:3-5 business daysNorthern India:4–7 business daysNOTE:The above delivery timeline applies to DTDC shipments. Orders sent via India Post may require an additional 1–2 working days. In certain cases, order processing and delivery may take longer due to unforeseen circumstances.",
+      "weight": "10g,50g,100g",
+      "description": "Gold Sugar Beads are metallic-finish jewellery-making beads for silk thread bangles, necklaces, earrings, blouse work, borders and detailed craft designs. The enhanced product photograph preserves the supplied rounded bead form, central holes, gold surface texture and realistic reflections. An exact bead measurement is not stated, so review the close-up image before matching with thread, wire or findings. Available in 10g, 50g and 100g packs.",
       "images": [
-        "images/jewellery-making/gold-sugar-beads-premium-product-v6.webp"
+        "images/jewellery-making/sugar-beads/gold-sugar-beads-premium.webp"
+      ],
+      "options": [
+        {
+          "label": "10g",
+          "price": 20
+        },
+        {
+          "label": "50g",
+          "price": 90
+        },
+        {
+          "label": "100g",
+          "price": 150
+        }
       ]
     },
     {
