@@ -1,0 +1,1125 @@
+{
+  "generated_at": "2026-08-12T04:55:30.814Z",
+  "strategy": "Current selling price retained; missing or zero-discount MRP derived at 35% above selling price.",
+  "database_changes": [
+    {
+      "id": "261ed6f2-75a5-4c89-bc8e-a312c28d376d",
+      "name": "12SS (3mm) Dark Green Pointed-Back Kundans",
+      "slug": "12ss-3mm-dark-green-pointed-back-kundans",
+      "status": "active",
+      "price": 35,
+      "previous_mrp": null,
+      "next_mrp": 47,
+      "pack_changes": [
+        {
+          "label": "10g",
+          "price": 35,
+          "previous_mrp": null,
+          "next_mrp": 47
+        },
+        {
+          "label": "20g",
+          "price": 60,
+          "previous_mrp": null,
+          "next_mrp": 81
+        }
+      ]
+    },
+    {
+      "id": "8155c87b-0de7-47cd-8d76-0806d6bcbec5",
+      "name": "12SS (3mm) Gold Pointed-Back Kundans",
+      "slug": "12ss-3mm-gold-pointed-back-kundans",
+      "status": "active",
+      "price": 35,
+      "previous_mrp": null,
+      "next_mrp": 47,
+      "pack_changes": [
+        {
+          "label": "10g",
+          "price": 35,
+          "previous_mrp": null,
+          "next_mrp": 47
+        },
+        {
+          "label": "20g",
+          "price": 60,
+          "previous_mrp": null,
+          "next_mrp": 81
+        }
+      ]
+    },
+    {
+      "id": "42ae6197-2389-4bc2-b831-2a3262a30c54",
+      "name": "12SS (3mm) Ruby Red Pointed-Back Kundans",
+      "slug": "12ss-3mm-ruby-red-pointed-back-kundans",
+      "status": "active",
+      "price": 35,
+      "previous_mrp": null,
+      "next_mrp": 47,
+      "pack_changes": [
+        {
+          "label": "10g",
+          "price": 35,
+          "previous_mrp": null,
+          "next_mrp": 47
+        },
+        {
+          "label": "20g",
+          "price": 60,
+          "previous_mrp": null,
+          "next_mrp": 81
+        }
+      ]
+    },
+    {
+      "id": "bab00d33-756e-40c6-89db-f80531670b28",
+      "name": "12SS (3mm) White Pointed-Back Kundans",
+      "slug": "12ss-3mm-white-pointed-back-kundans",
+      "status": "active",
+      "price": 35,
+      "previous_mrp": null,
+      "next_mrp": 47,
+      "pack_changes": [
+        {
+          "label": "10g",
+          "price": 35,
+          "previous_mrp": null,
+          "next_mrp": 47
+        },
+        {
+          "label": "20g",
+          "price": 60,
+          "previous_mrp": null,
+          "next_mrp": 81
+        }
+      ]
+    },
+    {
+      "id": "3ead1a13-cade-41cf-be07-3d0b2fd0c5e6",
+      "name": "16SS White Pointed-Back Kundans",
+      "slug": "16ss-white-pointed-back-kundans",
+      "status": "active",
+      "price": 35,
+      "previous_mrp": null,
+      "next_mrp": 47,
+      "pack_changes": [
+        {
+          "label": "10g",
+          "price": 35,
+          "previous_mrp": null,
+          "next_mrp": 47
+        },
+        {
+          "label": "20g",
+          "price": 60,
+          "previous_mrp": null,
+          "next_mrp": 81
+        }
+      ]
+    },
+    {
+      "id": "36770b6b-d949-4472-928f-1b9e5a8a0da8",
+      "name": "2cut Flat bangles",
+      "slug": "2cut-flat-bangles",
+      "status": "active",
+      "price": 15,
+      "previous_mrp": 15,
+      "next_mrp": 20,
+      "pack_changes": []
+    },
+    {
+      "id": "d49113f8-567c-4432-a67f-609a7cc178b6",
+      "name": "3mm Round Dark Green Clip Stones",
+      "slug": "3mm-round-dark-green-clip-stones",
+      "status": "draft",
+      "price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "id": "cfb44721-8ca0-4fd2-85a1-b11d6bc3bc76",
+      "name": "3mm Round Gold Clip Stones",
+      "slug": "3mm-round-gold-clip-stones",
+      "status": "draft",
+      "price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "id": "e1dc21fd-c4a6-42c5-9dc8-4e6bed52db24",
+      "name": "3mm Round Light Pink Clip Stones",
+      "slug": "3mm-round-light-pink-clip-stones",
+      "status": "draft",
+      "price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "id": "0734e32c-bb22-4303-b3d1-1c33e5e13052",
+      "name": "3mm Round Orange Clip Stones",
+      "slug": "3mm-round-orange-clip-stones",
+      "status": "draft",
+      "price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "id": "b29ee3bc-3e1c-406e-b117-41de5ee22428",
+      "name": "3mm Round Pink Clip Stones",
+      "slug": "3mm-round-pink-clip-stones",
+      "status": "draft",
+      "price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "id": "00ecb2de-1890-44cf-8212-e0ac4aaaeca8",
+      "name": "3mm Round Red Clip Stones",
+      "slug": "3mm-round-red-clip-stones",
+      "status": "draft",
+      "price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "id": "a0530d80-c9e2-46df-8570-7acdf3df5808",
+      "name": "3mm Round White Clip Stones",
+      "slug": "3mm-round-white-clip-stones",
+      "status": "draft",
+      "price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "id": "f530bf4a-c787-469e-9672-8feeefa41a3d",
+      "name": "4mm Round Dark Green Clip Stones",
+      "slug": "4mm-round-dark-green-clip-stones",
+      "status": "draft",
+      "price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": 40,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "id": "219fd6e8-c52e-4e96-8ab6-4c387612d69e",
+      "name": "4mm Round Gold Clip Stones",
+      "slug": "4mm-round-gold-clip-stones",
+      "status": "draft",
+      "price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": 40,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "id": "ea70b111-5239-4873-8b2a-13c9ab4a198c",
+      "name": "4mm Round Red Clip Stones",
+      "slug": "red-colour-4mm-round-clipstones",
+      "status": "draft",
+      "price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": 40,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "id": "a88ec25b-1663-4e6b-b4d9-e7ef5cd21d45",
+      "name": "4mm Round White Clip Stones",
+      "slug": "white-colour-4mm-round-clipstone",
+      "status": "draft",
+      "price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": 40,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "id": "059bdb36-ccdb-40aa-a25a-89225ac98421",
+      "name": "Dark Pink Hanging Acrylic Beads",
+      "slug": "dark-pink-hanging-acrylic-beads",
+      "status": "active",
+      "price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "id": "892ff587-afe1-43b3-bd4a-b3d2f621e4cb",
+      "name": "Dark Purple Hanging Acrylic Beads",
+      "slug": "dark-purpule-hanging-beads",
+      "status": "active",
+      "price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "id": "0ec8327c-335a-44d9-882d-bf601dcf2ac1",
+      "name": "Gold Sugar Beads",
+      "slug": "gold-sugar-beads",
+      "status": "active",
+      "price": 20,
+      "previous_mrp": null,
+      "next_mrp": 27,
+      "pack_changes": [
+        {
+          "label": "10g",
+          "price": 20,
+          "previous_mrp": null,
+          "next_mrp": 27
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "previous_mrp": null,
+          "next_mrp": 122
+        },
+        {
+          "label": "100g",
+          "price": 150,
+          "previous_mrp": null,
+          "next_mrp": 203
+        }
+      ]
+    },
+    {
+      "id": "e41c6550-a23d-4159-bea9-f751a7982048",
+      "name": "Golden Yellow Hanging Acrylic Beads",
+      "slug": "golden-yellow-hanging-acrylic-beads",
+      "status": "active",
+      "price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "id": "b0b18390-7b6d-4ef4-ab2e-12961bd5f086",
+      "name": "Green Hanging Acrylic Beads",
+      "slug": "green-hanging-acrylic-beads",
+      "status": "active",
+      "price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "id": "2a981304-1f28-446a-a52a-307c27f4257d",
+      "name": "Light Green Hanging Acrylic Beads",
+      "slug": "light-green-hanging-acrylic-beads",
+      "status": "active",
+      "price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "id": "d07dae9b-faac-4732-991c-6145aa7ca23e",
+      "name": "Light Pink Hanging Acrylic Beads",
+      "slug": "light-pink-hanging-acrylic-beads",
+      "status": "active",
+      "price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "id": "6c8932f5-e6db-4fb4-8737-8cb04d90808c",
+      "name": "Magenta Hanging Acrylic Beads",
+      "slug": "magenta-hanging-acrylic-beads",
+      "status": "active",
+      "price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "id": "4b28ced0-8f3b-4142-b7ea-0bba07fd1bba",
+      "name": "Nose Cutter Plier",
+      "slug": "nose-cutter-plier",
+      "status": "draft",
+      "price": 70,
+      "previous_mrp": 70,
+      "next_mrp": 95,
+      "pack_changes": [
+        {
+          "label": "1 piece",
+          "price": 70,
+          "previous_mrp": 70,
+          "next_mrp": 95
+        }
+      ]
+    },
+    {
+      "id": "4315cf92-f9bd-4878-8008-d0a3cc35804b",
+      "name": "Olive Yellow Hanging Acrylic Beads",
+      "slug": "olive-yellow-hanging-acrylic-beads",
+      "status": "active",
+      "price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "id": "3d379f55-09c6-41c5-8ba2-253c8e2cd59c",
+      "name": "Orange Hanging Acrylic Beads",
+      "slug": "orange-colour-hanging-beads",
+      "status": "active",
+      "price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "id": "0f4c88e0-11c9-4a45-b727-1921a63779c8",
+      "name": "Peach Hanging Acrylic Beads",
+      "slug": "peach-hanging-acrylic-beads",
+      "status": "active",
+      "price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "id": "950f4f62-7048-4c2a-87b6-e3abaf71c524",
+      "name": "Purple Hanging Acrylic Beads",
+      "slug": "purpule-colour-hanging-beads",
+      "status": "active",
+      "price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "id": "6b7f380e-d07c-46b9-9221-ced6234d1e80",
+      "name": "Red Hanging Acrylic Beads",
+      "slug": "red-colour-hanging-beads",
+      "status": "active",
+      "price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "id": "c5140494-f033-439f-9b17-9416d0c8019a",
+      "name": "Transparent White Hanging Acrylic Beads",
+      "slug": "transparent-white-hanging-acrylic-beads",
+      "status": "active",
+      "price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    }
+  ],
+  "local_catalog_changes": [
+    {
+      "name": "Gold Sugar Beads",
+      "url": "https://www.banglebychoice.in/products/gold-sugar-beads",
+      "status": "active",
+      "sale_price": 20,
+      "previous_mrp": 20,
+      "next_mrp": 27,
+      "pack_changes": [
+        {
+          "label": "10g",
+          "price": 20,
+          "previous_mrp": null,
+          "next_mrp": 27
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "previous_mrp": null,
+          "next_mrp": 122
+        },
+        {
+          "label": "100g",
+          "price": 150,
+          "previous_mrp": null,
+          "next_mrp": 203
+        }
+      ]
+    },
+    {
+      "name": "Dark Purple Hanging Acrylic Beads",
+      "url": "https://www.banglebychoice.in/products/dark-purpule-hanging-beads",
+      "status": "active",
+      "sale_price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "name": "Purple Hanging Acrylic Beads",
+      "url": "https://www.banglebychoice.in/products/purpule-colour-hanging-beads",
+      "status": "active",
+      "sale_price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "name": "Orange Hanging Acrylic Beads",
+      "url": "https://www.banglebychoice.in/products/orange-colour-hanging-beads",
+      "status": "active",
+      "sale_price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "name": "Red Hanging Acrylic Beads",
+      "url": "https://www.banglebychoice.in/products/red-colour-hanging-beads",
+      "status": "active",
+      "sale_price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "name": "Peach Hanging Acrylic Beads",
+      "url": "https://www.banglebychoice.in/products/peach-hanging-acrylic-beads",
+      "status": "active",
+      "sale_price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "name": "Green Hanging Acrylic Beads",
+      "url": "https://www.banglebychoice.in/products/green-hanging-acrylic-beads",
+      "status": "active",
+      "sale_price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "name": "Olive Yellow Hanging Acrylic Beads",
+      "url": "https://www.banglebychoice.in/products/olive-yellow-hanging-acrylic-beads",
+      "status": "active",
+      "sale_price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "name": "Dark Pink Hanging Acrylic Beads",
+      "url": "https://www.banglebychoice.in/products/dark-pink-hanging-acrylic-beads",
+      "status": "active",
+      "sale_price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "name": "Light Pink Hanging Acrylic Beads",
+      "url": "https://www.banglebychoice.in/products/light-pink-hanging-acrylic-beads",
+      "status": "active",
+      "sale_price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "name": "Magenta Hanging Acrylic Beads",
+      "url": "https://www.banglebychoice.in/products/magenta-hanging-acrylic-beads",
+      "status": "active",
+      "sale_price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "name": "Golden Yellow Hanging Acrylic Beads",
+      "url": "https://www.banglebychoice.in/products/golden-yellow-hanging-acrylic-beads",
+      "status": "active",
+      "sale_price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "name": "Light Green Hanging Acrylic Beads",
+      "url": "https://www.banglebychoice.in/products/light-green-hanging-acrylic-beads",
+      "status": "active",
+      "sale_price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "name": "Transparent White Hanging Acrylic Beads",
+      "url": "https://www.banglebychoice.in/products/transparent-white-hanging-acrylic-beads",
+      "status": "active",
+      "sale_price": 1,
+      "previous_mrp": 1,
+      "next_mrp": 1.35,
+      "pack_changes": [
+        {
+          "label": "1 bead",
+          "price": 1,
+          "previous_mrp": 1,
+          "next_mrp": 1.35
+        }
+      ]
+    },
+    {
+      "name": "12SS (3mm) Dark Green Pointed-Back Kundans",
+      "url": "https://www.banglebychoice.in/products/12ss-3mm-dark-green-pointed-back-kundans",
+      "status": "active",
+      "sale_price": 35,
+      "previous_mrp": 35,
+      "next_mrp": 47,
+      "pack_changes": [
+        {
+          "label": "10g",
+          "price": 35,
+          "previous_mrp": null,
+          "next_mrp": 47
+        },
+        {
+          "label": "20g",
+          "price": 60,
+          "previous_mrp": null,
+          "next_mrp": 81
+        }
+      ]
+    },
+    {
+      "name": "12SS (3mm) Ruby Red Pointed-Back Kundans",
+      "url": "https://www.banglebychoice.in/products/12ss-3mm-ruby-red-pointed-back-kundans",
+      "status": "active",
+      "sale_price": 35,
+      "previous_mrp": 35,
+      "next_mrp": 47,
+      "pack_changes": [
+        {
+          "label": "10g",
+          "price": 35,
+          "previous_mrp": null,
+          "next_mrp": 47
+        },
+        {
+          "label": "20g",
+          "price": 60,
+          "previous_mrp": null,
+          "next_mrp": 81
+        }
+      ]
+    },
+    {
+      "name": "12SS (3mm) Gold Pointed-Back Kundans",
+      "url": "https://www.banglebychoice.in/products/12ss-3mm-gold-pointed-back-kundans",
+      "status": "active",
+      "sale_price": 35,
+      "previous_mrp": 35,
+      "next_mrp": 47,
+      "pack_changes": [
+        {
+          "label": "10g",
+          "price": 35,
+          "previous_mrp": null,
+          "next_mrp": 47
+        },
+        {
+          "label": "20g",
+          "price": 60,
+          "previous_mrp": null,
+          "next_mrp": 81
+        }
+      ]
+    },
+    {
+      "name": "12SS (3mm) White Pointed-Back Kundans",
+      "url": "https://www.banglebychoice.in/products/12ss-3mm-white-pointed-back-kundans",
+      "status": "active",
+      "sale_price": 35,
+      "previous_mrp": 35,
+      "next_mrp": 47,
+      "pack_changes": [
+        {
+          "label": "10g",
+          "price": 35,
+          "previous_mrp": null,
+          "next_mrp": 47
+        },
+        {
+          "label": "20g",
+          "price": 60,
+          "previous_mrp": null,
+          "next_mrp": 81
+        }
+      ]
+    },
+    {
+      "name": "16SS White Pointed-Back Kundans",
+      "url": "https://www.banglebychoice.in/products/16ss-white-pointed-back-kundans",
+      "status": "active",
+      "sale_price": 35,
+      "previous_mrp": 35,
+      "next_mrp": 47,
+      "pack_changes": [
+        {
+          "label": "10g",
+          "price": 35,
+          "previous_mrp": null,
+          "next_mrp": 47
+        },
+        {
+          "label": "20g",
+          "price": 60,
+          "previous_mrp": null,
+          "next_mrp": 81
+        }
+      ]
+    },
+    {
+      "name": "3mm Round Gold Clip Stones",
+      "url": "https://www.banglebychoice.in/products/3mm-round-gold-clip-stones",
+      "status": "draft",
+      "sale_price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "name": "3mm Round Dark Green Clip Stones",
+      "url": "https://www.banglebychoice.in/products/3mm-round-dark-green-clip-stones",
+      "status": "draft",
+      "sale_price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "name": "3mm Round Red Clip Stones",
+      "url": "https://www.banglebychoice.in/products/3mm-round-red-clip-stones",
+      "status": "draft",
+      "sale_price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "name": "3mm Round Orange Clip Stones",
+      "url": "https://www.banglebychoice.in/products/3mm-round-orange-clip-stones",
+      "status": "draft",
+      "sale_price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "name": "3mm Round Pink Clip Stones",
+      "url": "https://www.banglebychoice.in/products/3mm-round-pink-clip-stones",
+      "status": "draft",
+      "sale_price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "name": "3mm Round Light Pink Clip Stones",
+      "url": "https://www.banglebychoice.in/products/3mm-round-light-pink-clip-stones",
+      "status": "draft",
+      "sale_price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "name": "3mm Round White Clip Stones",
+      "url": "https://www.banglebychoice.in/products/3mm-round-white-clip-stones",
+      "status": "draft",
+      "sale_price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": null,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "name": "4mm Round Red Clip Stones",
+      "url": "https://www.banglebychoice.in/products/red-colour-4mm-round-clipstones",
+      "status": "draft",
+      "sale_price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": 40,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "name": "4mm Round Dark Green Clip Stones",
+      "url": "https://www.banglebychoice.in/products/4mm-round-dark-green-clip-stones",
+      "status": "draft",
+      "sale_price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": 40,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "name": "4mm Round Gold Clip Stones",
+      "url": "https://www.banglebychoice.in/products/4mm-round-gold-clip-stones",
+      "status": "draft",
+      "sale_price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": 40,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "name": "4mm Round White Clip Stones",
+      "url": "https://www.banglebychoice.in/products/white-colour-4mm-round-clipstone",
+      "status": "draft",
+      "sale_price": 40,
+      "previous_mrp": 40,
+      "next_mrp": 54,
+      "pack_changes": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "previous_mrp": 40,
+          "next_mrp": 54
+        }
+      ]
+    },
+    {
+      "name": "Nose Cutter Plier",
+      "url": "https://www.banglebychoice.in/products/nose-cutter-plier",
+      "status": "draft",
+      "sale_price": 70,
+      "previous_mrp": 70,
+      "next_mrp": 95,
+      "pack_changes": [
+        {
+          "label": "1 piece",
+          "price": 70,
+          "previous_mrp": 70,
+          "next_mrp": 95
+        }
+      ]
+    }
+  ]
+}
