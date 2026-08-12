@@ -7,5 +7,8 @@
 .brand>a span { color: white; font-family: var(--font-playfair); font-size: 2.6rem; letter-spacing: -.055em; }
 .brand>a b { justify-self: end; color: #d6ad52; text-transform: uppercase; font-size: .52rem; letter-spacing: .28em; margin-top: 8px; }
 .brand p { max-width: 350px; color: #aa9a94; line-height: 1.7; margin-top: 12px; }
+.socialLink { display: inline-flex; align-items: center; gap: 7px; }
+.socialLink svg { width: 16px; height: 16px; color: #f2cf78; }
+.socialLink span { color: #aa9a94; }
 .footerBottom { border-top: 1px solid #49383f; padding: 18px 34px; text-align: center; color: #87777d; font-size: .7rem; }
 @media (max-width:760px) { .footerTop { padding: 48px 20px; grid-template-columns: repeat(2,1fr); gap: 38px 22px; } .brand { grid-column: 1/-1; } .footerTop>div:last-child { grid-column: 1/-1; } }
