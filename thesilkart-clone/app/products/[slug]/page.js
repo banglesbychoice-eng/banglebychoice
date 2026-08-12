@@ -113,7 +113,7 @@ export default async function ProductPage({ params }) {
             <p className={styles.category}>{product.category} · {product.subcategory}</p>
             <h1>{titleCase(product.name)}</h1>
             {summary ? <a className={styles.ratingSummary} href="#reviews"><span>★★★★★</span><b>{summary.value}</b><small>{summary.count} review{summary.count === 1 ? '' : 's'}</small></a> : null}
-            <div className={styles.prices}><strong>{choices.length > 1 ? 'From ' : ''}₹{product.sale_price}</strong><del>₹{product.price}</del>{discount > 0 && <span>{discount}% off · Save ₹{baseSavings}</span>}</div>
+            <div className={styles.prices}><strong>{choices.length > 1 ? 'From ' : ''}₹{product.sale_price}</strong>{product.price > product.sale_price ? <del>₹{product.price}</del> : null}{discount > 0 && <span>{discount}% off · Save ₹{baseSavings}</span>}</div>
             <p className={styles.tax}>Inclusive of all taxes</p>
             <div className={styles.stock}><span /> {product.availability}{product.stock_quantity > 0 && product.stock_quantity < 5 ? <b className={styles.lowStock}>Only {product.stock_quantity} packs left</b> : null}</div>
             <div className={styles.trustRow}><span>Secure online checkout</span><span>UPI and cards</span><span>48-hr damage support</span></div>
