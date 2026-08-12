@@ -1,7 +1,7 @@
 {
   "website": "thesilkart.com",
-  "scraped_at": "2026-08-12T03:36:15.922Z",
-  "total_products": 703,
+  "scraped_at": "2026-08-12T03:41:45.955Z",
+  "total_products": 706,
   "products": [
     {
       "id": "92dc26df4f59",
@@ -909,7 +909,24 @@
           "price": 150
         }
       ],
-      "status": "draft"
+      "status": "draft",
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
+      ]
     },
     {
       "id": "a2733b230692",
@@ -978,6 +995,23 @@
           "mrp": 250,
           "label": "100g",
           "price": 150
+        }
+      ],
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
         }
       ]
     },
@@ -1209,7 +1243,24 @@
           "price": 150
         }
       ],
-      "status": "draft"
+      "status": "draft",
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
+      ]
     },
     {
       "id": "ce838842f116",
@@ -7454,7 +7505,24 @@
           "price": 150
         }
       ],
-      "status": "draft"
+      "status": "draft",
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
+      ]
     },
     {
       "id": "6de201a62514",
@@ -7688,7 +7756,24 @@
           "price": 150
         }
       ],
-      "status": "draft"
+      "status": "draft",
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
+      ]
     },
     {
       "id": "c8a2323c166d",
@@ -8606,7 +8691,24 @@
           "price": 150
         }
       ],
-      "status": "draft"
+      "status": "draft",
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
+      ]
     },
     {
       "id": "7fcf5b674c23",
@@ -8749,7 +8851,24 @@
           "price": 150
         }
       ],
-      "status": "draft"
+      "status": "draft",
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
+      ]
     },
     {
       "id": "f221da6442f9",
@@ -9123,7 +9242,24 @@
           "price": 150
         }
       ],
-      "status": "draft"
+      "status": "draft",
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
+      ]
     },
     {
       "id": "abd7691893fb",
@@ -9720,7 +9856,24 @@
           "price": 150
         }
       ],
-      "status": "draft"
+      "status": "draft",
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
+      ]
     },
     {
       "id": "c13de6ab56d8",
@@ -10272,6 +10425,23 @@
           "label": "100g",
           "price": 150
         }
+      ],
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
       ]
     },
     {
@@ -10795,7 +10965,24 @@
           "price": 150
         }
       ],
-      "status": "draft"
+      "status": "draft",
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
+      ]
     },
     {
       "id": "9d50f36a6d72",
@@ -12309,7 +12496,24 @@
           "price": 150
         }
       ],
-      "status": "draft"
+      "status": "draft",
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
+      ]
     },
     {
       "id": "1cbe455a3fd2",
@@ -13077,6 +13281,23 @@
           "label": "100g",
           "price": 150
         }
+      ],
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
       ]
     },
     {
@@ -13148,6 +13369,23 @@
           "label": "100g",
           "price": 150
         }
+      ],
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
       ]
     },
     {
@@ -13202,6 +13440,23 @@
       "description": "Tilakam Shape Deep Red Glass Kundans feature the traditional tilakam silhouette in deep ruby red glass with an antique-gold setting. Suitable for silk-thread bangles, jewellery making, blouse work, saree embellishment and premium DIY craft projects. Review the product image for the exact colour and finish before ordering.",
       "images": [
         "images/kundan-stones/6k-drop-deep-red-glass-kundans-hero-top-view-v3.webp"
+      ],
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
       ]
     },
     {
@@ -15650,6 +15905,111 @@
         {
           "label": "20g",
           "price": 60
+        }
+      ]
+    },
+    {
+      "id": "802d4b0ac1a0",
+      "url": "https://www.banglebychoice.in/products/multicolour-kundans-tilakam-4k-drop-shape",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "Multicolour Kundans-tilakam(4k Drop)shape",
+      "price": 25,
+      "sale_price": 20,
+      "category": "Kundan Stones",
+      "subcategory": "tilakam shape kundans",
+      "type": "tilakam shape kundans",
+      "availability": "Out of Stock",
+      "weight": "10g,50g,100g",
+      "description": "Multicolour Kundans-tilakam(4k Drop)shape is a premium kundan stones item for silk thread bangles, bridal jewellery, blouse work, saree embellishment and premium craft detailing. The visible Drop, 10G, 50G and Stone profile is selected for clean edges, refined finish, consistent colour and a premium handmade look. Available packs: 10g, 50g and 100g. Use it when you want jewellery-making materials that photograph well, sit neatly in designs and help finished pieces look more polished. Packed by Bangle by Choice in Hyderabad with dispatch within 24 hours on business days and delivery across India.",
+      "images": [
+        "images/kundan-stones/multicolour-kundans-tilakam4k-dropshape_0.webp"
+      ],
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
+      ]
+    },
+    {
+      "id": "db9f6b0a2a4f",
+      "url": "https://www.banglebychoice.in/products/tilakam-shape-baby-pink-champagne-glass-kundans",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "Tilakam Shape Baby Pink Champagne Glass Kundans",
+      "price": 25,
+      "sale_price": 20,
+      "category": "Kundan Stones",
+      "subcategory": "tilakam shape kundans",
+      "type": "tilakam shape kundans",
+      "availability": "In Stock",
+      "weight": "10g,50g,100g",
+      "description": "Tilakam Shape Baby Pink Champagne Glass Kundans feature the traditional tilakam silhouette in baby pink champagne glass with an antique-gold setting. Suitable for silk-thread bangles, jewellery making, blouse work, saree embellishment and premium DIY craft projects. Review the product image for the exact colour and finish before ordering.",
+      "images": [
+        "images/kundan-stones/6k-drop-baby-pink-glass-kundans-hero-top-view-v3.webp"
+      ],
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
+        }
+      ]
+    },
+    {
+      "id": "599dcfaf2cb0",
+      "url": "https://www.banglebychoice.in/products/tilakam-shape-champagne-glass-kundans",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "Tilakam Shape Champagne Glass Kundans",
+      "price": 25,
+      "sale_price": 20,
+      "category": "Kundan Stones",
+      "subcategory": "tilakam shape kundans",
+      "type": "tilakam shape kundans",
+      "availability": "In Stock",
+      "weight": "10g,50g,100g",
+      "description": "Tilakam Shape Champagne Glass Kundans feature the traditional tilakam silhouette in warm champagne glass with an antique-gold setting. Suitable for silk-thread bangles, jewellery making, blouse work, saree embellishment and premium DIY craft projects. Review the product image for the exact colour and finish before ordering.",
+      "images": [
+        "images/kundan-stones/6k-drop-champagne-glass-kundans-hero-top-view-v3.webp"
+      ],
+      "options": [
+        {
+          "label": "10g",
+          "price": 20,
+          "mrp": 25
+        },
+        {
+          "label": "50g",
+          "price": 90,
+          "mrp": 125
+        },
+        {
+          "label": "100g",
+          "price": 160,
+          "mrp": 250
         }
       ]
     }
