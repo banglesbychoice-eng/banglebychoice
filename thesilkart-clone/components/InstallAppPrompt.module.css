@@ -1,3 +1,5 @@
+.floatingInstall { align-items: center; background: #6e1734; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; bottom: 24px; box-shadow: 0 12px 32px rgba(58,14,31,.28); color: white; cursor: pointer; display: inline-flex; font: inherit; font-size: .78rem; font-weight: 850; gap: 7px; left: 24px; min-height: 44px; padding: 0 16px; position: fixed; z-index: 80; }
+.floatingInstall svg { height: 17px; width: 17px; }
 .prompt { align-items: center; background: rgba(255,250,246,.96); border: 1px solid #eadfd8; border-radius: 18px; bottom: 24px; box-shadow: 0 18px 48px rgba(49,28,18,.18); display: grid; gap: 12px; grid-template-columns: 42px minmax(0,1fr) auto; left: 24px; max-width: 430px; padding: 12px 14px; position: fixed; z-index: 80; }
 .icon { align-items: center; background: #fff; border: 1px solid #eadfd8; border-radius: 12px; display: flex; height: 42px; justify-content: center; overflow: hidden; width: 42px; }
 .icon img { height: 100%; object-fit: cover; width: 100%; }
@@ -7,7 +9,13 @@
 .install { align-items: center; background: #2d8c4d; border: 0; border-radius: 999px; color: white; cursor: pointer; display: inline-flex; font: inherit; font-size: .76rem; font-weight: 850; gap: 6px; min-height: 38px; padding: 0 14px; }
 .close { align-items: center; background: #fff; border: 1px solid #eadfd8; border-radius: 50%; color: #746861; cursor: pointer; display: flex; height: 26px; justify-content: center; position: absolute; right: -8px; top: -8px; width: 26px; }
 @media (max-width:760px) {
+  .floatingInstall { bottom: 84px; left: auto; right: 12px; }
   .prompt { bottom: 86px; grid-template-columns: 38px minmax(0,1fr); left: 10px; right: 10px; max-width: none; padding: 11px; }
   .icon { border-radius: 12px; height: 38px; width: 38px; }
   .install { grid-column: 1/-1; justify-content: center; min-height: 40px; width: 100%; }
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  .floatingInstall { animation: installReveal 300ms ease-out both; }
+  @keyframes installReveal { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 }

@@ -10,19 +10,21 @@ function isStandalone() {
   return window.matchMedia?.('(display-mode: standalone)').matches || window.navigator.standalone === true;
 }
 
-function isIosSafari() {
+function installHelp() {
   const agent = window.navigator.userAgent.toLowerCase();
-  return /iphone|ipad|ipod/.test(agent) && /safari/.test(agent) && !/crios|fxios|edgios/.test(agent);
+  if (/iphone|ipad|ipod/.test(agent)) return 'Tap Share, then choose Add to Home Screen.';
+  return 'Open your browser menu and choose Install app or Add to Home screen.';
 }
 
 export default function InstallAppPrompt() {
   const [installEvent, setInstallEvent] = useState(null);
-  const [showIosHelp, setShowIosHelp] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const [helpText, setHelpText] = useState('');
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (isStandalone() || localStorage.getItem('bbc_install_prompt_dismissed') === '1') return undefined;
-    const iosTimer = isIosSafari() ? window.setTimeout(() => setVisible(true), 900) : null;
+    if (isStandalone()) return undefined;
+    const revealTimer = window.setTimeout(() => setVisible(true), 900);
 
     function onBeforeInstallPrompt(event) {
       event.preventDefault();
@@ -33,13 +35,12 @@ export default function InstallAppPrompt() {
     function onInstalled() {
       trackEvent('pwa_installed');
       setVisible(false);
-      localStorage.setItem('bbc_install_prompt_dismissed', '1');
     }
 
     window.addEventListener('beforeinstallprompt', onBeforeInstallPrompt);
     window.addEventListener('appinstalled', onInstalled);
     return () => {
-      if (iosTimer) window.clearTimeout(iosTimer);
+      window.clearTimeout(revealTimer);
       window.removeEventListener('beforeinstallprompt', onBeforeInstallPrompt);
       window.removeEventListener('appinstalled', onInstalled);
     };
@@ -47,8 +48,9 @@ export default function InstallAppPrompt() {
 
   async function installApp() {
     if (!installEvent) {
-      setShowIosHelp(true);
-      trackEvent('pwa_install_ios_help');
+      setHelpText(installHelp());
+      setExpanded(true);
+      trackEvent('pwa_install_help_opened');
       return;
     }
     installEvent.prompt();
@@ -58,22 +60,21 @@ export default function InstallAppPrompt() {
     if (choice?.outcome === 'accepted') setVisible(false);
   }
 
-  function dismiss() {
-    localStorage.setItem('bbc_install_prompt_dismissed', '1');
-    setVisible(false);
-  }
-
   if (!visible) return null;
 
+  if (!expanded) {
+    return <button className={styles.floatingInstall} type="button" onClick={installApp} aria-label="Install Bangle by Choice app"><Download aria-hidden="true" /><span>Install app</span></button>;
+  }
+
   return (
-    <aside className={styles.prompt} aria-label="Install Bangle by Choice app">
-      <button className={styles.close} type="button" onClick={dismiss} aria-label="Hide install app prompt"><X aria-hidden="true" /></button>
+    <aside className={styles.prompt} aria-label="Install Bangle by Choice app" aria-live="polite">
+      <button className={styles.close} type="button" onClick={() => setExpanded(false)} aria-label="Close install instructions"><X aria-hidden="true" /></button>
       <div className={styles.icon}><Image src="/icons/icon-96.png" alt="" width={42} height={42} /></div>
       <div>
         <b>Install Bangle by Choice</b>
-        <span>{showIosHelp ? 'Tap Share, then Add to Home Screen.' : 'Shop faster from your home screen.'}</span>
+        <span>{helpText}</span>
       </div>
-      <button className={styles.install} type="button" onClick={installApp}>{showIosHelp ? <Share2 aria-hidden="true" /> : <Download aria-hidden="true" />} Install</button>
+      <button className={styles.install} type="button" onClick={() => setExpanded(false)}><Share2 aria-hidden="true" /> Got it</button>
     </aside>
   );
 }

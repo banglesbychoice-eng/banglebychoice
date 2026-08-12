@@ -1,6 +1,6 @@
 export default function manifest() {
   return {
-    name: 'Bangle by Choice', short_name: 'BBC', description: 'Premium kundan stones, silk thread and jewellery-making materials delivered across India.',
+    name: 'Bangle by Choice', short_name: 'BBC', description: 'Silk thread bangle-making materials, Kundan stones, bangle bases, charms and tools delivered across India.',
     id: '/', start_url: '/', scope: '/', display: 'standalone', orientation: 'portrait', background_color: '#fff9f6', theme_color: '#6e1734',
     icons: [
       { src: '/favicon.ico?v=20260812b', sizes: 'any', type: 'image/x-icon' },
