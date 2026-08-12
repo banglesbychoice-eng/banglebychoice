@@ -1,7 +1,7 @@
 {
   "website": "thesilkart.com",
-  "scraped_at": "2026-08-08T10:36:35.775Z",
-  "total_products": 698,
+  "scraped_at": "2026-08-12T02:53:49.886Z",
+  "total_products": 702,
   "products": [
     {
       "id": "92dc26df4f59",
@@ -15510,6 +15510,118 @@
           "mrp": 250,
           "label": "100g",
           "price": 160
+        }
+      ]
+    },
+    {
+      "id": "3d056c3a87a2",
+      "url": "https://www.banglebychoice.in/products/12ss-3mm-dark-green-pointed-back-kundans",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "12SS (3mm) Dark Green Pointed-Back Kundans",
+      "price": 35,
+      "sale_price": 35,
+      "category": "Kundan Stones",
+      "subcategory": "12SS pointed-back kundans",
+      "type": "3mm round pointed-back kundans",
+      "availability": "In Stock",
+      "weight": "10g,20g",
+      "description": "12SS (3mm) Dark Green Pointed-Back Kundans are premium round faceted pointed-back stones for silk thread bangles, bridal jewellery, blouse work, saree embellishment and detailed craft designs. Confirmed size: 12SS, approximately 3mm. The uploaded product photograph shows the supplied dark green colour, faceting, reflections and pointed-back profile. Available in 10g and 20g packs. Packed in Hyderabad and dispatched within 24 hours on business days.",
+      "images": [
+        "images/kundan-stones/12ss-pointed-back/12ss-3mm-dark-green-pointed-back-kundans.webp"
+      ],
+      "options": [
+        {
+          "label": "10g",
+          "price": 35
+        },
+        {
+          "label": "20g",
+          "price": 60
+        }
+      ]
+    },
+    {
+      "id": "53e7db6f7bdb",
+      "url": "https://www.banglebychoice.in/products/12ss-3mm-ruby-red-pointed-back-kundans",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "12SS (3mm) Ruby Red Pointed-Back Kundans",
+      "price": 35,
+      "sale_price": 35,
+      "category": "Kundan Stones",
+      "subcategory": "12SS pointed-back kundans",
+      "type": "3mm round pointed-back kundans",
+      "availability": "In Stock",
+      "weight": "10g,20g",
+      "description": "12SS (3mm) Ruby Red Pointed-Back Kundans are premium round faceted pointed-back stones for silk thread bangles, bridal jewellery, blouse work, saree embellishment and detailed craft designs. Confirmed size: 12SS, approximately 3mm. The uploaded product photograph shows the supplied ruby red colour, faceting, reflections and pointed-back profile. Available in 10g and 20g packs. Packed in Hyderabad and dispatched within 24 hours on business days.",
+      "images": [
+        "images/kundan-stones/12ss-pointed-back/12ss-3mm-ruby-red-pointed-back-kundans.webp"
+      ],
+      "options": [
+        {
+          "label": "10g",
+          "price": 35
+        },
+        {
+          "label": "20g",
+          "price": 60
+        }
+      ]
+    },
+    {
+      "id": "ecc95b1735fa",
+      "url": "https://www.banglebychoice.in/products/12ss-3mm-champagne-pointed-back-kundans",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "12SS (3mm) Champagne Pointed-Back Kundans",
+      "price": 35,
+      "sale_price": 35,
+      "category": "Kundan Stones",
+      "subcategory": "12SS pointed-back kundans",
+      "type": "3mm round pointed-back kundans",
+      "availability": "In Stock",
+      "weight": "10g,20g",
+      "description": "12SS (3mm) Champagne Pointed-Back Kundans are premium round faceted pointed-back stones for silk thread bangles, bridal jewellery, blouse work, saree embellishment and detailed craft designs. Confirmed size: 12SS, approximately 3mm. The uploaded product photograph shows the supplied champagne colour, faceting, reflections and pointed-back profile. Available in 10g and 20g packs. Packed in Hyderabad and dispatched within 24 hours on business days.",
+      "images": [
+        "images/kundan-stones/12ss-pointed-back/12ss-3mm-champagne-pointed-back-kundans.webp"
+      ],
+      "options": [
+        {
+          "label": "10g",
+          "price": 35
+        },
+        {
+          "label": "20g",
+          "price": 60
+        }
+      ]
+    },
+    {
+      "id": "1ef1b1c7144a",
+      "url": "https://www.banglebychoice.in/products/12ss-3mm-crystal-clear-pointed-back-kundans",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "12SS (3mm) Crystal Clear Pointed-Back Kundans",
+      "price": 35,
+      "sale_price": 35,
+      "category": "Kundan Stones",
+      "subcategory": "12SS pointed-back kundans",
+      "type": "3mm round pointed-back kundans",
+      "availability": "In Stock",
+      "weight": "10g,20g",
+      "description": "12SS (3mm) Crystal Clear Pointed-Back Kundans are premium round faceted pointed-back stones for silk thread bangles, bridal jewellery, blouse work, saree embellishment and detailed craft designs. Confirmed size: 12SS, approximately 3mm. The uploaded product photograph shows the supplied crystal clear colour, faceting, reflections and pointed-back profile. Available in 10g and 20g packs. Packed in Hyderabad and dispatched within 24 hours on business days.",
+      "images": [
+        "images/kundan-stones/12ss-pointed-back/12ss-3mm-crystal-clear-pointed-back-kundans.webp"
+      ],
+      "options": [
+        {
+          "label": "10g",
+          "price": 35
+        },
+        {
+          "label": "20g",
+          "price": 60
         }
       ]
     }
