@@ -84,6 +84,8 @@ const nextConfig = {
         permanent: true,
       },
       ...kundanCatalogRedirects.map(([source, destination]) => ({ source: `/products/${source}`, destination: `/products/${destination}`, permanent: true })),
+      { source: '/products/12ss-3mm-champagne-pointed-back-kundans', destination: '/products/12ss-3mm-gold-pointed-back-kundans', permanent: true },
+      { source: '/products/12ss-3mm-crystal-clear-pointed-back-kundans', destination: '/products/12ss-3mm-white-pointed-back-kundans', permanent: true },
       { source: '/collections/imitation-jewelery-material', destination: '/collections/imitation-jewellery-material', permanent: true },
       { source: '/products/diamond-shape-purpule-colour-matt', destination: '/products/diamond-shape-purple-colour-matt', permanent: true },
       { source: '/products/dark-green-half-moom-glass-kundans', destination: '/products/dark-green-half-moon-glass-kundans', permanent: true },
