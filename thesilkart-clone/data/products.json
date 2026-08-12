@@ -1,7 +1,7 @@
 {
   "website": "thesilkart.com",
-  "scraped_at": "2026-08-12T04:01:33.770Z",
-  "total_products": 712,
+  "scraped_at": "2026-08-12T04:12:24.301Z",
+  "total_products": 713,
   "products": [
     {
       "id": "92dc26df4f59",
@@ -16168,6 +16168,31 @@
       "description": "3mm Round Light Pink Clip Stones are 3mm round faceted stones held in individual metal clip settings for silk thread bangles, jewellery making, blouse work, embroidery and decorative craft designs. The premium close-up photograph shows the supplied light pink colour, crystal faceting, prong placement, rim profile and reverse metal cups. Supplied as a 100-piece pack for ₹40. Small variations in reflection may occur under different lighting.",
       "images": [
         "images/kundan-stones/3mm-clipstones/3mm-round-light-pink-clip-stones.webp"
+      ],
+      "options": [
+        {
+          "label": "100 pieces",
+          "price": 40
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "0a26ebe3fcb6",
+      "url": "https://www.banglebychoice.in/products/3mm-round-white-clip-stones",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "3mm Round White Clip Stones",
+      "price": 40,
+      "sale_price": 40,
+      "category": "Kundan Stones",
+      "subcategory": "3mm round clip stones",
+      "type": "3mm round clip stones",
+      "availability": "Out of Stock",
+      "weight": "100 pieces",
+      "description": "3mm Round White Clip Stones are 3mm clear white faceted stones held in individual gold-colour metal clip settings for silk thread bangles, jewellery making, blouse work, embroidery and decorative craft designs. The premium close-up photograph shows the supplied colourless white crystals, prong placement, rim profile and reverse metal cups. Supplied as a 100-piece pack for ₹40. Small variations in reflection may occur under different lighting.",
+      "images": [
+        "images/kundan-stones/3mm-clipstones/3mm-round-white-clip-stones.webp"
       ],
       "options": [
         {
