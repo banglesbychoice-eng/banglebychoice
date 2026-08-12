@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { isAdmin } from '@/lib/admin-auth';
 import { normalizeDatabaseProduct } from '@/lib/catalog-server';
 import { DELIVERY_METHODS, getDeliveryDetails } from '@/lib/delivery';
-import { getPackChoices, getPackPrice, getShippingQuote } from '@/lib/pricing';
+import { formatSavingsAmount, getPackChoices, getPackPrice, getShippingQuote } from '@/lib/pricing';
 import { rateLimit, requestIp } from '@/lib/rate-limit';
 import { getServiceSupabase } from '@/lib/supabase-server';
 
@@ -122,7 +122,7 @@ export async function POST(request) {
       `Payment method: ${paymentLabel}`,
       `Delivery method: ${delivery.label}`,
       delivery.requiresAddress ? `Calculated delivery: Rs ${shippingQuote.regularFee}` : '',
-      delivery.requiresAddress && shippingQuote.deliveryDiscount ? `Free-shipping deduction: Rs ${shippingQuote.deliveryDiscount}` : '',
+      delivery.requiresAddress && shippingQuote.deliveryDiscount ? `Free-shipping deduction: Rs ${formatSavingsAmount(shippingQuote.deliveryDiscount)}` : '',
       delivery.method === 'customer_arranged' ? 'Pickup service charge is arranged and paid directly by the customer.' : '',
       customerNotes,
     ].filter(Boolean).join('\n');

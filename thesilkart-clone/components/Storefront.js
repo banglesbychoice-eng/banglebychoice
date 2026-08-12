@@ -12,7 +12,7 @@ import { scoreProduct } from '@/lib/product-search';
 import { facetOptions, matchesFacets } from '@/lib/product-facets';
 import { productGroupKey } from '@/lib/product-grouping';
 import { catalogImage, categorySlug } from '@/lib/product-utils';
-import { FREE_SHIPPING_MIN, getPackChoices } from '@/lib/pricing';
+import { FREE_SHIPPING_MIN, formatSavingsAmount, getPackChoices } from '@/lib/pricing';
 
 const PAGE_SIZE = 48;
 const categoryImages = {
@@ -47,7 +47,7 @@ const ProductTile = memo(function ProductTile({ product }) {
         <div className={styles.priceRow}>
           <strong>₹{product.sale_price}</strong>
           {product.price !== product.sale_price && <del>₹{product.price}</del>}
-          {saveAmount ? <span>Save ₹{saveAmount}</span> : null}
+          {saveAmount ? <span>Save ₹{formatSavingsAmount(saveAmount)}</span> : null}
         </div>
         {firstPack ? <p className={styles.packHint}>Starting pack: {firstPack}</p> : null}
         <QuickCartButton product={product} />

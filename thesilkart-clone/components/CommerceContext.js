@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
 import { CheckCircle2, X } from 'lucide-react';
-import { getPackChoices, getPackMrp, getPackPrice } from '@/lib/pricing';
+import { formatSavingsAmount, getPackChoices, getPackMrp, getPackPrice } from '@/lib/pricing';
 import styles from './CommerceContext.module.css';
 import { trackEvent } from '@/lib/analytics-client';
 
@@ -127,7 +127,7 @@ export function CommerceProvider({ children }) {
       return next;
     });
     trackEvent('add_to_cart', { currency: 'INR', value: selectedPrice * addQuantity, items: [{ item_id: String(product.id), item_name: product.name, item_variant: selectedPack || undefined, price: selectedPrice, quantity: addQuantity }] });
-    setCartNotice(`${product.name}${selectedPack ? ` · ${selectedPack}` : ''}${addQuantity > 1 ? ` × ${addQuantity}` : ''} added${addedSavings ? `. You saved ₹${addedSavings}` : ''}.`);
+    setCartNotice(`${product.name}${selectedPack ? ` · ${selectedPack}` : ''}${addQuantity > 1 ? ` × ${addQuantity}` : ''} added${addedSavings ? `. You saved ₹${formatSavingsAmount(addedSavings)}` : ''}.`);
   }
 
   function updateQuantity(key, quantity) {

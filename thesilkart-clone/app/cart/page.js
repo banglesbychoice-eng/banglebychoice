@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react';
 import { useCommerce } from '@/components/CommerceContext';
-import { FREE_SHIPPING_MIN, MINIMUM_SHIPPING_FEE, SHIPPING_RATE_PER_KG, getShippingQuote } from '@/lib/pricing';
+import { FREE_SHIPPING_MIN, MINIMUM_SHIPPING_FEE, SHIPPING_RATE_PER_KG, formatSavingsAmount, getShippingQuote } from '@/lib/pricing';
 import styles from './cart.module.css';
 
 function cartSavings(cart) {
@@ -39,7 +39,7 @@ export default function CartPage() {
               <Link href={`/products/${item.slug}`}><h2>{item.name}</h2></Link>
               {item.packSize ? <p>{item.packSize}</p> : null}
               <strong>₹{item.price * item.quantity}</strong>
-              {lineSavings ? <small>Save ₹{lineSavings} on this line</small> : null}
+              {lineSavings ? <small>Save ₹{formatSavingsAmount(lineSavings)} on this line</small> : null}
               <div className={styles.quantity}>
                 <button aria-label={`Decrease ${item.name}`} onClick={() => updateQuantity(item.key, item.quantity - 1)}><Minus aria-hidden="true" /></button>
                 <span>{item.quantity}</span>
@@ -53,9 +53,9 @@ export default function CartPage() {
       <aside className={styles.summary}>
         <h2>Order summary</h2>
         <p><span>Subtotal</span><b>₹{cartTotal}</b></p>
-        {savings ? <p className={styles.savings}><span>Product savings</span><b>₹{savings}</b></p> : null}
+        {savings ? <p className={styles.savings}><span>Product savings</span><b>₹{formatSavingsAmount(savings)}</b></p> : null}
         <p><span>{shippingQuote.deliveryDiscount ? 'Calculated shipping' : 'Shipping'}</span><b>₹{shippingQuote.regularFee}</b></p>
-        {shippingQuote.deliveryDiscount ? <p className={styles.savings}><span>Free-shipping deduction</span><b>−₹{shippingQuote.deliveryDiscount}</b></p> : null}
+        {shippingQuote.deliveryDiscount ? <p className={styles.savings}><span>Free-shipping deduction</span><b>−₹{formatSavingsAmount(shippingQuote.deliveryDiscount)}</b></p> : null}
         {shippingQuote.deliveryDiscount ? <p><span>Shipping payable</span><b>{shipping ? `₹${shipping}` : 'Free'}</b></p> : null}
         <small>{shippingCopy} Delivery starts at ₹{MINIMUM_SHIPPING_FEE} and is calculated at ₹{SHIPPING_RATE_PER_KG}/kg. Free shipping from ₹{FREE_SHIPPING_MIN} excludes bangle boxes.</small>
         <div><span>Total</span><strong>₹{total}</strong></div>

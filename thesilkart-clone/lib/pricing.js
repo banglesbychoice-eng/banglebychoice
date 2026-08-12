@@ -6,6 +6,13 @@ export const SHIPPING_FEE = MINIMUM_SHIPPING_FEE;
 const PACKAGING_WEIGHT_GRAMS = 100;
 const BANGLE_BOX_WEIGHT_GRAMS = 300;
 
+export function formatSavingsAmount(value) {
+  const amount = Number(value);
+  if (!Number.isFinite(amount)) return '0';
+  const rounded = Math.round((amount + Number.EPSILON) * 100) / 100;
+  return rounded.toLocaleString('en-IN', { maximumFractionDigits: 2 });
+}
+
 function parsePackAmount(choice) {
   const match = String(choice || '').trim().match(/([\d.]+)\s*(kg|g)?/i);
   if (!match) return null;

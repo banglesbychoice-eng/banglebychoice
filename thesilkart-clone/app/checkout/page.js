@@ -8,7 +8,7 @@ import { useCommerce } from '@/components/CommerceContext';
 import { analyticsItems, trackEvent } from '@/lib/analytics-client';
 import { DEFAULT_DELIVERY_METHOD, DELIVERY_METHODS } from '@/lib/delivery';
 import { buildStaticUpiQrLink, buildUpiPaymentLink, isUpiConfigured, upiPayeeAddress } from '@/lib/payments';
-import { FREE_SHIPPING_MIN, MINIMUM_SHIPPING_FEE, SHIPPING_RATE_PER_KG, getShippingQuote } from '@/lib/pricing';
+import { FREE_SHIPPING_MIN, MINIMUM_SHIPPING_FEE, SHIPPING_RATE_PER_KG, formatSavingsAmount, getShippingQuote } from '@/lib/pricing';
 import styles from './checkout.module.css';
 
 const WHATSAPP_NUMBER = '919553655562';
@@ -28,7 +28,7 @@ function buildWhatsAppOrderMessage(order) {
   const deliveryLines = order.deliveryMethod === 'shipping' || !order.deliveryMethod
     ? [
       `Calculated delivery charge: Rs ${order.deliveryCharge ?? order.shipping}`,
-      ...(Number(order.deliveryDiscount) ? [`Free-shipping deduction: Rs ${order.deliveryDiscount}`] : []),
+      ...(Number(order.deliveryDiscount) ? [`Free-shipping deduction: Rs ${formatSavingsAmount(order.deliveryDiscount)}`] : []),
       `Delivery payable: ${Number(order.shipping) ? `Rs ${order.shipping}` : 'Free'}`,
     ]
     : [
@@ -213,7 +213,7 @@ export default function CheckoutPage() {
     <aside className={styles.summary}>
       <p>Order summary</p><h2>{cart.length} {cart.length === 1 ? 'item' : 'items'}</h2>
       <div className={styles.items}>{cart.map((item) => <article key={item.key}><Image src={item.image} alt={item.name} width={72} height={82} /><div><h3>{item.name}</h3><p>{item.packSize || 'Standard'} · Qty {item.quantity}</p><strong>₹{item.price * item.quantity}</strong></div></article>)}</div>
-      <dl><div><dt>Subtotal</dt><dd>₹{cartTotal}</dd></div>{savings ? <div><dt>Product savings</dt><dd>₹{savings}</dd></div> : null}{requiresAddress ? <><div><dt>{shippingQuote.deliveryDiscount ? 'Calculated delivery' : 'Delivery'}</dt><dd>₹{shippingQuote.regularFee}</dd></div>{shippingQuote.deliveryDiscount ? <div className={styles.discountLine}><dt>Free-shipping deduction</dt><dd>−₹{shippingQuote.deliveryDiscount}</dd></div> : null}{shippingQuote.deliveryDiscount ? <div><dt>Delivery payable</dt><dd>{shipping ? `₹${shipping}` : 'Free'}</dd></div> : null}</> : <div><dt>{DELIVERY_METHODS[deliveryMethod].label}</dt><dd>₹0</dd></div>}{totalSavings ? <div className={styles.discountLine}><dt>Total saved today</dt><dd>₹{totalSavings}</dd></div> : null}<div><dt>Total</dt><dd>₹{orderTotal}</dd></div></dl>
+      <dl><div><dt>Subtotal</dt><dd>₹{cartTotal}</dd></div>{savings ? <div><dt>Product savings</dt><dd>₹{formatSavingsAmount(savings)}</dd></div> : null}{requiresAddress ? <><div><dt>{shippingQuote.deliveryDiscount ? 'Calculated delivery' : 'Delivery'}</dt><dd>₹{shippingQuote.regularFee}</dd></div>{shippingQuote.deliveryDiscount ? <div className={styles.discountLine}><dt>Free-shipping deduction</dt><dd>−₹{formatSavingsAmount(shippingQuote.deliveryDiscount)}</dd></div> : null}{shippingQuote.deliveryDiscount ? <div><dt>Delivery payable</dt><dd>{shipping ? `₹${shipping}` : 'Free'}</dd></div> : null}</> : <div><dt>{DELIVERY_METHODS[deliveryMethod].label}</dt><dd>₹0</dd></div>}{totalSavings ? <div className={styles.discountLine}><dt>Total saved today</dt><dd>₹{formatSavingsAmount(totalSavings)}</dd></div> : null}<div><dt>Total</dt><dd>₹{orderTotal}</dd></div></dl>
       {requiresAddress && shippingQuote.remainingForFreeShipping > 0 ? <Link className={styles.freeShippingUpsell} href="/#catalog">Add ₹{shippingQuote.remainingForFreeShipping} more to unlock free shipping on eligible products</Link> : null}
       <p className={styles.shippingNote}>{requiresAddress ? `Delivery is minimum ₹${MINIMUM_SHIPPING_FEE}, calculated at ₹${SHIPPING_RATE_PER_KG}/kg. Orders from ₹${FREE_SHIPPING_MIN} ship free, except bangle boxes.` : deliveryMethod === 'pickup' ? 'Pickup has no delivery charge. Collect only after receiving the ready-for-pickup confirmation.' : 'No website delivery charge. You arrange and pay Rapido, Porter or your chosen pickup provider directly.'}</p>
     </aside>
