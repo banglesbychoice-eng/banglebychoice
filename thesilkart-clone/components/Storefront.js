@@ -7,6 +7,7 @@ import { Heart } from 'lucide-react';
 import { useCommerce } from './CommerceContext';
 import QuickCartButton from './QuickCartButton';
 import VoiceSearchButton from './VoiceSearchButton';
+import HeroCarousel from './HeroCarousel';
 import styles from './Storefront.module.css';
 import { scoreProduct } from '@/lib/product-search';
 import { facetOptions, matchesFacets } from '@/lib/product-facets';
@@ -176,17 +177,7 @@ export default function Storefront({ initialProducts, categories, collectionGrou
 
   return (
     <>
-      <section className={styles.hero}>
-        <div className={styles.heroBackdrop}>
-          <Image src="/images/generated/banglebychoice-hero.webp" alt="Premium kundan stones and bangle-making materials from Bangle by Choice" fill priority fetchPriority="high" sizes="100vw" quality={75} className={styles.heroBackdropImage} />
-        </div>
-        <div className={styles.heroContent}>
-          <p className={styles.eyebrow}>India’s craft supply destination</p>
-          <h1>Bangle by Choice: Kundan Stones &amp; Jewellery-Making Materials</h1>
-          <p className={styles.heroCopy}>Premium bangle, kundan and jewellery-making materials—now curated by Bangle by Choice.</p>
-          <Link href="/collections/silk-thread-materials">Shop bangle materials</Link>
-        </div>
-      </section>
+      <HeroCarousel />
 
       <section className={styles.mobileHeroSearch} aria-label="Search products">
         <div>

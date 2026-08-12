@@ -1,13 +1,3 @@
-.hero { min-height: 610px; position: relative; overflow: hidden; background: #55152b; color: white; }
-.heroBackdrop { position: absolute; inset: 0; }
-.heroBackdrop::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg,#461021 0%,rgba(86,15,43,.98) 33%,rgba(86,15,43,.78) 48%,rgba(86,15,43,.08) 72%); }
-.heroBackdropImage { object-fit: cover; object-position: center; }
-.heroContent { position: relative; z-index: 2; align-self: center; padding: 80px max(38px,8vw); max-width: 780px; }
-.eyebrow { text-transform: uppercase; letter-spacing: .2em; color: #f3d78f; font-weight: 700; font-size: .78rem; margin-bottom: 24px; }
-.hero h1 { color: white; font-size: clamp(3.2rem,5.5vw,5.8rem); line-height: 1; font-weight: 600; letter-spacing: 0; max-width: 760px; }
-.heroCopy { margin-top: 28px; max-width: 560px; color: rgba(255,255,255,.78); line-height: 1.7; font-size: 1.08rem; }
-.heroContent a { display: inline-flex; align-self: flex-start; margin-top: 36px; border: 0; background: #f0c969; color: #35101c; padding: 16px 24px; font: inherit; font-weight: 800; cursor: pointer; transition: transform 180ms ease,background 180ms ease; }
-.heroContent a:hover { transform: translateY(-3px); background: white; }
 .mobileHeroSearch { display: none; }
 .categoryRail { max-width: 1440px; margin: 0 auto; padding: 44px 32px 38px; display: flex; justify-content: center; gap: clamp(18px,4vw,60px); overflow-x: auto; }
 .categoryRail a { background: none; border: 0; display: grid; justify-items: center; gap: 12px; min-width: 120px; font: inherit; font-size: .86rem; font-weight: 700; cursor: pointer; color: #463c38; text-align: center; }
@@ -86,14 +76,6 @@
 @media (prefers-reduced-motion: reduce) { .catalogStatus span { animation: none; } }
 @media (max-width:1200px) { .productGrid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
 @media (max-width:760px) {
-  .hero { min-height: 525px; display: block; background: #5b1530; }
-  .heroBackdrop::after { background: linear-gradient(180deg,rgba(70,9,31,.08),rgba(54,5,21,.94)); }
-  .heroBackdropImage { object-position: 66% center; }
-  .heroContent { min-height: 525px; padding: 170px 22px 42px; display: flex; flex-direction: column; justify-content: end; }
-  .hero h1 { font-size: clamp(3rem,14vw,4.6rem); line-height: .95; max-width: 440px; }
-  .heroCopy { font-size: .94rem; line-height: 1.55; margin-top: 18px; max-width: 400px; }
-  .heroContent a { align-self: flex-start; margin-top: 24px; padding: 14px 18px; }
-  .eyebrow { margin-bottom: 14px; font-size: .64rem; }
   .mobileHeroSearch { display: block; background: #fffaf6; padding: 12px 12px 0; }
   .mobileHeroSearch div { display: grid; grid-template-columns: 1fr 48px; gap: 8px; margin: -34px auto 0; position: relative; z-index: 4; }
   .mobileHeroSearch input { border: 1px solid #ded4ce; box-shadow: 0 10px 24px rgba(35,15,22,.12); font: inherit; font-size: .9rem; min-height: 48px; padding: 0 14px; }
