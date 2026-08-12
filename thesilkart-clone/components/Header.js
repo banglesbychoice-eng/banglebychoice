@@ -9,9 +9,9 @@ import styles from './Header.module.css';
 import { FREE_SHIPPING_MIN } from '@/lib/pricing';
 
 const navItems = [
-  ['Silk Thread Materials', 'silk-thread-materials'],
-  ['Kundan Stones', 'kundan-stones'],
-  ['Jewellery Making', 'jewellery-making'],
+  ['Raw Materials', 'raw-materials'],
+  ['Bangles', 'bangles'],
+  ['Accessories', 'accessories'],
 ];
 
 export default function Header() {
@@ -57,6 +57,7 @@ export default function Header() {
       {menuOpen && (
         <nav className={styles.mobileMenu}>
           <form ref={mobileFormRef} action="/search">{renderSearchForm(mobileFormRef)}</form>
+          <Link onClick={() => setMenuOpen(false)} href="/">Home</Link>
           {navItems.map(([label, slug]) => <Link onClick={() => setMenuOpen(false)} href={`/collections/${slug}`} key={slug}>{label}</Link>)}
           <Link onClick={() => setMenuOpen(false)} href="/offers">Offers</Link>
           <Link onClick={() => setMenuOpen(false)} href="/#catalog">View all products</Link>

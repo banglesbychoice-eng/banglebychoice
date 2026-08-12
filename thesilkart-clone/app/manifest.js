@@ -12,7 +12,8 @@ export default function manifest() {
     ],
     categories: ['shopping', 'lifestyle', 'business'],
     shortcuts: [
-      { name: 'Kundan Stones', short_name: 'Kundans', url: '/collections/kundan-stones', icons: [{ src: '/icons/icon-192.png', sizes: '192x192' }] },
+      { name: 'Raw Materials', short_name: 'Materials', url: '/collections/raw-materials', icons: [{ src: '/icons/icon-192.png', sizes: '192x192' }] },
+      { name: 'Bangles', short_name: 'Bangles', url: '/collections/bangles', icons: [{ src: '/icons/icon-192.png', sizes: '192x192' }] },
       { name: 'Offers', short_name: 'Offers', url: '/offers', icons: [{ src: '/icons/icon-192.png', sizes: '192x192' }] },
     ],
   };

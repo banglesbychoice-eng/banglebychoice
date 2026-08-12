@@ -7,6 +7,7 @@ import { collectionContent } from '@/lib/collection-content';
 import { absoluteUrl, jsonLd, ogImages, twitterImage } from '@/lib/seo';
 import { facetOptions, matchesFacets } from '@/lib/product-facets';
 import { groupProductsByDesign } from '@/lib/product-grouping';
+import { departmentProducts, getStoreDepartment, storeDepartments } from '@/lib/store-departments';
 import QuickCartButton from '@/components/QuickCartButton';
 import PendingSubmitButton from '@/components/PendingSubmitButton';
 import styles from './collection.module.css';
@@ -21,17 +22,19 @@ function findCategoryBySlug(products, slug) {
 
 export async function generateStaticParams() {
   const products = await getCatalogProducts();
-  return [...new Set(products.map((product) => product.category))].map((category) => ({ slug: categorySlug(category) }));
+  const categoryParams = [...new Set(products.map((product) => product.category))].map((category) => ({ slug: categorySlug(category) }));
+  return [...categoryParams, ...storeDepartments.map(({ slug }) => ({ slug }))];
 }
 
 export async function generateMetadata({ params, searchParams }) {
   const { slug } = await params;
   const { page = '1', colour = '', shape = '', size = '' } = await searchParams;
   const products = await getCatalogProducts();
+  const department = getStoreDepartment(slug);
   const category = findCategoryBySlug(products, slug);
-  if (!category) return { title: 'Collection not found' };
-  const name = titleCase(category).replace('Jewelery', 'Jewellery');
-  const collection = products.filter((product) => product.category === category);
+  if (!department && !category) return { title: 'Collection not found' };
+  const name = department?.name || titleCase(category).replace('Jewelery', 'Jewellery');
+  const collection = department ? departmentProducts(products, slug) : products.filter((product) => product.category === category);
   const image = collection[0]?.image;
   const content = collectionContent[slug];
   const description = content?.metaDescription || content?.intro || `Shop ${name.toLowerCase()} for bangle and jewellery making. Dispatch within 24 hours and delivery across India.`;
@@ -75,9 +78,10 @@ export default async function CollectionPage({ params, searchParams }) {
   const { slug } = await params;
   const { colour = '', shape = '', size = '', page = '1' } = await searchParams;
   const products = await getCatalogProducts();
+  const department = getStoreDepartment(slug);
   const category = findCategoryBySlug(products, slug);
-  if (!category) notFound();
-  const collection = products.filter((product) => product.category === category);
+  if (!department && !category) notFound();
+  const collection = department ? departmentProducts(products, slug) : products.filter((product) => product.category === category);
   const availableFacets = facetOptions(collection);
   const filteredCollection = collection.filter((product) => matchesFacets(product, { colour, shape, size }));
   const pageCount = Math.max(1, Math.ceil(filteredCollection.length / PAGE_SIZE));
@@ -86,7 +90,7 @@ export default async function CollectionPage({ params, searchParams }) {
   const pagedCollection = filteredCollection.slice(start, start + PAGE_SIZE);
   const productGroups = groupProductsByDesign(pagedCollection);
   const filters = { colour, shape, size };
-  const name = titleCase(category).replace('Jewelery', 'Jewellery');
+  const name = department?.name || titleCase(category).replace('Jewelery', 'Jewellery');
   const content = collectionContent[slug];
   const collectionUrl = absoluteUrl(`/collections/${slug}`);
   const collectionSchema = { '@context': 'https://schema.org', '@type': 'CollectionPage', name, url: collectionUrl, mainEntity: { '@type': 'ItemList', numberOfItems: filteredCollection.length, itemListElement: pagedCollection.map((product, index) => ({ '@type': 'ListItem', position: start + index + 1, name: titleCase(product.name), url: absoluteUrl(`/products/${product.slug}`) })) } };

@@ -1,4 +1,49 @@
 export const collectionContent = {
+  'raw-materials': {
+    seoTitle: 'Jewellery & Bangle-Making Raw Materials Online',
+    metaDescription: 'Shop Kundan stones, silk threads, adhesives, tools and jewellery-making raw materials online with delivery across India.',
+    intro: 'Shop raw materials for bangle making, jewellery assembly, maggam work and decorative craft projects. Compare Kundan stones, silk threads, adhesives, tools, bases and essential making supplies by colour, shape and available pack size. Active products are packed in Hyderabad and dispatched within 24 hours for delivery across India.',
+    buyingGuide: [
+      ['Start with the project base', 'Choose the bangle, fabric, MDF or jewellery base first, then match stones, thread, adhesive and tools to that surface.'],
+      ['Check pack and finish', 'Review the listed pack size and real product photograph before ordering because colour, backing and finish affect the completed design.'],
+      ['Test before full assembly', 'Create one small sample and allow adhesives to cure fully before repeating the design or producing larger quantities.'],
+    ],
+    faqs: [
+      ['What is included under raw materials?', 'This department includes active Kundan stones, silk-thread supplies, adhesives, tools, bases and other materials used to make or decorate products.'],
+      ['Can beginners use these materials?', 'Yes. Start with a simple design, basic tools and a small pack before ordering larger quantities.'],
+      ['Are pack sizes the same for every material?', 'No. Use the pack selector and pricing shown on each product page because quantities vary by product.'],
+    ],
+  },
+  bangles: {
+    seoTitle: 'Bangles & Bangle Boxes Online in India',
+    metaDescription: 'Shop active plain bangles, cut bangles and bangle boxes online for jewellery making, storage and craft businesses across India.',
+    intro: 'Browse active plain bangles, cut bangle bases and bangle boxes for handmade designs, classes, small businesses and organised storage. Check the product name, cut style, available sizes and photographs before ordering. Bangle boxes remain weight-chargeable and are excluded from the free-shipping offer.',
+    buyingGuide: [
+      ['Confirm the bangle profile', 'Choose flat or curved bases and the required cut width according to the wrapping and decoration planned for the finished bangle.'],
+      ['Check available sizes', 'Use the individual product page to confirm the listed bangle sizes instead of assuming every design has the same options.'],
+      ['Plan box delivery cost', 'Bangle boxes are charged by calculated shipment weight even when other eligible products receive free shipping.'],
+    ],
+    faqs: [
+      ['What types of bangles are listed?', 'The active selection can include flat and curved plain bangles in different cut widths, together with available bangle boxes.'],
+      ['Are bangle boxes eligible for free shipping?', 'No. Bangle boxes remain weight-chargeable and the cart calculates their delivery amount separately.'],
+      ['How do I choose the correct bangle size?', 'Check the sizes listed on the product page and compare them with the required finished bangle measurement before ordering.'],
+    ],
+  },
+  accessories: {
+    seoTitle: 'Jewellery Accessories, Charms, Beads & Findings',
+    metaDescription: 'Shop charms, chains, beads, pearls, pendants, connectors and decorative jewellery accessories online across India.',
+    intro: 'Shop decorative accessories and components for bangles, earrings, necklaces, hair accessories and handmade craft projects. Browse active charms, chains, beads, pearls, pendants, connectors, pins and related findings, then check colour, connection points and pack details before combining parts.',
+    buyingGuide: [
+      ['Match connection points', 'Check holes, loops, pins and connector sizes before combining accessories with chain, wire or thread.'],
+      ['Coordinate finish and colour', 'Compare the product photographs under similar lighting before mixing gold, silver, pearl and coloured components.'],
+      ['Test the finished weight', 'Assemble one sample first so earrings, bangles and hanging elements remain comfortable and balanced.'],
+    ],
+    faqs: [
+      ['Which products are listed as accessories?', 'This department groups active charms, chains, beads, pearls, pendants, connectors, pins and similar decorative components.'],
+      ['Can accessories be used for custom jewellery?', 'Yes. Check the product size, connection point and pack information before using components in a custom design.'],
+      ['Will colours look identical on every screen?', 'Lighting and display settings can change colour appearance, so review all product images before ordering items that must match precisely.'],
+    ],
+  },
   'silk-thread-materials': {
     seoTitle: 'Silk Thread Jewellery-Making Materials Online',
     metaDescription: 'Shop silk thread jewellery-making materials, bangle boxes, charms, adhesives and finishing supplies online with delivery across India.',
