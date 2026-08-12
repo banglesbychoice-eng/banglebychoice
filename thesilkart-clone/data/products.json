@@ -1,7 +1,7 @@
 {
   "website": "thesilkart.com",
-  "scraped_at": "2026-08-12T04:24:56.298Z",
-  "total_products": 715,
+  "scraped_at": "2026-08-12T04:49:02.619Z",
+  "total_products": 716,
   "products": [
     {
       "id": "92dc26df4f59",
@@ -16266,6 +16266,32 @@
           "label": "100 pieces",
           "price": 40,
           "mrp": 40
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "2157e0e45509",
+      "url": "https://www.banglebychoice.in/products/nose-cutter-plier",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "Nose Cutter Plier",
+      "price": 70,
+      "sale_price": 70,
+      "category": "Jewellery Making",
+      "subcategory": "cutters and pliers",
+      "type": "cutters and pliers",
+      "availability": "Out of Stock",
+      "weight": "1 piece",
+      "description": "Nose Cutter Plier is a compact jewellery-making hand tool with long tapered metal jaws, a central pivot and yellow-and-red coated handles for a secure grip. Suitable for precision gripping, bending and positioning wire and small jewellery components. Supplied as one piece for ₹70. Handle colours and minor surface marks may vary slightly between batches.",
+      "images": [
+        "images/jewellery-making/tools/nose-cutter-plier.webp"
+      ],
+      "options": [
+        {
+          "label": "1 piece",
+          "price": 70,
+          "mrp": 70
         }
       ],
       "status": "draft"
