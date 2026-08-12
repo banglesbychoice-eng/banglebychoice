@@ -1,7 +1,7 @@
 {
   "website": "thesilkart.com",
-  "scraped_at": "2026-08-12T03:47:26.632Z",
-  "total_products": 706,
+  "scraped_at": "2026-08-12T04:01:33.770Z",
+  "total_products": 712,
   "products": [
     {
       "id": "92dc26df4f59",
@@ -16026,6 +16026,156 @@
           "mrp": 250
         }
       ]
+    },
+    {
+      "id": "fee93946b9cb",
+      "url": "https://www.banglebychoice.in/products/3mm-round-gold-clip-stones",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "3mm Round Gold Clip Stones",
+      "price": 40,
+      "sale_price": 40,
+      "category": "Kundan Stones",
+      "subcategory": "3mm round clip stones",
+      "type": "3mm round clip stones",
+      "availability": "Out of Stock",
+      "weight": "100 pieces",
+      "description": "3mm Round Gold Clip Stones are 3mm round faceted stones held in individual metal clip settings for silk thread bangles, jewellery making, blouse work, embroidery and decorative craft designs. The premium close-up photograph shows the supplied gold colour, crystal faceting, prong placement, rim profile and reverse metal cups. Supplied as a 100-piece pack for ₹40. Small variations in reflection may occur under different lighting.",
+      "images": [
+        "images/kundan-stones/3mm-clipstones/3mm-round-gold-clip-stones.webp"
+      ],
+      "options": [
+        {
+          "label": "100 pieces",
+          "price": 40
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "b84f5e645d7c",
+      "url": "https://www.banglebychoice.in/products/3mm-round-dark-green-clip-stones",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "3mm Round Dark Green Clip Stones",
+      "price": 40,
+      "sale_price": 40,
+      "category": "Kundan Stones",
+      "subcategory": "3mm round clip stones",
+      "type": "3mm round clip stones",
+      "availability": "Out of Stock",
+      "weight": "100 pieces",
+      "description": "3mm Round Dark Green Clip Stones are 3mm round faceted stones held in individual metal clip settings for silk thread bangles, jewellery making, blouse work, embroidery and decorative craft designs. The premium close-up photograph shows the supplied dark green colour, crystal faceting, prong placement, rim profile and reverse metal cups. Supplied as a 100-piece pack for ₹40. Small variations in reflection may occur under different lighting.",
+      "images": [
+        "images/kundan-stones/3mm-clipstones/3mm-round-dark-green-clip-stones.webp"
+      ],
+      "options": [
+        {
+          "label": "100 pieces",
+          "price": 40
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "79f345c80aff",
+      "url": "https://www.banglebychoice.in/products/3mm-round-red-clip-stones",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "3mm Round Red Clip Stones",
+      "price": 40,
+      "sale_price": 40,
+      "category": "Kundan Stones",
+      "subcategory": "3mm round clip stones",
+      "type": "3mm round clip stones",
+      "availability": "Out of Stock",
+      "weight": "100 pieces",
+      "description": "3mm Round Red Clip Stones are 3mm round faceted stones held in individual metal clip settings for silk thread bangles, jewellery making, blouse work, embroidery and decorative craft designs. The premium close-up photograph shows the supplied red colour, crystal faceting, prong placement, rim profile and reverse metal cups. Supplied as a 100-piece pack for ₹40. Small variations in reflection may occur under different lighting.",
+      "images": [
+        "images/kundan-stones/3mm-clipstones/3mm-round-red-clip-stones.webp"
+      ],
+      "options": [
+        {
+          "label": "100 pieces",
+          "price": 40
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "03e6e6699498",
+      "url": "https://www.banglebychoice.in/products/3mm-round-orange-clip-stones",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "3mm Round Orange Clip Stones",
+      "price": 40,
+      "sale_price": 40,
+      "category": "Kundan Stones",
+      "subcategory": "3mm round clip stones",
+      "type": "3mm round clip stones",
+      "availability": "Out of Stock",
+      "weight": "100 pieces",
+      "description": "3mm Round Orange Clip Stones are 3mm round faceted stones held in individual metal clip settings for silk thread bangles, jewellery making, blouse work, embroidery and decorative craft designs. The premium close-up photograph shows the supplied orange colour, crystal faceting, prong placement, rim profile and reverse metal cups. Supplied as a 100-piece pack for ₹40. Small variations in reflection may occur under different lighting.",
+      "images": [
+        "images/kundan-stones/3mm-clipstones/3mm-round-orange-clip-stones.webp"
+      ],
+      "options": [
+        {
+          "label": "100 pieces",
+          "price": 40
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "878078e41a93",
+      "url": "https://www.banglebychoice.in/products/3mm-round-pink-clip-stones",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "3mm Round Pink Clip Stones",
+      "price": 40,
+      "sale_price": 40,
+      "category": "Kundan Stones",
+      "subcategory": "3mm round clip stones",
+      "type": "3mm round clip stones",
+      "availability": "Out of Stock",
+      "weight": "100 pieces",
+      "description": "3mm Round Pink Clip Stones are 3mm round faceted stones held in individual metal clip settings for silk thread bangles, jewellery making, blouse work, embroidery and decorative craft designs. The premium close-up photograph shows the supplied pink colour, crystal faceting, prong placement, rim profile and reverse metal cups. Supplied as a 100-piece pack for ₹40. Small variations in reflection may occur under different lighting.",
+      "images": [
+        "images/kundan-stones/3mm-clipstones/3mm-round-pink-clip-stones.webp"
+      ],
+      "options": [
+        {
+          "label": "100 pieces",
+          "price": 40
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "996ac16a7371",
+      "url": "https://www.banglebychoice.in/products/3mm-round-light-pink-clip-stones",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "3mm Round Light Pink Clip Stones",
+      "price": 40,
+      "sale_price": 40,
+      "category": "Kundan Stones",
+      "subcategory": "3mm round clip stones",
+      "type": "3mm round clip stones",
+      "availability": "Out of Stock",
+      "weight": "100 pieces",
+      "description": "3mm Round Light Pink Clip Stones are 3mm round faceted stones held in individual metal clip settings for silk thread bangles, jewellery making, blouse work, embroidery and decorative craft designs. The premium close-up photograph shows the supplied light pink colour, crystal faceting, prong placement, rim profile and reverse metal cups. Supplied as a 100-piece pack for ₹40. Small variations in reflection may occur under different lighting.",
+      "images": [
+        "images/kundan-stones/3mm-clipstones/3mm-round-light-pink-clip-stones.webp"
+      ],
+      "options": [
+        {
+          "label": "100 pieces",
+          "price": 40
+        }
+      ],
+      "status": "draft"
     }
   ]
 }

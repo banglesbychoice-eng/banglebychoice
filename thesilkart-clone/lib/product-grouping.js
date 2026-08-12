@@ -65,6 +65,9 @@ function kundanFamily(product) {
   const text = searchableText(product).replace(/×/g, 'x');
   const name = cleanProductName(product).replace(/×/g, 'x').toLowerCase();
 
+  const sizedClipstone = text.match(/\b(\d+(?:\.\d+)?)\s*mm\b.*\bclip\s*stones?\b/) || text.match(/\bclip\s*stones?\b.*\b(\d+(?:\.\d+)?)\s*mm\b/);
+  if (sizedClipstone) return `${sizedClipstone[1]}mm Round Clip Stones`;
+
   const sizedRound = text.match(/\b(\d+(?:\.\d+)?)\s*mm\b.*\bround\b/) || text.match(/\bround\b.*\b(\d+(?:\.\d+)?)\s*mm\b/);
   if (sizedRound) return `${sizedRound[1]}mm Round Kundans`;
 
