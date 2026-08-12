@@ -1,7 +1,7 @@
 {
   "website": "thesilkart.com",
-  "scraped_at": "2026-08-12T04:12:24.301Z",
-  "total_products": 713,
+  "scraped_at": "2026-08-12T04:24:56.298Z",
+  "total_products": 715,
   "products": [
     {
       "id": "92dc26df4f59",
@@ -5248,24 +5248,6 @@
       ]
     },
     {
-      "id": "56bb0348cfdc",
-      "url": "https://www.thesilkart.com/products/view/white-colour-4mm-round-clipstone",
-      "source": "thesilkart",
-      "currency": "INR",
-      "name": "white colour 4mm round clipstone",
-      "price": 25,
-      "sale_price": 20,
-      "category": "Jewellery Making",
-      "subcategory": "clipstones",
-      "type": "4mm round clipstones",
-      "availability": "In Stock",
-      "weight": "5g, 10g",
-      "description": "DescriptionShipping & Delivery InformationOrder Processing:All orders are processed and dispatched on the same day based on order confirmation timing (business days only).Estimated Delivery Time (from date of dispatch):Andhra Pradesh & Telangana:1–3 business daysTamil Nadu, Puducherry & Karnataka:3-5 business daysNorthern India:4–7 business daysNOTE:The above delivery timeline applies to DTDC shipments. Orders sent via India Post may require an additional 1–2 working days. In certain cases, order processing and delivery may take longer due to unforeseen circumstances.",
-      "images": [
-        "images/jewellery-making/white-colour-4mm-round-clipstone-premium-product-v6.webp"
-      ]
-    },
-    {
       "id": "31bf29a491f2",
       "url": "https://www.thesilkart.com/products/view/1015-size-oval-size-gold-colour-clipstones",
       "source": "thesilkart",
@@ -10261,24 +10243,6 @@
           "price": 1,
           "mrp": 1
         }
-      ]
-    },
-    {
-      "id": "520c28798c74",
-      "url": "https://www.thesilkart.com/products/view/red-colour-4mm-round-clipstones",
-      "source": "thesilkart",
-      "currency": "INR",
-      "name": "red colour 4mm round clipstones",
-      "price": 25,
-      "sale_price": 20,
-      "category": "Jewellery Making",
-      "subcategory": "clipstones",
-      "type": "4mm round clipstones",
-      "availability": "In Stock",
-      "weight": "5g, 10g",
-      "description": "DescriptionShipping & Delivery InformationOrder Processing:All orders are processed and dispatched on the same day based on order confirmation timing (business days only).Estimated Delivery Time (from date of dispatch):Andhra Pradesh & Telangana:1–3 business daysTamil Nadu, Puducherry & Karnataka:3-5 business daysNorthern India:4–7 business daysNOTE:The above delivery timeline applies to DTDC shipments. Orders sent via India Post may require an additional 1–2 working days. In certain cases, order processing and delivery may take longer due to unforeseen circumstances.",
-      "images": [
-        "images/jewellery-making/red-colour-4mm-round-clipstones-premium-product-v6.webp"
       ]
     },
     {
@@ -16198,6 +16162,110 @@
         {
           "label": "100 pieces",
           "price": 40
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "1a9d6836f6b7",
+      "url": "https://www.banglebychoice.in/products/red-colour-4mm-round-clipstones",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "4mm Round Red Clip Stones",
+      "price": 40,
+      "sale_price": 40,
+      "category": "Kundan Stones",
+      "subcategory": "4mm round clip stones",
+      "type": "4mm round clip stones",
+      "availability": "Out of Stock",
+      "weight": "100 pieces",
+      "description": "4mm Round Red Clip Stones are glossy 4mm round faceted red stones held in individual silver-colour metal clip settings. The premium close-up photograph shows the authentic crystal reflections, four-prong placement, smooth rim profile and reverse metal cups. Suitable for silk thread bangles, jewellery making, blouse work, embroidery and decorative craft projects. Supplied as a 100-piece pack for ₹40. Small variations in reflection may occur under different lighting.",
+      "images": [
+        "images/kundan-stones/4mm-clipstones/4mm-round-red-clip-stones.webp"
+      ],
+      "options": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "mrp": 40
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "1050cc619887",
+      "url": "https://www.banglebychoice.in/products/4mm-round-dark-green-clip-stones",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "4mm Round Dark Green Clip Stones",
+      "price": 40,
+      "sale_price": 40,
+      "category": "Kundan Stones",
+      "subcategory": "4mm round clip stones",
+      "type": "4mm round clip stones",
+      "availability": "Out of Stock",
+      "weight": "100 pieces",
+      "description": "4mm Round Dark Green Clip Stones are glossy 4mm round faceted dark green stones held in individual silver-colour metal clip settings. The premium close-up photograph shows the authentic crystal reflections, four-prong placement, smooth rim profile and reverse metal cups. Suitable for silk thread bangles, jewellery making, blouse work, embroidery and decorative craft projects. Supplied as a 100-piece pack for ₹40. Small variations in reflection may occur under different lighting.",
+      "images": [
+        "images/kundan-stones/4mm-clipstones/4mm-round-dark-green-clip-stones.webp"
+      ],
+      "options": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "mrp": 40
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "3a73129c1c26",
+      "url": "https://www.banglebychoice.in/products/4mm-round-gold-clip-stones",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "4mm Round Gold Clip Stones",
+      "price": 40,
+      "sale_price": 40,
+      "category": "Kundan Stones",
+      "subcategory": "4mm round clip stones",
+      "type": "4mm round clip stones",
+      "availability": "Out of Stock",
+      "weight": "100 pieces",
+      "description": "4mm Round Gold Clip Stones are glossy 4mm round faceted gold stones held in individual gold-colour metal clip settings. The premium close-up photograph shows the authentic crystal reflections, four-prong placement, smooth rim profile and reverse metal cups. Suitable for silk thread bangles, jewellery making, blouse work, embroidery and decorative craft projects. Supplied as a 100-piece pack for ₹40. Small variations in reflection may occur under different lighting.",
+      "images": [
+        "images/kundan-stones/4mm-clipstones/4mm-round-gold-clip-stones.webp"
+      ],
+      "options": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "mrp": 40
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "b97436de2c3a",
+      "url": "https://www.banglebychoice.in/products/white-colour-4mm-round-clipstone",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "4mm Round White Clip Stones",
+      "price": 40,
+      "sale_price": 40,
+      "category": "Kundan Stones",
+      "subcategory": "4mm round clip stones",
+      "type": "4mm round clip stones",
+      "availability": "Out of Stock",
+      "weight": "100 pieces",
+      "description": "4mm Round White Clip Stones are glossy 4mm round faceted white stones held in individual gold-colour metal clip settings. The premium close-up photograph shows the authentic crystal reflections, four-prong placement, smooth rim profile and reverse metal cups. Suitable for silk thread bangles, jewellery making, blouse work, embroidery and decorative craft projects. Supplied as a 100-piece pack for ₹40. Small variations in reflection may occur under different lighting.",
+      "images": [
+        "images/kundan-stones/4mm-clipstones/4mm-round-white-clip-stones.webp"
+      ],
+      "options": [
+        {
+          "label": "100 pieces",
+          "price": 40,
+          "mrp": 40
         }
       ],
       "status": "draft"
