@@ -27,7 +27,7 @@ export const metadata = {
   alternates: { canonical: '/', languages: { 'en-IN': '/' } },
   openGraph: { title: 'Bangle by Choice', description: 'Bangle and jewellery-making materials delivered across India.', url: '/', siteName, images: [ogImage(defaultOgImage, 'Bangle by Choice jewellery-making materials')], locale: 'en_IN', type: 'website' },
   twitter: { card: 'summary_large_image', title: 'Bangle by Choice', description: 'Shop bangle and jewellery-making materials across India.', images: twitterImage([defaultOgImage]) },
-  icons: { icon: [{ url: '/favicon.ico?v=20260812', sizes: 'any' }, { url: '/icon.png?v=20260812', type: 'image/png', sizes: '192x192' }], apple: [{ url: '/apple-icon.png?v=20260812', sizes: '180x180', type: 'image/png' }] },
+  icons: { icon: [{ url: '/favicon.ico?v=20260812b', sizes: 'any' }, { url: '/icon.png?v=20260812b', type: 'image/png', sizes: '192x192' }], apple: [{ url: '/apple-icon.png?v=20260812b', sizes: '180x180', type: 'image/png' }] },
   appleWebApp: { capable: true, title: 'Bangle by Choice', statusBarStyle: 'default' },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },
   verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined, other: { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || undefined } },

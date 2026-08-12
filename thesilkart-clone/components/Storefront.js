@@ -12,17 +12,10 @@ import styles from './Storefront.module.css';
 import { scoreProduct } from '@/lib/product-search';
 import { facetOptions, matchesFacets } from '@/lib/product-facets';
 import { productGroupKey } from '@/lib/product-grouping';
-import { catalogImage, categorySlug } from '@/lib/product-utils';
+import { catalogImage } from '@/lib/product-utils';
 import { FREE_SHIPPING_MIN, formatSavingsAmount, getPackChoices } from '@/lib/pricing';
 
 const PAGE_SIZE = 48;
-const categoryImages = {
-  'All Products': '/images/generated/banglebychoice-hero.webp',
-  'Kundan Stones': '/images/kundan-stones/8k-eye-shape-glossy-white-kundans-hero-top-view-v2.webp',
-  'Silk Thread Materials': '/images/silk-thread-materials/b-7000-glue-50ml_0.webp',
-  'Jewellery Making': '/images/imitation-jewelery-material/2-hole-connectors-catalog-v6.webp',
-};
-
 function displayName(value = '') {
   return value.replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
@@ -57,7 +50,7 @@ const ProductTile = memo(function ProductTile({ product }) {
   );
 });
 
-export default function Storefront({ initialProducts, categories, collectionGroups = [], totalProducts, initialQuery = '', seoProducts = [] }) {
+export default function Storefront({ initialProducts, collectionGroups = [], totalProducts, initialQuery = '', seoProducts = [] }) {
   const [catalogProducts, setCatalogProducts] = useState(initialProducts);
   const [activeCollection, setActiveCollection] = useState('all');
   const [query, setQuery] = useState(initialQuery);
@@ -184,19 +177,6 @@ export default function Storefront({ initialProducts, categories, collectionGrou
           <input aria-label="Search products" value={query} onChange={(event) => updateQuery(event.target.value)} placeholder={`Search ${totalProducts} products`} />
           <VoiceSearchButton className={styles.mobileVoiceButton} onTranscript={updateQuery} onFinal={updateQuery} label="" />
         </div>
-      </section>
-
-      <section className={styles.categoryRail} aria-label="Shop categories">
-        {['All Products', ...categories].map((category) => {
-          const categoryProduct = category === 'All Products' ? catalogProducts[0] : catalogProducts.find((product) => product.category === category);
-          const categoryImage = catalogImage(categoryImages[category] || categoryProduct?.image || '/images/generated/banglebychoice-hero.webp');
-          return (
-            <Link key={category} href={category === 'All Products' ? '/#catalog' : `/collections/${categorySlug(category)}`}>
-              <span className={styles.categoryImage}><Image src={categoryImage} alt={`${category} jewellery-making materials`} fill sizes="100px" quality={75} /></span>
-              <span>{category}</span>
-            </Link>
-          );
-        })}
       </section>
 
       <section className={styles.promiseStrip}>
