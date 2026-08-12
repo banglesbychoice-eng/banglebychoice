@@ -1,5 +1,23 @@
 export const guides = [
   {
+    slug: 'silk-thread-bangle-making-materials-list',
+    title: 'Silk Thread Bangle-Making Materials List',
+    description: 'A practical checklist of bangle bases, silk thread, glue, Kundan stones, chain, charms and tools needed to make silk thread bangles.',
+    category: 'Starter checklist',
+    readTime: '6 min read',
+    datePublished: '2026-08-12',
+    dateModified: '2026-08-12',
+    image: '/images/generated/banglebychoice-artisan-hero.webp',
+    collection: '/collections/raw-materials',
+    sections: [
+      ['Bangle bases and silk thread', 'Start with plain bangle bases in the required size and profile. Choose silk thread shades after planning the finished set, and order enough of one shade together when several bangles must match.'],
+      ['Glue and basic tools', 'Keep suitable craft adhesive, scissors, a measuring tool and pliers or cutters ready for the selected decorations. Test adhesive on one wrapped base before producing a full set.'],
+      ['Kundan stones, chain and charms', 'Choose a focal Kundan shape first, then add smaller stones, stone chain or charms as supporting details. Place the complete repeat without glue to check spacing and symmetry.'],
+      ['Finishing and packing supplies', 'Check the inner edge for loose thread or rough fittings and allow adhesive to cure fully. Use a clean bangle box or protected storage so completed work stays free from dust, perfume and moisture.'],
+      ['How much material to buy', 'Buy a small pack when testing a new shape or colour. For repeated orders or coordinated sets, count the planned repeats and include a modest allowance for samples and placement changes.'],
+    ],
+  },
+  {
     slug: 'how-to-make-silk-thread-bangles',
     title: 'How to Make Silk Thread Bangles at Home',
     description: 'A beginner-friendly method for wrapping, decorating and finishing silk thread bangles with commonly used craft materials.',
@@ -19,7 +37,7 @@ export const guides = [
   {
     slug: 'kundan-stones-shapes-and-uses',
     title: 'Kundan Stone Shapes and How to Use Them',
-    description: 'Learn how round, teardrop, marquise and geometric Kundan shapes support different jewellery and maggam-work layouts.',
+    description: 'Learn how round, drop, eye and geometric Kundan shapes work in silk thread bangle borders, centre motifs and bridal sets.',
     category: 'Material guide',
     readTime: '6 min read',
     datePublished: '2026-06-23',
@@ -35,8 +53,8 @@ export const guides = [
   },
   {
     slug: 'jewellery-making-materials-for-beginners',
-    title: 'Jewellery-Making Materials for Beginners',
-    description: 'A practical starter list covering pliers, cutters, findings, beads, adhesive and storage for first jewellery projects.',
+    title: 'Tools and Findings for Bangle Makers',
+    description: 'A practical starter guide to pliers, cutters, findings, beads, adhesive and storage for silk thread bangle makers.',
     category: 'Beginner guide',
     readTime: '5 min read',
     datePublished: '2026-06-23',

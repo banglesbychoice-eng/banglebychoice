@@ -22,7 +22,7 @@ export default async function Home() {
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Bangle by Choice product catalog',
+    name: 'Silk thread bangle-making materials catalog',
     numberOfItems: products.length,
     itemListElement: products.slice(0, 30).map((product, index) => ({
       '@type': 'ListItem',

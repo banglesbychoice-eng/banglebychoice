@@ -1,8 +1,8 @@
 export const collectionContent = {
   'raw-materials': {
-    seoTitle: 'Jewellery & Bangle-Making Raw Materials Online',
-    metaDescription: 'Shop Kundan stones, silk threads, adhesives, tools and jewellery-making raw materials online with delivery across India.',
-    intro: 'Shop raw materials for bangle making, jewellery assembly, maggam work and decorative craft projects. Compare Kundan stones, silk threads, adhesives, tools, bases and essential making supplies by colour, shape and available pack size. Active products are packed in Hyderabad and dispatched within 24 hours for delivery across India.',
+    seoTitle: 'Silk Thread Bangle-Making Raw Materials Online',
+    metaDescription: 'Shop silk thread bangle-making raw materials online: Kundan stones, thread, glue, bangle bases, tools and finishing supplies delivered across India.',
+    intro: 'Shop raw materials selected for silk thread bangle making. Compare Kundan stones, silk threads, adhesives, bangle bases, tools and finishing supplies by colour, shape and available pack size. Active products are packed in Hyderabad and dispatched within 24 hours for delivery across India.',
     buyingGuide: [
       ['Start with the project base', 'Choose the bangle, fabric, MDF or jewellery base first, then match stones, thread, adhesive and tools to that surface.'],
       ['Check pack and finish', 'Review the listed pack size and real product photograph before ordering because colour, backing and finish affect the completed design.'],
@@ -15,9 +15,9 @@ export const collectionContent = {
     ],
   },
   bangles: {
-    seoTitle: 'Bangles & Bangle Boxes Online in India',
-    metaDescription: 'Shop active plain bangles, cut bangles and bangle boxes online for jewellery making, storage and craft businesses across India.',
-    intro: 'Browse active plain bangles, cut bangle bases and bangle boxes for handmade designs, classes, small businesses and organised storage. Check the product name, cut style, available sizes and photographs before ordering. Bangle boxes remain weight-chargeable and are excluded from the free-shipping offer.',
+    seoTitle: 'Bangle Bases & Boxes for Silk Thread Bangles',
+    metaDescription: 'Shop plain and cut bangle bases plus bangle boxes for silk thread bangle making, classes and small businesses across India.',
+    intro: 'Browse plain bangles, cut bangle bases and bangle boxes for silk thread bangle designs, classes and small businesses. Check the product name, cut style, available sizes and photographs before ordering. Bangle boxes remain weight-chargeable and are excluded from the free-shipping offer.',
     buyingGuide: [
       ['Confirm the bangle profile', 'Choose flat or curved bases and the required cut width according to the wrapping and decoration planned for the finished bangle.'],
       ['Check available sizes', 'Use the individual product page to confirm the listed bangle sizes instead of assuming every design has the same options.'],
@@ -30,9 +30,9 @@ export const collectionContent = {
     ],
   },
   accessories: {
-    seoTitle: 'Jewellery Accessories, Charms, Beads & Findings',
-    metaDescription: 'Shop charms, chains, beads, pearls, pendants, connectors and decorative jewellery accessories online across India.',
-    intro: 'Shop decorative accessories and components for bangles, earrings, necklaces, hair accessories and handmade craft projects. Browse active charms, chains, beads, pearls, pendants, connectors, pins and related findings, then check colour, connection points and pack details before combining parts.',
+    seoTitle: 'Charms, Chains & Accessories for Thread Bangles',
+    metaDescription: 'Shop charms, stone chains, beads, pearls, pendants and connectors for silk thread bangles and coordinated handmade bangle sets.',
+    intro: 'Shop decorative accessories for silk thread bangles and coordinated handmade sets. Browse active charms, stone chains, beads, pearls, pendants and connectors, then check colour, connection points and pack details before combining parts.',
     buyingGuide: [
       ['Match connection points', 'Check holes, loops, pins and connector sizes before combining accessories with chain, wire or thread.'],
       ['Coordinate finish and colour', 'Compare the product photographs under similar lighting before mixing gold, silver, pearl and coloured components.'],
@@ -45,9 +45,9 @@ export const collectionContent = {
     ],
   },
   'silk-thread-materials': {
-    seoTitle: 'Silk Thread Jewellery-Making Materials Online',
-    metaDescription: 'Shop silk thread jewellery-making materials, bangle boxes, charms, adhesives and finishing supplies online with delivery across India.',
-    intro: 'Shop silk thread jewellery-making materials, bangle boxes, enamel charms, adhesives and finishing supplies for handmade bangles, jhumkas and decorative craft projects. Compare the current pack, colour and product photographs before ordering, then combine only compatible components for a clean and durable finish. Active products are packed in Hyderabad and dispatched within 24 hours for delivery across India.',
+    seoTitle: 'Silk Thread Bangle-Making Materials Online',
+    metaDescription: 'Buy silk thread bangle-making materials online: thread, glue, Kundan stones, charms, bases and finishing supplies with India-wide delivery.',
+    intro: 'Shop silk thread bangle-making materials including thread, Kundan stones, bangle bases, charms, adhesives and finishing supplies. Compare the current pack, colour and product photographs before ordering, then combine compatible components for a clean and durable finish. Active products are packed in Hyderabad and dispatched within 24 hours for delivery across India.',
     buyingGuide: [
       ['Plan one finished design first', 'List the base, thread or covering material, adhesive and decorative elements required for one design before increasing quantities. This reduces mismatched colours and unused findings.'],
       ['Match adhesive to both surfaces', 'The correct adhesive depends on the product backing and the bangle, fabric or MDF base. Test a small area and allow the bond to cure fully before packing or wearing the item.'],
@@ -62,9 +62,9 @@ export const collectionContent = {
     ],
   },
   'kundan-stones': {
-    seoTitle: 'Kundan Stones Online: Glass, Glossy & Ceramic',
-    metaDescription: 'Buy premium Kundan stones online in glass, glossy and ceramic finishes for jewellery, bangles, maggam work and fabric craft across India.',
-    intro: 'Shop premium Kundan stones for jewellery making, silk-thread bangles, maggam work, blouse and saree decoration. Filter active designs by shape, colour, finish and pack size. Product photographs show the visible finish; exact pieces per gram vary with stone dimensions and backing weight.',
+    seoTitle: 'Kundan Stones for Silk Thread Bangles Online',
+    metaDescription: 'Buy premium Kundan stones for silk thread bangles in glass, glossy and ceramic finishes. Choose shape, colour and pack size with India-wide delivery.',
+    intro: 'Shop premium Kundan stones for silk thread bangles, bridal bangle sets, borders and centre motifs. Filter active designs by shape, colour, finish and pack size. Product photographs show the visible finish; exact pieces per gram vary with stone dimensions and backing weight.',
     buyingGuide: [
       ['Choose shape for the layout', 'Round and drop stones suit floral arrangements, while eye, square and diamond shapes work well in petals, borders and geometric motifs. Plan the complete repeat before applying adhesive.'],
       ['Compare finish in real photographs', 'Glass, glossy and ceramic finishes reflect light differently. Use the product gallery to compare the visible face, rim and backing instead of relying only on a colour name.'],
@@ -79,9 +79,9 @@ export const collectionContent = {
     ],
   },
   'jewellery-making': {
-    seoTitle: 'Jewellery-Making Supplies Online in India',
-    metaDescription: 'Shop beads, findings, chains, tools and decorative jewellery-making supplies online for handmade projects with India-wide delivery.',
-    intro: 'Find jewellery-making supplies for earrings, necklaces, bangles and decorative craft work, including beads, findings, chains, tools and active components. Check the product photographs, pack details and stated measurements before combining parts, because small differences in hole size, thickness and weight can affect assembly. Products are packed in Hyderabad and dispatched within 24 hours for delivery across India.',
+    seoTitle: 'Tools & Findings for Silk Thread Bangle Making',
+    metaDescription: 'Shop pliers, cutters, chains, beads and findings for silk thread bangle making and coordinated handmade bangle sets across India.',
+    intro: 'Find tools and components used to assemble silk thread bangles and coordinated handmade sets, including pliers, cutters, beads, findings and chains. Check product photographs, pack details and measurements before combining parts, because small differences in hole size, thickness and weight can affect assembly. Products are packed in Hyderabad and dispatched within 24 hours for delivery across India.',
     buyingGuide: [
       ['Check connection points', 'Match jump rings, pins and connectors to the component hole size and expected design weight. A connector that fits visually may still be too thick or too light for the finished piece.'],
       ['Build a small sample first', 'Test one section of a necklace, earring or bangle before ordering larger quantities. This confirms colour, movement, spacing and tool compatibility.'],

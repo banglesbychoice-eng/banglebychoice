@@ -62,13 +62,14 @@ function productAttributes(product) {
 
 function productUseCaseText(product) {
   const text = `${product.category || ''} ${product.subcategory || ''} ${product.type || ''} ${product.name || ''}`.toLowerCase();
-  if (text.includes('kundan')) return 'silk thread bangles, bridal jewellery, blouse work, saree embellishment and premium craft detailing';
-  if (text.includes('glue') || text.includes('adhesive')) return 'stone fixing, bangle finishing, fabric craft and jewellery assembly';
-  if (text.includes('thread')) return 'silk thread bangles, jhumka wrapping, tassel work and coordinated handmade jewellery';
-  if (text.includes('chain') || text.includes('chaine')) return 'bangle borders, necklace accents, rakhi work and decorative jewellery layouts';
-  if (text.includes('charm') || text.includes('marking')) return 'designer bangles, festive jewellery accents and traditional craft motifs';
-  if (text.includes('mdf')) return 'base shapes for painted, fabric-wrapped and stone-embellished craft work';
-  return 'designer bangles, jewellery making, blouse work, saree craft and handmade decoration';
+  if (text.includes('kundan')) return 'silk thread bangles, bridal bangle sets, borders and centre motifs';
+  if (text.includes('glue') || text.includes('adhesive')) return 'thread wrapping, stone fixing and clean bangle finishing';
+  if (text.includes('thread')) return 'silk thread bangles, wrapped bases and coordinated handmade sets';
+  if (text.includes('chain') || text.includes('chaine')) return 'silk thread bangle borders, accents and coordinated sets';
+  if (text.includes('charm') || text.includes('marking')) return 'designer silk thread bangles, festive sets and traditional motifs';
+  if (text.includes('bangle')) return 'silk thread wrapping, Kundan decoration and custom bangle sets';
+  if (text.includes('plier') || text.includes('cutter') || text.includes('tool')) return 'cutting, shaping and assembling silk thread bangle decorations';
+  return 'silk thread bangles, decorative borders and handmade bangle sets';
 }
 
 export function isWeakProductMetaDescription(value = '') {
@@ -87,9 +88,9 @@ export function premiumProductMetaDescription(product) {
   const price = Number(product.sale_price || product.price);
   const priceText = Number.isFinite(price) && price > 0 ? ` starting at ₹${Math.round(price)}` : '';
   const quality = attributes ? `${attributes} finish` : 'premium craft finish';
-  const base = cleanText(`Buy ${name}${priceText} from Bangle by Choice. ${quality} for ${productUseCaseText(product)}. Dispatch across India.`);
+  const base = cleanText(`Buy ${name}${priceText} from Bangle by Choice. ${quality} for ${productUseCaseText(product)}. Dispatch within 24 hours across India.`);
   if (base.length <= 155) return base;
-  return cleanText(`Buy ${name}${priceText} for bangles, jewellery making and craft work. Fast dispatch across India from Bangle by Choice.`).slice(0, 155);
+  return cleanText(`Buy ${name}${priceText} for silk thread bangles and handmade bangle sets. Dispatch within 24 hours across India from Bangle by Choice.`).slice(0, 155);
 }
 
 export function premiumProductDescription(product) {
@@ -104,10 +105,10 @@ export function productKeywords(product) {
     product.category,
     product.subcategory,
     product.type,
-    ...(product.facets?.colours || []).map((colour) => `${colour} jewellery making material`),
+    ...(product.facets?.colours || []).map((colour) => `${colour} bangle making material`),
     ...(product.facets?.shapes || []).map((shape) => `${shape} kundans`),
-    'premium bangle making materials',
-    'jewellery making supplies India',
+    'silk thread bangle making materials',
+    'bangle making supplies India',
     'Bangle by Choice',
   ].map(cleanText).filter(Boolean);
 }

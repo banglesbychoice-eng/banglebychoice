@@ -30,7 +30,7 @@ const ProductTile = memo(function ProductTile({ product }) {
     <article className={styles.productTile}>
       <div className={styles.imageWrap}>
         <Link href={`/products/${product.slug}`} className={styles.imageLink}>
-          <Image src={catalogImage(product.image)} alt={product.alt_text || `${product.name} for jewellery making`} fill sizes="(max-width: 760px) 47vw, (max-width: 1200px) 30vw, 21vw" className={styles.productImage} quality={75} />
+          <Image src={catalogImage(product.image)} alt={product.alt_text || `${product.name} for silk thread bangle making`} fill sizes="(max-width: 760px) 47vw, (max-width: 1200px) 30vw, 21vw" className={styles.productImage} quality={75} />
           {discount > 0 && <span className={styles.discount}>{discount}% off</span>}
         </Link>
         <button className={styles.heart} onClick={() => toggleWishlist(product)} aria-label="Save to wishlist"><Heart aria-hidden="true" fill={isWishlisted(product.id) ? 'currentColor' : 'none'} /></button>
@@ -219,7 +219,7 @@ export default function Storefront({ initialProducts, collectionGroups = [], tot
       </section>
 
       <section className={styles.seoProductLinks} aria-label="Popular product links">
-        <h2>Popular jewellery-making materials</h2>
+        <h2>Popular silk thread bangle-making materials</h2>
         <div>{seoProducts.map((product) => <Link key={product.id} href={`/products/${product.slug}`}>{displayName(product.name)}</Link>)}</div>
       </section>
 

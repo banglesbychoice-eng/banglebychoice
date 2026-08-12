@@ -9,33 +9,36 @@ import styles from './HeroCarousel.module.css';
 const slides = [
   {
     image: '/images/generated/banglebychoice-hero.webp',
-    alt: 'Premium kundan stones, silk threads and handcrafted bangles arranged for jewellery making',
-    eyebrow: 'Materials chosen for makers',
-    title: 'Your next beautiful piece starts here.',
-    copy: 'Premium kundan stones, silk threads and jewellery-making essentials for ideas worth bringing to life.',
-    cta: 'Explore kundan stones',
-    href: '/collections/kundan-stones',
-    position: 'center',
+    alt: 'Silk threads, Kundan stones, tools and handcrafted thread bangles arranged for bangle making',
+    eyebrow: 'For silk-thread bangle makers',
+    title: 'Beautiful bangles start with the right materials.',
+    copy: 'Choose silk threads, Kundan stones, bangle bases and finishing supplies for your next handmade set.',
+    cta: 'Shop bangle materials',
+    href: '/collections/raw-materials',
+    desktopPosition: 'center center',
+    mobilePosition: '78% center',
   },
   {
     image: '/images/generated/banglebychoice-artisan-hero.webp',
     alt: 'An artisan handcrafting a burgundy silk-thread bangle with kundan stones',
-    eyebrow: 'Made by your hands',
-    title: 'Create something they will always remember.',
-    copy: 'From the first wrap of thread to the final stone, find every detail that makes your work feel personal.',
-    cta: 'Shop bangle materials',
+    eyebrow: 'Wrap. Decorate. Finish.',
+    title: 'Make each thread bangle look unmistakably yours.',
+    copy: 'Match thread shades, stones, chain and glue with confidence—from the first wrap to the final detail.',
+    cta: 'Shop silk-thread supplies',
     href: '/collections/silk-thread-materials',
-    position: 'center',
+    desktopPosition: 'center center',
+    mobilePosition: '80% center',
   },
   {
     image: '/images/generated/banglebychoice-celebration-hero.webp',
-    alt: 'Finished handcrafted burgundy kundan bangles presented as a meaningful festive gift',
-    eyebrow: 'For moments worth making',
-    title: 'Turn every celebration into something personal.',
-    copy: 'Choose premium stones, charms and finishing details for gifts and designs that carry your signature.',
-    cta: 'Discover accessories',
-    href: '/collections/jewellery-making',
-    position: 'center',
+    alt: 'Finished handcrafted silk-thread Kundan bangles presented as a festive gift',
+    eyebrow: 'Made to be remembered',
+    title: 'Create festive bangles customers want to keep.',
+    copy: 'Build coordinated sets with premium Kundan stones, charms and finishing details selected for bangle makers.',
+    cta: 'Explore Kundan stones',
+    href: '/collections/kundan-stones',
+    desktopPosition: 'center center',
+    mobilePosition: '82% center',
   },
 ];
 
@@ -80,7 +83,7 @@ export default function HeroCarousel() {
   return (
     <section
       className={styles.hero}
-      aria-label="Featured collections"
+      aria-label="Featured materials for silk thread bangle makers"
       aria-roledescription="carousel"
       onMouseEnter={() => setInteractionPaused(true)}
       onMouseLeave={() => setInteractionPaused(false)}
@@ -89,7 +92,7 @@ export default function HeroCarousel() {
       onTouchStart={(event) => { touchStart.current = event.touches[0].clientX; }}
       onTouchEnd={finishSwipe}
     >
-      <div className={styles.backdrop} key={slide.image}>
+      <div className={styles.backdrop} key={slide.image} style={{ '--desktop-position': slide.desktopPosition, '--mobile-position': slide.mobilePosition }}>
         <Image
           src={slide.image}
           alt={slide.alt}
@@ -99,7 +102,6 @@ export default function HeroCarousel() {
           sizes="100vw"
           quality={75}
           className={styles.image}
-          style={{ objectPosition: slide.position }}
         />
       </div>
       <div className={styles.content} key={`${activeSlide}-${slide.title}`} role="group" aria-label={`Slide ${activeSlide + 1} of ${slides.length}`}>

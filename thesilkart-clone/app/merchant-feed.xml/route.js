@@ -48,6 +48,6 @@ export async function GET() {
     </item>`;
   }).join('\n');
   const body = `<?xml version="1.0" encoding="UTF-8"?>
-  <rss xmlns:g="http://base.google.com/ns/1.0" version="2.0"><channel><title>${xml(siteName)}</title><link>${xml(siteUrl)}</link><description>Bangle and jewellery-making materials delivered across India.</description>${items}</channel></rss>`;
+  <rss xmlns:g="http://base.google.com/ns/1.0" version="2.0"><channel><title>${xml(siteName)}</title><link>${xml(siteUrl)}</link><description>Silk thread bangle-making materials, Kundan stones, bangle bases, charms and tools delivered across India.</description>${items}</channel></rss>`;
   return new Response(body, { headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400' } });
 }

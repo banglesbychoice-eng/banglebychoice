@@ -1,10 +1,10 @@
-.hero { min-height: 610px; position: relative; overflow: hidden; background: #55152b; color: white; touch-action: pan-y; }
+.hero { height: 610px; position: relative; overflow: hidden; background: #55152b; color: white; touch-action: pan-y; }
 .backdrop { position: absolute; inset: 0; animation: imageReveal 700ms cubic-bezier(.2,.7,.2,1) both; }
 .backdrop::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg,#461021 0%,rgba(86,15,43,.98) 33%,rgba(86,15,43,.78) 48%,rgba(86,15,43,.08) 72%); }
-.image { object-fit: cover; transform: scale(1.015); animation: imageSettle 6.5s ease-out both; }
-.content { position: relative; z-index: 2; min-height: 610px; display: flex; flex-direction: column; justify-content: center; padding: 72px max(38px,8vw) 98px; max-width: 800px; animation: contentReveal 560ms 90ms cubic-bezier(.2,.7,.2,1) both; }
+.image { object-fit: cover; object-position: var(--desktop-position,center); transform: scale(1.015); animation: imageSettle 6.5s ease-out both; }
+.content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 72px max(38px,8vw) 98px; max-width: 800px; animation: contentReveal 560ms 90ms cubic-bezier(.2,.7,.2,1) both; }
 .eyebrow { text-transform: uppercase; letter-spacing: .2em; color: #f3d78f; font-weight: 750; font-size: .78rem; margin-bottom: 22px; }
-.content h1 { color: white; font-size: clamp(3.2rem,5.5vw,5.65rem); line-height: .98; font-weight: 600; max-width: 760px; text-wrap: balance; }
+.content h1 { color: white; font-size: clamp(3.1rem,5vw,4.85rem); line-height: .98; font-weight: 600; max-width: 760px; text-wrap: balance; }
 .copy { margin-top: 25px; max-width: 560px; color: rgba(255,255,255,.82); line-height: 1.65; font-size: 1.05rem; }
 .content>a { display: inline-flex; align-self: flex-start; margin-top: 32px; background: #f0c969; color: #35101c; padding: 15px 22px; font-weight: 850; transition: transform 180ms ease,background 180ms ease; }
 .content>a:hover { transform: translateY(-3px); background: white; }
@@ -20,11 +20,11 @@
 @keyframes contentReveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 
 @media (max-width:760px) {
-  .hero { min-height: 525px; }
+  .hero { height: 600px; }
   .backdrop::after { background: linear-gradient(180deg,rgba(70,9,31,.05) 10%,rgba(54,5,21,.35) 42%,rgba(54,5,21,.96) 80%); }
-  .image { object-position: 70% center !important; }
-  .content { min-height: 525px; justify-content: end; padding: 150px 22px 82px; max-width: 470px; }
-  .content h1 { font-size: clamp(2.65rem,12.5vw,4rem); line-height: .96; max-width: 420px; }
+  .image { object-position: var(--mobile-position,78% center); }
+  .content { height: 100%; justify-content: end; padding: 150px 22px 84px; max-width: 470px; }
+  .content h1 { font-size: clamp(2.5rem,11.6vw,3.65rem); line-height: .96; max-width: 420px; }
   .copy { font-size: .9rem; line-height: 1.5; margin-top: 16px; max-width: 390px; }
   .content>a { margin-top: 21px; padding: 13px 17px; font-size: .85rem; }
   .eyebrow { margin-bottom: 12px; font-size: .61rem; }

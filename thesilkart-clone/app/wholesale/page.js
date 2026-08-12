@@ -3,15 +3,15 @@ import { absoluteUrl, defaultOgImage, jsonLd, ogImage, twitterImage } from '@/li
 import styles from './wholesale.module.css';
 
 export const metadata = {
-  title: 'Wholesale Jewellery-Making Materials',
-  description: 'Request bulk pricing for kundan stones, silk thread and jewellery-making materials from Bangle by Choice in Hyderabad.',
+  title: 'Wholesale Materials for Silk Thread Bangles',
+  description: 'Request bulk pricing for silk thread, Kundan stones, bangle bases, charms and tools for bangle makers from Bangle by Choice.',
   alternates: { canonical: '/wholesale' },
-  openGraph: { title: 'Wholesale Jewellery-Making Materials', description: 'Bulk craft-material enquiries for makers and resellers across India.', url: absoluteUrl('/wholesale'), type: 'website', images: [ogImage(defaultOgImage, 'Bangle by Choice wholesale materials')] },
-  twitter: { card: 'summary_large_image', title: 'Bangle by Choice Wholesale', description: 'Request a bulk quote for jewellery-making materials.', images: twitterImage([defaultOgImage]) },
+  openGraph: { title: 'Wholesale Materials for Silk Thread Bangles', description: 'Bulk material enquiries for bangle makers, teachers and resellers across India.', url: absoluteUrl('/wholesale'), type: 'website', images: [ogImage(defaultOgImage, 'Bangle by Choice wholesale bangle-making materials')] },
+  twitter: { card: 'summary_large_image', title: 'Bangle by Choice Wholesale', description: 'Request a bulk quote for silk thread bangle-making materials.', images: twitterImage([defaultOgImage]) },
 };
 
 const questions = [
-  ['Who can request wholesale pricing?', 'Boutiques, craft teachers, jewellery makers, resellers and production teams can request a quote.'],
+  ['Who can request wholesale pricing?', 'Silk thread bangle makers, craft teachers, boutiques, resellers and production teams can request a quote.'],
   ['Is there one fixed wholesale discount?', 'No. The quote depends on the exact product, pack size, quantity and current stock, so you receive pricing that matches the requirement.'],
   ['Can several colours or shapes be combined?', 'Share the required colour, shape, size and quantity for every item. We will confirm which combinations are available.'],
   ['How is bulk shipping calculated?', 'Shipping is quoted using the final packed weight and destination PIN code.'],

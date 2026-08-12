@@ -5,7 +5,7 @@ import { catalogImage, categorySlug, titleCase } from '@/lib/products';
 import { getCatalogProducts, getDatabaseProduct } from '@/lib/catalog-server';
 import ProductActions from '@/components/ProductActions';
 import styles from './product.module.css';
-import { absoluteUrl, jsonLd, ogImages, premiumProductDescription, premiumProductMetaDescription, productKeywords, productSeoTitle, siteName, twitterImage } from '@/lib/seo';
+import { absoluteUrl, isWeakProductMetaDescription, jsonLd, ogImages, premiumProductDescription, premiumProductMetaDescription, productKeywords, productSeoTitle, siteName, twitterImage } from '@/lib/seo';
 import { FREE_SHIPPING_MIN, SHIPPING_FEE, formatSavingsAmount, getPackChoices, getPriceValidUntil, isBangleBoxProduct } from '@/lib/pricing';
 import { productGroupKey } from '@/lib/product-grouping';
 import { getApprovedReviews, reviewSummary } from '@/lib/reviews-server';
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
   const product = await getDatabaseProduct(slug);
   if (!product || product.status === 'draft') return { title: 'Product not found', robots: { index: false, follow: false } };
   const title = productSeoTitle(product);
-  const description = product.meta_description || premiumProductMetaDescription(product);
+  const description = isWeakProductMetaDescription(product.meta_description) ? premiumProductMetaDescription(product) : product.meta_description;
   const images = ogImages(product.images, title);
   return {
     title,
