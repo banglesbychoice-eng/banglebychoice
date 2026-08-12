@@ -1,7 +1,7 @@
 {
   "website": "thesilkart.com",
-  "scraped_at": "2026-08-12T04:55:30.799Z",
-  "total_products": 716,
+  "scraped_at": "2026-08-12T05:02:56.402Z",
+  "total_products": 717,
   "products": [
     {
       "id": "92dc26df4f59",
@@ -16312,6 +16312,32 @@
           "label": "1 piece",
           "price": 70,
           "mrp": 95
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "17b9bbfe6e1d",
+      "url": "https://www.banglebychoice.in/products/30w-soldering-machine",
+      "source": "banglebychoice",
+      "currency": "INR",
+      "name": "30W Soldering Machine",
+      "price": 144,
+      "sale_price": 120,
+      "category": "Jewellery Making",
+      "subcategory": "soldering tools",
+      "type": "soldering tools",
+      "availability": "Out of Stock",
+      "weight": "1 piece",
+      "description": "30W Soldering Machine is a compact pencil-style electric soldering iron with a pointed metal tip, ventilated heating barrel, yellow insulated handle, attached black power cable and two-pin plug. Suitable for jewellery making, craft wire work and small soldering tasks where controlled tip placement is required. Rated at 30 watts and supplied as one piece for ₹120 (MRP ₹144). Use only with appropriate heat-safe working practices and unplug after use.",
+      "images": [
+        "images/jewellery-making/tools/30w-soldering-machine.webp"
+      ],
+      "options": [
+        {
+          "label": "1 piece",
+          "price": 120,
+          "mrp": 144
         }
       ],
       "status": "draft"
