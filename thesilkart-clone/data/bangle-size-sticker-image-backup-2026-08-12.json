@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-08-12T05:11:10.747Z",
+  "purpose": "Rollback map for the 2026-08-12 bangle size sticker image replacement.",
+  "products": [
+    {
+      "id": "c6cfbe45-e327-4b0f-bb1b-a27bbb2aa488",
+      "name": "2.0 Bangle Size Sticker Sheet",
+      "slug": "2-0-bangle-size-sticker-sheet",
+      "price": 5,
+      "mrp": 10,
+      "sizes": [
+        {
+          "mrp": 10,
+          "label": "1 sheet",
+          "price": 5
+        },
+        {
+          "mrp": 50,
+          "label": "5 sheet",
+          "price": 20
+        }
+      ],
+      "desc_text": "{\"_bbc\":1,\"description\":\"Buy 2.0 Bangle Size Sticker Sheet from Rs 10 from Bangle By Choice. Suitable for jewellery making, bangle making and craft projects. Premium catalogue image shows the exact colour, finish and product details.\",\"sku\":\"\",\"stock_quantity\":null,\"shipping_weight_grams\":null,\"status\":\"active\",\"featured\":false}",
+      "image_url": "/images/new-products-2026-07-19/2-0-bangle-size-sticker-sheet-premium.webp",
+      "alt_text": "2.0 Bangle Size Sticker Sheet premium product photo with Bangle By Choice watermark and phone number"
+    },
+    {
+      "id": "d27c9457-0145-4fda-afc3-c0fb3cf4cadd",
+      "name": "2.10 Bangle Size Sticker Sheet",
+      "slug": "2-10-bangle-size-sticker-sheet",
+      "price": 5,
+      "mrp": 10,
+      "sizes": [],
+      "desc_text": "{\"_bbc\":1,\"status\":\"active\",\"description\":\"Buy 2.10 Bangle Size Sticker Sheet from Rs 10 from Bangle By Choice. Suitable for jewellery making, bangle making and craft projects. Premium catalogue image shows the exact colour, finish and product details.\"}",
+      "image_url": "/images/new-products-2026-07-19/2-10-bangle-size-sticker-sheet-premium.webp",
+      "alt_text": "2.10 Bangle Size Sticker Sheet premium product photo with Bangle By Choice watermark and phone number"
+    },
+    {
+      "id": "dfbbb4a4-e96e-47cf-ba0e-296dd03858af",
+      "name": "2.12 Bangle Size Sticker Sheet",
+      "slug": "2-12-bangle-size-sticker-sheet",
+      "price": 5,
+      "mrp": 10,
+      "sizes": [],
+      "desc_text": "{\"_bbc\":1,\"status\":\"active\",\"description\":\"Buy 2.12 Bangle Size Sticker Sheet from Rs 10 from Bangle By Choice. Suitable for jewellery making, bangle making and craft projects. Premium catalogue image shows the exact colour, finish and product details.\"}",
+      "image_url": "/images/new-products-2026-07-19/2-12-bangle-size-sticker-sheet-premium.webp",
+      "alt_text": "2.12 Bangle Size Sticker Sheet premium product photo with Bangle By Choice watermark and phone number"
+    },
+    {
+      "id": "e51719cd-b75d-44a3-87ba-73a6750430fb",
+      "name": "2.14 Bangle Size Sticker Sheet",
+      "slug": "2-14-bangle-size-sticker-sheet",
+      "price": 5,
+      "mrp": 10,
+      "sizes": [],
+      "desc_text": "{\"_bbc\":1,\"status\":\"active\",\"description\":\"Buy 2.14 Bangle Size Sticker Sheet from Rs 10 from Bangle By Choice. Suitable for jewellery making, bangle making and craft projects. Premium catalogue image shows the exact colour, finish and product details.\"}",
+      "image_url": "/images/new-products-2026-07-19/2-14-bangle-size-sticker-sheet-premium.webp",
+      "alt_text": "2.14 Bangle Size Sticker Sheet premium product photo with Bangle By Choice watermark and phone number"
+    },
+    {
+      "id": "e1347ad0-1d09-4346-b815-b32a29de64fd",
+      "name": "2.2 Bangle Size Sticker Sheet",
+      "slug": "2-2-bangle-size-sticker-sheet",
+      "price": 5,
+      "mrp": 10,
+      "sizes": [],
+      "desc_text": "{\"_bbc\":1,\"status\":\"active\",\"description\":\"Buy 2.2 Bangle Size Sticker Sheet from Rs 10 from Bangle By Choice. Suitable for jewellery making, bangle making and craft projects. Premium catalogue image shows the exact colour, finish and product details.\"}",
+      "image_url": "/images/new-products-2026-07-19/2-2-bangle-size-sticker-sheet-premium.webp",
+      "alt_text": "2.2 Bangle Size Sticker Sheet premium product photo with Bangle By Choice watermark and phone number"
+    },
+    {
+      "id": "fb2fb35c-e8fa-4d1f-bf71-85f4edce523c",
+      "name": "2.4 Bangle Size Sticker Sheet",
+      "slug": "2-4-bangle-size-sticker-sheet",
+      "price": 5,
+      "mrp": 10,
+      "sizes": [],
+      "desc_text": "{\"_bbc\":1,\"status\":\"active\",\"description\":\"Buy 2.4 Bangle Size Sticker Sheet from Rs 10 from Bangle By Choice. Suitable for jewellery making, bangle making and craft projects. Premium catalogue image shows the exact colour, finish and product details.\"}",
+      "image_url": "/images/new-products-2026-07-19/2-4-bangle-size-sticker-sheet-premium.webp",
+      "alt_text": "2.4 Bangle Size Sticker Sheet premium product photo with Bangle By Choice watermark and phone number"
+    },
+    {
+      "id": "5721c617-580f-4c3b-9ee2-ca4dfbd996a9",
+      "name": "2.6 Bangle Size Sticker Sheet",
+      "slug": "2-6-bangle-size-sticker-sheet",
+      "price": 5,
+      "mrp": 10,
+      "sizes": [],
+      "desc_text": "{\"_bbc\":1,\"status\":\"active\",\"description\":\"Buy 2.6 Bangle Size Sticker Sheet from Rs 10 from Bangle By Choice. Suitable for jewellery making, bangle making and craft projects. Premium catalogue image shows the exact colour, finish and product details.\"}",
+      "image_url": "/images/new-products-2026-07-19/2-6-bangle-size-sticker-sheet-premium.webp",
+      "alt_text": "2.6 Bangle Size Sticker Sheet premium product photo with Bangle By Choice watermark and phone number"
+    },
+    {
+      "id": "908a5aeb-0731-43f2-9f41-ddf4f6c05455",
+      "name": "2.8 Bangle Size Sticker Sheet",
+      "slug": "2-8-bangle-size-sticker-sheet",
+      "price": 5,
+      "mrp": 10,
+      "sizes": [],
+      "desc_text": "{\"_bbc\":1,\"status\":\"active\",\"description\":\"Buy 2.8 Bangle Size Sticker Sheet from Rs 10 from Bangle By Choice. Suitable for jewellery making, bangle making and craft projects. Premium catalogue image shows the exact colour, finish and product details.\"}",
+      "image_url": "/images/new-products-2026-07-19/2-8-bangle-size-sticker-sheet-premium.webp",
+      "alt_text": "2.8 Bangle Size Sticker Sheet premium product photo with Bangle By Choice watermark and phone number"
+    }
+  ]
+}
