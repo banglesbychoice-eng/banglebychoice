@@ -4,6 +4,7 @@ import { getServiceSupabase } from '@/lib/supabase-server';
 import { revalidatePath, revalidateTag } from 'next/cache';
 import { PRODUCT_CACHE_TAG } from '@/lib/catalog-server';
 import { isDisallowedProduct } from '@/lib/disallowed-products';
+import { getDefaultBanglePacks, isBangleBaseProduct } from '@/lib/pricing';
 
 function editableFields(body) {
   const slug = body.name ? body.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : undefined;
@@ -24,6 +25,8 @@ export async function PUT(request, { params }) {
   const client = getServiceSupabase();
   const { data: existing } = await client.from('products').select('*').eq('id', id).maybeSingle();
   const fields = editableFields(body);
+  const nextProduct = { ...existing, ...fields };
+  if (isBangleBaseProduct(nextProduct) && (!Array.isArray(nextProduct.sizes) || !nextProduct.sizes.length)) fields.sizes = getDefaultBanglePacks(nextProduct);
   if (isDisallowedProduct({ ...existing, ...fields })) return NextResponse.json({ error: 'This product category is no longer supported.' }, { status: 400 });
   const { data, error } = await client.from('products').update(fields).eq('id', id).select().single();
   if (error) return NextResponse.json({ error: 'Unable to update product.' }, { status: error.code === 'PGRST116' ? 404 : 500 });

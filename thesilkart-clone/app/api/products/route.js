@@ -4,6 +4,7 @@ import { getServiceSupabase } from '@/lib/supabase-server';
 import { revalidatePath, revalidateTag } from 'next/cache';
 import { getProductRows, PRODUCT_CACHE_TAG } from '@/lib/catalog-server';
 import { isDisallowedProduct } from '@/lib/disallowed-products';
+import { getDefaultBanglePacks, isBangleBaseProduct } from '@/lib/pricing';
 
 export async function GET() {
   if (!(await isAdmin())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -26,6 +27,7 @@ export async function POST(request) {
       tag: body.tag || '', sizes: body.sizes || [], image_url: body.image_url || null,
       meta_title: body.meta_title || `${body.name} | Bangle by Choice`, meta_description: body.meta_description || `Buy ${body.name} online at Bangle by Choice.`, alt_text: body.alt_text || body.name,
     };
+    if (isBangleBaseProduct(product) && !product.sizes.length) product.sizes = getDefaultBanglePacks(product);
     if (isDisallowedProduct(product)) return NextResponse.json({ error: 'This product category is no longer supported.' }, { status: 400 });
     const { data, error } = await getServiceSupabase().from('products').insert(product).select().single();
     if (error) throw error;

@@ -2,6 +2,7 @@ export const FREE_SHIPPING_MIN = 999;
 export const MINIMUM_SHIPPING_FEE = 60;
 export const SHIPPING_RATE_PER_KG = 65;
 export const SHIPPING_FEE = MINIMUM_SHIPPING_FEE;
+export const DEFAULT_BANGLE_SIZES = ['2.2', '2.4', '2.6', '2.8', '2.10', '2.12'];
 
 const PACKAGING_WEIGHT_GRAMS = 100;
 const BANGLE_BOX_WEIGHT_GRAMS = 300;
@@ -40,6 +41,18 @@ export function isBangleBoxProduct(product) {
     product?.subcategory,
     product?.category,
   ].filter(Boolean).join(' '));
+}
+
+export function isBangleBaseProduct(product) {
+  const name = String(product?.name || '');
+  if (!/\bbangles?\b/i.test(name) || isBangleBoxProduct(product)) return false;
+  return !/\b(?:sticker|marking|paper|chart|kit|tool)\b/i.test(name);
+}
+
+export function getDefaultBanglePacks(product) {
+  const price = Math.round(Number(product?.sale_price ?? product?.price ?? 0));
+  const mrp = Math.round(Number(product?.mrp ?? product?.price ?? price));
+  return DEFAULT_BANGLE_SIZES.map((label) => ({ label, price, ...(mrp ? { mrp } : {}), available: true }));
 }
 
 export function getFreeShippingRemaining(subtotal) {
@@ -115,14 +128,7 @@ export function getDefaultPackChoice(product) {
 }
 
 export function isBangleSizeProduct(product) {
-  if (isBangleBoxProduct(product)) return false;
-  const isBangle = /\bbangles?\b/i.test([
-    product?.name,
-    product?.type,
-    product?.subcategory,
-    product?.category,
-  ].filter(Boolean).join(' '));
-  return isBangle && getPackChoices(product).some((choice) => /^2\.(?:2|4|6|8|10|12|14)$/.test(String(choice).trim()));
+  return isBangleBaseProduct(product) && getPackChoices(product).some((choice) => /^2\.(?:2|4|6|8|10|12|14)$/.test(String(choice).trim()));
 }
 
 export function getPackPrice(product, packSize = '') {
