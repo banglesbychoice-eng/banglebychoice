@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { isAdmin } from '@/lib/admin-auth';
 import { normalizeDatabaseProduct } from '@/lib/catalog-server';
 import { DELIVERY_METHODS, getDeliveryDetails } from '@/lib/delivery';
-import { formatSavingsAmount, getPackChoices, getPackPrice, getShippingQuote } from '@/lib/pricing';
+import { formatSavingsAmount, getAvailablePackChoices, getPackChoices, getPackPrice, getShippingQuote, isPackChoiceAvailable } from '@/lib/pricing';
 import { rateLimit, requestIp } from '@/lib/rate-limit';
 import { getServiceSupabase } from '@/lib/supabase-server';
 
@@ -103,7 +103,10 @@ export async function POST(request) {
       const product = byId.get(String(item.id));
       if (product.status === 'draft' || product.availability === 'Out of Stock') throw new Error(`${product.name} is no longer available.`);
       const choices = getPackChoices(product);
-      const packSize = choices.includes(item.packSize) ? item.packSize : choices[0] || '';
+      const availableChoices = getAvailablePackChoices(product);
+      if (item.packSize && !choices.includes(item.packSize)) throw new Error(`${product.name} has an invalid size or pack selection.`);
+      const packSize = item.packSize || availableChoices[0] || '';
+      if (choices.length > 0 && !isPackChoiceAvailable(product, packSize)) throw new Error(`${product.name} in ${packSize || 'the selected size'} is no longer available.`);
       const unitPrice = getPackPrice(product, packSize);
       return {
         id: String(product.id), slug: product.slug, name: product.name, image: product.image,
@@ -171,6 +174,7 @@ export async function POST(request) {
   } catch (error) {
     if (createdOrderId) await getServiceSupabase().from('orders').delete().eq('id', createdOrderId);
     console.error('POST /api/orders failed:', error.message);
-    return NextResponse.json({ error: error.message?.endsWith('available.') ? error.message : 'Unable to process the order.' }, { status: 500 });
+    const availabilityError = /(?:no longer available|invalid size or pack selection)/i.test(error.message || '');
+    return NextResponse.json({ error: availabilityError ? error.message : 'Unable to process the order.' }, { status: availabilityError ? 409 : 500 });
   }
 }

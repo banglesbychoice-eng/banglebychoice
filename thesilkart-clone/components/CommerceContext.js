@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
 import { CheckCircle2, X } from 'lucide-react';
-import { formatSavingsAmount, getPackChoices, getPackMrp, getPackPrice } from '@/lib/pricing';
+import { formatSavingsAmount, getAvailablePackChoices, getPackChoices, getPackMrp, getPackPrice, isPackChoiceAvailable } from '@/lib/pricing';
 import styles from './CommerceContext.module.css';
 import { trackEvent } from '@/lib/analytics-client';
 
@@ -99,7 +99,12 @@ export function CommerceProvider({ children }) {
   function addToCart(product, packSize = '', quantity = 1) {
     const addQuantity = Math.max(1, Math.min(50, Number(quantity) || 1));
     const choices = getPackChoices(product);
-    const selectedPack = packSize || choices[0] || '';
+    const availableChoices = getAvailablePackChoices(product);
+    const selectedPack = packSize || availableChoices[0] || '';
+    if (product.availability === 'Out of Stock' || (choices.length > 0 && !isPackChoiceAvailable(product, selectedPack))) {
+      setCartNotice(`${product.name}${selectedPack ? ` · ${selectedPack}` : ''} is currently unavailable.`);
+      return;
+    }
     const key = `${product.id}:${selectedPack}`;
     const selectedPrice = getPackPrice(product, selectedPack);
     const selectedMrp = getPackMrp(product, selectedPack);
@@ -149,7 +154,9 @@ export function CommerceProvider({ children }) {
       const product = entry.product;
       if (!product?.id) continue;
       const choices = getPackChoices(product);
-      const packSize = choices.includes(entry.packSize) ? entry.packSize : choices[0] || '';
+      const availableChoices = getAvailablePackChoices(product);
+      const packSize = choices.includes(entry.packSize) && isPackChoiceAvailable(product, entry.packSize) ? entry.packSize : availableChoices[0] || '';
+      if (product.availability === 'Out of Stock' || (choices.length > 0 && !packSize)) continue;
       const key = `${product.id}:${packSize}`;
       const quantity = Math.max(1, Math.min(50, Number(entry.quantity) || 1));
       const existingIndex = next.findIndex((item) => item.key === key);

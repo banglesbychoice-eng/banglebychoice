@@ -39,6 +39,8 @@
 .options button small { color: #776b65; font-size: .65rem; }
 .options button.selectedOption { border-color: #761a37; color: #761a37; background: #fff8f4; }
 .options button.selectedOption small { color: #761a37; }
+.options button:disabled { background: #f3efec; border-color: #ddd4cf; color: #9a8f89; cursor: not-allowed; opacity: .82; text-decoration: line-through; }
+.options button:disabled small { color: #9a3f3f; font-weight: 800; text-decoration: none; }
 .starterOffer { align-items: center; background: #f1f8f2; color: #326742; display: flex; font-size: .72rem; gap: 8px; margin-top: 10px; padding: 9px 11px; }
 .starterOffer svg { flex: 0 0 auto; height: 18px; width: 18px; }
 .buyTools { display: grid; grid-template-columns: 150px 1fr; gap: 10px; margin-top: 18px; }

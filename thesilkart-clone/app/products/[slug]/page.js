@@ -6,7 +6,7 @@ import { getCatalogProducts, getDatabaseProduct } from '@/lib/catalog-server';
 import ProductActions from '@/components/ProductActions';
 import styles from './product.module.css';
 import { absoluteUrl, isWeakProductMetaDescription, jsonLd, ogImages, premiumProductDescription, premiumProductMetaDescription, productKeywords, productSeoTitle, siteName, twitterImage } from '@/lib/seo';
-import { FREE_SHIPPING_MIN, SHIPPING_FEE, formatSavingsAmount, getPackChoices, getPriceValidUntil, isBangleBoxProduct } from '@/lib/pricing';
+import { FREE_SHIPPING_MIN, SHIPPING_FEE, formatSavingsAmount, getAvailablePackChoices, getPackChoices, getPackPrice, getPriceValidUntil, isBangleBoxProduct, isBangleSizeProduct } from '@/lib/pricing';
 import { productGroupKey } from '@/lib/product-grouping';
 import { getApprovedReviews, reviewSummary } from '@/lib/reviews-server';
 import ProductReviews from '@/components/ProductReviews';
@@ -57,6 +57,10 @@ export default async function ProductPage({ params }) {
   const discount = Math.round(((product.price - product.sale_price) / product.price) * 100);
   const baseSavings = Math.max(0, product.price - product.sale_price);
   const choices = getPackChoices(product);
+  const availableChoices = getAvailablePackChoices(product);
+  const unavailableChoices = choices.filter((choice) => !availableChoices.includes(choice));
+  const displayedPrice = availableChoices.length ? Math.min(...availableChoices.map((choice) => getPackPrice(product, choice))) : product.sale_price;
+  const choiceLabel = isBangleSizeProduct(product) ? 'bangle sizes' : 'packs';
   const reviews = await getApprovedReviews(product.slug);
   const summary = reviewSummary(reviews);
   const productUrl = absoluteUrl(`/products/${product.slug}`);
@@ -77,7 +81,7 @@ export default async function ProductPage({ params }) {
   const productSchema = {
     '@context': 'https://schema.org', '@type': 'Product', name: titleCase(product.name), description: productDescription,
     sku: product.id, image: product.images.map(absoluteUrl), category: product.category, brand: { '@type': 'Brand', name: siteName },
-    offers: { '@type': 'Offer', url: productUrl, priceCurrency: 'INR', price: product.sale_price, priceValidUntil: getPriceValidUntil(), availability: product.availability.toLowerCase().includes('stock') ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock', itemCondition: 'https://schema.org/NewCondition', seller: { '@type': 'Organization', name: siteName }, shippingDetails, hasMerchantReturnPolicy: returnPolicy },
+    offers: { '@type': 'Offer', url: productUrl, priceCurrency: 'INR', price: displayedPrice, priceValidUntil: getPriceValidUntil(), availability: product.availability === 'In Stock' ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock', itemCondition: 'https://schema.org/NewCondition', seller: { '@type': 'Organization', name: siteName }, shippingDetails, hasMerchantReturnPolicy: returnPolicy },
   };
   if (additionalProperty.length) productSchema.additionalProperty = additionalProperty;
   if (product.facets?.colours?.length) productSchema.color = product.facets.colours.join(', ');
@@ -113,7 +117,7 @@ export default async function ProductPage({ params }) {
             <p className={styles.category}>{product.category} · {product.subcategory}</p>
             <h1>{titleCase(product.name)}</h1>
             {summary ? <a className={styles.ratingSummary} href="#reviews"><span>★★★★★</span><b>{summary.value}</b><small>{summary.count} review{summary.count === 1 ? '' : 's'}</small></a> : null}
-            <div className={styles.prices}><strong>{choices.length > 1 ? 'From ' : ''}₹{product.sale_price}</strong>{product.price > product.sale_price ? <del>₹{product.price}</del> : null}{discount > 0 && <span>{discount}% off · Save ₹{formatSavingsAmount(baseSavings)}</span>}</div>
+            <div className={styles.prices}><strong>{availableChoices.length > 1 ? 'From ' : ''}₹{displayedPrice}</strong>{product.price > product.sale_price ? <del>₹{product.price}</del> : null}{discount > 0 && <span>{discount}% off · Save ₹{formatSavingsAmount(baseSavings)}</span>}</div>
             <p className={styles.tax}>Inclusive of all taxes</p>
             <div className={styles.stock}><span /> {product.availability}{product.stock_quantity > 0 && product.stock_quantity < 5 ? <b className={styles.lowStock}>Only {product.stock_quantity} packs left</b> : null}</div>
             <div className={styles.trustRow}><span>Secure online checkout</span><span>UPI and cards</span><span>48-hr damage support</span></div>
@@ -123,7 +127,7 @@ export default async function ProductPage({ params }) {
               <p><b>Delivery across India</b><span>1–3 days in AP & Telangana, 3–7 days elsewhere.</span></p>
               <p><b>Need help?</b><span>Chat with us for product and quantity guidance.</span></p>
             </div>
-            <details open><summary>Product details</summary><p>{productDescription}</p><p><b>Type:</b> {product.type}</p>{choices.length ? <p><b>Available packs:</b> {choices.join(', ')}</p> : null}</details>
+            <details open><summary>Product details</summary><p>{productDescription}</p><p><b>Type:</b> {product.type}</p>{availableChoices.length ? <p><b>Available {choiceLabel}:</b> {availableChoices.join(', ')}</p> : null}{unavailableChoices.length ? <p><b>Currently unavailable:</b> {unavailableChoices.join(', ')}</p> : null}</details>
             <details><summary>Shipping & delivery</summary><p>Orders are processed for dispatch within 24 hours after confirmation. India Post shipments may require 1–2 additional working days.</p></details>
           </div>
         </section>

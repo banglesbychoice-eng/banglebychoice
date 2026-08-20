@@ -16,7 +16,7 @@ export function deriveProductFacets(product) {
   const foundColours = colours.filter((colour, index) => text.includes(colour) && !colours.slice(0, index).some((specific) => text.includes(specific) && specific.includes(colour))).map(title);
   const foundShapes = shapes.filter((shape, index) => text.includes(shape) && !shapes.slice(0, index).some((specific) => text.includes(specific) && specific.includes(shape))).map(title);
   const stringSizes = Array.isArray(product.sizes) ? product.sizes.filter((value) => typeof value === 'string') : [];
-  const sizeText = `${text} ${product.weight || ''} ${(product.pack_prices || []).map((pack) => pack.label).join(' ')} ${stringSizes.join(' ')}`;
+  const sizeText = `${text} ${product.weight || ''} ${(product.pack_prices || []).filter((pack) => pack.available !== false).map((pack) => pack.label).join(' ')} ${stringSizes.join(' ')}`;
   const measuredSizes = sizeText.match(/\b\d+(?:\.\d+)?\s*(?:mm|cm|inches|inch|kg|g)\b/gi) || [];
   const dimensions = sizeText.match(/\b\d+(?:\.\d+)?\s*[x*]\s*\d+(?:\.\d+)?(?:\s*mm)?\b/gi) || [];
   const bangleSizes = sizeText.match(/\b2\.(?:2|4|6|8|10|12|14)\b/g) || [];

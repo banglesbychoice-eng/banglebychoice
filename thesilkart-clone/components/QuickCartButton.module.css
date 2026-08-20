@@ -1,6 +1,7 @@
 .button { align-items: center; display: flex; gap: 7px; justify-content: center; width: 100%; min-height: 44px; margin-top: 12px; border: 1px solid #6e1734; border-radius: 5px; background: #6e1734; color: white; font: inherit; font-size: .875rem; font-weight: 850; cursor: pointer; transition: background .2s ease, color .2s ease, transform .2s ease; }
 .button svg { height: 16px; width: 16px; }
 .button:hover { background: white; color: #6e1734; transform: translateY(-1px); }
+.button:disabled { background: #efe9e5; border-color: #d7ccc5; color: #756b65; cursor: not-allowed; transform: none; }
 .added { background: #2d8c4d; border-color: #2d8c4d; color: white; }
 .added:hover { background: #2d8c4d; color: white; }
 .compact { min-height: 42px; margin-top: 9px; font-size: .82rem; }

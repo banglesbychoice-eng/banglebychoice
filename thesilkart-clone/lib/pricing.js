@@ -84,7 +84,7 @@ export function getShippingQuote(cart = [], subtotal = 0) {
 }
 
 export function getBestValuePack(product) {
-  const choices = getPackChoices(product);
+  const choices = getAvailablePackChoices(product);
   return choices.reduce((best, choice) => {
     const grams = getPackGrams(choice);
     if (!grams) return best;
@@ -96,6 +96,32 @@ export function getBestValuePack(product) {
 export function getPackChoices(product) {
   if (product.pack_prices?.length) return product.pack_prices.map((pack) => pack.label).filter(Boolean);
   return product.weight ? product.weight.split(',').map((choice) => choice.trim()).filter(Boolean) : [];
+}
+
+export function isPackChoiceAvailable(product, choice = '') {
+  const choices = getPackChoices(product);
+  if (!choices.length) return !choice;
+  const configuredPack = product.pack_prices?.find((pack) => pack.label === choice);
+  if (!configuredPack) return choices.includes(choice);
+  return configuredPack.available !== false;
+}
+
+export function getAvailablePackChoices(product) {
+  return getPackChoices(product).filter((choice) => isPackChoiceAvailable(product, choice));
+}
+
+export function getDefaultPackChoice(product) {
+  return getAvailablePackChoices(product)[0] || '';
+}
+
+export function isBangleSizeProduct(product) {
+  if (isBangleBoxProduct(product)) return false;
+  return /\bbangles?\b/i.test([
+    product?.name,
+    product?.type,
+    product?.subcategory,
+    product?.category,
+  ].filter(Boolean).join(' '));
 }
 
 export function getPackPrice(product, packSize = '') {

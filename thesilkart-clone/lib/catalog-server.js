@@ -51,6 +51,10 @@ function parseImages(value, fallback) {
   return [value];
 }
 
+function packIsAvailable(pack) {
+  return pack?.available !== false;
+}
+
 export function normalizeDatabaseProduct(row) {
   const imported = getProduct(row.slug);
   const fallbackImage = imported?.image || '/images/generated/banglebychoice-hero.webp';
@@ -69,7 +73,7 @@ export function normalizeDatabaseProduct(row) {
     category: canonicalCategory(row.cat || imported?.category),
     subcategory: cleanProductText(row.tag || imported?.subcategory || 'Craft material'),
     type: cleanProductText(imported?.type || row.tag || 'Jewellery-making material'),
-    availability: details.status === 'draft' || details.stock_quantity === 0 ? 'Out of Stock' : imported?.availability || 'In Stock',
+    availability: details.status === 'draft' || details.stock_quantity === 0 || (packPrices.length > 0 && !packPrices.some(packIsAvailable)) ? 'Out of Stock' : imported?.availability || 'In Stock',
     image,
     images,
     description: details.description && !details.description.startsWith('DescriptionShipping') ? cleanProductText(details.description) : '',
@@ -104,7 +108,7 @@ export function normalizeCatalogProduct(row) {
     category: canonicalCategory(row.cat || imported?.category),
     subcategory: cleanProductText(row.tag || imported?.subcategory || 'Craft material'),
     type: cleanProductText(imported?.type || row.tag || 'Jewellery-making material'),
-    availability: details.status === 'draft' || details.stock_quantity === 0 ? 'Out of Stock' : imported?.availability || 'In Stock',
+    availability: details.status === 'draft' || details.stock_quantity === 0 || (packPrices.length > 0 && !packPrices.some(packIsAvailable)) ? 'Out of Stock' : imported?.availability || 'In Stock',
     image: images[0],
     alt_text: cleanProductText(row.alt_text || row.name),
     status: details.status || 'active',
@@ -114,7 +118,7 @@ export function normalizeCatalogProduct(row) {
     weight: '',
   };
   product.facets = deriveProductFacets(product);
-  product.pack_prices = packPrices.slice(0, 1);
+  product.pack_prices = (packPrices.find(packIsAvailable) ? packPrices.filter(packIsAvailable) : packPrices).slice(0, 1);
   return product;
 }
 

@@ -13,7 +13,7 @@ import { scoreProduct } from '@/lib/product-search';
 import { facetOptions, matchesFacets } from '@/lib/product-facets';
 import { productGroupKey } from '@/lib/product-grouping';
 import { catalogImage } from '@/lib/product-utils';
-import { FREE_SHIPPING_MIN, formatSavingsAmount, getPackChoices } from '@/lib/pricing';
+import { FREE_SHIPPING_MIN, formatSavingsAmount, getDefaultPackChoice, isBangleSizeProduct } from '@/lib/pricing';
 
 const PAGE_SIZE = 48;
 function displayName(value = '') {
@@ -23,7 +23,7 @@ function displayName(value = '') {
 const ProductTile = memo(function ProductTile({ product }) {
   const discount = Math.round(((product.price - product.sale_price) / product.price) * 100);
   const saveAmount = Math.max(0, Number(product.price) - Number(product.sale_price));
-  const firstPack = getPackChoices(product)[0];
+  const firstPack = getDefaultPackChoice(product);
   const { toggleWishlist, isWishlisted } = useCommerce();
 
   return (
@@ -43,7 +43,7 @@ const ProductTile = memo(function ProductTile({ product }) {
           {product.price !== product.sale_price && <del>₹{product.price}</del>}
           {saveAmount ? <span>Save ₹{formatSavingsAmount(saveAmount)}</span> : null}
         </div>
-        {firstPack ? <p className={styles.packHint}>Starting pack: {firstPack}</p> : null}
+        {firstPack ? <p className={styles.packHint}>{isBangleSizeProduct(product) ? 'Available size' : 'Starting pack'}: {firstPack}</p> : null}
         <QuickCartButton product={product} />
       </div>
     </article>

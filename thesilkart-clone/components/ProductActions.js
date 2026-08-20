@@ -4,11 +4,12 @@ import { useEffect, useState } from 'react';
 import { Check, Heart, MessageCircle, Minus, PackageCheck, Plus, ShoppingBag } from 'lucide-react';
 import { useCommerce } from './CommerceContext';
 import styles from '@/app/products/[slug]/product.module.css';
-import { formatSavingsAmount, getBestValuePack, getPackGrams, getPackMrp, getPackPrice } from '@/lib/pricing';
+import { formatSavingsAmount, getAvailablePackChoices, getBestValuePack, getPackGrams, getPackMrp, getPackPrice, isBangleSizeProduct, isPackChoiceAvailable } from '@/lib/pricing';
 import { trackEvent } from '@/lib/analytics-client';
 
 export default function ProductActions({ product, choices }) {
-  const [packSize, setPackSize] = useState(choices[0] || '');
+  const availableChoices = getAvailablePackChoices(product);
+  const [packSize, setPackSize] = useState(availableChoices[0] || '');
   const [quantity, setQuantity] = useState(1);
   const [pincode, setPincode] = useState('');
   const { addToCart, getCartQuantity, toggleWishlist, isWishlisted } = useCommerce();
@@ -18,13 +19,14 @@ export default function ProductActions({ product, choices }) {
   const savingsPercent = selectedMrp > selectedPrice ? Math.round((packSavings / selectedMrp) * 100) : 0;
   const lineTotal = selectedPrice * quantity;
   const lineSavings = packSavings * quantity;
-  const starterPack = choices.find((choice) => getPackGrams(choice) === 100);
+  const starterPack = availableChoices.find((choice) => getPackGrams(choice) === 100);
   const starterPrice = starterPack ? getPackPrice(product, starterPack) : 0;
   const starterSavings = starterPack ? Math.max(0, getPackMrp(product, starterPack) - starterPrice) : 0;
   const bestValuePack = getBestValuePack(product);
   const deliveryEstimate = /^\d{6}$/.test(pincode) ? (pincode.startsWith('50') || pincode.startsWith('51') || pincode.startsWith('52') ? 'Estimated delivery: 1–3 business days after dispatch.' : 'Estimated delivery: 3–7 business days after dispatch.') : '';
   const cartQuantity = getCartQuantity(product.id, packSize);
   const inBag = cartQuantity > 0;
+  const optionLabel = isBangleSizeProduct(product) ? 'bangle size' : 'pack size';
 
   useEffect(() => {
     trackEvent('view_item', { currency: 'INR', value: Number(product.sale_price), items: [{ item_id: String(product.id), item_name: product.name, item_category: product.category, price: Number(product.sale_price), quantity: 1 }] });
@@ -40,7 +42,7 @@ export default function ProductActions({ product, choices }) {
 
   return (
     <>
-      {choices.length > 0 && <div className={styles.options}><p>Select pack size</p><div>{choices.map((choice) => <button type="button" className={packSize === choice ? styles.selectedOption : ''} onClick={() => setPackSize(choice)} key={choice}><b>{choice}</b><small>₹{getPackPrice(product, choice)}{choice === bestValuePack ? ' · Best value' : ''}</small></button>)}</div><p className={styles.selectedPrice}>Selected pack: <strong>₹{selectedPrice}</strong>{selectedMrp > selectedPrice ? <del>₹{selectedMrp}</del> : null}{packSavings ? <span>{savingsPercent}% off · Save ₹{formatSavingsAmount(packSavings)} per pack</span> : null}</p></div>}
+      {choices.length > 0 && <div className={styles.options}><p>Select {optionLabel}</p><div>{choices.map((choice) => { const available = isPackChoiceAvailable(product, choice); return <button type="button" className={packSize === choice ? styles.selectedOption : ''} onClick={() => setPackSize(choice)} disabled={!available} aria-label={`${choice} ${optionLabel}${available ? '' : ', unavailable'}`} key={choice}><b>{choice}</b><small>{available ? <>₹{getPackPrice(product, choice)}{choice === bestValuePack ? ' · Best value' : ''}</> : 'Unavailable'}</small></button>; })}</div><p className={styles.selectedPrice}>Selected {optionLabel}: <strong>₹{selectedPrice}</strong>{selectedMrp > selectedPrice ? <del>₹{selectedMrp}</del> : null}{packSavings ? <span>{savingsPercent}% off · Save ₹{formatSavingsAmount(packSavings)} per pack</span> : null}</p></div>}
       {starterPack ? <p className={styles.starterOffer}><PackageCheck aria-hidden="true" /><span><b>100 g value pack: ₹{starterPrice}</b>{starterSavings ? ` · Save ₹${formatSavingsAmount(starterSavings)} against MRP` : ' · Clear price before checkout'}</span></p> : null}
       <div className={styles.buyTools}>
         <label>Quantity <span className={styles.quantityStepper}><button type="button" aria-label="Decrease quantity" onClick={() => setQuantity((current) => Math.max(1, current - 1))}><Minus aria-hidden="true" /></button><b>{quantity}</b><button type="button" aria-label="Increase quantity" onClick={() => setQuantity((current) => Math.min(50, current + 1))}><Plus aria-hidden="true" /></button></span></label>
