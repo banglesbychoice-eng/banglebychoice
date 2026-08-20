@@ -116,12 +116,13 @@ export function getDefaultPackChoice(product) {
 
 export function isBangleSizeProduct(product) {
   if (isBangleBoxProduct(product)) return false;
-  return /\bbangles?\b/i.test([
+  const isBangle = /\bbangles?\b/i.test([
     product?.name,
     product?.type,
     product?.subcategory,
     product?.category,
   ].filter(Boolean).join(' '));
+  return isBangle && getPackChoices(product).some((choice) => /^2\.(?:2|4|6|8|10|12|14)$/.test(String(choice).trim()));
 }
 
 export function getPackPrice(product, packSize = '') {
