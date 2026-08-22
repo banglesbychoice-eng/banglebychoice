@@ -49,6 +49,10 @@ export function isBangleBaseProduct(product) {
   return !/\b(?:sticker|marking|paper|chart|kit|tool)\b/i.test(name);
 }
 
+export function supportsBangleSizes(product) {
+  return isBangleBaseProduct(product) || isBangleBoxProduct(product);
+}
+
 export function getDefaultBanglePacks(product) {
   const price = Math.round(Number(product?.sale_price ?? product?.price ?? 0));
   const mrp = Math.round(Number(product?.mrp ?? product?.price ?? price));
@@ -128,7 +132,7 @@ export function getDefaultPackChoice(product) {
 }
 
 export function isBangleSizeProduct(product) {
-  return isBangleBaseProduct(product) && getPackChoices(product).some((choice) => /^2\.(?:2|4|6|8|10|12|14)$/.test(String(choice).trim()));
+  return supportsBangleSizes(product) && getPackChoices(product).some((choice) => /^2\.(?:2|4|6|8|10|12|14)$/.test(String(choice).trim()));
 }
 
 export function getPackPrice(product, packSize = '') {
