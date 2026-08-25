@@ -3,10 +3,12 @@ import { getCatalogProducts } from '@/lib/catalog-server';
 import { absoluteUrl, jsonLd } from '@/lib/seo';
 import { titleCase } from '@/lib/products';
 import { groupProductsByDesign } from '@/lib/product-grouping';
+import { catalogStateFromSearchParams } from '@/lib/catalog-navigation';
 
 export const revalidate = 300;
 
-export default async function Home() {
+export default async function Home({ searchParams }) {
+  const initialCatalogState = catalogStateFromSearchParams(await searchParams);
   const products = await getCatalogProducts();
   const categories = [...new Set(products.map((product) => product.category))];
   const productGroups = categories.flatMap((category) => groupProductsByDesign(products.filter((product) => product.category === category)));
@@ -31,5 +33,5 @@ export default async function Home() {
       url: absoluteUrl(`/products/${product.slug}`),
     })),
   };
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(itemListSchema) }} /><Storefront initialProducts={initialProducts} categories={categories} collectionGroups={collectionGroups} totalProducts={products.length} seoProducts={products.slice(0, 30).map(({ id, name, slug }) => ({ id, name, slug }))} /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(itemListSchema) }} /><Storefront initialProducts={initialProducts} categories={categories} collectionGroups={collectionGroups} totalProducts={products.length} initialCatalogState={initialCatalogState} seoProducts={products.slice(0, 30).map(({ id, name, slug }) => ({ id, name, slug }))} /></>;
 }
